@@ -1,0 +1,388 @@
+{
+  "services1": {
+    "plasticCards": {
+      "title": "Plastik kartalar",
+      "desc": "Plastik kartalar bo‘yicha tez va xavfsiz xizmatlar."
+    },
+    "loans": {
+      "title": "Kreditlar",
+      "desc": "Imtiyozli foiz stavkalari va tez rasmiylashtirish bilan mikrokreditlar."
+    },
+    "deposits": {
+      "title": "Omonat (Depozitlar)",
+      "desc": "Mablag‘laringizni ishonchli va yuqori daromad bilan ko‘paytiring."
+    },
+    "currency": {
+      "title": "Valyuta",
+      "desc": "24/7 onlayn valyuta ayirboshlash eng qulay kurslarda."
+    }
+  },
+  "buttons": {
+    "moreDetails": "Batafsil →"
+  },
+  "salom": {
+    "home": "Bizning xizmatlar"
+  },
+  "navbar": {
+    "more": "YANA",
+    "kredit": "Kredit",
+    "home": "Bosh sahifa",
+    "aboutus": "Biz haqimizda",
+    "dashboard": "Dashboard",
+    "card": "Karta",
+    "services": "Xizmatlar",
+    "about": "Biz haqimizda",
+    "contact": "Kontaktlar",
+    "login": "Kirish"
+  },
+  "stats": {
+    "clients": "Mijozlar",
+    "branches": "Filiallar",
+    "experience": "Yillik tajriba",
+    "service": "Xizmat"
+  },
+  "hero": {
+    "badle": "O'zbekistonda №1 raqamli bank",
+    "desc": "Lodo Bank bilan moliyaviy kelajagingizni ishonch bilan quring.",
+    "title": "Ishonch, Xavfsizlik,",
+    "subtitle": "Rivojlanish",
+    "button": "Xizmatlar",
+    "button1": "Batafsil",
+    "hero_title": "Moliya olamida ishonch bilan",
+    "hero_desc": "Sizning ishonchli bankingiz va zamonaviy moliyaviy yechimlar markazi",
+    "hero_subtitle": "Yangi standartlar"
+  },
+  "services": {
+    "title": "Bizning xizmatlar",
+    "card1": {
+      "title": "Onlayn kredit",
+      "desc": "Tez va qulay kredit olish imkoniyati"
+    },
+    "card2": {
+      "title": "Plastik kartalar",
+      "desc": "Visa va Mastercard kartalari"
+    },
+    "card3": {
+      "title": "Pul o‘tkazmalari",
+      "desc": "Xalqaro va mahalliy pul o‘tkazmalari"
+    }
+  },
+  "translation": {
+    "send": "Yuborish",
+    "fullName": "F.I.Sh",
+    "region": "Viloyat",
+    "city": "Shahar",
+    "email": "Email",
+    "phone": "Telefon",
+    "requestType": "Murojaat turi",
+    "complaint": "Shikoyat",
+    "suggestion": "Taklif",
+    "question": "Savol",
+    "subjectType": "Shaxs turi",
+    "legal": "Yuridik shaxs",
+    "physical": "Jismoniy shaxs",
+    "message": "Xabar",
+    "agree": "Shartlarni qabul qilaman",
+    "alerts": {
+      "success": "Murojaat muvaffaqiyatli yuborildi",
+      "error": "Xatolik yuz berdi",
+      "network": "Tarmoq xatosi, qayta urinib ko‘ring"
+    },
+    "errors": {
+      "fullNameWords": "F.I.Sh 3 ta so‘zdan iborat bo‘lishi kerak",
+      "fullNameFormat": "F.I.Sh noto‘g‘ri formatda",
+      "region": "Viloyat kiritilishi shart",
+      "city": "Shahar kiritilishi shart",
+      "email": "Email noto‘g‘ri",
+      "phone": "Telefon formati: +998 XX XXX-XX-XX",
+      "message": "Xabar kamida 10 ta belgidan iborat bo‘lishi kerak",
+      "agree": "Shartlarni qabul qilishingiz shart"
+    }
+  },
+  "footer": {
+    "rights": "Barcha huquqlar himoyalangan",
+    "privacy": "Maxfiylik siyosati",
+    "terms": "Foydalanish shartlari"
+  },
+  "cards": {
+    "visa": {
+      "title": "VISA",
+      "description": "Karta tayyorlash muddati 3 ish kuni.",
+      "subDescription": "Minimal balans 10$",
+      "price": "BEPUL",
+      "priceLabel": "Kartani chiqarish",
+      "deposit": "10$",
+      "depositLabel": "Minimal balans"
+    },
+    "mastercard": {
+      "title": "MASTERCARD",
+      "description": "Kartani tayyorlash 5 ish kunigacha davom etadi.",
+      "subDescription": "Minimal balans 20$",
+      "price": "BEPUL",
+      "priceLabel": "Kartani chiqarish",
+      "deposit": "20$",
+      "depositLabel": "Minimal balans"
+    }
+  },
+  "timeline": {
+    "badge": "Tarixiy yo'l",
+    "title_part1": "Muvaffaqiyat ",
+    "title_brand": "Banki",
+    "title_part2": " sari",
+    "data": [
+      {
+        "year": "2003",
+        "title": "Tamal toshi",
+        "desc": "Bank o'z faoliyatini boshlab, ilk mijozlariga eshiklarini ochdi."
+      },
+      {
+        "year": "2008",
+        "title": "Milliy qamrov",
+        "desc": "Respublika bo'ylab kengayish davri boshlandi va filiallar tarmog'i 50 taga yetdi."
+      },
+      {
+        "year": "2012",
+        "title": "Raqamli transformatsiya",
+        "desc": "Innovatsion banking xizmatlari joriy etilib, ilk bor onlayn tranzaksiyalar yo'lga qo'yildi."
+      },
+      {
+        "year": "2017",
+        "title": "Muvaffaqiyat cho'qqisi",
+        "desc": "Mijozlarimiz soni 1 milliondan oshdi. Biz xalqaro e'tirofga sazovor bo'ldik."
+      },
+      {
+        "year": "2021",
+        "title": "Intellektual bank",
+        "desc": "Sun'iy intellekt va Big Data tahlili asosida mijozlarga shaxsiy yondashuv boshlandi."
+      },
+      {
+        "year": "2024",
+        "title": "Kelajak banki",
+        "desc": "Bank ekotizimi yaratildi - 2M+ mijoz va to'liq raqamli moliya dunyosi."
+      }
+    ]
+  },
+  "ss1": {
+    "id": 1,
+    "title": "Plastik kartalar",
+    "desc": "Visa / Mastercard / Humo kartalari",
+    "btn": "Batafsil"
+  },
+  "ss2": {
+    "id": 2,
+    "title": "Kreditlar",
+    "desc": "Imtiyozli foiz stavkalari",
+    "btn": "Ariza topshirish"
+  },
+  "ss3": {
+    "id": 3,
+    "title": "Omonat",
+    "desc": "Yuqori daromadli omonatlar",
+    "btn": "Hisob ochish"
+  },
+  "ss4": {
+    "id": 4,
+    "title": "Biznes xizmatlari",
+    "desc": "Korporativ mijozlar uchun",
+    "btn": "Batafsil"
+  },
+  "ss5": {
+    "id": 5,
+    "title": "Valyuta ayirboshlash",
+    "desc": "24/7 onlayn ayirboshlash",
+    "btn": "Kurslarni ko‘rish"
+  },
+  "ss6": {
+    "id": 6,
+    "title": "Internet Banking",
+    "desc": "Mobil va web banking",
+    "btn": "Ro‘yxatdan o‘tish"
+  },
+  "xizmatlar": {
+    "calc_title": "Hisoblaymiz sizning daromadingiz",
+    "calc_total": "Muddat oxiridagi summa",
+    "calc_profit": "Sof foyda",
+    "calc_amount": "Investitsiya summasi"
+  },
+  "contacts": {
+    "title": "Kontaktlar",
+    "subtitle": "Biz bilan o'zingizga qulay usulda bog'laning. Biz har doim yordamga tayyormiz.",
+    "phone": "Telefon",
+    "email": "Email",
+    "address": "Manzil",
+    "address_text": "Toshkent sh., Amir Temur ko'chasi, 108-uy",
+    "work_hours": "Ish tartibi",
+    "work_hours_text": "Dush-Jum: 09:00 – 18:00",
+    "form_title": "Xabar yo'llash",
+    "name_label": "Ismingiz",
+    "name_placeholder": "Ismingizni kiriting",
+    "email_label": "Email manzilingiz",
+    "email_placeholder": "example@mail.com",
+    "message_label": "Xabaringiz",
+    "message_placeholder": "Xabaringizni shu yerga yozing...",
+    "send_btn": "Xabarni yuborish"
+  },
+  "kredit": {
+    "hero_title": "Tez va Ishonchli Kredit Xizmati",
+    "hero_subtitle": "Eng qulay foizlar va tezkor tasdiqlash.",
+    "btn_get": "Kredit olish",
+    "btn_calc": "Hisoblash",
+    "types_title": "Kredit Turlari",
+    "btn_more": "Batafsil",
+    "calc_title": "Kredit Kalkulyator",
+    "placeholder_sum": "Summa",
+    "placeholder_term": "Muddat (oy)",
+    "placeholder_percent": "Foiz (%)",
+    "monthly_payment": "Oylik to'lov",
+    "form_title": "Kreditga Ariza Qoldiring",
+    "placeholder_name": "Ismingiz",
+    "placeholder_phone": "Telefon",
+    "select_type": "Kredit tanlang",
+    "btn_send": "Yuborish",
+    "alert_fill": "Iltimos barcha maydonlarni to‘ldiring",
+    "alert_success": "Ariza yuborildi ✅",
+    "currency": "so'm",
+    "rate_label": "Foiz",
+    "max_label": "Maks",
+    "term_label": "Muddat",
+    "types": {
+      "mortgage": "Ipoteka krediti",
+      "auto": "Avtokredit",
+      "business": "Biznes krediti",
+      "consumer": "Iste’mol krediti"
+    },
+    "max_values": {
+      "1b": "1 mlrd so'm",
+      "500m": "500 mln so'm",
+      "2b": "2 mlrd so'm",
+      "200m": "200 mln so'm"
+    },
+    "terms": {
+      "20y": "20 yil",
+      "5y": "5 yil",
+      "10y": "10 yil",
+      "3y": "3 yil"
+    }
+  },
+  "about": {
+    "badge": "Kelejak Banki",
+    "heroTitle": "Yuksalish Bank",
+    "heroSubtitle": "BILAN YANGI DAVR",
+    "heroDesc": "Biz faqat bank emasmiz, biz sizning moliyaviy muvaffaqiyatingiz yo'lidagi ishonchli hamkoringizmiz. Innovatsion yechimlar va xavfsizlik — bizning bosh tamoyilimiz.",
+    "btnMore": "Batafsil",
+    "stats": {
+      "clients": "Mijozlarimiz",
+      "experience": "Tajriba",
+      "branches": "Filiallar"
+    },
+    "mission": {
+      "title": "Bizning Missiyamiz",
+      "desc": "Har bir mijoz uchun individual yondashuv orqali eng qulay va zamonaviy moliyaviy ekotizimni yaratish."
+    },
+    "vision": {
+      "title": "Bizning Vizyonimiz",
+      "desc": "Markaziy Osiyoda raqamli bank xizmatlari bo'yicha eng innovatsion va ishonchli brendga aylanish."
+    },
+    "team": {
+      "title": "Rahbariyat Jamoasi",
+      "roles": {
+        "founder": "Asoschi & Rais",
+        "ceo": "Bosh Direktor (CEO)",
+        "cfo": "Moliya Direktori (CFO)"
+      }
+    },
+    "cta": {
+      "title": "Savollaringiz bormi?",
+      "desc": "Mutaxassislarimiz sizga yordam berishga tayyor. Hoziroq bog'laning va xizmatlarimizdan foydalaning.",
+      "btn": "Bog'lanish"
+    }
+  },
+  "uz": {
+    "title": "Mijozlarimiz Nima Deydi",
+    "desc": "Bizning mijozlarimiz Yuksalish Bank bilan qanday muvaffaqiyatga erishganini o'qing va o'z fikringizni qoldiring.",
+    "stats": "ta fikr",
+    "form": {
+      "name": "Ismingiz",
+      "role": "Rolingiz",
+      "msg": "Fikringiz...",
+      "submit": "Fikringizni yuboring",
+      "success": "Sizning fikringiz yuborildi! Fikrni faqat bir marta yuborishingiz mumkin."
+    }
+  },
+  "uz1": [
+    {
+      "name": "Ali Rustam",
+      "role": "Kredit Foydalanuvchisi",
+      "rating": 5,
+      "message": "Yuksalish Bankdagi xizmatlar juda qulay va tezkor. Men omonatni ochishdan juda mamnunman.",
+      "img": "https://i.pravatar.cc/100?img=12"
+    },
+    {
+      "name": "Malika Karimova",
+      "role": "Bank kartasi foydalanuvchisi",
+      "rating": 4,
+      "message": "Online banking interfeysi juda sodda va tushunarli. Mijozlarga xizmat darajasi a’lo.",
+      "img": "https://i.pravatar.cc/100?img=32"
+    },
+    {
+      "name": "Jumaqulva J",
+      "role": "Valyuta savdogari",
+      "rating": 5,
+      "message": "Valyuta kurslari yangilanadi va har doim qulay. Men doimo bu bank bilan ishlayman.",
+      "img": "https://i.pravatar.cc/100?img=44"
+    }
+  ],
+ "loans": {
+    "jan": "Yan",
+    "mar": "Mar",
+    "may": "May",
+    "jul": "Iyl",
+    "sep": "Sen",
+    "nov": "Noy"
+  },
+   "loan": "Kredit o‘sish tendensiyalari",
+   "stats1": {
+    "clients": "Jami mijozlar",
+    "loans": "Faol kreditlar",
+    "deposits": "Jami omonatlar",
+    "revenue": "Oylik daromad"
+  },
+"transactions": {
+   "title": "So‘nggi Tranzaksiyalar",
+    "t1": {
+      "date": "24 Okt 2023",
+      "client": "Jahongir Saidov",
+      "type": "Agro krediti",
+      "amount": "45,000,000 UZS",
+      "status": "Bajarildi"
+    },
+    "t2": {
+      "date": "02 Noy 2023",
+      "client": "Dilshod Karimov",
+      "type": "Biznes krediti",
+      "amount": "120,000,000 UZS",
+      "status": "Kutilmoqda"
+    },
+    "t3": {
+      "date": "15 Dek 2023",
+      "client": "Malika Tursunova",
+      "type": "Ipoteka",
+      "amount": "350,000,000 UZS",
+      "status": "Bajarildi"
+    },
+    "t4": {
+      "date": "08 Yan 2024",
+      "client": "Azizbek Yuldashev",
+      "type": "Avto krediti",
+      "amount": "85,000,000 UZS",
+      "status": "Rad etildi"
+    }
+  },
+   "table": {
+    "date": "Sana",
+    "client": "Mijoz",
+    "type": "Turi",
+    "amount": "Miqdori",
+    "status": "Holati"
+  }
+}

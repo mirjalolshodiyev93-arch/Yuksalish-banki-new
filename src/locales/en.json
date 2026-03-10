@@ -1,0 +1,372 @@
+{
+  "services1": {
+    "plasticCards": {
+      "title": "Plastic Cards",
+      "desc": "Fast and secure services for plastic cards."
+    },
+    "loans": {
+      "title": "Loans",
+      "desc": "Microloans with preferential interest rates and fast processing."
+    },
+    "deposits": {
+      "title": "Deposits",
+      "desc": "Grow your funds reliably with high returns."
+    },
+    "currency": {
+      "title": "Currency",
+      "desc": "24/7 online currency exchange at the most favorable rates."
+    }
+  },
+  "buttons": {
+    "moreDetails": "More Details →",
+    "orderOnline": "Order Online"
+  },
+  "salom": {
+    "home": "Our Services"
+  },
+  "navbar": {
+    "more":"MORE",
+    "aboutus":"AboutUs",
+    "dashboard":"Dashboard",
+"card":"Card",
+    "kredit": "Loan",
+    "home": "Home",
+    "services": "Services",
+    "about": "About Us",
+    "contact": "Contacts",
+    "login": "Login"
+  },
+  "stats": {
+    "clients": "Clients",
+    "branches": "Branches",
+    "experience": "Years Experience",
+    "service": "Service"
+  },
+ "hero": {
+    "badle": "No.1 digital bank in Uzbekistan",
+    "desc": "Build your financial future confidently with Lodo Bank.",
+    "title": "Trust, Security,",
+    "subtitle": "Growth",
+    "button": "Services",
+    "button1": "More Details",
+    "hero_title": "Confidence in the world of finance",
+    "hero_desc": "Your reliable bank and center of modern financial solutions",
+    "hero_subtitle": "New standards"
+  },
+  "services": {
+    "title": "Our Services",
+    "card1": {
+      "title": "Online Loan",
+      "desc": "Opportunity to get a loan quickly and conveniently"
+    },
+    "card2": {
+      "title": "Plastic Cards",
+      "desc": "Visa and Mastercard cards"
+    },
+    "card3": {
+      "title": "Money Transfers",
+      "desc": "International and local money transfers"
+    }
+  },
+  "translation": {
+    "send": "Send",
+    "fullName": "Full Name",
+    "region": "Region",
+    "city": "City",
+    "email": "Email",
+    "phone": "Phone",
+    "requestType": "Request Type",
+    "complaint": "Complaint",
+    "suggestion": "Suggestion",
+    "question": "Question",
+    "subjectType": "Subject Type",
+    "legal": "Legal Entity",
+    "physical": "Physical Person",
+    "message": "Message",
+    "agree": "I agree to the terms",
+    "alerts": {
+      "success": "Request sent successfully",
+      "error": "An error occurred",
+      "network": "Network error, please try again"
+    },
+    "errors": {
+      "fullNameWords": "Full name must consist of 3 words",
+      "fullNameFormat": "Invalid full name format",
+      "region": "Region is required",
+      "city": "City is required",
+      "email": "Invalid email",
+      "phone": "Phone format: +998 XX XXX-XX-XX",
+      "message": "Message must be at least 10 characters long",
+      "agree": "You must accept the terms"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
+  "cards": {
+    "visa": {
+      "title": "VISA",
+      "description": "Card production time is 3 working days.",
+      "subDescription": "Minimum balance 10$",
+      "price": "FREE",
+      "priceLabel": "Card Issuance",
+      "deposit": "10$",
+      "depositLabel": "Min. balance"
+    },
+    "mastercard": {
+      "title": "MASTERCARD",
+      "description": "Card production takes up to 5 working days.",
+      "subDescription": "Minimum balance 20$",
+      "price": "FREE",
+      "priceLabel": "Card Issuance",
+      "deposit": "20$",
+      "depositLabel": "Min. balance"
+    }
+  },"timeline": {
+    "badge": "Historical Journey",
+    "title_part1": "Towards ",
+    "title_brand": "Bank",
+    "title_part2": " of Excellence",
+    "data": [
+      { "year": "2003", "title": "Foundation", "desc": "The bank started its operations and opened its doors to the first customers." },
+      { "year": "2008", "title": "National Coverage", "desc": "Expansion across the country began, and the branch network reached 50." },
+      { "year": "2012", "title": "Digital Transformation", "desc": "Innovative banking services were introduced, and the first online transactions were launched." },
+      { "year": "2017", "title": "Peak of Success", "desc": "The number of our customers exceeded 1 million. We gained international recognition." },
+      { "year": "2021", "title": "Intellectual Bank", "desc": "A personal approach to customers based on AI and Big Data analytics began." },
+      { "year": "2024", "title": "Bank of the Future", "desc": "A bank ecosystem was created - 2M+ customers and a fully digital financial world." }
+    ]
+  },
+  
+
+  "ss1": {
+    "id": 1,
+    "title": "Plastic Cards",
+    "desc": "Visa / Mastercard / Humo cards",
+    "btn": "More Details"
+  },
+  "ss2": {
+    "id": 2,
+    "title": "Loans",
+    "desc": "Preferential interest rates",
+    "btn": "Apply Now"
+  },
+  "ss3": {
+    "id": 3,
+    "title": "Savings Accounts",
+    "desc": "High-yield deposit options",
+    "btn": "Open Account"
+  },
+  "ss4": {
+    "id": 4,
+    "title": "Business Services",
+    "desc": "For corporate clients",
+    "btn": "More Details"
+  },
+  "ss5": {
+    "id": 5,
+    "title": "Currency Exchange",
+    "desc": "24/7 online exchange",
+    "btn": "View Rates"
+  },
+  "ss6": {
+    "id": 6,
+    "title": "Internet Banking",
+    "desc": "Mobile and web banking",
+    "btn": "Register Now"
+  },
+  "xizmatlar": {
+    "calc_title": "Calculate your profit",
+    "calc_total": "Amount at the end of the term",
+    "calc_profit": "Net profit",
+    "calc_amount": "Investment amount"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "subtitle": "Contact us in any way convenient for you. We are always ready to help.",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "address_text": "108 Amir Temur Str., Tashkent city",
+    "work_hours": "Working Hours",
+    "work_hours_text": "Mon-Fri: 09:00 – 18:00",
+    "form_title": "Send a Message",
+    "name_label": "Your Name",
+    "name_placeholder": "Enter your name",
+    "email_label": "Email Address",
+    "email_placeholder": "example@mail.com",
+    "message_label": "Your Message",
+    "message_placeholder": "Write your message here...",
+    "send_btn": "Send Message"
+  }
+,
+  "kredit": {
+    "hero_title": "Fast and Reliable Credit Services",
+    "hero_subtitle": "The most favorable interest rates and fast approval.",
+    "btn_get": "Get a loan",
+    "btn_calc": "Calculate",
+    "types_title": "Loan Types",
+    "btn_more": "Learn more",
+    "calc_title": "Loan Calculator",
+    "placeholder_sum": "Amount",
+    "placeholder_term": "Term (months)",
+    "placeholder_percent": "Interest (%)",
+    "monthly_payment": "Monthly payment",
+    "form_title": "Apply for a Loan",
+    "placeholder_name": "Your name",
+    "placeholder_phone": "Phone",
+    "select_type": "Select loan type",
+    "btn_send": "Send",
+    "alert_fill": "Please fill in all fields",
+    "alert_success": "Application sent ✅",
+    "currency": "soum",
+    "rate_label": "Rate",
+    "max_label": "Max",
+    "term_label": "Term",
+   "types": {
+      "mortgage": "Mortgage Loan",
+      "auto": "Car Loan",
+      "business": "Business Loan",
+      "consumer": "Consumer Loan"
+    },
+    "max_values": {
+      "1b": "1 billion UZS",
+      "500m": "500 million UZS",
+      "2b": "2 billion UZS",
+      "200m": "200 million UZS"
+    },
+    "terms": {
+      "20y": "20 years",
+      "5y": "5 years",
+      "10y": "10 years",
+      "3y": "3 years"
+    }
+  },
+
+  "about": {
+    "badge": "Future Bank",
+    "heroTitle": "Yuksalish Bank",
+    "heroSubtitle": "A NEW ERA",
+    "heroDesc": "We are not just a bank, we are your trusted partner on the path to financial success. Innovative solutions and security are our core principles.",
+    "btnMore": "Learn More",
+    "stats": {
+      "clients": "Our Clients",
+      "experience": "Experience",
+      "branches": "Branches"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "desc": "Creating a convenient and modern financial ecosystem with an individual approach for every client."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "desc": "To become the most innovative and trusted digital banking brand in Central Asia."
+    },
+    "team": {
+      "title": "Management Team",
+      "roles": {
+        "founder": "Founder & Chairman",
+        "ceo": "Chief Executive Officer (CEO)",
+        "cfo": "Chief Financial Officer (CFO)"
+      }
+    },
+    "cta": {
+      "title": "Have Questions?",
+      "desc": "Our specialists are ready to assist you. Contact us now and take advantage of our services.",
+      "btn": "Contact Us"
+    }
+  },
+  "uz": {
+      "title": "What Our Clients Say",
+      "desc": "Read how our clients have achieved success with Yuksalish Bank and leave your feedback.",
+      "stats": "reviews",
+      "form": {
+        "name": "Your Name",
+        "role": "Your Role",
+        "msg": "Your Feedback...",
+        "submit": "Send Feedback",
+        "success": "Your feedback has been submitted! You can only send it once."
+      }
+    },
+    "uz1": [
+    {
+      "name": "Ali Rustam",
+      "role": "Credit User",
+      "rating": 5,
+      "message": "The services at Yuksalish Bank are very convenient and fast. I am very pleased with opening a deposit.",
+      "img": "https://i.pravatar.cc/100?img=12"
+    },
+    {
+      "name": "Malika Karimova",
+      "role": "Bank Card User",
+      "rating": 4,
+      "message": "The online banking interface is very simple and clear. Customer service is excellent.",
+      "img": "https://i.pravatar.cc/100?img=32"
+    },
+    {
+      "name": "Jumaqulva J",
+      "role": "Currency Trader",
+      "rating": 5,
+      "message": "Currency rates are updated and always convenient. I always work with this bank.",
+      "img": "https://i.pravatar.cc/100?img=44"
+    }
+  ]  ,
+  "loan":"Loan Growth Trends",
+  "loans":{
+
+    "jan": "Jan",
+    "mar": "Mar",
+    "may": "May",
+    "jul": "Jul",
+    "sep": "Sep",
+    "nov": "Nov"
+  },
+   "stats1": {
+    "clients": "Total Clients",
+    "loans": "Active Loans",
+    "deposits": "Total Deposits",
+    "revenue": "Monthly Revenue"
+  },
+ "transactions": {
+  "title":"Recent Transactions",
+    "t1": {
+      "date": "Oct 24, 2023",
+      "client": "Jahongir Saidov",
+      "type": "Agro Loan",
+      "amount": "45,000,000 UZS",
+      "status": "Completed"
+    },
+    "t2": {
+      "date": "Nov 02, 2023",
+      "client": "Dilshod Karimov",
+      "type": "Business Loan",
+      "amount": "120,000,000 UZS",
+      "status": "Pending"
+    },
+    "t3": {
+      "date": "Dec 15, 2023",
+      "client": "Malika Tursunova",
+      "type": "Mortgage",
+      "amount": "350,000,000 UZS",
+      "status": "Completed"
+    },
+    "t4": {
+      "date": "Jan 08, 2024",
+      "client": "Azizbek Yuldashev",
+      "type": "Car Loan",
+      "amount": "85,000,000 UZS",
+      "status": "Rejected"
+    }
+  },
+   "table": {
+    "date": "Date",
+    "client": "Client",
+    "type": "Type",
+    "amount": "Amount",
+    "status": "Status"
+  }
+  
+
+}
+
