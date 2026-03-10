@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 // services funksiya sifatida import qilinadi
 import { services as getServices } from "../data/homeData"; 
+import { Link } from "react-router-dom";
 
 export default function Service() {
   const { t } = useTranslation();
@@ -30,13 +31,13 @@ export default function Service() {
       
       {/* HERO SECTION */}
       <div
-        className="h-[450px] bg-cover bg-center relative flex items-center"
+        className="h-[500px] bg-cover bg-center relative flex items-center "
         style={{
           backgroundImage: "url(https://images.unsplash.com/photo-1554224155-6726b3ff858f)",
         }}
       >
         <div className="absolute inset-0 bg-white/30"></div>
-        <div className="relative px-16">
+        <div className="relative px-6   pt-[120px]">
           <h1 className="text-5xl font-bold leading-tight mb-4 text-gray-900">
             {t("hero.hero_title")} <br />
             <span className="text-blue-600">{t("hero.hero_subtitle")}</span>
@@ -50,6 +51,7 @@ export default function Service() {
       {/* SERVICES GRID - Endi rasmlar aniq chiqadi */}
       <div className="px-6 grid py-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 bg-white">
         {translatedServices.map((item) => (
+          <Link to={item.link} key={item.id}>
           <div
             key={item.id}
             className="rounded-3xl overflow-hidden border border-gray-200 bg-white hover:shadow-xl transition duration-300"
@@ -71,6 +73,7 @@ export default function Service() {
               </button>
             </div>
           </div>
+          </Link>
         ))}
       </div>
 

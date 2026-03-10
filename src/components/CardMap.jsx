@@ -40,7 +40,7 @@ const CardMap = () => {
       </div>
 
       {/* Xarita */}
-      <div className="md:w-2/3 h-[80vh] rounded-xl overflow-hidden shadow-md">
+      <div className="h-[100vh] w-full">
         <MapContainer
           center={[41.2936485, 69.2195442]}
           zoom={12}

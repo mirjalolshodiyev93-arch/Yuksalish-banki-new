@@ -99,11 +99,7 @@
       "agree": "Shartlarni qabul qilishingiz shart"
     }
   },
-  "footer": {
-    "rights": "Barcha huquqlar himoyalangan",
-    "privacy": "Maxfiylik siyosati",
-    "terms": "Foydalanish shartlari"
-  },
+
   "cards": {
     "visa": {
       "title": "VISA",
@@ -384,5 +380,123 @@
     "type": "Turi",
     "amount": "Miqdori",
     "status": "Holati"
+  },
+"dashboard": {
+  "title":"Boshqaruv paneli",
+  "profil": "Profil",
+  "sozlamalar": "Sozlamalar",
+  "tranzaksiyalar": "Tranzaksiyalar",
+  "sorovyuborish": "So'rov yuborish",
+  "chiqish": "Chiqish"
+},
+"footer": {
+    "bank_desc": "Sizning moliyaviy o'sishingiz va farovonligingiz uchun zamonaviy va ishonchli bank xizmatlari.",
+    
+    "services": "Xizmatlar",
+    "credits": "Kreditlar",
+    "deposits": "Omonatlar",
+    "cards": "Bank kartalari",
+    "transfers": "Pul o'tkazmalari",
+
+    "help": "Yordam",
+    "tariffs": "Tariflar",
+    "branches": "Filiallar va bankomatlar",
+    "faq": "Savol va javoblar",
+    "contact": "Bog'lanish",
+
+    "news": "Yangiliklar",
+    "news_desc": "Bank yangiliklari va aksiyalaridan xabardor bo'ling.",
+    "email_placeholder": "Email manzilingiz",
+
+    "success": "Email muvaffaqiyatli yuborildi!",
+    "error": "Email noto‘g‘ri kiritildi!",
+
+    "copyright": "© 2026 \"Yuksalish Bank\" ATB. Barcha huquqlar himoyalangan.",
+
+    "privacy": "Maxfiylik siyosati",
+    "offer": "Ommaviy oferta",
+    "license": "Litsenziya"
+  },
+  
+  "auto_kredit": {
+    "badge": "Sizning avtomobil orzularingiz",
+    "title": "Avtomobilni <0>osonlik bilan</0> oling!",
+    "description": "Yangi yoki ishlatilgan avtomobilni qulay shartlarda, tez va ortiqcha hujjatlarsiz sotib oling.",
+    "button": "Ariza qoldirish",
+    "modal_title": "Ariza qoldirish",
+    "modal_desc": "Ma'lumotlaringizni kiriting, mutaxassislarimiz bog'lanishadi.",
+    "label_name": "To'liq ismingiz",
+    "placeholder_name": "Masalan: Azizbek Karimov",
+    "label_phone": "Telefon raqamingiz",
+    "submit_btn": "Arizani yuborish",
+    "sending": "Yuborilmoqda...",
+    "success_title": "Muvaffaqiyatli!",
+    "success_desc": "Arizangiz qabul qilindi. Tez orada menejerlarimiz qo'ng'iroq qilishadi.",
+    "error_fill": "Iltimos, ma'lumotlarni to'liq kiriting!",
+    "error_server": "Xatolik yuz berdi. Qayta urinib ko'ring."
+  },
+  "ipoteka": {
+    "badge": "Uy sotib olish uchun",
+    "title": "Orzuyingizdagi <0>uyga ega bo‘ling</0>",
+    "description": "Ipoteka krediti orqali yangi uy yoki kvartirani qulay to‘lov shartlari bilan sotib oling.",
+    "button": "Ariza qoldirish",
+    "modal_title": "Ariza qoldirish",
+    "placeholder_name": "Ismingiz",
+    "submit_btn": "Arizani yuborish",
+    "sending": "Yuborilmoqda...",
+    "success_title": "Muvaffaqiyatli!",
+    "success_desc": "Arizangiz qabul qilindi. Tez orada menejerlarimiz bog‘lanishadi.",
+    "error_fill": "Iltimos, ma'lumotlarni to'liq kiriting!",
+    "error_server": "Xatolik yuz berdi. Qayta urinib ko'ring."
+  }
+,
+"business": {
+    "badge": "Biznesingiz uchun imkoniyat",
+    "title": "Biznesingizni <0>biz bilan</0> yuqoriga ko'taring!",
+    "description": "Kichik va o‘rta biznesingiz rivoji uchun eng qulay shartlarda, ortiqcha hujjatlarsiz tezkor kredit oling.",
+    "button": "Ariza qoldirish",
+    "modal_title": "Ariza qoldirish",
+    "modal_desc": "Ma'lumotlaringizni kiriting, mutaxassislarimiz bog'lanishadi.",
+    "label_name": "To'liq ismingiz",
+    "placeholder_name": "Masalan: Azizbek Karimov",
+    "label_phone": "Telefon raqamingiz",
+    "submit_btn": "Arizani yuborish",
+    "sending": "Yuborilmoqda...",
+    "success_title": "Muvaffaqiyatli!",
+    "success_desc": "Arizangiz qabul qilindi. Tez orada menejerlarimiz qo'ng'iroq qilishadi.",
+    "error_fill": "Iltimos, ma'lumotlarni to'liq kiriting!",
+    "error_server": "Xatolik yuz berdi. Qayta urinib ko'ring."
+  },
+  "consumer": {
+    "badge": "Shaxsiy moliyaviy yordam",
+    "title": "Orzularingizni <0>ro‘yobga chiqaring</0> oson kredit bilan!",
+    "description": "Istemol kreditlari bilan istalgan xarajatlaringizni qoplang: ta’lim, uy jihozlari, tibbiy xizmatlar yoki sayohat.",
+    "button": "Ariza qoldirish",
+    "modal_title": "Ariza qoldirish",
+    "modal_desc": "Ma'lumotlaringizni kiriting, mutaxassislarimiz bog'lanishadi.",
+    "label_name": "To'liq ismingiz",
+    "placeholder_name": "Masalan: Azizbek Karimov",
+    "label_phone": "Telefon raqamingiz",
+    "submit_btn": "Arizani yuborish",
+    "sending": "Yuborilmoqda...",
+    "success_title": "Muvaffaqiyatli!",
+    "success_desc": "Arizangiz qabul qilindi. Tez orada menejerlarimiz qo'ng'iroq qilishadi.",
+    "error_fill": "Iltimos, ma'lumotlarni to'liq kiriting!",
+    "error_server": "Xatolik yuz berdi. Qayta urinib ko'ring."
+  },
+  "details": {
+    "back": "Orqaga",
+    "title": "Batafsil Ma'lumot",
+    "p1": "Yuksalish Bank sizga eng yaxshi moliyaviy xizmatlarni taqdim etadi. Hisob ochish, kredit va depozit xizmatlari bilan bir qatorda, sizning moliyaviy xavfsizligingizni ham ta’minlaymiz.",
+    "p2": "Bank kartalari, onlayn banking, mobil ilovalar va boshqa innovatsion yechimlar yordamida siz oson va tezkor moliyaviy operatsiyalarni amalga oshirishingiz mumkin.",
+    "p3": "Batafsil xizmatlarimiz va tariflarimiz bilan tanishish uchun siz sahifani pastga aylantiring yoki “Xizmatlar” bo‘limiga o‘ting.",
+    "banking_title": "Onlayn Banking",
+    "banking_desc": "Har doim va har yerda hisobingizni nazorat qiling.",
+    "credit_title": "Kredit Xizmatlari",
+    "credit_desc": "Moslashuvchan shartlar bilan kredit oling.",
+    "deposit_title": "Depozitlar",
+    "deposit_desc": "Daromadingizni xavfsiz joyda saqlang va oshiring.",
+    "app_title": "Mobil Ilova",
+    "app_desc": "Har doim qulay va tezkor banking tajribasi."
   }
 }

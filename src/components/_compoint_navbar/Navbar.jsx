@@ -9,7 +9,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const { t } = useTranslation();
-  
+
 
   const navItems = [
     "home",
@@ -49,27 +49,25 @@ export default function Navbar() {
 
           {/* LOGO */}
           <Link to="/">
-          <div
-  className={`transition-all duration-500 flex items-center justify-center overflow-hidden ${
-    scrolled
-      ? "bg-transparent p-2" // Bu yerda fonni olib tashladim, faqat masofa qoldi
-      : "bg-transparent"
-  }`}
-  style={{
-    width: scrolled ? "150px" : "140px",
-    height: scrolled ? "60px" : "100px"
-  }}
->
-  <img
-    src={logo}
-    alt="Logo"
-    className={`w-full h-[110px] object-cover object-center transition-all duration-500 ${
-      scrolled 
-        ? "drop-shadow-[0_1px_1px_rgba(0,0,0,0.86)]" // 
-        : "drop-shadow-none"
-    }`}
-  />
-</div>
+            <div
+              className={`transition-all duration-500 flex items-center justify-center overflow-hidden ${scrolled
+                  ? "bg-transparent p-2" // Bu yerda fonni olib tashladim, faqat masofa qoldi
+                  : "bg-transparent"
+                }`}
+              style={{
+                width: scrolled ? "150px" : "140px",
+                height: scrolled ? "60px" : "100px"
+              }}
+            >
+              <img
+                src={logo}
+                alt="Logo"
+                className={`w-full h-[110px] object-cover object-center transition-all duration-500 ${scrolled
+                    ? "drop-shadow-[0_1px_1px_rgba(0,0,0,0.86)]" // 
+                    : "drop-shadow-none"
+                  }`}
+              />
+            </div>
           </Link>
 
           {/* DESKTOP LINKS */}

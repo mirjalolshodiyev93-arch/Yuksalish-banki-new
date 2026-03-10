@@ -1,168 +1,152 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import logo from "../assets/logo.png";
+import telegram from "../assets/telegram.png"; // Rasmni import qilish
+
+// Instagram logotipini chizuvchi kichik komponent (CSS usulida qoldi)
+const InstagramLogo = () => (
+  <div className="w-full h-full flex items-center justify-center rounded-lg bg-[radial-gradient(circle_at_30%_107%,#fdf497_0%,#fdf497_5%,#fd5949_45%,#d6249f_60%,#285AEB_90%)] shadow-inner">
+    <div className="w-5 h-5 border-[2px] border-white rounded-[6px] flex items-center justify-center relative">
+      <div className="w-2.5 h-2.5 border-[2px] border-white rounded-full"></div>
+      <div className="absolute top-[1px] right-[1px] w-[3px] h-[3px] bg-white rounded-full"></div>
+    </div>
+  </div>
+);
 
 export default function Footer() {
-
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [card, setCard] = useState(null);
 
   const handleSubmit = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
     if (emailRegex.test(email)) {
-      setCard({ type: "success", text: "Email muvaffaqiyatli yuborildi!" });
+      setCard({ type: "success", text: t("footer.success") });
       setEmail("");
     } else {
-      setCard({ type: "error", text: "Email noto‘g‘ri kiritildi!" });
+      setCard({ type: "error", text: t("footer.error") });
     }
-
-   setTimeout(() => {
-  setCard(null);
-}, 5000); // 5 soniya
+    setTimeout(() => setCard(null), 5000);
   };
 
   return (
-    <footer className="text-gray-200 relative">
-
-      {/* CARD */}
+    <footer className="text-gray-200 relative transition-all">
+      {/* TOAST CARD */}
       {card && (
         <div className="fixed top-[100px] right-6 z-50 animate-[toastIn_.4s_ease]">
-          
-          <div
-            className={`relative flex items-center gap-3 px-5 py-3 rounded-xl shadow-xl backdrop-blur-md border overflow-hidden
-            ${
-              card.type === "success"
-                ? "bg-green-500/20 text-green-900 border-green-400/40"
-                : "bg-red-500/20 text-red-900 border-red-400/40"
-            }`}
-          >
-
-            {/* ICON */}
-            <div className="text-lg">
-              {card.type === "success" ? "✔" : "❗"}
-            </div>
-
-            {/* TEXT */}
-            <div className="text-sm font-medium">
-              {card.text}
-            </div>
-
-            {/* PROGRESS BAR */}
-            <div
-              className={`absolute bottom-0 left-0 h-[3px] animate-[progress_3s_linear]
-              ${card.type === "success" ? "bg-green-400" : "bg-red-400"}`}
-            ></div>
-
+          <div className={`relative flex items-center gap-3 px-5 py-3 rounded-xl shadow-xl backdrop-blur-md border overflow-hidden
+            ${card.type === "success"
+              ? "bg-green-500/20 text-green-900 border-green-400/40 dark:text-green-400"
+              : "bg-red-500/20 text-red-900 border-red-400/40 dark:text-red-400"}`}>
+            <div className="text-lg">{card.type === "success" ? "✔" : "❗"}</div>
+            <div className="text-sm font-medium">{card.text}</div>
+            <div className={`absolute bottom-0 left-0 h-[3px] animate-[progress_3s_linear] ${card.type === "success" ? "bg-green-400" : "bg-red-400"}`}></div>
           </div>
-
         </div>
       )}
 
-      {/* Asosiy fonni to'q yashil qildim (#004d40 - banklar uchun xos rang) */}
-      <div className="bg-[#013220] max-w-[1400px] m-auto mx-auto px-6 py-10">
-        
-        {/* Yuqori qism */}
+      <div className="bg-[#013220] dark:bg-slate-900 max-w-[1400px] m-auto px-6 py-10 transition-colors duration-500">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
 
-          {/* Chap taraf: Logo va ma'lumot */}
+          {/* Logo & Socials */}
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 bg-green-500 rounded-md flex items-center justify-center font-bold text-white">
-                Y
-              </div>
-              <h2 className="font-semibold text-lg text-white tracking-wide">
-                YUKSALISH BANK
-              </h2>
+            <div className="w-[200px] mb-4">
+              <img src={logo} alt="Logo" className="w-full h-[50px] object-contain object-left" />
             </div>
-
-            <p className="text-sm text-gray-300 leading-relaxed mb-6">
-              Sizning moliyaviy o'sishingiz va farovonligingiz uchun 
-              zamonaviy va ishonchli bank xizmatlari.
+            <p className="text-sm text-gray-300 leading-relaxed mb-6 italic opacity-80">
+              {t("footer.bank_desc")}
             </p>
 
-            {/* Ijtimoiy tarmoqlar */}
-            <div className="flex gap-4">
-              <div className="w-9 h-9 rounded-full bg-green-800/50 flex items-center justify-center cursor-pointer hover:bg-green-600 transition text-white">
-                🌐
-              </div>
-              <div className="w-9 h-9 rounded-full bg-green-800/50 flex items-center justify-center cursor-pointer hover:bg-green-600 transition text-white">
-                🔗
-              </div>
-              <div className="w-9 h-9 rounded-full bg-green-800/50 flex items-center justify-center cursor-pointer hover:bg-green-600 transition text-white">
-                💬
+            {/* IJTIMOIY TARMOQLAR */}
+            <div className="flex gap-4 items-center">
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/_mirjalo0l_developer_/"
+                target="_blank"
+                rel="noreferrer"
+                className="w-9 h-9 cursor-pointer hover:scale-110 transition-transform active:scale-95"
+              >
+                <InstagramLogo />
+              </a>
+
+              {/* Telegram */}
+              <a
+                href="https://t.me/mirjalol_iq"
+                target="_blank"
+                rel="noreferrer"
+                className="w-[60px] h-[60px]  cursor-pointer hover:scale-110 transition-transform active:scale-95 overflow-hidden rounded-lg"
+              >
+                <img
+                  src={telegram}
+                  alt="Telegram"
+                  className="w-full h-full object-cover"
+                />
+              </a>
+
+              {/* Facebook */}
+              <div className="w-9 h-9 rounded-lg bg-[#1877F2] flex items-center justify-center cursor-pointer hover:scale-110 transition-transform active:scale-95 text-white shadow-inner">
+                <span className="text-xl font-bold leading-none mb-1">f</span>
               </div>
             </div>
           </div>
 
-          {/* Xizmatlar */}
+          {/* Services */}
           <div>
-            <h3 className="text-white font-semibold mb-5">XIZMATLAR</h3>
+            <h3 className="text-white font-bold mb-5 border-b border-green-800/50 pb-2 inline-block">
+              {t("footer.services")}
+            </h3>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li className="hover:text-green-400 cursor-pointer">
-                <Link to="/kredit">Kreditlar</Link>
-              </li>
-              <li className="hover:text-green-400 cursor-pointer">
-                <Link to="/omonat">Omonatlar</Link>
-              </li>
-              <li className="hover:text-green-400 cursor-pointer">
-                <Link to="/card">Bank kartalari</Link>
-              </li>
-              <li className="hover:text-green-400 cursor-pointer">
-                <Link to="/transfer">Pul o'tkazmalari</Link>
-              </li>
+              <li className="hover:text-green-400 transition cursor-pointer"><Link to="/kredit">{t("footer.credits")}</Link></li>
+              <li className="hover:text-green-400 transition cursor-pointer"><Link to="/omonat">{t("footer.deposits")}</Link></li>
+              <li className="hover:text-green-400 transition cursor-pointer"><Link to="/card">{t("footer.cards")}</Link></li>
+              <li className="hover:text-green-400 transition cursor-pointer"><Link to="/transfer">{t("footer.transfers")}</Link></li>
             </ul>
           </div>
 
-          {/* Qo'llab-quvvatlash */}
+          {/* Help */}
           <div>
-            <h3 className="text-white font-semibold mb-5">YORDAM</h3>
+            <h3 className="text-white font-bold mb-5 border-b border-green-800/50 pb-2 inline-block">
+              {t("footer.help")}
+            </h3>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li className="hover:text-green-400 cursor-pointer">
-                <Link to="/tariflar">Tariflar</Link>
-              </li>
-              <li className="hover:text-green-400 cursor-pointer">
-                <Link to="/map">Filiallar va bankomatlar</Link>
-              </li>
-              <li className="hover:text-green-400 cursor-pointer">
-                <Link to="/savol-v-javoblar">Savol va javoblar</Link>
-              </li>
-              <li className="hover:text-green-400 cursor-pointer">Bog'lanish</li>
+              <li className="hover:text-green-400 transition cursor-pointer"><Link to="/tariflar">{t("footer.tariffs")}</Link></li>
+              <li className="hover:text-green-400 transition cursor-pointer"><Link to="/map">{t("footer.branches")}</Link></li>
+              <li className="hover:text-green-400 transition cursor-pointer"><Link to="/faq">{t("footer.faq")}</Link></li>
+              <li className="hover:text-green-400 transition cursor-pointer"><Link to="/contact">{t("footer.contact")}</Link></li>
             </ul>
           </div>
 
-          {/* Yangiliklar */}
+          {/* News */}
           <div>
-            <h3 className="text-white font-semibold mb-5">YANGILIKLAR</h3>
-            <p className="text-sm text-gray-400 mb-4">
-              Bank yangiliklari va aksiyalaridan xabardor bo'ling.
+            <h3 className="text-white font-bold mb-5 border-b border-green-800/50 pb-2 inline-block">
+              {t("footer.news")}
+            </h3>
+            <p className="text-sm text-gray-400 mb-4 italic leading-relaxed">
+              {t("footer.news_desc")}
             </p>
-
-            <div className="flex">
+            <div className="flex group">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email manzilingiz"
-                className="flex-1 px-4 py-2 text-sm bg-white/10 border border-green-700 rounded-l-md focus:outline-none focus:ring-1 focus:ring-green-500 text-white placeholder:text-gray-500"
+                placeholder={t("footer.email_placeholder")}
+                className="flex-1 px-4 py-2 text-sm bg-white/5 border border-green-800/50 rounded-l-xl focus:outline-none focus:border-green-500 text-white transition-all"
               />
-              <button
-                onClick={handleSubmit}
-                className="bg-green-500 px-4 rounded-r-md hover:bg-green-600 transition text-white"
-              >
+              <button onClick={handleSubmit} className="bg-green-600 px-4 rounded-r-xl hover:bg-green-700 transition-colors text-white">
                 ➤
               </button>
             </div>
           </div>
         </div>
 
-        {/* Chiziq va pastki qism */}
-        <div className="border-t border-green-900 mt-14 pt-6 flex flex-col md:flex-row justify-between text-xs text-gray-500">
-          <p>© 2026 "Yuksalish Bank" ATB. Barcha huquqlar himoyalangan.</p>
-
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <span className="hover:text-white cursor-pointer">Maxfiylik siyosati</span>
-            <span className="hover:text-white cursor-pointer">Ommaviy oferta</span>
-            <span className="hover:text-white cursor-pointer">Litsenziya</span>
+        {/* Bottom */}
+        <div className="border-t border-green-900/50 mt-14 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] sm:text-xs text-gray-500 gap-4">
+          <p className="opacity-70">{t("footer.copyright")}</p>
+          <div className="flex gap-6 uppercase tracking-wider">
+            <span className="hover:text-green-400 cursor-pointer transition">{t("footer.privacy")}</span>
+            <span className="hover:text-green-400 cursor-pointer transition">{t("footer.offer")}</span>
+            <span className="hover:text-green-400 cursor-pointer transition">{t("footer.license")}</span>
           </div>
         </div>
       </div>

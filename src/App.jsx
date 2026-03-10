@@ -26,6 +26,7 @@ import Transactions from "./pages/Transactions";
 import Srm from "./pages/Srm";
 import Dashboard from "./pages/Dashboard";
 import ErrorBoundary from "./context/ErrorBoundary";
+import AutoKredit from "./components/_compoint_navbar/AutoKredit";
 import Transfer from "./pages/Transfer";
 import AboutUs from "./components/components/AboutUs";
       import CardSection from "./components/components/CardSection";
@@ -34,6 +35,10 @@ import Contacts from "./components/components/Contactkar";
 import Deposits from "./components/components/Deposits";
 import OpenAccount from "./components/components/OpenAccount";
 import CardMap from "./components/CardMap";
+import BusinessKredit from "./components/_compoint_navbar/BusinessKredit";
+import CurrencyExchangePage from "./components/components/CurrencyExchangePage";
+import IstemolKredit from "./components/_compoint_navbar/IstemolKredi";
+import IpotekaKredit from "./components/_compoint_navbar/IpotekaKredit";
 
 
 function App() {
@@ -53,13 +58,15 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/hisob-ochish" element={<OpenAccount />} />
+          
           <Route path="/register" element={<Register />} />
-       
+                <Route path="/salom" element={<CurrencyExchangePage />} />
           <Route path="/salom/usd" element={<USDPage />} />
            <Route path="/map" element={<CardMap />} />
           <Route path="/salom/eur" element={<EURPage />} />
           <Route path="/salom/gbp" element={<GBPPage />} />
           <Route path="/salom/rub" element={<RUBPage />} />
+           <Route path="/BusinessKredit" element={<BusinessKredit />} />
           <Route path="/contact" element={<Contacts />} />
           <Route path="/kredit" element={<Kredit />} />
           <Route path="/aboutus" element={<AboutUs />} />
@@ -67,6 +74,11 @@ function App() {
           <Route path="/omonat" element={<Deposits />} />
           <Route path="/transfer" element={<Transfer />} />
           <Route path="/omonat/deposits" element={<Deposits1 />} />
+          <Route path="/autoKredit" element={<AutoKredit />} />
+          <Route path="/IstemolKredit" element={<IstemolKredit />} />
+          <Route path="/IpotekaKredit" element={<IpotekaKredit />} />
+        
+          
 
           {/* Dashboard nested route */}
           <Route path="/dashboard" element={<Dashboard />}>

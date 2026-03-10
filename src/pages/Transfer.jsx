@@ -36,7 +36,7 @@
 
     const commissionRate = getCommissionRate();
     const commissionAmount = amount ? (amount * commissionRate) / 100 : 0;
-    const totalAmount = amount ? Number(amount) + commissionAmount : 0;
+    const totalAmount = amount ? Number(amount) - commissionAmount : 0;
 
     return (
         <div className="bg-gray-50 min-h-screen font-sans relative">

@@ -69,3 +69,6 @@ export default function LanguageDetector() {
     </div>
   );
 }
+//"Kredit Turlari"
+//"Kredit Kalkulyator"
+//"cardmap"

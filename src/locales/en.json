@@ -25,10 +25,10 @@
     "home": "Our Services"
   },
   "navbar": {
-    "more":"MORE",
-    "aboutus":"AboutUs",
-    "dashboard":"Dashboard",
-"card":"Card",
+    "more": "MORE",
+    "aboutus": "AboutUs",
+    "dashboard": "Dashboard",
+    "card": "Card",
     "kredit": "Loan",
     "home": "Home",
     "services": "Services",
@@ -42,7 +42,7 @@
     "experience": "Years Experience",
     "service": "Service"
   },
- "hero": {
+  "hero": {
     "badle": "No.1 digital bank in Uzbekistan",
     "desc": "Build your financial future confidently with Lodo Bank.",
     "title": "Trust, Security,",
@@ -100,11 +100,7 @@
       "agree": "You must accept the terms"
     }
   },
-  "footer": {
-    "rights": "All rights reserved",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Use"
-  },
+ 
   "cards": {
     "visa": {
       "title": "VISA",
@@ -124,22 +120,45 @@
       "deposit": "20$",
       "depositLabel": "Min. balance"
     }
-  },"timeline": {
+  },
+  "timeline": {
     "badge": "Historical Journey",
     "title_part1": "Towards ",
     "title_brand": "Bank",
     "title_part2": " of Excellence",
     "data": [
-      { "year": "2003", "title": "Foundation", "desc": "The bank started its operations and opened its doors to the first customers." },
-      { "year": "2008", "title": "National Coverage", "desc": "Expansion across the country began, and the branch network reached 50." },
-      { "year": "2012", "title": "Digital Transformation", "desc": "Innovative banking services were introduced, and the first online transactions were launched." },
-      { "year": "2017", "title": "Peak of Success", "desc": "The number of our customers exceeded 1 million. We gained international recognition." },
-      { "year": "2021", "title": "Intellectual Bank", "desc": "A personal approach to customers based on AI and Big Data analytics began." },
-      { "year": "2024", "title": "Bank of the Future", "desc": "A bank ecosystem was created - 2M+ customers and a fully digital financial world." }
+      {
+        "year": "2003",
+        "title": "Foundation",
+        "desc": "The bank started its operations and opened its doors to the first customers."
+      },
+      {
+        "year": "2008",
+        "title": "National Coverage",
+        "desc": "Expansion across the country began, and the branch network reached 50."
+      },
+      {
+        "year": "2012",
+        "title": "Digital Transformation",
+        "desc": "Innovative banking services were introduced, and the first online transactions were launched."
+      },
+      {
+        "year": "2017",
+        "title": "Peak of Success",
+        "desc": "The number of our customers exceeded 1 million. We gained international recognition."
+      },
+      {
+        "year": "2021",
+        "title": "Intellectual Bank",
+        "desc": "A personal approach to customers based on AI and Big Data analytics began."
+      },
+      {
+        "year": "2024",
+        "title": "Bank of the Future",
+        "desc": "A bank ecosystem was created - 2M+ customers and a fully digital financial world."
+      }
     ]
   },
-  
-
   "ss1": {
     "id": 1,
     "title": "Plastic Cards",
@@ -199,8 +218,7 @@
     "message_label": "Your Message",
     "message_placeholder": "Write your message here...",
     "send_btn": "Send Message"
-  }
-,
+  },
   "kredit": {
     "hero_title": "Fast and Reliable Credit Services",
     "hero_subtitle": "The most favorable interest rates and fast approval.",
@@ -224,7 +242,7 @@
     "rate_label": "Rate",
     "max_label": "Max",
     "term_label": "Term",
-   "types": {
+    "types": {
       "mortgage": "Mortgage Loan",
       "auto": "Car Loan",
       "business": "Business Loan",
@@ -243,7 +261,6 @@
       "3y": "3 years"
     }
   },
-
   "about": {
     "badge": "Future Bank",
     "heroTitle": "Yuksalish Bank",
@@ -278,18 +295,18 @@
     }
   },
   "uz": {
-      "title": "What Our Clients Say",
-      "desc": "Read how our clients have achieved success with Yuksalish Bank and leave your feedback.",
-      "stats": "reviews",
-      "form": {
-        "name": "Your Name",
-        "role": "Your Role",
-        "msg": "Your Feedback...",
-        "submit": "Send Feedback",
-        "success": "Your feedback has been submitted! You can only send it once."
-      }
-    },
-    "uz1": [
+    "title": "What Our Clients Say",
+    "desc": "Read how our clients have achieved success with Yuksalish Bank and leave your feedback.",
+    "stats": "reviews",
+    "form": {
+      "name": "Your Name",
+      "role": "Your Role",
+      "msg": "Your Feedback...",
+      "submit": "Send Feedback",
+      "success": "Your feedback has been submitted! You can only send it once."
+    }
+  },
+  "uz1": [
     {
       "name": "Ali Rustam",
       "role": "Credit User",
@@ -311,10 +328,9 @@
       "message": "Currency rates are updated and always convenient. I always work with this bank.",
       "img": "https://i.pravatar.cc/100?img=44"
     }
-  ]  ,
-  "loan":"Loan Growth Trends",
-  "loans":{
-
+  ],
+  "loan": "Loan Growth Trends",
+  "loans": {
     "jan": "Jan",
     "mar": "Mar",
     "may": "May",
@@ -322,14 +338,14 @@
     "sep": "Sep",
     "nov": "Nov"
   },
-   "stats1": {
+  "stats1": {
     "clients": "Total Clients",
     "loans": "Active Loans",
     "deposits": "Total Deposits",
     "revenue": "Monthly Revenue"
   },
- "transactions": {
-  "title":"Recent Transactions",
+  "transactions": {
+    "title": "Recent Transactions",
     "t1": {
       "date": "Oct 24, 2023",
       "client": "Jahongir Saidov",
@@ -359,14 +375,127 @@
       "status": "Rejected"
     }
   },
-   "table": {
+  "table": {
     "date": "Date",
     "client": "Client",
     "type": "Type",
     "amount": "Amount",
     "status": "Status"
+  },
+  "dashboard": {
+        "title":"Dashboard",
+    "profil": "Profile",
+    "sozlamalar": "Settings",
+    "tranzaksiyalar": "Transactions",
+    "sorovyuborish": "Send Request",
+    "chiqish": "Logout"
+  },
+  "footer": {
+    "bank_desc": "Modern and reliable banking services for your financial growth and prosperity.",
+
+    "services": "Services",
+    "credits": "Loans",
+    "deposits": "Deposits",
+    "cards": "Bank Cards",
+    "transfers": "Money Transfers",
+
+    "help": "Support",
+    "tariffs": "Tariffs",
+    "branches": "Branches & ATMs",
+    "faq": "FAQ",
+    "contact": "Contact",
+
+    "news": "News",
+    "news_desc": "Stay informed about bank news and promotions.",
+    "email_placeholder": "Your email",
+
+    "success": "Email sent successfully!",
+    "error": "Invalid email!",
+
+    "copyright": "© 2026 Yuksalish Bank. All rights reserved.",
+
+    "privacy": "Privacy Policy",
+    "offer": "Public Offer",
+    "license": "License"
+  },
+  "auto_kredit": {
+    "badge": "Your car dreams",
+    "title": "Get a car <0>with ease</0>!",
+    "description": "Buy a new or used car on favorable terms, quickly and without unnecessary documents.",
+    "button": "Submit application",
+    "modal_title": "Submit Application",
+    "modal_desc": "Enter your details, our specialists will contact you.",
+    "label_name": "Your full name",
+    "placeholder_name": "Example: Azizbek Karimov",
+    "label_phone": "Your phone number",
+    "submit_btn": "Send Application",
+    "sending": "Sending...",
+    "success_title": "Success!",
+    "success_desc": "Your application has been accepted. Our managers will call you soon.",
+    "error_fill": "Please fill in all the information!",
+    "error_server": "An error occurred. Please try again."
+  },
+  "ipoteka": {
+    "badge": "For home purchase",
+    "title": "Own your <0>dream home</0>",
+    "description": "Buy a new house or apartment with flexible payment terms through a mortgage loan.",
+    "button": "Submit application",
+    "modal_title": "Submit Application",
+    "placeholder_name": "Your Name",
+    "submit_btn": "Send Application",
+    "sending": "Sending...",
+    "success_title": "Success!",
+    "success_desc": "Your application has been accepted. Our managers will contact you soon.",
+    "error_fill": "Please fill in all the information!",
+    "error_server": "An error occurred. Please try again."
+  },
+  "business": {
+    "badge": "Opportunity for your business",
+    "title": "Elevate your business <0>with us</0>!",
+    "description": "Get a fast loan for your small or medium business development on the most favorable terms without extra paperwork.",
+    "button": "Submit application",
+    "modal_title": "Submit Application",
+    "modal_desc": "Enter your details, our specialists will contact you.",
+    "label_name": "Your full name",
+    "placeholder_name": "Example: Azizbek Karimov",
+    "label_phone": "Your phone number",
+    "submit_btn": "Send Application",
+    "sending": "Sending...",
+    "success_title": "Success!",
+    "success_desc": "Your application has been accepted. Our managers will call you soon.",
+    "error_fill": "Please fill in all the information correctly!",
+    "error_server": "An error occurred. Please try again."
+  },
+  "consumer": {
+    "badge": "Personal financial assistance",
+    "title": "Make your <0>dreams come true</0> with an easy loan!",
+    "description": "Cover any expenses with consumer loans: education, home appliances, medical services, or travel.",
+    "button": "Submit application",
+    "modal_title": "Submit Application",
+    "modal_desc": "Enter your details, our specialists will contact you.",
+    "label_name": "Your full name",
+    "placeholder_name": "Example: Azizbek Karimov",
+    "label_phone": "Your phone number",
+    "submit_btn": "Send Application",
+    "sending": "Sending...",
+    "success_title": "Success!",
+    "success_desc": "Your application has been accepted. Our managers will call you soon.",
+    "error_fill": "Please fill in all the information correctly!",
+    "error_server": "An error occurred. Please try again."
+  },
+  "details": {
+    "back": "Back",
+    "title": "Detailed Information",
+    "p1": "Yuksalish Bank provides you with the best financial services. Along with account opening, credit, and deposit services, we ensure your financial security.",
+    "p2": "With bank cards, online banking, mobile apps, and other innovative solutions, you can perform easy and fast financial operations.",
+    "p3": "To learn more about our detailed services and tariffs, scroll down or go to the 'Services' section.",
+    "banking_title": "Online Banking",
+    "banking_desc": "Control your account anytime and anywhere.",
+    "credit_title": "Credit Services",
+    "credit_desc": "Get a loan with flexible terms.",
+    "deposit_title": "Deposits",
+    "deposit_desc": "Save and increase your income in a secure place.",
+    "app_title": "Mobile App",
+    "app_desc": "Always convenient and fast banking experience."
   }
-  
-
 }
-
