@@ -13,6 +13,7 @@ const TelegramSection = () => (
           alt="Card Image"
         />
       </div>
+      
     </div>
     <h3 className="text-xl font-bold text-gray-800 mb-8 leading-snug">
       Yuksalish bank Istagramga obuna bo'ling
