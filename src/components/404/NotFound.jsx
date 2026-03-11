@@ -1,11 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+// Astronaut rasmi: o'zingiz upload qilgan rasm yo'li
+import astronautImg from "../../assets/astronautImg.png";
+
 export default function NotFound() {
   const navigate = useNavigate();
 
   return (
-    <div className="relative flex items-center justify-center min-h-screen bg-[#1F2937] overflow-hidden text-white">
+    <div className="relative flex items-center justify-center min-h-screen bg-[#008141] overflow-hidden text-white px-4">
       
       {/* Stars */}
       <div className="absolute inset-0">
@@ -23,8 +26,8 @@ export default function NotFound() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4">
-        <p className="text-yellow-400 text-lg mb-2">
+      <div className="relative z-10 text-center">
+        <p className="text-yellow-300 text-lg mb-2">
           Houston, we have a problem.
         </p>
 
@@ -32,34 +35,36 @@ export default function NotFound() {
           404
         </h1>
 
-        <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mt-2">
+        <h2 className="text-3xl md:text-4xl font-bold text-yellow-300 mt-2">
           Page not found
         </h2>
 
-        <p className="mt-4 text-gray-300">
+        <p className="mt-4 text-white/80">
           Oops! The page you are looking for does not exist.
         </p>
 
         {/* Home button */}
         <button
           onClick={() => navigate("/")}
-          className="mt-8 px-6 py-3 bg-yellow-400 text-black font-semibold rounded-full hover:scale-105 transition transform duration-300"
+          className="mt-8 px-6 py-3 bg-white text-[#008141] font-semibold rounded-full hover:scale-105 transition transform duration-300"
         >
           Go to Home →
         </button>
       </div>
 
       {/* Planet */}
-      <div className="absolute bottom-[-150px] right-[-150px] w-[400px] h-[400px] bg-yellow-500 rounded-full shadow-2xl">
-        <div className="absolute top-16 left-20 w-24 h-24 border-8 border-yellow-600 rounded-full"></div>
-        <div className="absolute bottom-24 right-24 w-20 h-20 border-8 border-yellow-600 rounded-full"></div>
+      <div className="absolute bottom-[-150px] right-[-150px] w-[400px] h-[400px] bg-white/20 rounded-full shadow-2xl">
+        <div className="absolute top-16 left-20 w-24 h-24 border-8 border-white/40 rounded-full"></div>
+        <div className="absolute bottom-24 right-24 w-20 h-20 border-8 border-white/40 rounded-full"></div>
       </div>
 
-      {/* Astronaut */}
-      <div className="absolute right-40 bottom-40 animate-float">
-        <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg">
-          👨‍🚀
-        </div>
+      {/* Astronaut Image */}
+      <div className="absolute right-10 md:right-40 bottom-10 md:bottom-40 animate-float w-24 h-24 md:w-32 md:h-32">
+        <img
+          src={astronautImg}
+          alt="Astronaut"
+          className="w-full h-full object-contain"
+        />
       </div>
 
       {/* Custom Animation */}
@@ -77,4 +82,4 @@ export default function NotFound() {
       </style>
     </div>
   );
-}
+}   

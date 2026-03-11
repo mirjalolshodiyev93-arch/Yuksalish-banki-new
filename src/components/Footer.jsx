@@ -31,12 +31,12 @@ export default function Footer() {
   };
 
   return (
-    <footer className="text-gray-200 relative transition-all">
+    <footer className="text-white relative transition-all">
       {/* TOAST CARD */}
       {card && (
         <div className="fixed top-[100px] right-6 z-50 animate-[toastIn_.4s_ease]">
           <div className={`relative flex items-center gap-3 px-5 py-3 rounded-xl shadow-xl backdrop-blur-md border overflow-hidden
-            ${card.type === "success"
+        ${card.type === "success"
               ? "bg-green-500/20 text-green-900 border-green-400/40 dark:text-green-400"
               : "bg-red-500/20 text-red-900 border-red-400/40 dark:text-red-400"}`}>
             <div className="text-lg">{card.type === "success" ? "✔" : "❗"}</div>
@@ -46,21 +46,24 @@ export default function Footer() {
         </div>
       )}
 
-      <div className="bg-[#013220] dark:bg-slate-900 max-w-[1400px] m-auto px-6 py-10 transition-colors duration-500">
+      <div className="bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-600 max-w-[1400px] m-auto px-6 py-10 transition-colors duration-500">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
 
           {/* Logo & Socials */}
           <div>
-            <div className="w-[200px] mb-4">
-              <img src={logo} alt="Logo" className="w-full h-[50px] object-contain object-left" />
+            <div className="w-[300px] sm:w-[200px] mb-4 flex items-center justify-start">
+              <img
+                src={logo}
+                alt="Logo"
+                className="h-10 sm:h-12 w-full object-cover transition-transform duration-200 hover:scale-105"
+              />
             </div>
-            <p className="text-sm text-gray-300 leading-relaxed mb-6 italic opacity-80">
+            <p className="text-sm leading-relaxed mb-6 italic opacity-80">
               {t("footer.bank_desc")}
             </p>
 
-            {/* IJTIMOIY TARMOQLAR */}
+            {/* Socials */}
             <div className="flex gap-4 items-center">
-              {/* Instagram */}
               <a
                 href="https://www.instagram.com/_mirjalo0l_developer_/"
                 target="_blank"
@@ -70,21 +73,15 @@ export default function Footer() {
                 <InstagramLogo />
               </a>
 
-              {/* Telegram */}
               <a
                 href="https://t.me/mirjalol_iq"
                 target="_blank"
                 rel="noreferrer"
-                className="w-[60px] h-[60px]  cursor-pointer hover:scale-110 transition-transform active:scale-95 overflow-hidden rounded-lg"
+                className="w-[60px] h-[60px] cursor-pointer hover:scale-110 transition-transform active:scale-95 overflow-hidden rounded-lg"
               >
-                <img
-                  src={telegram}
-                  alt="Telegram"
-                  className="w-full h-full object-cover"
-                />
+                <img src={telegram} alt="Telegram" className="w-full h-full object-cover" />
               </a>
 
-              {/* Facebook */}
               <div className="w-9 h-9 rounded-lg bg-[#1877F2] flex items-center justify-center cursor-pointer hover:scale-110 transition-transform active:scale-95 text-white shadow-inner">
                 <span className="text-xl font-bold leading-none mb-1">f</span>
               </div>
@@ -93,36 +90,36 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-white font-bold mb-5 border-b border-green-800/50 pb-2 inline-block">
+            <h3 className="font-bold mb-5 border-b border-white/40 pb-2 inline-block">
               {t("footer.services")}
             </h3>
-            <ul className="space-y-3 text-sm text-gray-400">
-              <li className="hover:text-green-400 transition cursor-pointer"><Link to="/kredit">{t("footer.credits")}</Link></li>
-              <li className="hover:text-green-400 transition cursor-pointer"><Link to="/omonat">{t("footer.deposits")}</Link></li>
-              <li className="hover:text-green-400 transition cursor-pointer"><Link to="/card">{t("footer.cards")}</Link></li>
-              <li className="hover:text-green-400 transition cursor-pointer"><Link to="/transfer">{t("footer.transfers")}</Link></li>
+            <ul className="space-y-3 text-sm">
+              <li className="hover:text-white transition cursor-pointer"><Link to="/kredit">{t("footer.credits")}</Link></li>
+              <li className="hover:text-white transition cursor-pointer"><Link to="/omonat">{t("footer.deposits")}</Link></li>
+              <li className="hover:text-white transition cursor-pointer"><Link to="/card">{t("footer.cards")}</Link></li>
+              <li className="hover:text-white transition cursor-pointer"><Link to="/transfer">{t("footer.transfers")}</Link></li>
             </ul>
           </div>
 
           {/* Help */}
           <div>
-            <h3 className="text-white font-bold mb-5 border-b border-green-800/50 pb-2 inline-block">
+            <h3 className="font-bold mb-5 border-b border-white/40 pb-2 inline-block">
               {t("footer.help")}
             </h3>
-            <ul className="space-y-3 text-sm text-gray-400">
-              <li className="hover:text-green-400 transition cursor-pointer"><Link to="/tariflar">{t("footer.tariffs")}</Link></li>
-              <li className="hover:text-green-400 transition cursor-pointer"><Link to="/map">{t("footer.branches")}</Link></li>
-              <li className="hover:text-green-400 transition cursor-pointer"><Link to="/faq">{t("footer.faq")}</Link></li>
-              <li className="hover:text-green-400 transition cursor-pointer"><Link to="/contact">{t("footer.contact")}</Link></li>
+            <ul className="space-y-3 text-sm">
+              <li className="hover:text-white transition cursor-pointer"><Link to="/tariflar">{t("footer.tariffs")}</Link></li>
+              <li className="hover:text-white transition cursor-pointer"><Link to="/map">{t("footer.branches")}</Link></li>
+              <li className="hover:text-white transition cursor-pointer"><Link to="/faq">{t("footer.faq")}</Link></li>
+              <li className="hover:text-white transition cursor-pointer"><Link to="/contact">{t("footer.contact")}</Link></li>
             </ul>
           </div>
 
-          {/* News */}
+          {/* Newsletter */}
           <div>
-            <h3 className="text-white font-bold mb-5 border-b border-green-800/50 pb-2 inline-block">
+            <h3 className="font-bold mb-5 border-b border-white/40 pb-2 inline-block">
               {t("footer.news")}
             </h3>
-            <p className="text-sm text-gray-400 mb-4 italic leading-relaxed">
+            <p className="text-sm mb-4 italic leading-relaxed">
               {t("footer.news_desc")}
             </p>
             <div className="flex group">
@@ -131,9 +128,9 @@ export default function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t("footer.email_placeholder")}
-                className="flex-1 px-4 py-2 text-sm bg-white/5 border border-green-800/50 rounded-l-xl focus:outline-none focus:border-green-500 text-white transition-all"
+                className="flex-1 px-4 py-2 text-sm bg-white/10 border border-white/30 rounded-l-xl focus:outline-none focus:border-white text-white transition-all"
               />
-              <button onClick={handleSubmit} className="bg-green-600 px-4 rounded-r-xl hover:bg-green-700 transition-colors text-white">
+              <button onClick={handleSubmit} className="bg-white/20 px-4 rounded-r-xl hover:bg-white/30 transition-colors text-white">
                 ➤
               </button>
             </div>
@@ -141,12 +138,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-green-900/50 mt-14 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] sm:text-xs text-gray-500 gap-4">
+        <div className="border-t border-white/30 mt-14 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] sm:text-xs gap-4">
           <p className="opacity-70">{t("footer.copyright")}</p>
           <div className="flex gap-6 uppercase tracking-wider">
-            <span className="hover:text-green-400 cursor-pointer transition">{t("footer.privacy")}</span>
-            <span className="hover:text-green-400 cursor-pointer transition">{t("footer.offer")}</span>
-            <span className="hover:text-green-400 cursor-pointer transition">{t("footer.license")}</span>
+            <span className="hover:text-white cursor-pointer transition">{t("footer.privacy")}</span>
+            <span className="hover:text-white cursor-pointer transition">{t("footer.offer")}</span>
+            <span className="hover:text-white cursor-pointer transition">{t("footer.license")}</span>
           </div>
         </div>
       </div>
