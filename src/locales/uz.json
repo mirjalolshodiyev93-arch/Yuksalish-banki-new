@@ -498,5 +498,113 @@
     "deposit_desc": "Daromadingizni xavfsiz joyda saqlang va oshiring.",
     "app_title": "Mobil Ilova",
     "app_desc": "Har doim qulay va tezkor banking tajribasi."
+  },
+  "promo": {
+    "instagram_title": "Yuksalish bank Instagramga obuna bo'ling",
+    "subscribe": "Obuna bo'lish",
+    "bank_name": "Yuksalish bank",
+    "app_download": "Mobil ilovasini yuklab oling!"
+  },
+  "filiali_va_bankomatlari": {
+    "title": "Filiallar va bankomatlar",
+    "l1": {
+      "name": "Agrobank Markaz",
+      "type": "Filial",
+      "lat": 41.2936485,
+      "lng": 69.2195442,
+      "status": "Ochiq"
+    },
+    "l2": {
+      "name": "Yunusobod Filiali",
+      "type": "Filial",
+      "lat": 41.345,
+      "lng": 69.265,
+      "status": "Ochiq"
+    },
+    "l3": {
+      "name": "Chilonzor Bankomati",
+      "type": "Bankomat",
+      "lat": 41.289,
+      "lng": 69.200,
+      "status": "24/7"
+    },
+    "l4": {
+      "name": "Mirzo Ulug'bek Filiali",
+      "type": "Filial",
+      "lat": 41.333,
+      "lng": 69.290,
+      "status": "Ochiq"
+    },
+    "l5": {
+      "name": "Sergeli Bankomati",
+      "type": "Bankomat",
+      "lat": 41.260,
+      "lng": 69.230,
+      "status": "Texnik xizmat"
+    },
+    "l6": {
+      "name": "Mirobod Filiali",
+      "type": "Filial",
+      "lat": 41.312,
+      "lng": 69.260,
+      "status": "Ochiq"
+    },
+    "l7": {
+      "name": "Yashnobod Bankomati",
+      "type": "Bankomat",
+      "lat": 41.320,
+      "lng": 69.210,
+      "status": "24/7"
+    }
+  },
+  "currencyExchange": {
+    "hero": {
+      "title": "24/7 Onlayn \n Valyuta Ayirboshlash",
+      "subtitle": "Eng qulay kurslarda, istalgan vaqtda valyutangizni almashtiring.",
+      "btnExchange": "Ayirboshlash",
+      "btnMore": "Batafsil"
+    },
+    "rates": {
+      "title": "Eng so‘nggi kurslar",
+      "buy": "Sotib olish",
+      "sell": "Sotish",
+      "realTime": "Real vaqt"
+    },
+    "features": {
+      "description": "Bizning onlayn valyuta ayirboshlash xizmati orqali siz 24/7 rejimda real vaqt kurslari asosida valyutani tez va xavfsiz tarzda almashtirishingiz mumkin.",
+      "fast": "⚡ Tezkor operatsiya",
+      "secure": "🔒 Xavfsiz tizim",
+      "anytime": "🌍 24/7 xizmat"
+    },
+    "list": {
+      "usd": {
+        "code": "USD",
+        "buy": "10,200",
+        "sell": "10,250",
+        "color": "from-blue-600 to-blue-800",
+        "link": "/salom/usd"
+      },
+      "eur": {
+        "code": "EUR",
+        "buy": "11,500",
+        "sell": "11,550",
+        "color": "from-green-500 to-emerald-600",
+        "link": "/salom/eur"
+      },
+      "gbp": {
+        "code": "GBP",
+        "buy": "13,000",
+        "sell": "13,050",
+        "color": "from-emerald-600 to-green-700",
+        "link": "/salom/gbp"
+      },
+      "rub": {
+        "code": "RUB",
+        "buy": "120",
+        "sell": "125",
+        "color": "from-green-700 to-green-800",
+        "link": "/salom/rub"
+      }
+    }
   }
 }

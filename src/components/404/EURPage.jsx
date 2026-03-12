@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { ArrowUpDown, TrendingUp, ShieldCheck, Globe } from "lucide-react";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
-// EUR haftalik simulyatsiya ma'lumotlari
 const chartData = [
   { day: 'Dush', rate: 13800 },
   { day: 'Sesh', rate: 13850 },
@@ -11,93 +10,90 @@ const chartData = [
   { day: 'Jum', rate: 14010 },
   { day: 'Shan', rate: 13980 },
   { day: 'Yak', rate: 14050 },
-
 ];
 
 export default function EURPage() {
   const [amount, setAmount] = useState(1);
-  const buyRate = 13850; // EUR sotib olish kursi
-  const sellRate = 14100; // EUR sotish kursi
+  const buyRate = 13850;
+  const sellRate = 14100;
 
   return (
-    <section className="min-h-screen bg-slate-50 p-4 md:p-10 font-sans">
-      <div className="max-w-6xl mx-auto">
+    <section className="min-h-screen pt-[120px] px-4 bg-slate-50 md:p-10 font-sans">
+      <div className="max-w-6xl mx-auto md:pt-[100px]">
         
-        {/* Header qismi */}
-        <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
-          <div>
-            <h1 className="text-4xl font-extrabold text-slate-900 flex items-center gap-3">
-              <Globe className="text-indigo-600" /> Yevropa Valyutasi (EUR)
+        {/* Header */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-6">
+          <div className="w-full md:w-auto">
+            <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 flex items-center gap-3">
+              <Globe className="text-indigo-600 shrink-0" /> Yevropa Valyutasi (EUR)
             </h1>
-            <p className="text-slate-500 mt-2">Yevro hududi va Markaziy bankning rasmiy kursi</p>
+            <p className="text-slate-500 mt-2 text-sm md:text-base">Yevro hududi va Markaziy bank kursi</p>
           </div>
-          <div className="bg-white px-6 py-3 rounded-2xl shadow-sm border border-slate-100 flex gap-8">
+
+          <div className="w-full md:w-auto bg-white px-5 py-4 rounded-2xl shadow-sm border border-slate-100 flex justify-between md:justify-start gap-6 md:gap-8">
             <div>
-              <p className="text-xs text-slate-400 uppercase font-bold">Sotib olish</p>
-              <p className="text-xl font-bold text-green-600">{buyRate.toLocaleString()} UZS</p>
+              <p className="text-[10px] md:text-xs text-slate-400 uppercase font-bold tracking-wider">Sotib olish</p>
+              <p className="text-lg md:text-xl font-bold text-green-600">{buyRate.toLocaleString()} UZS</p>
             </div>
             <div className="w-[1px] bg-slate-100"></div>
             <div>
-              <p className="text-xs text-slate-400 uppercase font-bold">Sotish</p>
-              <p className="text-xl font-bold text-indigo-600">{sellRate.toLocaleString()} UZS</p>
+              <p className="text-[10px] md:text-xs text-slate-400 uppercase font-bold tracking-wider">Sotish</p>
+              <p className="text-lg md:text-xl font-bold text-indigo-600">{sellRate.toLocaleString()} UZS</p>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          
-          {/* 1. Kalkulyator Section */}
-          <div className="lg:col-span-1 bg-white p-6 rounded-3xl shadow-xl shadow-indigo-100/50 border border-indigo-50 h-fit">
-            <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <ArrowUpDown size={20} className="text-indigo-500" /> Konvertatsiya
+        {/* Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+          {/* Kalkulyator */}
+          <div className="lg:col-span-1 bg-white p-6 rounded-3xl shadow-xl shadow-indigo-100/30 border border-indigo-50 h-fit order-2 lg:order-1">
+            <h2 className="text-xl font-bold mb-6 flex items-center gap-2 text-indigo-900">
+              <ArrowUpDown size={20} className="text-indigo-600" /> EUR Konvertatsiya
             </h2>
             
-            <div className="space-y-4">
+            <div className="space-y-5">
               <div>
                 <label className="block text-sm font-medium text-slate-600 mb-2">Miqdorni kiriting (EUR)</label>
                 <div className="relative">
-                  <input 
-                    type="number" 
+                  <input
+                    type="number"
                     value={amount}
-                    onChange={(e) => setAmount(e.target.value)}
-                    className="w-full pr-20 p-4 bg-slate-50 border-2 border-transparent focus:border-indigo-500 focus:bg-white rounded-2xl outline-none transition-all text-xl font-bold"
-                    placeholder="0.00"
-                    style={{ appearance: 'textfield' }}
+                    onChange={(e) => {
+                      let val = e.target.value.toString().replace(/\D/g, "");
+                      if (val.length > 7) val = val.slice(0, 7);
+                      setAmount(Number(val));
+                    }}
+                    className="w-full pr-16 p-4 bg-slate-50 border-2 border-transparent focus:border-indigo-500 focus:bg-white rounded-2xl outline-none transition-all text-xl font-bold"
                   />
                   <span className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold pointer-events-none">EUR</span>
                 </div>
               </div>
 
-              <div className="p-4 bg-indigo-50 rounded-2xl overflow-hidden">
-                <p className="text-sm text-indigo-600 font-medium">Siz olasiz (UZS):</p>
-                <p className="text-2xl font-black text-indigo-800 mt-1 break-words leading-tight">
+              <div className="p-5 bg-indigo-50 rounded-2xl border border-indigo-100">
+                <p className="text-xs text-indigo-700 font-semibold uppercase tracking-wider">Siz olasiz (UZS):</p>
+                <p className="text-2xl md:text-3xl font-black text-indigo-900 mt-1">
                   {(amount * buyRate).toLocaleString()} UZS
                 </p>
               </div>
 
-              <button className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl transition-transform active:scale-95 shadow-lg shadow-indigo-200">
-                Yevro ayirboshlash
+              <button className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl transition-all shadow-lg shadow-indigo-200 active:scale-[0.98]">
+                EUR Ayirboshlash
               </button>
             </div>
           </div>
 
-          {/* 2. Grafik va Ma'lumotlar */}
-          <div className="lg:col-span-2 space-y-8">
-            <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 h-[380px] w-full overflow-hidden">
-              <div className="flex justify-between items-center mb-6 px-2">
-                <h3 className="font-bold text-slate-800 flex items-center gap-2">
-                  <TrendingUp size={18} className="text-indigo-500" /> EUR/UZS Haftalik dinamikasi
-                </h3>
-              </div>
-              
-              <div className="h-[280px] w-full">
+          {/* Grafik */}
+          <div className="lg:col-span-2 space-y-8 order-1 lg:order-2">
+            <div className="bg-white p-4 md:p-6 rounded-3xl shadow-sm border border-slate-100 w-full overflow-hidden">
+              <h3 className="font-bold text-slate-800 flex items-center gap-2 mb-6">
+                <TrendingUp size={18} className="text-indigo-600" /> Haftalik EUR Dinamikasi
+              </h3>
+              <div className="h-[250px] md:h-[320px] w-full">
                 <ResponsiveContainer width="100%" height="100%">
-                  <AreaChart 
-                    data={chartData} 
-                    margin={{ top: 10, right: 30, left: 10, bottom: 25 }} 
-                  >
+                  <AreaChart data={chartData} margin={{ top: 10, right: 10, left: -25, bottom: 0 }}>
                     <defs>
-                      <linearGradient id="colorRateEUR" x1="0" y1="0" x2="0" y2="1">
+                      <linearGradient id="colorEUR" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="5%" stopColor="#4f46e5" stopOpacity={0.15}/>
                         <stop offset="95%" stopColor="#4f46e5" stopOpacity={0.01}/>
                       </linearGradient>
@@ -108,58 +104,19 @@ export default function EURPage() {
                       axisLine={false} 
                       tickLine={false} 
                       interval={0} 
-                      padding={{ left: 15, right: 15 }}
-                      tick={{ fill: '#64748b', fontSize: 12, fontWeight: 600 }}
-                      dy={15} 
+                      padding={{ left: 37, right: 0 }}
+                      tick={{ fill: '#64748b', fontSize: 10, fontWeight: 600 }}
+                      dy={10} 
                     />
                     <YAxis hide domain={['dataMin - 100', 'dataMax + 100']} />
-                    <Tooltip 
-                      contentStyle={{ borderRadius: '16px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }}
-                      formatter={(value) => [`${value.toLocaleString()} UZS`, 'Kurs']}
-                    />
-                    <Area 
-                      type="monotone" 
-                      dataKey="rate" 
-                      stroke="#4f46e5" 
-                      strokeWidth={3} 
-                      fillOpacity={1} 
-                      fill="url(#colorRateEUR)" 
-                    />
+                    <Tooltip contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }} />
+                    <Area type="monotone" dataKey="rate" stroke="#4f46e5" strokeWidth={3} fill="url(#colorEUR)" />
                   </AreaChart>
                 </ResponsiveContainer>
               </div>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-5 bg-white rounded-2xl border border-slate-100 flex items-start gap-4 hover:shadow-md transition-shadow">
-                <div className="p-3 bg-indigo-50 rounded-xl text-indigo-600">
-                  <ShieldCheck size={24} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-slate-800">Yevropa Standarti</h3>
-                  <p className="text-sm text-slate-500">Xalqaro darajadagi xavfsiz va tezkor o'tkazmalar.</p>
-                </div>
-              </div>
-              
-              <div className="p-5 bg-white rounded-2xl border border-slate-100 flex items-start gap-4 hover:shadow-md transition-shadow">
-                <div className="p-3 bg-emerald-50 rounded-xl text-emerald-600">
-                  <TrendingUp size={24} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-slate-800">Komissiyasiz</h3>
-                  <p className="text-sm text-slate-500">EUR ayirboshlashda eng past xarajatlar bizda.</p>
-                </div>
-              </div>
-            </div>
           </div>
 
-        </div>
-
-        {/* Footer info */}
-        <div className="mt-12 text-center border-t border-slate-200 pt-8">
-          <p className="text-slate-400 text-sm">
-            Yangilangan vaqt: {new Date().toLocaleTimeString()} | Markaziy Bank EUR kursi asosida.
-          </p>
         </div>
       </div>
     </section>

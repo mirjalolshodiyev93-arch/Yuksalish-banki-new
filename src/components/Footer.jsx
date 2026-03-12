@@ -2,15 +2,26 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import logo from "../assets/logo.png";
-import telegram from "../assets/telegram.png"; // Rasmni import qilish
 
-// Instagram logotipini chizuvchi kichik komponent (CSS usulida qoldi)
+
 const InstagramLogo = () => (
   <div className="w-full h-full flex items-center justify-center rounded-lg bg-[radial-gradient(circle_at_30%_107%,#fdf497_0%,#fdf497_5%,#fd5949_45%,#d6249f_60%,#285AEB_90%)] shadow-inner">
     <div className="w-5 h-5 border-[2px] border-white rounded-[6px] flex items-center justify-center relative">
       <div className="w-2.5 h-2.5 border-[2px] border-white rounded-full"></div>
       <div className="absolute top-[1px] right-[1px] w-[3px] h-[3px] bg-white rounded-full"></div>
     </div>
+  </div>
+);
+const TelegramLogo = () => (
+  <div className="w-full h-full flex items-center justify-center rounded-lg bg-[#229ED9] shadow-inner">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="white"
+      className="w-5 h-5"
+    >
+      <path d="M9.04 15.35l-.39 5.46c.56 0 .8-.24 1.09-.53l2.63-2.52 5.46 3.99c1 .55 1.71.26 1.96-.92l3.55-16.62.01-.01c.3-1.4-.51-1.95-1.48-1.6L1.37 9.7c-1.36.53-1.34 1.29-.23 1.63l5.62 1.75L19.9 5.9c.62-.41 1.18-.18.72.23" />
+    </svg>
   </div>
 );
 
@@ -32,7 +43,7 @@ export default function Footer() {
 
   return (
     <footer className="text-white relative transition-all">
-      {/* TOAST CARD */}
+
       {card && (
         <div className="fixed top-[100px] right-6 z-50 animate-[toastIn_.4s_ease]">
           <div className={`relative flex items-center gap-3 px-5 py-3 rounded-xl shadow-xl backdrop-blur-md border overflow-hidden
@@ -49,21 +60,21 @@ export default function Footer() {
       <div className="bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-600 max-w-[1400px] m-auto px-6 py-10 transition-colors duration-500">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
 
-          {/* Logo & Socials */}
           <div>
-            <div className="w-[300px] sm:w-[200px] mb-4 flex items-center justify-start">
+            <div className="w-[150px] sm:w-[180px] md:w-[200px] lg:w-[220px]  flex items-center justify-start">
               <img
                 src={logo}
-                alt="Logo"
-                className="h-10 sm:h-12 w-full object-cover transition-transform duration-200 hover:scale-105"
+                alt="Yuksalish Bank Logo"
+                className="h-auto w-full object-contain transition-transform duration-200 hover:scale-105"
               />
             </div>
             <p className="text-sm leading-relaxed mb-6 italic opacity-80">
               {t("footer.bank_desc")}
             </p>
 
-            {/* Socials */}
+
             <div className="flex gap-4 items-center">
+
               <a
                 href="https://www.instagram.com/_mirjalo0l_developer_/"
                 target="_blank"
@@ -73,22 +84,29 @@ export default function Footer() {
                 <InstagramLogo />
               </a>
 
+
               <a
                 href="https://t.me/mirjalol_iq"
                 target="_blank"
                 rel="noreferrer"
-                className="w-[60px] h-[60px] cursor-pointer hover:scale-110 transition-transform active:scale-95 overflow-hidden rounded-lg"
+                className="w-9 h-9 rounded-lg bg-[#229ED9] flex items-center justify-center cursor-pointer hover:scale-110 transition-transform active:scale-95 "
               >
-                <img src={telegram} alt="Telegram" className="w-full h-full object-cover" />
+                <TelegramLogo />
               </a>
 
-              <div className="w-9 h-9 rounded-lg bg-[#1877F2] flex items-center justify-center cursor-pointer hover:scale-110 transition-transform active:scale-95 text-white shadow-inner">
-                <span className="text-xl font-bold leading-none mb-1">f</span>
-              </div>
+
+              <a
+                href="FACEBOOK_LINK_SHU_YERGA"
+                target="_blank"
+                rel="noreferrer"
+                className="w-9 h-9 rounded-lg bg-[#1877F2] flex items-center justify-center cursor-pointer hover:scale-110 transition-transform active:scale-95 text-white shadow-inner"
+              >
+                <span className="text-2xl font-bold leading-none mb-1">f</span>
+              </a>
             </div>
           </div>
 
-          {/* Services */}
+
           <div>
             <h3 className="font-bold mb-5 border-b border-white/40 pb-2 inline-block">
               {t("footer.services")}
@@ -101,7 +119,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Help */}
+
           <div>
             <h3 className="font-bold mb-5 border-b border-white/40 pb-2 inline-block">
               {t("footer.help")}
@@ -114,7 +132,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
           <div>
             <h3 className="font-bold mb-5 border-b border-white/40 pb-2 inline-block">
               {t("footer.news")}
@@ -137,7 +154,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom */}
+
         <div className="border-t border-white/30 mt-14 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] sm:text-xs gap-4">
           <p className="opacity-70">{t("footer.copyright")}</p>
           <div className="flex gap-6 uppercase tracking-wider">

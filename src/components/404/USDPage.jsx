@@ -54,14 +54,16 @@ export default function USDPage() {
               <div>
                 <label className="block text-sm font-medium text-slate-600 mb-2">Miqdorni kiriting (USD)</label>
                 <div className="relative">
-                  <input 
-                    type="number" 
-                    value={amount}
-                    onChange={(e) => setAmount(e.target.value)}
-                    className="w-full pr-20 p-4 bg-slate-50 border-2 border-transparent focus:border-blue-500 focus:bg-white rounded-2xl outline-none transition-all text-xl font-bold"
-                    placeholder="0.00"
-                    style={{ appearance: 'textfield' }}
-                  />
+                 <input
+  type="number"
+  value={amount}
+  onChange={(e) => {
+    let val = e.target.value.toString().replace(/\D/g, ""); // faqat raqam
+    if (val.length > 7) val = val.slice(0, 7);             // maksimal 7 raqam
+    setAmount(Number(val));
+  }}
+  className="w-full pr-16 p-4 bg-slate-50 border-2 border-transparent focus:border-red-500 focus:bg-white rounded-2xl outline-none transition-all text-xl font-bold"
+/>
                   <span className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold pointer-events-none">USD</span>
                 </div>
               </div>

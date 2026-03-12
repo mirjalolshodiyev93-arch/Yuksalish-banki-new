@@ -497,5 +497,113 @@
     "deposit_desc": "Save and increase your income in a secure place.",
     "app_title": "Mobile App",
     "app_desc": "Always convenient and fast banking experience."
+  },
+  "promo": {
+    "instagram_title": "Follow Yuksalish Bank on Instagram",
+    "subscribe": "Subscribe",
+    "bank_name": "Yuksalish Bank",
+    "app_download": "Download the mobile app!"
+  },
+  "filiali_va_bankomatlari": {
+    "title": "Branches and ATMs",
+    "l1": {
+      "name": "Agrobank Center",
+      "type": "Branch",
+      "lat": 41.2936485,
+      "lng": 69.2195442,
+      "status": "Open"
+    },
+    "l2": {
+      "name": "Yunusobod Branch",
+      "type": "Branch",
+      "lat": 41.345,
+      "lng": 69.265,
+      "status": "Open"
+    },
+    "l3": {
+      "name": "Chilonzor ATM",
+      "type": "ATM",
+      "lat": 41.289,
+      "lng": 69.200,
+      "status": "24/7"
+    },
+    "l4": {
+      "name": "Mirzo Ulug'bek Branch",
+      "type": "Branch",
+      "lat": 41.333,
+      "lng": 69.290,
+      "status": "Open"
+    },
+    "l5": {
+      "name": "Sergeli ATM",
+      "type": "ATM",
+      "lat": 41.260,
+      "lng": 69.230,
+      "status": "Maintenance"
+    },
+    "l6": {
+      "name": "Mirobod Branch",
+      "type": "Branch",
+      "lat": 41.312,
+      "lng": 69.260,
+      "status": "Open"
+    },
+    "l7": {
+      "name": "Yashnobod ATM",
+      "type": "ATM",
+      "lat": 41.320,
+      "lng": 69.210,
+      "status": "24/7"
+    }
+  },
+  "currencyExchange": {
+    "hero": {
+      "title": "24/7 Online \n Currency Exchange",
+      "subtitle": "Exchange your currency at the most favorable rates, anytime you want.",
+      "btnExchange": "Exchange Now",
+      "btnMore": "Learn More"
+    },
+    "rates": {
+      "title": "Latest Rates",
+      "buy": "Buy",
+      "sell": "Sell",
+      "realTime": "Real-time"
+    },
+    "features": {
+      "description": "Through our online currency exchange service, you can exchange currency quickly and securely 24/7 based on real-time exchange rates.",
+      "fast": "⚡ Fast Operation",
+      "secure": "🔒 Secure System",
+      "anytime": "🌍 24/7 Service"
+    },
+    "list": {
+      "usd": {
+        "code": "USD",
+        "buy": "10,200",
+        "sell": "10,250",
+        "color": "from-blue-600 to-blue-800",
+        "link": "/salom/usd"
+      },
+      "eur": {
+        "code": "EUR",
+        "buy": "11,500",
+        "sell": "11,550",
+        "color": "from-green-500 to-emerald-600",
+        "link": "/salom/eur"
+      },
+      "gbp": {
+        "code": "GBP",
+        "buy": "13,000",
+        "sell": "13,050",
+        "color": "from-emerald-600 to-green-700",
+        "link": "/salom/gbp"
+      },
+      "rub": {
+        "code": "RUB",
+        "buy": "120",
+        "sell": "125",
+        "color": "from-green-700 to-green-800",
+        "link": "/salom/rub"
+      }
+    }
   }
 }

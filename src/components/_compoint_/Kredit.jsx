@@ -15,10 +15,10 @@ export default function Kredit() {
   const kalkulyatorRef = useRef(null);
 
   const kreditTurlari = [
-    { id: 1, title: t("kredit.types.mortgage"), rate: "18%", max: t("kredit.max_values.1b"), term: t("kredit.terms.20y"), link:"/IpotekaKredit" },
-    { id: 2, title: t("kredit.types.auto"), rate: "20%", max: t("kredit.max_values.500m"), term: t("kredit.terms.5y") ,link:"/autoKredit" },
-    { id: 3, title: t("kredit.types.business"), rate: "22%", max: t("kredit.max_values.2b"), term: t("kredit.terms.10y"),link:"/BusinessKredit" },
-    { id: 4, title: t("kredit.types.consumer"), rate: "24%", max: t("kredit.max_values.200m"), term: t("kredit.terms.3y"),link:"/IstemolKredit"  },
+    { id: 1, title: t("kredit.types.mortgage"), rate: "18%", max: t("kredit.max_values.1b"), term: t("kredit.terms.20y"), link: "/IpotekaKredit" },
+    { id: 2, title: t("kredit.types.auto"), rate: "20%", max: t("kredit.max_values.500m"), term: t("kredit.terms.5y"), link: "/autoKredit" },
+    { id: 3, title: t("kredit.types.business"), rate: "22%", max: t("kredit.max_values.2b"), term: t("kredit.terms.10y"), link: "/BusinessKredit" },
+    { id: 4, title: t("kredit.types.consumer"), rate: "24%", max: t("kredit.max_values.200m"), term: t("kredit.terms.3y"), link: "/IstemolKredit" },
   ];
 
   const [name, setName] = useState("");
@@ -30,6 +30,7 @@ export default function Kredit() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false); // ✅ ariza yuborildi flag
 
   const handleSubmitModal = () => {
     setIsSuccess(true);
@@ -54,7 +55,7 @@ export default function Kredit() {
   const handlePhoneChange = (e) => {
     let val = e.target.value.replace(/\D/g, "");
     if (val.startsWith("998")) val = val.slice(3);
-    if (val.length > 9) val = val.slice(0, 9);
+    if (val.length > 9) val = val.slice(0, 9); // ✅ 9 raqamgacha
     let formatted = "+998";
     if (val.length > 0) formatted += " " + val.slice(0, 2);
     if (val.length >= 3) formatted += "-" + val.slice(2, 5);
@@ -63,7 +64,26 @@ export default function Kredit() {
     setPhone(formatted);
   };
 
+  // Kalkulyator inputlari 10 ta raqamga cheklanishi
+  const handleSummaChange = (e) => {
+    let val = e.target.value.toString().replace(/\D/g, "");
+    if (val.length > 10) val = val.slice(0, 10);
+    setSumma(Number(val));
+  };
+  const handleMuddatChange = (e) => {
+    let val = e.target.value.toString().replace(/\D/g, "");
+    if (val.length > 10) val = val.slice(0, 10);
+    setMuddat(Number(val));
+  };
+  const handleFoizChange = (e) => {
+    let val = e.target.value.toString().replace(/\D/g, "");
+    if (val.length > 10) val = val.slice(0, 10);
+    setFoiz(Number(val));
+  };
+
   const sendToTelegram = async () => {
+    if (isFormSubmitted) return; // ✅ yuborilgan bo'lsa bloklash
+
     const formattedName = capitalizeName(name.trim());
     const digits = phone.replace(/\D/g, "").slice(3);
     if (formattedName.length < 2 || digits.length !== 9 || !type) {
@@ -80,7 +100,10 @@ export default function Kredit() {
         body: JSON.stringify({ chat_id: CHAT_ID, text: message }),
       });
       toast.success("✅ Ariza muvaffaqiyatli yuborildi!", { autoClose: 3000 });
-      setName(""); setPhone(""); setType("");
+      setIsFormSubmitted(true); // ✅ yuborildi flag o'rnatish
+      setName("");
+      setPhone("");
+      setType("");
     } catch (err) {
       toast.error(" Xabar yuborilmadi, iltimos qayta urinib ko‘ring!", { autoClose: 3000 });
     }
@@ -171,16 +194,16 @@ export default function Kredit() {
           <div className="bg-green-50 p-6 md:p-10 rounded-3xl space-y-6 shadow-xl border border-green-100">
             <div>
               <label className="block text-sm font-semibold mb-2 text-green-900">{t("kredit.placeholder_sum")}</label>
-              <input type="number" value={summa} onChange={(e) => setSumma(+e.target.value)} className="w-full p-3 rounded-xl border-green-200 focus:ring-2 focus:ring-green-500 outline-none bg-white" />
+              <input type="number" value={summa} onChange={handleSummaChange} className="w-full p-3 rounded-xl border-green-200 focus:ring-2 focus:ring-green-500 outline-none bg-white" />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-semibold mb-2 text-green-900">{t("kredit.placeholder_term")}</label>
-                <input type="number" value={muddat} onChange={(e) => setMuddat(+e.target.value)} className="w-full p-3 rounded-xl border-green-200 focus:ring-2 focus:ring-green-500 outline-none bg-white" />
+                <input type="number" value={muddat} onChange={handleMuddatChange} className="w-full p-3 rounded-xl border-green-200 focus:ring-2 focus:ring-green-500 outline-none bg-white" />
               </div>
               <div>
                 <label className="block text-sm font-semibold mb-2 text-green-900">{t("kredit.placeholder_percent")}</label>
-                <input type="number" value={foiz} onChange={(e) => setFoiz(+e.target.value)} className="w-full p-3 rounded-xl border-green-200 focus:ring-2 focus:ring-green-500 outline-none bg-white" />
+                <input type="number" value={foiz} onChange={handleFoizChange} className="w-full p-3 rounded-xl border-green-200 focus:ring-2 focus:ring-green-500 outline-none bg-white" />
               </div>
             </div>
             <div className="text-2xl font-extrabold text-center text-green-700 bg-white p-5 rounded-2xl shadow-sm border border-green-100">
@@ -195,24 +218,85 @@ export default function Kredit() {
       </div>
 
       {/* ARIZA SECTION */}
+      {/* ARIZA SECTION */}
       <div className="max-w-[1400px] mx-auto px-4 py-12 flex flex-col lg:flex-row items-center gap-10 mb-20">
         <div className="w-full lg:w-1/2 flex justify-center">
           <img src={ariza} alt="Ariza" className="w-full h-auto max-w-[500px] rounded-2xl shadow-xl lg:h-[600px] object-cover" />
         </div>
-        <section className="w-full lg:w-1/2">
-          <div className="bg-white p-8 md:p-10 rounded-3xl space-y-6 shadow-2xl border border-gray-50">
-            <h2 className="text-2xl font-bold text-center text-green-700">{t("kredit.form_title")}</h2>
-            <input type="text" placeholder={t("kredit.placeholder_name")} value={name} onChange={(e) => setName(e.target.value)} className="w-full p-4 rounded-xl border bg-gray-50 focus:bg-white focus:ring-2 focus:ring-green-500 transition outline-none" />
-            <input type="text" placeholder="+998 99-999-99-99" value={phone} onChange={handlePhoneChange} className="w-full p-4 rounded-xl border bg-gray-50 focus:bg-white focus:ring-2 focus:ring-green-500 transition outline-none" />
-            <select value={type} onChange={(e) => setType(e.target.value)} className="w-full p-4 rounded-xl border bg-gray-50 focus:bg-white focus:ring-2 focus:ring-green-500 transition outline-none">
-              <option value="">{t("kredit.select_type")}</option>
-              {kreditTurlari.map((item) => <option key={item.id} value={item.title}>{item.title}</option>)}
-            </select>
-            <button onClick={sendToTelegram} className="bg-green-600 text-white w-full py-4 rounded-xl font-bold hover:bg-green-700 shadow-lg shadow-green-100 active:scale-95 transition-all">
-              {t("kredit.btn_send")}
-            </button>
+    {/* ARIZA SECTION */}
+<section className="w-full lg:w-1/2">
+  <div className="bg-white p-8 md:p-10 rounded-3xl space-y-6 shadow-2xl border border-gray-50">
+    <h2 className="text-2xl font-bold text-center text-green-700">{t("kredit.form_title")}</h2>
+
+    <input
+      type="text"
+      placeholder={t("kredit.placeholder_name")}
+      value={name}
+      onChange={(e) => setName(e.target.value)}
+      className="w-full p-4 rounded-xl border bg-gray-50 focus:bg-white focus:ring-2 focus:ring-green-500 transition outline-none"
+      disabled={isFormSubmitted}
+    />
+
+    <input
+      type="text"
+      placeholder="+998 99-999-99-99"
+      value={phone}
+      onChange={handlePhoneChange}
+      className="w-full p-4 rounded-xl border bg-gray-50 focus:bg-white focus:ring-2 focus:ring-green-500 transition outline-none"
+      disabled={isFormSubmitted}
+    />
+
+    <input
+      type="number"
+      placeholder="Summa (maks 100 000 000 UZS)"
+      value={summa}
+      onChange={(e) => {
+        let val = e.target.value.toString().replace(/\D/g, "");
+        if (val.length > 10) val = val.slice(0, 10);
+        let num = Number(val);
+        if (num > 100_000_000) num = 100_000_000;
+        setSumma(num);
+      }}
+      className="w-full p-4 rounded-xl border bg-gray-50 focus:bg-white focus:ring-2 focus:ring-green-500 transition outline-none"
+      disabled={isFormSubmitted}
+    />
+
+    {/* KREDIT TURINI TANLASH */}
+    <select
+      value={type}
+      onChange={(e) => setType(e.target.value)}
+      className="w-full p-4 rounded-xl border bg-gray-50 focus:bg-white focus:ring-2 focus:ring-green-500 transition outline-none"
+      disabled={isFormSubmitted}
+    >
+      <option value="">{t("kredit.select_type")}</option>
+      {kreditTurlari.map((item) => (
+        <option key={item.id} value={item.title}>{item.title}</option>
+      ))}
+    </select>
+
+    {/* ✅ TANLANGAN KREDIT CARD KO‘RSATISH */}
+    {type && (
+      <div className="bg-green-50 border border-green-200 p-4 rounded-xl mt-4 shadow-sm">
+        {kreditTurlari.filter(k => k.title === type).map((k) => (
+          <div key={k.id} className="space-y-2">
+            <h3 className="text-lg font-bold text-green-700">{k.title}</h3>
+            <p className="text-gray-700"><strong>Foiz:</strong> {k.rate}</p>
+            <p className="text-gray-700"><strong>Maks summa:</strong> {k.max}</p>
+            <p className="text-gray-700"><strong>Muddat:</strong> {k.term}</p>
           </div>
-        </section>
+        ))}
+      </div>
+    )}
+
+    <button
+      onClick={sendToTelegram}
+      className={`bg-green-600 text-white w-full py-4 rounded-xl font-bold hover:bg-green-700 shadow-lg shadow-green-100 active:scale-95 transition-all ${isFormSubmitted ? "opacity-50 cursor-not-allowed" : ""}`}
+      disabled={isFormSubmitted}
+    >
+      {t("kredit.btn_send")}
+    </button>
+  </div>
+</section>
       </div>
     </div>
   );

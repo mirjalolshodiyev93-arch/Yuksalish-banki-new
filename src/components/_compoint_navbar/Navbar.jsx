@@ -39,7 +39,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${scrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
           ? "h-[75px] bg-white/70 backdrop-blur-xl shadow-xl border-b border-white/20"
           : "h-[100px] bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-600"
           }`}
