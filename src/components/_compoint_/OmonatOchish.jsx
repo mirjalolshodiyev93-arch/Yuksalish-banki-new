@@ -4,8 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 export default function OpenDeposit() {
   const location = useLocation();
   const navigate = useNavigate();
-  
-  // Deposits sahifasidan kelgan ma'lumotni olish (omonat nomi)
+
   const selectedDeposit = location.state?.depositName || "Tanlanmagan";
 
   const handleSubmit = (e) => {

@@ -32,7 +32,7 @@ export default function BankingServices() {
 
   return (
     <section className="relative min-h-screen bg-green-50 pt-[150px] pb-32 px-6">
-      {/* HERO */}
+   
       <div className="max-w-5xl mx-auto text-center mb-20">
         <h1 className="text-5xl font-extrabold text-green-800 mb-4 animate-fade-in-down">
           {t("hero2.title")}
@@ -41,8 +41,7 @@ export default function BankingServices() {
           {t("hero2.description")}
         </p>
       </div>
-
-      {/* Success */}
+ 
       {successMessage && (
         <div className="fixed top-20 left-1/2 -translate-x-1/2 bg-green-100 border border-green-300 text-green-800 rounded-3xl px-6 py-4 flex items-center gap-3 shadow-xl z-50 animate-slide-down">
           <CheckCircle size={24} />
@@ -50,7 +49,6 @@ export default function BankingServices() {
         </div>
       )}
 
-      {/* Services Grid */}
       <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-10">
         {services.map((s) => (
           <div
@@ -58,7 +56,7 @@ export default function BankingServices() {
             onClick={() => setModalData(s)}
             className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 group cursor-pointer relative overflow-hidden transform hover:-translate-y-2 hover:scale-105"
           >
-            {/* Gradient Overlay */}
+           
             <div className="absolute inset-0 bg-gradient-to-br from-green-100 to-green-50 opacity-0 group-hover:opacity-30 rounded-3xl transition-opacity duration-500"></div>
 
             <div className="relative z-10 flex items-center justify-center w-16 h-16 mb-6 bg-green-50 rounded-xl shadow-inner group-hover:shadow-lg transition-all duration-500">
@@ -73,7 +71,7 @@ export default function BankingServices() {
         ))}
       </div>
 
-      {/* Modal */}
+      
       {modalData && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
           <div className="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 relative border border-green-100 animate-fade-in-up">
@@ -98,7 +96,7 @@ export default function BankingServices() {
         </div>
       )}
 
-      {/* Footer */}
+ 
       <div className="max-w-4xl mx-auto mt-32 text-center">
         <h2 className="text-3xl font-bold text-green-800 mb-4 animate-fade-in-up">
           {t("footer2.title")}

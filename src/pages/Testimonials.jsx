@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { UploadCloud } from "lucide-react"; // ✅ Import qilindi
+import { UploadCloud } from "lucide-react";
 
 export function Testimonials() {
   const { t, i18n } = useTranslation();
 
   const [testimonials, setTestimonials] = useState([]);
 
-  // i18n arrayini olish
+
   useEffect(() => {
     try {
       const data = t("uz1", { returnObjects: true });
@@ -131,7 +131,7 @@ export function Testimonials() {
           ))}
         </div>
 
-        {/* ✅ Styled File Input */}
+   
         <div className="flex flex-col items-center">
           <label
             htmlFor="file-upload"

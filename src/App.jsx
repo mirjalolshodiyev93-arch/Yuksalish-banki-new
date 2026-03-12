@@ -19,7 +19,6 @@ import GBPPage from "./components/404/GBPPage";
 import RUBPage from "./components/404/RUBPage";
 import NotFound from "./components/404/NotFound";
 
-// Dashboard pages
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import Transactions from "./pages/Transactions";
@@ -47,17 +46,17 @@ import BankingServices from "./context/BankingServices";
 function App() {
   const location = useLocation();
 
-  // 404 sahifa uchun tekshiruv
+
   const isNotFound = location.pathname === "/404";
 
   return (
     <ErrorBoundary>
       <UserProvider>
-        {/* Navbar faqat 404 bo'lmaganida */}
+      
         {!isNotFound && <Navbar />}
 
         <Routes>
-          {/* Bosh sahifalar */}
+      
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/hisob-ochish" element={<OpenAccount />} />
@@ -84,9 +83,9 @@ function App() {
 
 
 
-          {/* Dashboard nested route */}
+    
           <Route path="/dashboard" element={<Dashboard />}>
-            <Route index element={<Navigate to="profile" replace />} /> {/* default sahifa */}
+            <Route index element={<Navigate to="profile" replace />} /> 
             <Route path="profile" element={<Profile />} />
             <Route path="settings" element={<Settings />} />
             <Route path="transactions" element={<Transactions />} />
@@ -97,8 +96,6 @@ function App() {
           <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
-
-        {/* ChatBot va Footer faqat 404 bo'lmaganida */}
 
         {!isNotFound && <Footer />}
       </UserProvider>

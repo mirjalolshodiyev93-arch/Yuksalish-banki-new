@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { ArrowUpRight, ArrowDownLeft, RefreshCcw } from "lucide-react"; // Ikonkalar qo'shish tavsiya etiladi
+import { ArrowUpRight, ArrowDownLeft, RefreshCcw } from "lucide-react"; 
 import CardImg from "../../assets/currency-card.png";
 
 const getCurrencies = (t) => [
@@ -24,11 +24,11 @@ export default function CurrencyExchangePage() {
   return (
     <section className="relative overflow-hidden min-h-screen bg-[#F8FAFC] pt-16 pb-24 px-6">
       
-      {/* Orqa fon effektlari (Yumshoqroq) */}
+
       <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-green-200 rounded-full blur-[120px] opacity-40 animate-pulse"></div>
       <div className="absolute bottom-[5%] left-[-10%] w-[500px] h-[500px] bg-emerald-100 rounded-full blur-[100px] opacity-50"></div>
 
-      {/* HERO SECTION */}
+     
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
         <div className="lg:w-1/2 text-center lg:text-left">
           <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium text-emerald-700 bg-emerald-100 rounded-full">
@@ -65,7 +65,7 @@ export default function CurrencyExchangePage() {
         </div>
       </div>
 
-      {/* RATES GRID SECTION */}
+     
       <div ref={ratesRef} className="relative z-10 max-w-7xl mx-auto mt-32">
         <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6 text-center md:text-left px-4">
           <div>
@@ -119,8 +119,7 @@ export default function CurrencyExchangePage() {
         </div>
       </div>
 
-      {/* FOOTER FEATURES */}
-      <div className="relative z-10 max-w-5xl mx-auto mt-24">
+     <div className="relative z-10 max-w-5xl mx-auto mt-24">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             { label: t("currencyExchange.features.fast"), icon: " " },

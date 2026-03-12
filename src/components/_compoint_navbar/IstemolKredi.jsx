@@ -70,7 +70,7 @@ export default function IstemolKredit() {
       <div className="max-w-[1240px] mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           
-          {/* MATN QISMI */}
+       
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -98,7 +98,7 @@ export default function IstemolKredit() {
             </div>
           </motion.div>
 
-          {/* RASM QISMI */}
+         
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -111,7 +111,7 @@ export default function IstemolKredit() {
         </div>
       </div>
 
-      {/* MODAL */}
+    
       <AnimatePresence>
         {isModalOpen && (
           <motion.div 

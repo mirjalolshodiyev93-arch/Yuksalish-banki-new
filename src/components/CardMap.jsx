@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-// locations funksiyasi i18n bilan ishlaydi
+
 const locations = (t) => [
   {
     id: 1,
@@ -64,7 +64,6 @@ const locations = (t) => [
 ];
 
 
-// Xarita view ni o‘zgartirish komponenti
 function MapMover({ position }) {
   const map = useMap();
   if (position) {
@@ -77,11 +76,11 @@ const CardMap = () => {
   const { t } = useTranslation();
   const [selectedLocation, setSelectedLocation] = useState(null);
 
-  const locs = locations(t); // t() bilan tarjima qilingan massiv
+  const locs = locations(t); 
 
   return (
     <div className="flex flex-col md:flex-row max-w-[1400px] mx-auto gap-4 p-6 mt-[100px]">
-      {/* Kartochkalar */}
+   
       <div className="flex flex-col gap-4 md:w-1/3">
         {locs.map((loc) => (
           <div
@@ -95,7 +94,7 @@ const CardMap = () => {
         ))}
       </div>
 
-      {/* Xarita */}
+
       <div className="h-[100vh] w-full relative z-0">
         <MapContainer
           center={[41.2936485, 69.2195442]}

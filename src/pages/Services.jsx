@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-// services funksiya sifatida import qilinadi
+
 import { services as getServices } from "../data/homeData"; 
 import { Link } from "react-router-dom";
 
@@ -12,8 +12,7 @@ export default function Service() {
   const [rate, setRate] = useState(7.5);
   const [total, setTotal] = useState(income * (1 + rate / 100));
 
-  // 1. Rasmlar chiqishi uchun eng to'g'ri yo'li:
-  // homeData dagi funksiyaga t ni uzatib, tayyor obyektlar massivini olamiz.
+ 
   const translatedServices = getServices(t);
 
   useEffect(() => {
@@ -28,8 +27,7 @@ export default function Service() {
 
   return (
     <div className="max-w-[1400px] mx-auto bg-white text-gray-900">
-      
-      {/* HERO SECTION */}
+
       <div
         className="h-[500px] bg-cover bg-center relative flex items-center "
         style={{
@@ -48,7 +46,6 @@ export default function Service() {
         </div>
       </div>
 
-      {/* SERVICES GRID - Endi rasmlar aniq chiqadi */}
       <div className="px-6 grid py-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 bg-white">
         {translatedServices.map((item) => (
           <Link to={item.link} key={item.id}>
@@ -61,7 +58,7 @@ export default function Service() {
                 src={item.img}
                 alt={item.title}
                 className="w-full h-full object-cover hover:scale-110 transition duration-500"
-                // Rasm yuklanmasa xato bermasligi uchun fallback
+            
                 onError={(e) => { e.target.src = 'https://via.placeholder.com/400x300?text=Bank+Service'; }}
               />
             </div>

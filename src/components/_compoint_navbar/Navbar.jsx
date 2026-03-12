@@ -47,11 +47,11 @@ export default function Navbar() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-8 h-full flex justify-between items-center">
 
 
-          {/* LOGO */}
+      
           <Link to="/">
             <div
               className={`transition-all duration-500 flex items-center justify-center overflow-hidden ${scrolled
-                  ? "bg-transparent p-2" // Bu yerda fonni olib tashladim, faqat masofa qoldi
+                  ? "bg-transparent p-2"
                   : "bg-transparent"
                 }`}
               style={{
@@ -70,7 +70,6 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* DESKTOP LINKS */}
           <div className={`hidden md:flex gap-8 items-center font-medium uppercase text-[11px] tracking-[2px] ${scrolled ? "text-gray-700" : "text-white"
             }`}>
             {visibleItems.map((item) => (
@@ -84,7 +83,7 @@ export default function Navbar() {
               </Link>
             ))}
 
-            {/* MORE */}
+       
             {hiddenItems.length > 0 && (
               <div className="relative">
                 <button
@@ -112,7 +111,7 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* RIGHT SIDE */}
+    
           <div className="flex items-center gap-4">
             <Link to="/register" className="hidden sm:block">
               <button
@@ -141,7 +140,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* MOBILE MENU GLASS */}
+
       <div
         className={`fixed inset-0 z-[100] bg-black/40 backdrop-blur-sm transition-opacity duration-300 md:hidden ${menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}

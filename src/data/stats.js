@@ -1,4 +1,4 @@
-// stats.js
+
 export const getStatsData = (t) => [
   { id: 1, value: "1M+", label: t("stats.clients"), link: "card" }, // To'g'ri
   { id: 2, value: "120+", label: t("stats.branches"), link: "/" },   // Home sahifasi

@@ -38,7 +38,7 @@ export default function Settings() {
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
 
-        {/* Avatar */}
+   
         <div className="flex items-center gap-4">
           <img
             src={avatar}

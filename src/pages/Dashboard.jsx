@@ -10,10 +10,10 @@ export default function DashboardLayout() {
   const toggleSidebar = () => setIsOpen(!isOpen);
 
   return (
-    // "pt-[100px]" o'rniga "mt-[100px]" ishlatish skroll muammosini oldini oladi
+   
     <div className="max-w-[1400px] mx-auto flex min-h-screen bg-gray-100 relative pt-[100px]">
 
-      {/* 1. Mobile Hamburger Button - Sidebar yopilganda ko'rinadi */}
+    
       {!isOpen && (
         <button
           className="md:hidden fixed top-[115px] right-6 z-40 bg-white p-3 rounded-full shadow-lg border border-emerald-100 active:scale-95 transition-all"
@@ -23,7 +23,7 @@ export default function DashboardLayout() {
         </button>
       )}
 
-      {/* 2. Sidebar Desktop */}
+   
       <aside className="w-64 bg-white shadow-md p-6 hidden md:flex flex-col sticky top-[100px] h-[calc(100vh-100px)] overflow-y-auto">
         <h2 className="text-2xl font-bold mb-6 text-gray-800">{t("dashboard.title")}</h2>
         <nav className="flex flex-col gap-3">
@@ -35,14 +35,14 @@ export default function DashboardLayout() {
         </nav>
       </aside>
 
-      {/* 3. Sidebar Mobile - Right Side */}
+     
       <div
         className={`fixed top-[100px] right-0 w-80 h-[calc(100vh-100px)] bg-white shadow-[-10px_0_30px_rgba(0,0,0,0.1)] z-50 transform transition-transform duration-300 ease-in-out
                     ${isOpen ? "translate-x-0" : "translate-x-full"} md:hidden flex flex-col`}
       >
-        {/* Sidebar Header (Rasmdagi yashil qism) */}
+      
         <div className="bg-gradient-to-br from-emerald-600 to-green-500 p-6 relative min-h-[160px] flex flex-col justify-end">
-          {/* X (yopish) tugmasi sidebar ichida, rasmdagidek o'ngda */}
+    
           <button 
             onClick={toggleSidebar}
             className="absolute top-4 right-4 bg-white/20 p-2 rounded-full hover:bg-white/30 transition text-white"
@@ -58,7 +58,7 @@ export default function DashboardLayout() {
           </div>
         </div>
 
-        {/* Sidebar Navigation */}
+    
         <nav className="flex flex-col gap-1 p-4 overflow-y-auto flex-1">
           <Link onClick={toggleSidebar} to="profile" className="flex items-center p-3 text-gray-700 rounded-xl hover:bg-emerald-50 hover:text-emerald-600 transition font-medium">
             {t("dashboard.profil")}
@@ -81,7 +81,7 @@ export default function DashboardLayout() {
         </nav>
       </div>
 
-      {/* 4. Overlay Mobile - Top qiymati sidebar bilan bir xil qilindi */}
+ 
       {isOpen && (
         <div
           onClick={toggleSidebar}
@@ -89,7 +89,6 @@ export default function DashboardLayout() {
         />
       )}
 
-      {/* 5. Main Content */}
       <main className="flex-1 p-6 sm:p-10 overflow-y-auto">
         <Outlet />
       </main>

@@ -8,7 +8,7 @@ export default function LanguageDetector() {
   const [currentLang, setCurrentLang] = useState("EN");
   const ref = useRef();
 
-  // Boshlang'ich til
+
   useEffect(() => {
     const lang = localStorage.getItem("lang") || i18n.language || "en";
     setCurrentLang(lang === "uz" ? "UZ" : lang === "ru" ? "RU" : "EN");
@@ -33,7 +33,7 @@ export default function LanguageDetector() {
 
   return (
     <div className="relative" ref={ref}>
-      {/* Toggle button */}
+    
       <button
         onClick={() => setOpen(!open)}
         className="bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors shadow-md"
@@ -41,7 +41,7 @@ export default function LanguageDetector() {
         {currentLang}
       </button>
 
-      {/* Modal */}
+    
       <div
         className={`absolute right-0 mt-2 w-20 bg-white text-black rounded-md shadow-xl z-50 overflow-hidden
           transform transition-all duration-200 ease-out
@@ -69,6 +69,4 @@ export default function LanguageDetector() {
     </div>
   );
 }
-//"Kredit Turlari"
-//"Kredit Kalkulyator"
-//"cardmap"
+

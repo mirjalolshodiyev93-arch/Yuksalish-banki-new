@@ -28,7 +28,7 @@ export default function AboutUs() {
 
   return (
     <section className="overflow-hidden bg-white text-gray-900">
-      {/* HERO SECTION */}
+    
       <div className="relative pt-24 pb-16 px-4 sm:px-10 lg:px-20 max-w-7xl mx-auto">
         <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
           <motion.div 
@@ -78,7 +78,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      {/* Mission & Vision */}
+    
       <div className="bg-gray-50 py-24 px-4 sm:px-10 lg:px-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           <motion.div {...fadeIn} className="group bg-white p-10 rounded-[2rem] shadow-sm hover:shadow-xl transition-all border border-gray-100">
@@ -99,7 +99,6 @@ export default function AboutUs() {
         </div>
       </div>
 
-      {/* Team Section */}
       <div className="py-24 px-4 sm:px-10 lg:px-20 max-w-7xl mx-auto">
         <motion.div {...fadeIn} className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">{t("about.team.title")}</h2>

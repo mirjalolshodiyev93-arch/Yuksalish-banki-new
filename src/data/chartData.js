@@ -1,6 +1,4 @@
-// chartData.js
 
-// Named export
 export const crmData = [
   { month: "Jan", value: 1200 },
   { month: "Feb", value: 1900 },

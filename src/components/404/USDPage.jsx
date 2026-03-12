@@ -6,8 +6,8 @@ import { useTranslation } from "react-i18next";
 export default function USDPage() {
   const { t } = useTranslation();
   const [amount, setAmount] = useState(1);
-  const [result, setResult] = useState(null);  // natija saqlash uchun
-  const [isModalOpen, setIsModalOpen] = useState(false); // modal state
+  const [result, setResult] = useState(null); 
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
   const buyRate = 12193;
   const sellRate = 12250;
@@ -23,15 +23,15 @@ export default function USDPage() {
   ];
 
   const handleExchange = () => {
-    setResult(amount * buyRate); // natijani saqlaymiz
-    setIsModalOpen(true);         // modalni ochamiz
+    setResult(amount * buyRate); 
+    setIsModalOpen(true);        
   };
 
   return (
     <section className="min-h-screen bg-slate-50 p-4 md:p-10 font-sans">
       <div className="max-w-6xl mx-auto pt-[100px]">
 
-        {/* Header */}
+       
         <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
           <div>
             <h1 className="text-4xl font-extrabold text-slate-900 flex items-center gap-3">
@@ -57,7 +57,7 @@ export default function USDPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-          {/* Converter */}
+      
           <div className="lg:col-span-1 bg-white p-6 rounded-3xl shadow-xl shadow-blue-100/50 border border-blue-50 h-fit">
             <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
               <ArrowUpDown size={20} className="text-blue-500" /> {t("usdPage.converter")}
@@ -86,7 +86,7 @@ export default function USDPage() {
                 <p className="text-2xl font-black text-blue-800 mt-1 break-words leading-tight">{(amount * buyRate).toLocaleString()} UZS</p>
               </div>
 
-              {/* Exchange button */}
+        
               <button
                 onClick={handleExchange}
                 className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition-transform active:scale-95 shadow-lg shadow-blue-200"
@@ -96,7 +96,6 @@ export default function USDPage() {
             </div>
           </div>
 
-          {/* Chart */}
           <div className="lg:col-span-2 space-y-8">
             <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 h-[380px] w-full overflow-hidden">
               <div className="flex justify-between items-center mb-6 px-2">
@@ -127,7 +126,6 @@ export default function USDPage() {
 
         </div>
 
-        {/* ✅ Modal */}
         {isModalOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white p-6 rounded-3xl max-w-md w-full shadow-lg relative">

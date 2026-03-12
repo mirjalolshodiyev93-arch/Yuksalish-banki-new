@@ -31,12 +31,12 @@ export default function OpenAccount() {
   ];
 
   return (
-    // pt-24 yoki pt-32 navbar balandligiga qarab moslanadi
+  
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-white pt-[150px] pb-16 px-6">
       
       <div className="max-w-6xl mx-auto">
 
-        {/* Back Button - biroz modernroq ko'rinishda */}
+  
         <button
           onClick={() => navigate(-1)}
           className="group mb-8 flex items-center gap-2 px-4 py-2 text-green-700 font-medium hover:text-green-800 transition-all"
@@ -45,7 +45,7 @@ export default function OpenAccount() {
           {t("details.back")}
         </button>
 
-        {/* Header Section */}
+       
         <div className="bg-white rounded-[2.5rem] shadow-xl shadow-green-900/5 p-8 md:p-12 mb-12 text-center border border-green-50">
           <h1 className="text-3xl md:text-5xl font-black text-green-600 mb-6 leading-tight">
             {t("details.title")}
@@ -65,7 +65,6 @@ export default function OpenAccount() {
           </div>
         </div>
 
-        {/* Services Cards Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {cards.map((card, index) => (
             <div

@@ -14,7 +14,7 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* Mobile Hamburger */}
+    
       <button
         onClick={() => setOpen(!open)}
         className="md:hidden fixed top-5 left-5 z-50 p-2 rounded-md bg-blue-600 text-white"
@@ -22,7 +22,7 @@ export default function Sidebar() {
         <Menu size={24} />
       </button>
 
-      {/* Sidebar */}
+    
       <div
         className={`
           fixed top-0 left-0 h-screen w-64 bg-[#0B1F3A] text-white p-6
@@ -40,7 +40,7 @@ export default function Sidebar() {
               key={index}
               to={item.path}
               className="flex gap-3 items-center hover:text-green-400 transition"
-              onClick={() => setOpen(false)} // mobil ochilganda link bosganda yopilsin
+              onClick={() => setOpen(false)}
             >
               {item.icon} {item.title}
             </NavLink>
@@ -48,7 +48,7 @@ export default function Sidebar() {
         </nav>
       </div>
 
-      {/* Overlay for mobile */}
+    
       {open && (
         <div
           onClick={() => setOpen(false)}

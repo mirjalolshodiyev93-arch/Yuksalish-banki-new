@@ -9,7 +9,7 @@
 
     const handleAmountChange = (e) => {
         const val = e.target.value;
-        // Faqat musbat sonlar va maksimal 7 ta raqam
+    
         if (val === "" || (val >= 0 && val.length <= 7)) {
         setAmount(val);
         }
@@ -25,7 +25,7 @@
     const handleTransfer = () => {
         if (amount > 0) {
         setIsSuccess(true);
-        // 3.5 soniyadan keyin xabarni yopish va formani tozalash
+      
         setTimeout(() => {
             setIsSuccess(false);
             setActiveService(null);
@@ -41,7 +41,7 @@
     return (
         <div className="bg-gray-50 min-h-screen font-sans relative">
         
-        {/* 🟢 O'NG TOMONDAN CHIQUVCHI MUVAFFAQIYAT KARTI */}
+      
         {isSuccess && (
             <div className="fixed top-[100px] right-6 z-50 animate-in fade-in slide-in-from-right-full duration-500">
             <div className="bg-white border-l-[6px] border-green-500 text-[#013220] px-6 py-5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] flex items-center gap-4 min-w-[350px] relative overflow-hidden">
@@ -54,7 +54,7 @@
                 <h4 className="font-extrabold text-green-700 text-lg leading-tight">Muvaffaqiyatli!</h4>
                 <p className="text-sm text-gray-500 font-medium tracking-tight">O'tkazmangiz muvaffaqiyatli amalga oshirildi.</p>
                 </div>
-                {/* Pastki qismdagi taymer chizig'i (ixtiyoriy dekor) */}
+               
                 <div className="absolute bottom-0 left-0 h-1 bg-green-100 w-full">
                 <div className="h-full bg-green-500 animate-[progress_3.5s_linear]"></div>
                 </div>
@@ -62,7 +62,7 @@
             </div>
         )}
 
-        {/* Input ikonkasini yo'q qilish uchun CSS */}
+     
         <style>{`
             input::-webkit-outer-spin-button,
             input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
@@ -79,7 +79,7 @@
             <p className="text-gray-500 font-medium">Xavfsiz pul o'tkazmalari tizimi</p>
             </div>
 
-            {/* Xizmat turlari */}
+        
             <div className="grid md:grid-cols-3 gap-8 mb-12">
             {[
                 { id: "inner", title: "Bank ichida", icon: Earch2, desc: "Komissiya 0%" },
@@ -102,7 +102,7 @@
             ))}
             </div>
 
-            {/* Kalkulyator */}
+        
             {activeService && (
             <div className="animate-in fade-in zoom-in duration-300 max-w-4xl mx-auto">
                 <div className="bg-[#013220] p-12 rounded-[48px] text-white shadow-2xl relative overflow-hidden">
@@ -170,7 +170,7 @@
             </div>
             )}
 
-            {/* Tanlanmagan holat */}
+        
             {!activeService && (
             <div className="text-center py-24 border-4 border-dotted border-gray-200 rounded-[60px] mt-10">
                 <div className="text-5xl mb-4 opacity-20">✨</div>

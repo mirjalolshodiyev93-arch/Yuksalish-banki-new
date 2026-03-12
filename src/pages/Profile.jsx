@@ -11,7 +11,7 @@ export default function Profile() {
 
   return (
     <div>
-      {/* Profil header */}
+  
       <div className="flex items-center mb-8">
         <img
           src={user.avatar}
@@ -24,7 +24,7 @@ export default function Profile() {
         </div>
       </div>
 
-      {/* Stat Cards */}
+    
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-10">
         <div className="bg-white p-4 sm:p-6 rounded-2xl shadow">
           <p className="text-sm sm:text-base">{t("stats1.clients")}</p>
@@ -47,7 +47,6 @@ export default function Profile() {
         </div>
       </div>
 
-      {/* Loan Chart */}
       <div className="bg-white p-4 sm:p-6 rounded-2xl shadow mb-6 sm:mb-10">
         <h3 className="mb-3 sm:mb-4 font-semibold text-sm sm:text-base">
           {t("loan")}
@@ -63,7 +62,7 @@ export default function Profile() {
         </ResponsiveContainer>
       </div>
 
-      {/* Recent Transactions */}
+   
    
     </div>
   );

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTranslation, Trans } from "react-i18next"; // Trans qo'shildi
+import { useTranslation, Trans } from "react-i18next";
 import { toast, ToastContainer, Slide } from "react-toastify";
 import { motion, AnimatePresence } from "framer-motion";
 import "react-toastify/dist/ReactToastify.css";
@@ -98,7 +98,7 @@ export default function AutoKredit() {
             </div>
           </motion.div>
 
-          {/* RASM QISMI O'ZGARISSIZ QOLADI */}
+      
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}

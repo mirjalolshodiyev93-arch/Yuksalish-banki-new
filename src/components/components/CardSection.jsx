@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function CardSection() {
   const { t } = useTranslation();
 
-  // t funksiyasini uzatib ma'lumotlarni olamiz
+ 
   const cardData = cards(t); 
 
   return (
@@ -16,9 +16,9 @@ export default function CardSection() {
             key={card.id}
             className="bg-white rounded-2xl border border-gray-200 p-8 flex flex-col lg:flex-row items-center justify-between gap-10 shadow-sm hover:shadow-md transition-shadow duration-300"
           >
-            {/* LEFT SIDE */}
+   
             <div className="flex-1 space-y-6">
-              {/* TO'G'IRLANDI: t.title emas, card.title bo'lishi kerak */}
+         
               <h2 className="text-3xl font-bold text-black">{card.title}</h2>
               <p className="text-gray-600 text-lg">{card.description}</p>
               <p className="text-gray-600 text-lg">{card.subDescription}</p>
@@ -36,7 +36,7 @@ export default function CardSection() {
 
               <div className="flex flex-wrap gap-4 pt-6">
                 <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl font-semibold transition">
-                   {/* Bu yerni ham tarjima qilish mumkin: t('buttons.orderOnline') */}
+            
                    Oformit onlayn
                 </button>
               <Link to={"/salom"}>
@@ -47,7 +47,6 @@ export default function CardSection() {
               </div>
             </div>
 
-            {/* RIGHT SIDE */}
             <div className="flex-1 flex justify-center">
               <img
                 src={card.image}

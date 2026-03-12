@@ -23,7 +23,7 @@ export default function CorporateServices() {
 
   return (
     <section className="relative min-h-screen bg-green-50 pt-[150px] pb-32 px-6">
-      {/* HERO */}
+    
       <div className="max-w-7xl mx-auto text-center mb-20">
         <h1 className="text-5xl font-extrabold text-green-800 mb-4">
           {t("hero1.title")}
@@ -33,7 +33,7 @@ export default function CorporateServices() {
         </p>
       </div>
 
-      {/* Success Card */}
+    
       {successMessage && (
         <div className="fixed top-20 left-1/2 -translate-x-1/2 bg-green-100 border border-green-300 text-green-800 rounded-2xl px-6 py-4 flex items-center gap-3 shadow-lg z-50 animate-slide-down">
           <CheckCircle size={24} />
@@ -41,7 +41,7 @@ export default function CorporateServices() {
         </div>
       )}
 
-      {/* Services Grid */}
+  
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {servicesKeys.map((key, idx) => {
           const service = t(`services2.${key}`, { returnObjects: true });
@@ -64,7 +64,7 @@ export default function CorporateServices() {
         })}
       </div>
 
-      {/* Modal */}
+  
       {modalData && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-4">
           <div className="bg-white rounded-3xl shadow-2xl max-w-xl w-full p-8 relative border border-green-100">
@@ -89,7 +89,7 @@ export default function CorporateServices() {
         </div>
       )}
 
-      {/* Footer */}
+
       <div className="max-w-5xl mx-auto mt-32 text-center">
         <h2 className="text-3xl font-bold text-green-800 mb-4">{t("footer1.title")}</h2>
         <p className="text-green-700 max-w-3xl mx-auto">{t("footer1.description")}</p>

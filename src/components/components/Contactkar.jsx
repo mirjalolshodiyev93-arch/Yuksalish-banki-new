@@ -1,24 +1,24 @@
-import React, { useState } from "react"; // 1. useState qo'shildi
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export default function Contacts() {
   const { t } = useTranslation();
 
-  // 2. State qo'shildi
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: ""
   });
 
-  // 3. Inputlarni kuzatish funksiyasi
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  // 4. Tekshiruv funksiyasi
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const { name, email, message } = formData;
@@ -29,13 +29,13 @@ export default function Contacts() {
     }
 
     alert("Xabaringiz muvaffaqiyatli yuborildi!");
-    setFormData({ name: "", email: "", message: "" }); // Tozalash
+    setFormData({ name: "", email: "", message: "" }); 
   };
 
   return (
     <div className="pt-[100px] sm:pt-[140px] bg-green-50 min-h-screen py-12 px-4 sm:px-6 lg:px-16">
       <div className="max-w-6xl mx-auto">
-        {/* Title qismi */}
+      
         <div className="text-center mb-10 sm:mb-16">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900">
             {t("contacts.title")}
@@ -48,7 +48,7 @@ export default function Contacts() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           
-          {/* Contact Info */}
+      
           <div className="bg-green-50 p-6 sm:p-10 rounded-3xl shadow-sm border border-green-100 space-y-8">
             <div className="flex items-start gap-4">
               <div className="p-3 bg-green-100 rounded-xl">
@@ -91,7 +91,7 @@ export default function Contacts() {
             </div>
           </div>
 
-          {/* Contact Form */}
+       
           <div className="bg-white p-6 sm:p-10 rounded-3xl shadow-2xl border border-green-50">
             <h2 className="text-2xl font-bold mb-6 text-gray-800">{t("contacts.form_title")}</h2>
             <form className="space-y-4" onSubmit={handleSubmit}>

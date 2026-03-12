@@ -12,7 +12,7 @@ export default function ScrolltopFunc() {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      // 300px dan keyin chiqishi ko'zga yoqimliroq
+   
       setIsVisible(window.scrollY > 300);
     };
 
@@ -54,7 +54,7 @@ export default function ScrolltopFunc() {
         />
       </svg>
       
-      {/* Orqa fondagi miltillovchi effekt (ixtiyoriy) */}
+
       <span className="absolute inset-0 rounded-2xl bg-emerald-400 animate-ping opacity-20 -z-10"></span>
     </button>
   );

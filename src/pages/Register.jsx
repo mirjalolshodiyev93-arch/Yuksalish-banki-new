@@ -19,7 +19,6 @@ export default function Register() {
 
   const [errors, setErrors] = useState({});
 
-  // VALIDATSIYA (JSON KALITLARIGA MOSLANGAN)
   const validateField = (name, value) => {
     let errorMsg = "";
     const cleanValue = typeof value === "string" ? value.trim() : value;
@@ -147,7 +146,7 @@ export default function Register() {
         </div>
 
         <form onSubmit={handleSubmit} className="p-8 space-y-5">
-          {/* FIO */}
+  
           <div className="space-y-1">
             <label className="text-sm font-semibold text-gray-700">{t("translation.fullName")}</label>
             <input 

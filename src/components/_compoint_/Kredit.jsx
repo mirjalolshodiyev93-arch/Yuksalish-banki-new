@@ -30,7 +30,7 @@ export default function Kredit() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false); // ✅ ariza yuborildi flag
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false); 
 
   const handleSubmitModal = () => {
     setIsSuccess(true);
@@ -55,7 +55,7 @@ export default function Kredit() {
   const handlePhoneChange = (e) => {
     let val = e.target.value.replace(/\D/g, "");
     if (val.startsWith("998")) val = val.slice(3);
-    if (val.length > 9) val = val.slice(0, 9); // ✅ 9 raqamgacha
+    if (val.length > 9) val = val.slice(0, 9); 
     let formatted = "+998";
     if (val.length > 0) formatted += " " + val.slice(0, 2);
     if (val.length >= 3) formatted += "-" + val.slice(2, 5);
@@ -64,7 +64,7 @@ export default function Kredit() {
     setPhone(formatted);
   };
 
-  // Kalkulyator inputlari 10 ta raqamga cheklanishi
+  
   const handleSummaChange = (e) => {
     let val = e.target.value.toString().replace(/\D/g, "");
     if (val.length > 10) val = val.slice(0, 10);
@@ -82,7 +82,7 @@ export default function Kredit() {
   };
 
   const sendToTelegram = async () => {
-    if (isFormSubmitted) return; // ✅ yuborilgan bo'lsa bloklash
+    if (isFormSubmitted) return
 
     const formattedName = capitalizeName(name.trim());
     const digits = phone.replace(/\D/g, "").slice(3);
@@ -100,7 +100,7 @@ export default function Kredit() {
         body: JSON.stringify({ chat_id: CHAT_ID, text: message }),
       });
       toast.success("✅ Ariza muvaffaqiyatli yuborildi!", { autoClose: 3000 });
-      setIsFormSubmitted(true); // ✅ yuborildi flag o'rnatish
+      setIsFormSubmitted(true); 
       setName("");
       setPhone("");
       setType("");
@@ -113,7 +113,7 @@ export default function Kredit() {
     <div className="bg-white pt-[100px] text-gray-800">
       <ToastContainer position="top-right" />
 
-      {/* HERO SECTION */}
+      
       <section className="max-w-[1400px] mx-auto px-4 md:px-6 py-12 md:py-20 grid md:grid-cols-2 gap-10 items-center">
         <div>
           <h1 className="text-3xl md:text-5xl font-bold mb-6">{t("kredit.hero_title")}</h1>
@@ -140,7 +140,7 @@ export default function Kredit() {
         />
       </section>
 
-      {/* MODAL OYNA */}
+ 
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
           <div className="bg-white p-8 rounded-2xl w-full max-w-md relative">
@@ -163,7 +163,7 @@ export default function Kredit() {
         </div>
       )}
 
-      {/* KREDIT TURLARI */}
+  
       <section className="max-w-[1400px] mx-auto px-4 md:px-6 py-12">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-900">{t("kredit.types_title")}</h2>
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
@@ -185,8 +185,7 @@ export default function Kredit() {
         </div>
       </section>
 
-      {/* KALKULYATOR SECTION */}
-      <div className="max-w-[1400px] mx-auto px-4 py-16 flex flex-col-reverse lg:flex-row items-center gap-12">
+     <div className="max-w-[1400px] mx-auto px-4 py-16 flex flex-col-reverse lg:flex-row items-center gap-12">
         <section ref={kalkulyatorRef} className="w-full lg:w-1/2">
           <h2 className="text-2xl md:text-3xl font-bold mb-10 text-green-700 text-center lg:text-left">
             {t("kredit.calc_title")}
@@ -217,13 +216,12 @@ export default function Kredit() {
         </div>
       </div>
 
-      {/* ARIZA SECTION */}
-      {/* ARIZA SECTION */}
+    
       <div className="max-w-[1400px] mx-auto px-4 py-12 flex flex-col lg:flex-row items-center gap-10 mb-20">
         <div className="w-full lg:w-1/2 flex justify-center">
           <img src={ariza} alt="Ariza" className="w-full h-auto max-w-[500px] rounded-2xl shadow-xl lg:h-[600px] object-cover" />
         </div>
-    {/* ARIZA SECTION */}
+ 
 <section className="w-full lg:w-1/2">
   <div className="bg-white p-8 md:p-10 rounded-3xl space-y-6 shadow-2xl border border-gray-50">
     <h2 className="text-2xl font-bold text-center text-green-700">{t("kredit.form_title")}</h2>
@@ -261,7 +259,6 @@ export default function Kredit() {
       disabled={isFormSubmitted}
     />
 
-    {/* KREDIT TURINI TANLASH */}
     <select
       value={type}
       onChange={(e) => setType(e.target.value)}
@@ -274,7 +271,7 @@ export default function Kredit() {
       ))}
     </select>
 
-    {/* ✅ TANLANGAN KREDIT CARD KO‘RSATISH */}
+
     {type && (
       <div className="bg-green-50 border border-green-200 p-4 rounded-xl mt-4 shadow-sm">
         {kreditTurlari.filter(k => k.title === type).map((k) => (

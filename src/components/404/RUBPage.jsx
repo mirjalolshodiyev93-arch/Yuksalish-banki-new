@@ -6,8 +6,8 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 export default function RUBPage() {
   const { t } = useTranslation();
   const [amount, setAmount] = useState(100);
-  const [result, setResult] = useState(null); // natija card uchun
-  const [isModalOpen, setIsModalOpen] = useState(false); // ✅ modal ochish uchun
+  const [result, setResult] = useState(null); 
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
   const buyRate = 153;
   const sellRate = 156;
@@ -24,15 +24,14 @@ export default function RUBPage() {
 
   const handleExchange = () => {
     const calculated = amount * buyRate;
-    setResult(calculated); // natijani saqlash
-    setIsModalOpen(true);   // modal oynani ochish
+    setResult(calculated); 
+    setIsModalOpen(true); 
   };
 
   return (
     <section className="min-h-screen pt-[120px] px-4 md:px-10 bg-slate-50 font-sans">
       <div className="max-w-6xl mx-auto md:pt-[100px]">
 
-        {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-6">
           <div className="w-full md:w-auto">
             <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 flex items-center gap-3">
@@ -54,10 +53,8 @@ export default function RUBPage() {
           </div>
         </div>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-          {/* Chart */}
           <div className="lg:col-span-2 space-y-8 order-1 lg:order-2">
             <div className="bg-white p-4 md:p-6 rounded-3xl shadow-sm border border-slate-100 w-full overflow-hidden">
               <h3 className="font-bold text-slate-800 flex items-center gap-2 mb-6">
@@ -92,7 +89,7 @@ export default function RUBPage() {
             </div>
           </div>
 
-          {/* Calculator */}
+          
           <div className="lg:col-span-1 bg-white p-6 rounded-3xl shadow-xl shadow-red-100/30 border border-red-50 h-fit order-2 lg:order-1">
             <h2 className="text-xl font-bold mb-6 flex items-center gap-2 text-red-900">
               <ArrowUpDown size={20} className="text-red-600" /> {t('rubPage.converter')}
@@ -127,7 +124,7 @@ export default function RUBPage() {
 
         </div>
 
-        {/* ✅ Modal */}
+     
         {isModalOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white p-6 rounded-3xl max-w-md w-full shadow-lg relative">

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function Stats() {
   const { t } = useTranslation();
   const stats = getStatsData(t);
-  const navigate = useNavigate(); // navigate funksiyasi
+  const navigate = useNavigate(); 
 
   return (
     <div className="max-w-[1400px] mx-auto bg-slate-300 py-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">

@@ -50,7 +50,7 @@ export default function BankTimeline() {
 
         <div className="relative">
 
-          {/* timeline line */}
+        
           <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-green-200">
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-green-600 via-emerald-400 to-green-800 animate-pulse origin-top"></div>
           </div>
@@ -63,14 +63,13 @@ export default function BankTimeline() {
 
               <div className="hidden md:block w-5/12"></div>
 
-              {/* mark */}
+       
               <div className="z-20 absolute left-4 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center">
                 <div className="w-10 h-10 bg-white border-4 border-green-600 rounded-xl rotate-45 flex items-center justify-center shadow-lg">
                   <div className="w-2 h-2 bg-green-600 rounded-full"></div>
                 </div>
               </div>
 
-              {/* card */}
               <div
                 className={`w-full md:w-5/12 pl-12 md:pl-0 timeline-card opacity-0 transition-all duration-1000 ease-out ${
                   index % 2 === 0 ? 'md:translate-x-10' : 'md:-translate-x-10'

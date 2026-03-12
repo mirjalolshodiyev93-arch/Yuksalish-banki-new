@@ -46,20 +46,20 @@ export default function ServicesData() {
   }, []);
 
   return (
-    // Orqa fonni juda och yashil qildik (bg-green-50)
+
     <section className="bg-green-50/30 py-16 sm:py-20 text-gray-800 transition-colors duration-500">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Title */}
+       
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
             {t("salom.home")}
           </h2>
-          {/* Chiziqchani yashil qildik */}
+         
           <div className="w-16 sm:w-20 h-1 bg-green-600 mx-auto mt-3 sm:mt-4 rounded-full"></div>
         </div>
 
-        {/* Cards */}
+      
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
           {services.map((item, index) => (
             <div 

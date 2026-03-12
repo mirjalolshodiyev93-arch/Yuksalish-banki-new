@@ -4,13 +4,16 @@ import { useTranslation } from "react-i18next";
 import img10 from "../../assets/img10.png";
 import img9 from "../../assets/rasm.jpg";
 
-// Instagram section
-const TelegramSection = () => {
 
+
+
+
+export default function YuksalishPage() {
   const { t } = useTranslation();
-
   return (
-    <div className="flex flex-col items-center bg-[#f8fafc] p-6 md:p-8 rounded-[35px] w-full lg:w-[360px] text-center shadow-sm border border-gray-100">
+    <div className="min-h-screen bg-white flex items-center justify-center p-4 md:p-8 lg:p-12 font-sans">
+      <div className="max-w-7xl w-full flex flex-col lg:flex-row gap-6 md:gap-8">
+        <div className="flex flex-col items-center bg-[#f8fafc] p-6 md:p-8 rounded-[35px] w-full lg:w-[360px] text-center shadow-sm border border-gray-100">
 
       <div className="relative mb-8 transform hover:-translate-y-2 transition-transform duration-500">
         <div className="w-[170px] md:w-[190px] h-[340px] md:h-[380px] bg-white rounded-[35px] border-6 border-[#1e293b] shadow-2xl overflow-hidden">
@@ -37,17 +40,7 @@ const TelegramSection = () => {
         </button>
       </a>
     </div>
-  );
-};
-
-
-// App promo
-const AppPromoSection = () => {
-
-  const { t } = useTranslation();
-
-  return (
-    <div className="flex flex-col lg:flex-row items-center justify-between bg-[#f8fafc] p-6 md:p-10 rounded-[35px] flex-1 shadow-sm border border-gray-100 overflow-hidden">
+     <div className="flex flex-col lg:flex-row items-center justify-between bg-[#f8fafc] p-6 md:p-10 rounded-[35px] flex-1 shadow-sm border border-gray-100 overflow-hidden">
 
       <div className="relative w-full lg:w-1/2 h-[250px] md:h-[350px] lg:h-[420px] flex items-center justify-center mb-8 lg:mb-0">
         <img
@@ -92,17 +85,6 @@ const AppPromoSection = () => {
       </div>
 
     </div>
-  );
-};
-
-
-// MAIN PAGE
-export default function YuksalishPage() {
-  return (
-    <div className="min-h-screen bg-white flex items-center justify-center p-4 md:p-8 lg:p-12 font-sans">
-      <div className="max-w-7xl w-full flex flex-col lg:flex-row gap-6 md:gap-8">
-        <TelegramSection />
-        <AppPromoSection />
       </div>
     </div>
   );
