@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function ScrolltopFunc() {
-  const [scrollBTN, setScrollBTN] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -11,45 +11,51 @@ export default function ScrolltopFunc() {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollBTN(window.scrollY > 100);
+    const toggleVisibility = () => {
+      // 300px dan keyin chiqishi ko'zga yoqimliroq
+      setIsVisible(window.scrollY > 300);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
   return (
     <button
       onClick={scrollToTop}
+      aria-label="Scroll to top"
       className={`
-        fixed z-50 right-4 bottom-4 w-12 h-12
-        rounded-full
-        bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-500
-        text-white
-        shadow-sm shadow-purple-300/40
-        flex justify-center items-center
-        transform transition-all duration-300
-        ${scrollBTN ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}
-        hover:scale-105 hover:shadow-md
+        fixed bottom-8 right-8 z-50
+        flex items-center justify-center
+        w-12 h-12 rounded-2xl
+        bg-emerald-500 text-white
+        shadow-[0_10px_20px_-5px_rgba(16,185,129,0.4)]
+        transition-all duration-500 ease-in-out
+        ${isVisible 
+          ? "opacity-100 translate-y-0 pointer-events-auto" 
+          : "opacity-0 translate-y-8 pointer-events-none"
+        }
+        hover:bg-emerald-600 hover:-translate-y-1 hover:shadow-[0_15px_25px_-5px_rgba(16,185,129,0.5)]
+        active:scale-90
       `}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
         fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="3"
         stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        className="w-6 h-6"
       >
-        <path d="M8 6L12 2L16 6" />
-        <path d="M12 2V22" />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M4.5 15.75l7.5-7.5 7.5 7.5"
+        />
       </svg>
+      
+      {/* Orqa fondagi miltillovchi effekt (ixtiyoriy) */}
+      <span className="absolute inset-0 rounded-2xl bg-emerald-400 animate-ping opacity-20 -z-10"></span>
     </button>
   );
 }

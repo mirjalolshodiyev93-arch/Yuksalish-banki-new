@@ -99,7 +99,6 @@
       "agree": "Shartlarni qabul qilishingiz shart"
     }
   },
-
   "cards": {
     "visa": {
       "title": "VISA",
@@ -328,7 +327,7 @@
       "img": "https://i.pravatar.cc/100?img=44"
     }
   ],
- "loans": {
+  "loans": {
     "jan": "Yan",
     "mar": "Mar",
     "may": "May",
@@ -336,15 +335,15 @@
     "sep": "Sen",
     "nov": "Noy"
   },
-   "loan": "Kredit o‘sish tendensiyalari",
-   "stats1": {
+  "loan": "Kredit o‘sish tendensiyalari",
+  "stats1": {
     "clients": "Jami mijozlar",
     "loans": "Faol kreditlar",
     "deposits": "Jami omonatlar",
     "revenue": "Oylik daromad"
   },
-"transactions": {
-   "title": "So‘nggi Tranzaksiyalar",
+  "transactions": {
+    "title": "So‘nggi Tranzaksiyalar",
     "t1": {
       "date": "24 Okt 2023",
       "client": "Jahongir Saidov",
@@ -374,50 +373,43 @@
       "status": "Rad etildi"
     }
   },
-   "table": {
+  "table": {
     "date": "Sana",
     "client": "Mijoz",
     "type": "Turi",
     "amount": "Miqdori",
     "status": "Holati"
   },
-"dashboard": {
-  "title":"Boshqaruv paneli",
-  "profil": "Profil",
-  "sozlamalar": "Sozlamalar",
-  "tranzaksiyalar": "Tranzaksiyalar",
-  "sorovyuborish": "So'rov yuborish",
-  "chiqish": "Chiqish"
-},
-"footer": {
+  "dashboard": {
+    "title": "Boshqaruv paneli",
+    "profil": "Profil",
+    "sozlamalar": "Sozlamalar",
+    "tranzaksiyalar": "Tranzaksiyalar",
+    "sorovyuborish": "So'rov yuborish",
+    "chiqish": "Chiqish"
+  },
+  "footer": {
     "bank_desc": "Sizning moliyaviy o'sishingiz va farovonligingiz uchun zamonaviy va ishonchli bank xizmatlari.",
-    
     "services": "Xizmatlar",
     "credits": "Kreditlar",
     "deposits": "Omonatlar",
     "cards": "Bank kartalari",
     "transfers": "Pul o'tkazmalari",
-
     "help": "Yordam",
     "tariffs": "Tariflar",
     "branches": "Filiallar va bankomatlar",
     "faq": "Savol va javoblar",
     "contact": "Bog'lanish",
-
     "news": "Yangiliklar",
     "news_desc": "Bank yangiliklari va aksiyalaridan xabardor bo'ling.",
     "email_placeholder": "Email manzilingiz",
-
     "success": "Email muvaffaqiyatli yuborildi!",
     "error": "Email noto‘g‘ri kiritildi!",
-
     "copyright": "© 2026 \"Yuksalish Bank\" ATB. Barcha huquqlar himoyalangan.",
-
     "privacy": "Maxfiylik siyosati",
     "offer": "Ommaviy oferta",
     "license": "Litsenziya"
   },
-  
   "auto_kredit": {
     "badge": "Sizning avtomobil orzularingiz",
     "title": "Avtomobilni <0>osonlik bilan</0> oling!",
@@ -448,9 +440,8 @@
     "success_desc": "Arizangiz qabul qilindi. Tez orada menejerlarimiz bog‘lanishadi.",
     "error_fill": "Iltimos, ma'lumotlarni to'liq kiriting!",
     "error_server": "Xatolik yuz berdi. Qayta urinib ko'ring."
-  }
-,
-"business": {
+  },
+  "business": {
     "badge": "Biznesingiz uchun imkoniyat",
     "title": "Biznesingizni <0>biz bilan</0> yuqoriga ko'taring!",
     "description": "Kichik va o‘rta biznesingiz rivoji uchun eng qulay shartlarda, ortiqcha hujjatlarsiz tezkor kredit oling.",
@@ -579,32 +570,196 @@
     "list": {
       "usd": {
         "code": "USD",
-        "buy": "10,200",
-        "sell": "10,250",
+        "buy": "12,193",
+        "sell": "12,250",
         "color": "from-blue-600 to-blue-800",
         "link": "/salom/usd"
       },
       "eur": {
         "code": "EUR",
-        "buy": "11,500",
-        "sell": "11,550",
+        "buy": "14,850",
+        "sell": "14,087",
         "color": "from-green-500 to-emerald-600",
         "link": "/salom/eur"
       },
       "gbp": {
         "code": "GBP",
-        "buy": "13,000",
-        "sell": "13,050",
+        "buy": "16,323",
+        "sell": "16,050",
         "color": "from-emerald-600 to-green-700",
         "link": "/salom/gbp"
       },
       "rub": {
         "code": "RUB",
-        "buy": "120",
-        "sell": "125",
+        "buy": "153",
+        "sell": "156",
         "color": "from-green-700 to-green-800",
         "link": "/salom/rub"
       }
     }
-  }
+  },
+  "usdPage": {
+    "modalTitle": "Ayirboshlashni tasdiqlash",
+    "modalText": "Siz quyidagicha miqdorni olasiz:",
+    "cancel": "Bekor qilish",
+    "confirm": "Tasdiqlash",
+    "days": {
+      "mon": "Dush",
+      "tue": "Sesh",
+      "wed": "Chor",
+      "thu": "Pay",
+      "fri": "Jum",
+      "sat": "Shan",
+      "sun": "Yak"
+    },
+    "title": "AQSH Dollari (USD)",
+    "subtitle": "Markaziy bank va bozorning real vaqtdagi kursi",
+    "buy": "Sotib olish",
+    "sell": "Sotish",
+    "converter": "Konvertatsiya",
+    "enterAmount": "Miqdorni kiriting (USD)",
+    "youGet": "Siz olasiz (UZS)",
+    "exchange": "Ayirboshlashni boshlash",
+    "weeklyRate": "Haftalik kurs dinamikasi",
+    "secureTransaction": "Xavfsiz tranzaksiya",
+    "secureDesc": "Barcha amallar Yuksalish Banki himoyasida.",
+    "bestRate": "Eng yaxshi kurs",
+    "bestRateDesc": "Biz bozordagi eng yaxshi kursni taqdim etamiz.",
+    "lastUpdate": "Oxirgi yangilanish",
+    "autoUpdate": "Ma'lumotlar avtomatik yangilanadi"
+  },
+  "eurPage": {
+    "title": "Yevropa Valyutasi (EUR)",
+    "subtitle": "Yevro hududi va Markaziy bank kursi",
+    "modalTitle": "Ayirboshlashni tasdiqlash",
+    "modalText": "Siz quyidagicha miqdorni olasiz:",
+    "cancel": "Bekor qilish",
+    "confirm": "Tasdiqlash",
+    "buy": "Sotib olish",
+    "sell": "Sotish",
+    "converter": "EUR Konvertatsiya",
+    "enterAmount": "Miqdorni kiriting (EUR)",
+    "youGet": "Siz olasiz (UZS)",
+    "exchange": "EUR Ayirboshlash",
+    "weeklyRate": "Haftalik EUR Dinamikasi",
+    "days": {
+      "mon": "Dush",
+      "tue": "Sesh",
+      "wed": "Chor",
+      "thu": "Pay",
+      "fri": "Jum",
+      "sat": "Shan",
+      "sun": "Yak"
+    }
+  },
+  "gbpPage": {
+    "title": "Britaniya Funti (GBP)",
+    "subtitle": "Bozor va banklararo eng so'nggi kurslar",
+    "buy": "Sotib olish",
+    "sell": "Sotish",
+    "converter": "GBP Konvertatsiya",
+    "enterAmount": "Miqdorni kiriting (GBP)",
+    "youGet": "Siz olasiz (UZS)",
+    "exchange": "GBP Ayirboshlash",
+    "weeklyRate": "Haftalik GBP Dinamikasi",
+    "lastUpdate": "Oxirgi yangilanish",
+    "autoUpdate": "Avtomatik yangilanish",
+    "modalTitle": "Ayirboshlashni tasdiqlash",
+    "modalText": "Siz quyidagicha miqdorni olasiz:",
+    "cancel": "Bekor qilish",
+    "confirm": "Tasdiqlash",
+    "days": {
+      "mon": "Dush",
+      "tue": "Sesh",
+      "wed": "Chor",
+      "thu": "Pay",
+      "fri": "Jum",
+      "sat": "Shan",
+      "sun": "Yak"
+    }
+  },
+  "rubPage": {
+    "title": "Rossiya Rubli (RUB)",
+    "subtitle": "Bozor va banklararo eng so'nggi kurslar",
+    "buy": "Sotib olish",
+    "sell": "Sotish",
+    "converter": "RUB Konvertatsiya",
+    "enterAmount": "Miqdorni kiriting (RUB)",
+    "youGet": "Siz olasiz (UZS)",
+    "exchange": "RUB Ayirboshlash",
+    "weeklyRate": "Haftalik RUB Dinamikasi",
+    "modalTitle": "Ayirboshlashni tasdiqlash",
+    "modalText": "Siz quyidagicha miqdorni olasiz:",
+    "cancel": "Bekor qilish",
+    "confirm": "Tasdiqlash",
+    "days": {
+      "mon": "Dush",
+      "tue": "Sesh",
+      "wed": "Chor",
+      "thu": "Pay",
+      "fri": "Jum",
+      "sat": "Shan",
+      "sun": "Yak"
+    }
+  },
+  "hero1": {
+    "title": "Biznes xizmatlari",
+    "description": "Korporativ mijozlarimiz uchun maxsus yaratilgan moliyaviy va xizmat paketlari."
+  },
+  "services2": {
+    "corporate": {
+      "title": "Korporativ hisob-kitoblar",
+      "description": "Biznesingiz uchun tezkor va xavfsiz moliyaviy operatsiyalarni taqdim etamiz.",
+      "details": "Korporativ hisob-kitoblar orqali kompaniyangiz xodimlari uchun maxsus hisob raqamlar ochiladi, tezkor va xavfsiz operatsiyalar taqdim etiladi."
+    },
+    "employees": {
+      "title": "Xodimlar uchun xizmatlar",
+      "description": "Ishchilar uchun maxsus hisob-kitob, naqd pul va bonus tizimlari.",
+      "details": "Xodimlar uchun maxsus xizmatlar: naqd pul olish, bonus tizimi va hisob-kitoblar monitoringi."
+    },
+    "financial": {
+      "title": "Moliyaviy tahlil va hisobotlar",
+      "description": "Kompaniyangiz moliyaviy holatini real vaqt rejimida kuzatish.",
+      "details": "Moliyaviy tahlil va hisobotlar yordamida siz kompaniyangiz xarajat va daromadlarini real vaqt rejimida kuzatishingiz mumkin."
+    },
+    "security": {
+      "title": "Xavfsizlik va kafolat",
+      "description": "Sizning biznesingiz ma’lumotlari himoyalangan va kafolatlangan.",
+      "details": "Bizning tizimimizda barcha ma’lumotlar shifrlanadi va xavfsizlik kafolatlangan."
+    }
+  },
+  "footer1": {
+    "title": "Nima uchun bizni tanlaysiz?",
+    "description": "Bizning korporativ xizmatlarimiz orqali kompaniyangizning moliyaviy ishlarini tez, xavfsiz va ishonchli boshqarishingiz mumkin."
+  },
+  "buttons1": {
+    "request": "So‘rov yuborish",
+    "details": "Batafsil →"
+  },
+  "success": "{{service}} uchun so‘rov muvaffaqiyatli yuborildi!",
+  "hero2": {
+    "title": "Internet va Mobile Banking",
+    "description": "Sizning moliyaviy operatsiyalaringizni tez, xavfsiz va qulay boshqarish imkoniyati."
+  },
+  "services3": {
+    "internetBanking": {
+      "title": "Internet Banking",
+      "description": "Sizning moliyaviy operatsiyalaringizni tez va xavfsiz boshqarish.",
+      "details": "Internet Banking orqali hisobingizni istalgan vaqtda kuzatishingiz, to‘lov va transferlarni amalga oshirishingiz mumkin."
+    },
+    "mobileBanking": {
+      "title": "Mobile Banking",
+      "description": "Mobil ilova orqali barcha bank xizmatlari sizning qo‘lingizda.",
+      "details": "Mobile Banking ilovasi orqali naqd pul, balans, transfer va boshqa barcha xizmatlardan tezkor foydalanishingiz mumkin."
+    }
+  },
+  "footer2": {
+    "title": "Nima uchun bizni tanlaysiz?",
+    "description": "Internet va Mobile Banking xizmatlari bilan siz har doim moliyaviy nazoratni qo‘lga kiritasiz va barcha operatsiyalar xavfsiz bo‘ladi."
+  },
+  "buttons2": {
+    "request": "So‘rov yuborish",
+    "details": "Batafsil →"
+  },
+  "success1": "{{service}} uchun so‘rov muvaffaqiyatli yuborildi!"
 }

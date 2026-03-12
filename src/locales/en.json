@@ -578,32 +578,206 @@
     "list": {
       "usd": {
         "code": "USD",
-        "buy": "10,200",
-        "sell": "10,250",
+        "buy": "12,193",
+        "sell": "12,250",
         "color": "from-blue-600 to-blue-800",
         "link": "/salom/usd"
       },
       "eur": {
         "code": "EUR",
-        "buy": "11,500",
-        "sell": "11,550",
+        "buy": "14,850",
+        "sell": "14,087",
         "color": "from-green-500 to-emerald-600",
         "link": "/salom/eur"
       },
       "gbp": {
         "code": "GBP",
-        "buy": "13,000",
-        "sell": "13,050",
+        "buy": "16,323",
+        "sell": "16,050",
         "color": "from-emerald-600 to-green-700",
         "link": "/salom/gbp"
       },
       "rub": {
         "code": "RUB",
-        "buy": "120",
-        "sell": "125",
+        "buy": "153",
+        "sell": "156",
         "color": "from-green-700 to-green-800",
         "link": "/salom/rub"
       }
     }
-  }
+  },
+   "usdPage": {
+    
+"modalTitle": "Confirm Exchange",
+    "modalText": "You will receive the following amount:",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "days": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun"
+    },
+
+    "title": "US Dollar (USD)",
+    "subtitle": "Real-time Central Bank and market exchange rate",
+
+    "buy": "Buy",
+    "sell": "Sell",
+
+    "converter": "Converter",
+    "enterAmount": "Enter amount (USD)",
+    "youGet": "You get (UZS)",
+    "exchange": "Start exchange",
+
+    "weeklyRate": "Weekly exchange rate dynamics",
+
+    "secureTransaction": "Secure transaction",
+    "secureDesc": "All operations are protected by Yuksalish Bank.",
+
+    "bestRate": "Best rate",
+    "bestRateDesc": "We offer one of the most competitive rates on the market.",
+
+    "lastUpdate": "Last update",
+    "autoUpdate": "Data updates automatically"
+  },
+  "eurPage": {"modalTitle": "Confirm Exchange",
+    "modalText": "You will receive the following amount:",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "title": "Euro Currency (EUR)",
+    "subtitle": "Eurozone and Central Bank exchange rate",
+
+    "buy": "Buy",
+    "sell": "Sell",
+
+    "converter": "EUR Converter",
+    "enterAmount": "Enter amount (EUR)",
+    "youGet": "You get (UZS)",
+    "exchange": "Exchange EUR",
+
+    "weeklyRate": "Weekly EUR Dynamics",
+
+    "days": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun"
+    }
+  }, "gbpPage": {"modalTitle": "Confirm Exchange",
+    "modalText": "You will receive the following amount:",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "title": "British Pound Sterling (GBP)",
+    "subtitle": "London Stock Exchange and Central Bank real-time rate",
+
+    "buy": "Buy",
+    "sell": "Sell",
+
+    "converter": "GBP Converter",
+    "enterAmount": "Enter amount (GBP)",
+    "youGet": "You get (UZS)",
+    "exchange": "Exchange GBP",
+
+    "weeklyRate": "Weekly GBP Dynamics",
+
+    "days": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun"
+    }
+  },  "rubPage": {
+    "modalTitle": "Confirm Exchange",
+    "modalText": "You will receive the following amount:",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "title": "Russian Ruble (RUB)",
+    "subtitle": "Latest market and interbank rates",
+    "buy": "Buy",
+    "sell": "Sell",
+    "converter": "RUB Converter",
+    "enterAmount": "Enter amount (RUB)",
+    "youGet": "You get (UZS)",
+    "exchange": "Exchange RUB",
+    "weeklyRate": "Weekly RUB Dynamics",
+    "days": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun"
+    }
+  },
+    "hero1": {
+    "title": "Business Services",
+    "description": "Special financial and service packages created for our corporate clients."
+  },
+  "services2": {
+    "corporate": {
+      "title": "Corporate Accounts",
+      "description": "Fast and secure financial operations for your business.",
+      "details": "Corporate accounts allow you to open special accounts for employees and provide fast and secure transactions."
+    },
+    "employees": {
+      "title": "Employee Services",
+      "description": "Special accounts, cash, and bonus systems for employees.",
+      "details": "Employee services: cash withdrawals, bonus system, and account monitoring."
+    },
+    "financial": {
+      "title": "Financial Analysis & Reports",
+      "description": "Track your company's financial status in real time.",
+      "details": "Financial analysis and reports help you track your company's expenses and income in real time."
+    },
+    "security": {
+      "title": "Security & Guarantee",
+      "description": "Your business data is protected and guaranteed.",
+      "details": "All data in our system is encrypted and security is guaranteed."
+    }
+  },
+  "footer1": {
+    "title": "Why choose us?",
+    "description": "With our corporate services, you can manage your company's finances quickly, safely, and reliably."
+  },
+  "buttons1": {
+    "request": "Send Request",
+    "details": "Details →"
+  },
+  "success": "Request for {{service}} sent successfully!",
+  "hero2": {
+    "title": "Internet & Mobile Banking",
+    "description": "Manage your financial operations quickly, safely, and conveniently."
+  },
+  "services3": {
+    "internetBanking": {
+      "title": "Internet Banking",
+      "description": "Manage your financial operations quickly and securely.",
+      "details": "Through Internet Banking, you can monitor your account anytime and perform payments and transfers."
+    },
+    "mobileBanking": {
+      "title": "Mobile Banking",
+      "description": "All banking services at your fingertips through a mobile app.",
+      "details": "With Mobile Banking, you can quickly access cash, balance, transfers, and all other services."
+    }
+  },
+  "footer2": {
+    "title": "Why choose us?",
+    "description": "With Internet & Mobile Banking services, you always maintain financial control and all operations are secure."
+  },
+  "buttons2": {
+    "request": "Send Request",
+    "details": "Details →"
+  },
+  "success1": "Request for {{service}} sent successfully!"
 }

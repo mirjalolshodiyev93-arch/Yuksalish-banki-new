@@ -1,20 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { UploadCloud } from "lucide-react"; // ✅ Import qilindi
 
 export function Testimonials() {
-  const { t, i18n } = useTranslation(); // ✅ i18n qo'shildi
+  const { t, i18n } = useTranslation();
 
-  // ✅ testimonials state
   const [testimonials, setTestimonials] = useState([]);
 
-  // ✅ i18n arrayini olish
+  // i18n arrayini olish
   useEffect(() => {
-    const data = t("uz1", { returnObjects: true });
-    if (Array.isArray(data)) {
-      setTestimonials(data);
+    try {
+      const data = t("uz1", { returnObjects: true });
+      if (Array.isArray(data)) setTestimonials(data);
+      else setTestimonials([]);
+    } catch {
+      setTestimonials([]);
     }
-  }, [t, i18n.language]); // til o'zgarganda array yangilanadi
+  }, [t, i18n.language]);
 
   const [form, setForm] = useState({
     name: "",
@@ -67,7 +70,7 @@ export function Testimonials() {
   };
 
   return (
-    <section className="bg-gray-50 py-24 px-4 sm:px-10 lg:px-20">
+    <section className="bg-gray-50 max-w-[1400px] mx-auto py-24 px-4 sm:px-10 lg:px-20">
       <motion.div {...fadeIn} className="text-center mb-12">
         <h2 className="text-3xl md:text-5xl font-bold mb-4">{t("uz.title")}</h2>
         <p className="text-gray-600 max-w-xl mx-auto">{t("uz.desc")}</p>
@@ -128,17 +131,42 @@ export function Testimonials() {
           ))}
         </div>
 
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleImageChange}
-          className="p-2 rounded-xl border"
-          disabled={submitted}
-        />
+        {/* ✅ Styled File Input */}
+        <div className="flex flex-col items-center">
+          <label
+            htmlFor="file-upload"
+            className={`flex flex-col items-center justify-center w-full max-w-xs p-6 rounded-2xl
+                        border-2 border-dashed border-green-400 bg-white hover:bg-green-50 transition-all
+                        cursor-pointer text-green-700 ${
+                          submitted ? "opacity-50 cursor-not-allowed" : ""
+                        }`}
+          >
+            <UploadCloud size={36} className="mb-2 text-green-600" />
+            <span className="text-sm font-semibold">
+              {form.imgFile ? form.imgFile.name : t("uz.form.upload")}
+            </span>
+            <input
+              id="file-upload"
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              className="hidden"
+              disabled={submitted}
+            />
+          </label>
+
+          {form.imgPreview && (
+            <img
+              src={form.imgPreview}
+              alt="Preview"
+              className="mt-4 w-32 h-32 object-cover rounded-xl shadow-md"
+            />
+          )}
+        </div>
 
         <button
-          className={`bg-blue-600 text-white px-6 py-3 rounded-xl ${
-            submitted ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-700"
+          className={`bg-green-600 text-white px-6 py-3 rounded-xl ${
+            submitted ? "opacity-50 cursor-not-allowed" : "hover:bg-green-400"
           }`}
           disabled={submitted}
         >

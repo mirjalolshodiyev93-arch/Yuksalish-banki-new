@@ -30,7 +30,7 @@ export const services = (t) => [
     btn: t("ss4.btn"),
     img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa",
     active: true,
-    link:"/omonat"
+    link:"/corporateva"
   }, {
     id: 5,
     title: t("ss5.title"),
@@ -46,7 +46,7 @@ export const services = (t) => [
     btn: t("ss6.btn"),
     img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa",
     active: true,
-    link:"/salom"
+    link:"/BankingServices"
   },
   // ... qolganlari ham xuddi shunday
 ];

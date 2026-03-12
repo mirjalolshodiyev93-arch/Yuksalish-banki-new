@@ -29,7 +29,7 @@ import ErrorBoundary from "./context/ErrorBoundary";
 import AutoKredit from "./components/_compoint_navbar/AutoKredit";
 import Transfer from "./pages/Transfer";
 import AboutUs from "./components/components/AboutUs";
-      import CardSection from "./components/components/CardSection";
+import CardSection from "./components/components/CardSection";
 
 import Contacts from "./components/components/Contactkar";
 import Deposits from "./components/components/Deposits";
@@ -39,6 +39,9 @@ import BusinessKredit from "./components/_compoint_navbar/BusinessKredit";
 import CurrencyExchangePage from "./components/components/CurrencyExchangePage";
 import IstemolKredit from "./components/_compoint_navbar/IstemolKredi";
 import IpotekaKredit from "./components/_compoint_navbar/IpotekaKredit";
+import CorporateServices from "./components/components/CorporateServices";
+import BankingServices from "./context/BankingServices";
+
 
 
 function App() {
@@ -58,15 +61,16 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/hisob-ochish" element={<OpenAccount />} />
-          
+          <Route path="/corporateva" element={<CorporateServices/>} />
+          <Route path="/BankingServices" element={<BankingServices/>} />
           <Route path="/register" element={<Register />} />
-                <Route path="/salom" element={<CurrencyExchangePage />} />
+          <Route path="/salom" element={<CurrencyExchangePage />} />
           <Route path="/salom/usd" element={<USDPage />} />
-           <Route path="/map" element={<CardMap />} />
+          <Route path="/map" element={<CardMap />} />
           <Route path="/salom/eur" element={<EURPage />} />
           <Route path="/salom/gbp" element={<GBPPage />} />
           <Route path="/salom/rub" element={<RUBPage />} />
-           <Route path="/BusinessKredit" element={<BusinessKredit />} />
+          <Route path="/BusinessKredit" element={<BusinessKredit />} />
           <Route path="/contact" element={<Contacts />} />
           <Route path="/kredit" element={<Kredit />} />
           <Route path="/aboutus" element={<AboutUs />} />
@@ -77,8 +81,8 @@ function App() {
           <Route path="/autoKredit" element={<AutoKredit />} />
           <Route path="/IstemolKredit" element={<IstemolKredit />} />
           <Route path="/IpotekaKredit" element={<IpotekaKredit />} />
-        
-          
+
+
 
           {/* Dashboard nested route */}
           <Route path="/dashboard" element={<Dashboard />}>
@@ -95,7 +99,7 @@ function App() {
         </Routes>
 
         {/* ChatBot va Footer faqat 404 bo'lmaganida */}
-     
+
         {!isNotFound && <Footer />}
       </UserProvider>
     </ErrorBoundary>
