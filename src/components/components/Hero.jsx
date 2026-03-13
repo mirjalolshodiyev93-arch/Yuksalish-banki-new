@@ -184,53 +184,56 @@ export default function Hero() {
         </div>
 
         {/* Visual Content (Animated Cards) */}
-        <div className="flex justify-center w-full md:w-1/2 md:justify-end">
-          <div className="relative w-[300px] sm:w-[400px] h-[200px] sm:h-[260px]">
-            
-            {/* Back Card (Glass effect) */}
-            <div className="absolute top-8 left-8 w-full h-full rounded-[2rem] bg-slate-100/50 dark:bg-slate-800/40 backdrop-blur-md border border-white/20 dark:border-slate-700/50 shadow-xl transition-all duration-700 group-hover:translate-x-4 group-hover:-translate-y-4">
-               <div className="flex justify-between p-6 sm:p-8">
-                  <div className="w-8 h-8 rounded-full opacity-50 bg-slate-300 dark:bg-slate-700"></div>
-                  <Chip />
-               </div>
-            </div>
+    <div className="flex justify-center w-full md:w-1/2 md:justify-end">
+          <div className="relative w-[280px] sm:w-[360px] md:w-[420px] h-[180px] sm:h-[220px] md:h-[260px] group">
 
-            {/* Front Card */}
-            <div className="absolute inset-0 w-full h-full rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 hover:scale-[1.02] hover:-rotate-1 border border-white/20 dark:border-slate-700">
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900"></div>
-              {/* Card Pattern Overlay */}
-              <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-              
-              <div className="relative flex flex-col justify-between h-full p-6 text-white sm:p-8">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h2 className="text-xl font-bold tracking-tight">Yuksalish</h2>
-                    <p className="text-[10px] uppercase tracking-[0.2em] opacity-60">Digital Priority</p>
-                  </div>
-                  <Chip />
-                </div>
+            {/* Back Card (Glassmorphism effect for dark mode) */}
+            <div className="absolute top-4 sm:top-6 left-4 sm:left-6 w-[240px] sm:w-[320px] md:w-[380px] h-[160px] sm:h-[200px] md:h-[220px] rounded-2xl overflow-hidden shadow-xl transition-all duration-500 group-hover:rotate-3 border border-white/20 dark:border-gray-800">
+              <div
+                className="absolute inset-0 bg-center bg-cover"
+                style={{
+                  backgroundImage:
+                    "url('https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1200')",
+                }}
+              />
+              <div className="absolute inset-0 bg-white/40 dark:bg-black/40 backdrop-blur-[2px]"></div>
+              <div className="relative flex items-start justify-between h-full p-4 sm:p-6">
+                <h2 className="text-sm font-semibold text-gray-800 dark:text-gray-200 sm:text-lg">
+                  Yuksalish Bank
+                </h2>
+                <Chip />
+              </div>
+            </div>
 
-                <div className="space-y-4">
-                  <p className="text-lg sm:text-2xl font-mono tracking-[0.15em] text-slate-200">
-                    4400 •••• •••• 8844
-                  </p>
-                  <div className="flex items-end justify-between">
-                    <div>
-                      <p className="text-[8px] uppercase opacity-50 mb-1">Card Holder</p>
-                      <p className="text-sm font-medium tracking-wide">PREMIUM CLIENT</p>
-                    </div>
-                    <div className="flex -space-x-3">
-                      <div className="w-8 h-8 rounded-full bg-red-500/80"></div>
-                      <div className="w-8 h-8 rounded-full bg-yellow-500/80"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Front Card */}
+            <div className="absolute w-[240px] sm:w-[320px] md:w-[380px] h-[160px] sm:h-[200px] md:h-[220px] rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 group-hover:-rotate-3 shadow-2xl border border-white/10 dark:border-gray-700">
+              <img
+                src="/card.png"
+                alt="Card background"
+                className="absolute inset-0 object-cover w-full h-full"
+              />
+              <div className="absolute inset-0 bg-black/40 dark:bg-black/60"></div>
 
-          </div>
-        </div>
+              <div className="relative flex flex-col justify-between h-full p-4 text-white sm:p-6">
+                <div className="flex items-start justify-between">
+                  <h2 className="text-lg font-semibold tracking-wide sm:text-xl">
+                    Yuksalish Bank
+                  </h2>
+                  <Chip />
+                </div>
 
+                <div>
+                  <p className="text-xs tracking-wider uppercase sm:text-sm opacity-80">
+                    Card Holder
+                  </p>
+                  <p className="font-mono text-sm tracking-widest sm:text-lg">
+                    0000 0000 0000 0000
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
