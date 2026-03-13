@@ -761,5 +761,29 @@
     "request": "So‘rov yuborish",
     "details": "Batafsil →"
   },
-  "success1": "{{service}} uchun so‘rov muvaffaqiyatli yuborildi!"
+  "success1": "{{service}} uchun so‘rov muvaffaqiyatli yuborildi!",
+  "salom1":{
+    "fullName": "To'liq ismingiz",
+    "region": "Viloyat",
+    "city": "Shahar",
+    "email": "Email",
+    "phone": "Telefon",
+    "message": "Xabar matni",
+    "agree": "Shartlarni qabul qilaman",
+    "send": "Yuborish",
+    "errors": {
+      "fullNameWords": "Iltimos, ismingizni kiriting",
+      "fullNameFormat": "Iltimos, to'liq ismingizni kiriting (familiya va ism)",
+      "email": "Iltimos, to'g'ri email manzilingizni kiriting",
+      "phone": "Iltimos, to'g'ri telefon raqamingizni kiriting (+998 XX XXX-XX-XX)",
+      "message": "Xabaringiz kamida 10 ta belgidan iborat bo'lishi kerak",
+      "region": "Iltimos, viloyatni tanlang",
+      "city": "Iltimos, shaharni kiriting",
+      "agree": "Iltimos, shartlarni qabul qiling"
+    },
+    "alerts": {
+      "success": "Sizning murojaatingiz muvaffaqiyatli yuborildi!",
+      "error": "Xatolik yuz berdi, iltimos qayta urinib ko'ring"
+    }
+  }
 }

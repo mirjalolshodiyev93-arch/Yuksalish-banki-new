@@ -779,5 +779,29 @@
     "request": "Send Request",
     "details": "Details →"
   },
-  "success1": "Request for {{service}} sent successfully!"
+  "success1": "Request for {{service}} sent successfully!",
+  "salom1": {
+    "fullName": "Full Name",
+    "region": "Region",
+    "city": "City",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "agree": "I agree to the terms",
+    "send": "Send",
+    "errors": {
+      "fullNameWords": "Please enter your name",
+      "fullNameFormat": "Please enter your full name (first and last name)",
+      "email": "Please enter a valid email address",
+      "phone": "Please enter a valid phone number (+998 XX XXX-XX-XX)",
+      "message": "Message must be at least 10 characters",
+      "region": "Please select a region",
+      "city": "Please enter a city",
+      "agree": "Please accept the terms"
+    },
+    "alerts": {
+      "success": "Your message has been sent successfully!",
+      "error": "An error occurred, please try again"
+    }
+  }
 }
