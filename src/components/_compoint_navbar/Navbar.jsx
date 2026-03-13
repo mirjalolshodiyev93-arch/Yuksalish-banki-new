@@ -38,107 +38,97 @@ export default function Navbar() {
 
   return (
     <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-          ? "h-[75px] bg-white/70 backdrop-blur-xl shadow-xl border-b border-white/20"
-          : "h-[100px] bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-600"
-          }`}
+  <nav
+  className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+    ? "h-[75px] bg-white/80 backdrop-blur-xl shadow-2xl border-b border-gray-200"
+    : "h-[100px] bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-600 shadow-lg"
+  } rounded-b-2xl`}
+>
+  <div className="max-w-[1400px] mx-auto px-4 sm:px-8 h-full flex justify-between items-center">
+    <Link to="/">
+      <div
+        className={`transition-all duration-500 flex items-center justify-center overflow-hidden ${scrolled
+          ? "bg-white p-2 rounded-xl shadow-md"
+          : "bg-transparent"
+        }`}
+        style={{
+          width: scrolled ? "150px" : "140px",
+          height: scrolled ? "60px" : "100px"
+        }}
       >
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-8 h-full flex justify-between items-center">
+        <img
+          src={logo}
+          alt="Logo"
+          className={`w-full h-[110px] object-cover object-center transition-all duration-500 ${scrolled
+            ? "drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]"
+            : "drop-shadow-none"
+          }`}
+        />
+      </div>
+    </Link>
 
+    <div className={`hidden md:flex gap-8 items-center font-medium uppercase text-[11px] tracking-[2px] ${scrolled ? "text-gray-700" : "text-white"}`}>
+      {visibleItems.map((item) => (
+        <Link
+          key={item}
+          to={item === "home" ? "/" : `/${item}`}
+          className="relative px-3 py-1 transition-all duration-300 group rounded-xl hover:bg-white/20 hover:backdrop-blur-md hover:shadow-lg"
+        >
+          {t(`navbar.${item}`)}
+          <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-emerald-400 transition-all duration-300 group-hover:w-full"></span>
+        </Link>
+      ))}
 
-      
-          <Link to="/">
-            <div
-              className={`transition-all duration-500 flex items-center justify-center overflow-hidden ${scrolled
-                  ? "bg-transparent p-2"
-                  : "bg-transparent"
-                }`}
-              style={{
-                width: scrolled ? "150px" : "140px",
-                height: scrolled ? "60px" : "100px"
-              }}
-            >
-              <img
-                src={logo}
-                alt="Logo"
-                className={`w-full h-[110px] object-cover object-center transition-all duration-500 ${scrolled
-                    ? "drop-shadow-[0_1px_1px_rgba(0,0,0,0.86)]" // 
-                    : "drop-shadow-none"
-                  }`}
-              />
-            </div>
-          </Link>
+      {hiddenItems.length > 0 && (
+        <div className="relative">
+          <button
+            onClick={() => setMoreOpen(!moreOpen)}
+            className="flex items-center gap-1 px-3 py-1 transition-all rounded-xl hover:bg-white/20 hover:backdrop-blur-md hover:shadow-lg"
+          >
+            {t("navbar.more") || "More"} ▾
+          </button>
 
-          <div className={`hidden md:flex gap-8 items-center font-medium uppercase text-[11px] tracking-[2px] ${scrolled ? "text-gray-700" : "text-white"
-            }`}>
-            {visibleItems.map((item) => (
-              <Link
-                key={item}
-                to={item === "home" ? "/" : `/${item}`}
-                className="relative group transition-all duration-300"
-              >
-                {t(`navbar.${item}`)}
-                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-emerald-400 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            ))}
-
-       
-            {hiddenItems.length > 0 && (
-              <div className="relative">
-                <button
-                  onClick={() => setMoreOpen(!moreOpen)}
-                  className="flex items-center gap-1"
+          {moreOpen && (
+            <div className="absolute top-full right-0 mt-3 bg-white/80 backdrop-blur-xl shadow-2xl rounded-2xl py-3 w-[200px] border border-gray-200">
+              {hiddenItems.map((item) => (
+                <Link
+                  key={item}
+                  to={`/${item}`}
+                  className="block px-5 py-2 transition-colors rounded-lg colopx-5 hover:bg-emerald-100 text-emerald-600"
+                  onClick={() => setMoreOpen(false)}
                 >
-                  {t("navbar.more") || "More"} ▾
-                </button>
-
-                {moreOpen && (
-                  <div className="absolute top-full right-0 mt-3 bg-lime-400 backdrop-blur-xl shadow-2xl rounded-xl py-3 w-[190px] border border-white/30">
-                    {hiddenItems.map((item) => (
-                      <Link
-                        key={item}
-                        to={`/${item}`}
-                        className="block px-4 py-2 hover:bg-green-500 transition-colors"
-                        onClick={() => setMoreOpen(false)}
-                      >
-                        {t(`navbar.${item}`)}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-
-    
-          <div className="flex items-center gap-4">
-            <Link to="/register" className="hidden sm:block">
-              <button
-                className={`transition-all duration-500 rounded-xl font-semibold shadow-lg ${scrolled
-                  ? "px-5 py-2 text-sm bg-gradient-to-r from-emerald-500 to-green-600 text-white hover:scale-105"
-                  : "px-6 py-2.5 text-sm bg-white text-emerald-600 hover:bg-emerald-50"
-                  }`}
-              >
-                {t("navbar.login")}
-              </button>
-            </Link>
-
-            <div className={`hidden md:block scale-90 ${scrolled ? "" : "text-white"
-              }`}>
-              <LanguageDetector />
+                  {t(`navbar.${item}`)}
+                </Link>
+              ))}
             </div>
-
-            <button
-              onClick={() => setMenuOpen(true)}
-              className={`md:hidden p-2 text-2xl ${scrolled ? "text-emerald-700" : "text-white"
-                }`}
-            >
-              ☰
-            </button>
-          </div>
+          )}
         </div>
-      </nav>
+      )}
+    </div>
+
+    <div className="flex items-center gap-4">
+      <Link to="/register" className="hidden sm:block">
+        <button className={`transition-all duration-500 rounded-xl font-semibold shadow-lg ${scrolled
+          ? "px-5 py-2 text-sm bg-gradient-to-r from-emerald-500 to-green-600 text-white hover:scale-105"
+          : "px-6 py-2.5 text-sm bg-white text-emerald-600 hover:bg-emerald-50"
+        }`}>
+          {t("navbar.login")}
+        </button>
+      </Link>
+
+      <div className={`hidden md:block scale-90 ${scrolled ? "" : "text-white"}`}>
+        <LanguageDetector />
+      </div>
+
+      <button
+        onClick={() => setMenuOpen(true)}
+        className={`md:hidden p-2 text-2xl ${scrolled ? "text-emerald-700" : "text-white"}`}
+      >
+        ☰
+      </button>
+    </div>
+  </div>
+</nav>
 
 
       <div
@@ -151,13 +141,13 @@ export default function Navbar() {
             }`}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="flex justify-between items-center mb-10">
-            <h2 className="text-emerald-600 font-bold tracking-widest uppercase">
+          <div className="flex items-center justify-between mb-10">
+            <h2 className="font-bold tracking-widest uppercase text-emerald-600">
               Menu
             </h2>
             <button
               onClick={() => setMenuOpen(false)}
-              className="text-gray-700 text-3xl"
+              className="text-3xl text-gray-700"
             >
               &times;
             </button>
@@ -169,22 +159,22 @@ export default function Navbar() {
                 key={item}
                 to={item === "home" ? "/" : `/${item}`}
                 onClick={() => setMenuOpen(false)}
-                className="text-gray-700 text-lg font-medium hover:text-emerald-600 transition-colors uppercase tracking-widest"
+                className="text-lg font-medium tracking-widest text-gray-700 uppercase transition-colors hover:text-emerald-600"
               >
                 {t(`navbar.${item}`)}
               </Link>
             ))}
 
-            <hr className="border-gray-200 my-2" />
+            <hr className="my-2 border-gray-200" />
 
             <div className="flex flex-col gap-4">
               <div className="flex items-center justify-between">
-                <span className="text-gray-500 text-sm">Til</span>
+                <span className="text-sm text-gray-500">Til</span>
                 <LanguageDetector />
               </div>
 
               <Link to="/register" onClick={() => setMenuOpen(false)}>
-                <button className="w-full py-3 bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-xl font-bold shadow-lg hover:scale-105 transition-transform">
+                <button className="w-full py-3 font-bold text-white transition-transform shadow-lg bg-gradient-to-r from-emerald-500 to-green-600 rounded-xl hover:scale-105">
                   {t("navbar.login")}
                 </button>
               </Link>
