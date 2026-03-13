@@ -19,8 +19,7 @@ export default function Home() {
       <ServiceCard />
       <Testimonials/>
       <Hero1/>
-      <SignIn/>
-      <SignUp/>
+      
     </>
   );
 }

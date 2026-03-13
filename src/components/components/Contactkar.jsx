@@ -5,19 +5,16 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 export default function Contacts() {
   const { t } = useTranslation();
 
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: ""
   });
 
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,104 +30,104 @@ export default function Contacts() {
   };
 
   return (
-    <div className="pt-[100px] sm:pt-[140px] bg-green-50 min-h-screen py-12 px-4 sm:px-6 lg:px-16">
+    <div className="pt-[100px] sm:pt-[140px] bg-green-50 dark:bg-slate-950 min-h-screen py-12 px-4 sm:px-6 lg:px-16 transition-colors duration-500">
       <div className="max-w-6xl mx-auto">
       
-        <div className="text-center mb-10 sm:mb-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900">
+        <div className="mb-10 text-center sm:mb-16">
+          <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl md:text-5xl">
             {t("contacts.title")}
           </h1>
           <div className="w-20 h-1.5 bg-green-600 mx-auto mt-4 rounded-full"></div>
-          <p className="text-gray-600 mt-4 text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="max-w-2xl mx-auto mt-4 text-base text-gray-600 dark:text-slate-400 sm:text-lg">
             {t("contacts.subtitle")}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div className="grid items-start grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
           
-      
-          <div className="bg-green-50 p-6 sm:p-10 rounded-3xl shadow-sm border border-green-100 space-y-8">
+          {/* Kontakt Ma'lumotlari Kartasi */}
+          <div className="p-6 space-y-8 transition-colors border border-green-100 shadow-sm dark:border-slate-800 bg-green-50 dark:bg-slate-900 sm:p-10 rounded-3xl">
             <div className="flex items-start gap-4">
-              <div className="p-3 bg-green-100 rounded-xl">
-                <Phone className="text-green-600 w-6 h-6" />
+              <div className="p-3 bg-green-100 dark:bg-slate-800 rounded-xl">
+                <Phone className="w-6 h-6 text-green-600 dark:text-green-500" />
               </div>
               <div>
-                <h3 className="font-bold text-lg text-gray-800">{t("contacts.phone")}</h3>
-                <p className="text-gray-600 mt-1 text-base">+998 71 123 45 67</p>
+                <h3 className="text-lg font-bold text-gray-800 dark:text-slate-200">{t("contacts.phone")}</h3>
+                <p className="mt-1 text-base text-gray-600 dark:text-slate-400">+998 71 123 45 67</p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="p-3 bg-green-100 rounded-xl">
-                <Mail className="text-green-600 w-6 h-6" />
+              <div className="p-3 bg-green-100 dark:bg-slate-800 rounded-xl">
+                <Mail className="w-6 h-6 text-green-600 dark:text-green-500" />
               </div>
               <div>
-                <h3 className="font-bold text-lg text-gray-800">{t("contacts.email")}</h3>
-                <p className="text-gray-600 mt-1 text-base">info@bank.uz</p>
+                <h3 className="text-lg font-bold text-gray-800 dark:text-slate-200">{t("contacts.email")}</h3>
+                <p className="mt-1 text-base text-gray-600 dark:text-slate-400">info@bank.uz</p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="p-3 bg-green-100 rounded-xl">
-                <MapPin className="text-green-600 w-6 h-6" />
+              <div className="p-3 bg-green-100 dark:bg-slate-800 rounded-xl">
+                <MapPin className="w-6 h-6 text-green-600 dark:text-green-500" />
               </div>
               <div>
-                <h3 className="font-bold text-lg text-gray-800">{t("contacts.address")}</h3>
-                <p className="text-gray-600 mt-1 text-base">{t("contacts.address_text")}</p>
+                <h3 className="text-lg font-bold text-gray-800 dark:text-slate-200">{t("contacts.address")}</h3>
+                <p className="mt-1 text-base text-gray-600 dark:text-slate-400">{t("contacts.address_text")}</p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="p-3 bg-green-100 rounded-xl">
-                <Clock className="text-green-600 w-6 h-6" />
+              <div className="p-3 bg-green-100 dark:bg-slate-800 rounded-xl">
+                <Clock className="w-6 h-6 text-green-600 dark:text-green-500" />
               </div>
               <div>
-                <h3 className="font-bold text-lg text-gray-800">{t("contacts.work_hours")}</h3>
-                <p className="text-gray-600 mt-1 text-base">{t("contacts.work_hours_text")}</p>
+                <h3 className="text-lg font-bold text-gray-800 dark:text-slate-200">{t("contacts.work_hours")}</h3>
+                <p className="mt-1 text-base text-gray-600 dark:text-slate-400">{t("contacts.work_hours_text")}</p>
               </div>
             </div>
           </div>
 
-       
-          <div className="bg-white p-6 sm:p-10 rounded-3xl shadow-2xl border border-green-50">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800">{t("contacts.form_title")}</h2>
+          {/* Aloqa Formasi */}
+          <div className="p-6 transition-colors bg-white border shadow-2xl dark:bg-slate-900 border-green-50 dark:border-slate-800 dark:shadow-none sm:p-10 rounded-3xl">
+            <h2 className="mb-6 text-2xl font-bold text-gray-800 dark:text-white">{t("contacts.form_title")}</h2>
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">{t("contacts.name_label")}</label>
+                <label className="block mb-1 text-sm font-medium text-gray-700 dark:text-slate-300">{t("contacts.name_label")}</label>
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   placeholder={t("contacts.name_placeholder")}
-                  className="w-full p-3 bg-green-50 border border-green-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:bg-white outline-none transition-all"
+                  className="w-full p-3 transition-all border border-green-200 outline-none dark:border-slate-700 bg-green-50 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-2 focus:ring-green-500 focus:bg-white dark:focus:bg-slate-900"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">{t("contacts.email_label")}</label>
+                <label className="block mb-1 text-sm font-medium text-gray-700 dark:text-slate-300">{t("contacts.email_label")}</label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder={t("contacts.email_placeholder")}
-                  className="w-full p-3 bg-green-50 border border-green-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:bg-white outline-none transition-all"
+                  className="w-full p-3 transition-all border border-green-200 outline-none dark:border-slate-700 bg-green-50 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-2 focus:ring-green-500 focus:bg-white dark:focus:bg-slate-900"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">{t("contacts.message_label")}</label>
+                <label className="block mb-1 text-sm font-medium text-gray-700 dark:text-slate-300">{t("contacts.message_label")}</label>
                 <textarea
                   rows="4"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   placeholder={t("contacts.message_placeholder")}
-                  className="w-full p-3 bg-green-50 border border-green-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:bg-white outline-none transition-all"
+                  className="w-full p-3 transition-all border border-green-200 outline-none dark:border-slate-700 bg-green-50 dark:bg-slate-800 dark:text-white rounded-xl focus:ring-2 focus:ring-green-500 focus:bg-white dark:focus:bg-slate-900"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-green-600 text-white py-4 rounded-xl font-bold hover:bg-green-700 active:scale-[0.98] transition-all shadow-lg shadow-green-200"
+                className="w-full bg-green-600 dark:bg-green-700 text-white py-4 rounded-xl font-bold hover:bg-green-700 dark:hover:bg-green-600 active:scale-[0.98] transition-all shadow-lg shadow-green-200 dark:shadow-none"
               >
                 {t("contacts.send_btn")}
               </button>

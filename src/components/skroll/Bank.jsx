@@ -27,32 +27,31 @@ export default function BankTimeline() {
   }, [timelineData]);
 
   return (
-    <section className="py-24 bg-green-50 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-24">
-          <span className="text-green-600 font-bold tracking-widest uppercase text-sm italic">
+    <section className="py-24 overflow-hidden transition-colors duration-500 bg-green-50 dark:bg-slate-950">
+      <div className="max-w-6xl px-6 mx-auto">
+        <div className="mb-24 text-center">
+          <span className="text-sm italic font-bold tracking-widest text-green-600 uppercase dark:text-green-400">
             {t("timeline.badge", "Tarixiy yo'l")}
           </span>
 
-          <h2 className="text-4xl md:text-6xl font-black text-slate-900 mt-2 mb-6 tracking-tight">
+          <h2 className="mt-2 mb-6 text-4xl font-black tracking-tight md:text-6xl text-slate-900 dark:text-white">
             {t("timeline.title_part1", "Muvaffaqiyat ")}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500 dark:from-green-400 dark:to-emerald-300">
               {t("timeline.title_brand", "Banki")}
             </span>
             {t("timeline.title_part2", " sari")}
           </h2>
 
           <div className="flex justify-center gap-1">
-            <div className="w-12 h-1 bg-green-600 rounded-full"></div>
-            <div className="w-4 h-1 bg-green-300 rounded-full"></div>
+            <div className="w-12 h-1 bg-green-600 rounded-full dark:bg-green-500"></div>
+            <div className="w-4 h-1 bg-green-300 rounded-full dark:bg-green-800"></div>
           </div>
         </div>
 
         <div className="relative">
-
-        
-          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-green-200">
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-green-600 via-emerald-400 to-green-800 animate-pulse origin-top"></div>
+          {/* Markaziy chiziq */}
+          <div className="absolute w-1 h-full transform bg-green-200 left-4 md:left-1/2 md:-translate-x-1/2 dark:bg-slate-800">
+            <div className="absolute top-0 left-0 w-full h-full origin-top bg-gradient-to-b from-green-600 via-emerald-400 to-green-800 animate-pulse"></div>
           </div>
 
           {Array.isArray(timelineData) && timelineData.map((item, index) => (
@@ -60,13 +59,12 @@ export default function BankTimeline() {
               key={index}
               className={`relative flex items-center justify-between mb-20 w-full ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}
             >
+              <div className="hidden w-5/12 md:block"></div>
 
-              <div className="hidden md:block w-5/12"></div>
-
-       
-              <div className="z-20 absolute left-4 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center">
-                <div className="w-10 h-10 bg-white border-4 border-green-600 rounded-xl rotate-45 flex items-center justify-center shadow-lg">
-                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+              {/* Romb belgisi */}
+              <div className="absolute z-20 flex items-center justify-center transform -translate-x-1/2 left-4 md:left-1/2">
+                <div className="flex items-center justify-center w-10 h-10 rotate-45 bg-white border-4 border-green-600 shadow-lg dark:bg-slate-900 dark:border-green-500 rounded-xl">
+                  <div className="w-2 h-2 bg-green-600 rounded-full dark:bg-green-400"></div>
                 </div>
               </div>
 
@@ -75,22 +73,21 @@ export default function BankTimeline() {
                   index % 2 === 0 ? 'md:translate-x-10' : 'md:-translate-x-10'
                 }`}
               >
-
                 <div
                   className={`
-                  group relative p-8 rounded-[2rem] transition-all duration-500 hover:-translate-y-2
-                  ${
-                    index % 2 === 0
-                      ? 'bg-green-50 shadow-xl hover:shadow-green-200'
-                      : 'bg-green-700 text-white shadow-2xl'
-                  }
-                `}
+                    group relative p-8 rounded-[2rem] transition-all duration-500 hover:-translate-y-2
+                    ${
+                      index % 2 === 0
+                        ? 'bg-white dark:bg-slate-900 shadow-xl hover:shadow-green-200 dark:hover:shadow-green-900/20'
+                        : 'bg-green-700 dark:bg-green-800 text-white shadow-2xl shadow-green-200/50 dark:shadow-none'
+                    }
+                  `}
                 >
-
+                  {/* Orqa fondagi yil (shaffof) */}
                   <div
                     className={`text-5xl font-black absolute -top-10 ${
                       index % 2 === 0 ? 'left-4' : 'right-4'
-                    } opacity-10 italic`}
+                    } opacity-10 dark:opacity-20 italic dark:text-green-400`}
                   >
                     {item.year}
                   </div>
@@ -99,7 +96,7 @@ export default function BankTimeline() {
                     <span
                       className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-xs ${
                         index % 2 === 0
-                          ? 'bg-green-100 text-green-700'
+                          ? 'bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-400'
                           : 'bg-green-500 text-white'
                       }`}
                     >
@@ -108,7 +105,7 @@ export default function BankTimeline() {
 
                     <h3
                       className={`text-2xl font-extrabold tracking-tight ${
-                        index % 2 === 0 ? 'text-green-900' : 'text-white'
+                        index % 2 === 0 ? 'text-green-900 dark:text-white' : 'text-white'
                       }`}
                     >
                       {item.title}
@@ -117,17 +114,16 @@ export default function BankTimeline() {
 
                   <p
                     className={`text-base leading-relaxed ${
-                      index % 2 === 0 ? 'text-green-800' : 'text-green-100'
+                      index % 2 === 0 ? 'text-green-800 dark:text-slate-300' : 'text-green-500 dark:text-green-100'
                     }`}
                   >
                     {item.desc}
                   </p>
 
-                  <div className="mt-6 flex items-center gap-2">
+                  <div className="flex items-center gap-2 mt-6">
                     <div className="h-[2px] w-8 bg-green-500 rounded-full"></div>
                     <div className="w-1.5 h-1.5 bg-green-500 rounded-full opacity-50"></div>
                   </div>
-
                 </div>
               </div>
             </div>

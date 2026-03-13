@@ -8,14 +8,18 @@ export default function Stats() {
   const navigate = useNavigate(); 
 
   return (
-    <div className="max-w-[1400px] mx-auto bg-slate-300 py-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div className="max-w-[1400px] mx-auto bg-slate-300 dark:bg-slate-900 py-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center transition-colors duration-300">
       {stats.map((stat) => (
         <div
           key={stat.label}    
-          className="p-6 rounded-2xl hover:shadow-lg transition cursor-pointer"
+          className="p-6 transition cursor-pointer rounded-2xl hover:shadow-lg dark:hover:bg-slate-800 group"
         >
-          <h3 className="text-3xl font-bold text-green-600">{stat.value}</h3>
-          <p className="text-gray-600 mt-2">{stat.label}</p>
+          <h3 className="text-3xl font-bold text-green-600 dark:text-green-400">
+            {stat.value}
+          </h3>
+          <p className="mt-2 font-medium text-gray-600 dark:text-gray-400">
+            {stat.label}
+          </p>
         </div>
       ))}
     </div>
