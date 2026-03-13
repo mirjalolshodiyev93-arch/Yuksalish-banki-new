@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react"; // useState va useEffect qo'shildi
 import Navbar from "./components/_compoint_navbar/Navbar";
 import Footer from "./components/Footer";
 
@@ -7,10 +8,7 @@ import Services from "./pages/Services";
 import Register from "./pages/Register";
 
 import Kredit from "./components/_compoint_/Kredit";
-
-
 import { UserProvider } from "./context/UserContext";
-
 import Deposits1 from "./components/_compoint_/OmonatOchish";
 
 import USDPage from "./components/404/USDPage";
@@ -41,61 +39,74 @@ import IpotekaKredit from "./components/_compoint_navbar/IpotekaKredit";
 import CorporateServices from "./components/components/CorporateServices";
 import BankingServices from "./context/BankingServices";
 
-
-
 function App() {
   const location = useLocation();
 
+  // --- DARK MODE LOGIKASI BOSHLANDI ---
+  const [darkMode, setDarkMode] = useState(() => {
+    // Sahifa yangilanganda tanlangan rejimni eslab qolish
+    return localStorage.getItem("theme") === "dark";
+  });
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
+  // --- DARK MODE LOGIKASI TUGADI ---
 
   const isNotFound = location.pathname === "/404";
 
   return (
     <ErrorBoundary>
       <UserProvider>
-      
-        {!isNotFound && <Navbar />}
+        {/* Navbar-ga darkMode va setDarkMode uzatildi */}
+        {!isNotFound && <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />}
 
-        <Routes>
-      
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/hisob-ochish" element={<OpenAccount />} />
-          <Route path="/corporateva" element={<CorporateServices/>} />
-          <Route path="/BankingServices" element={<BankingServices/>} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/salom" element={<CurrencyExchangePage />} />
-          <Route path="/salom/usd" element={<USDPage />} />
-          <Route path="/map" element={<CardMap />} />
-          <Route path="/salom/eur" element={<EURPage />} />
-          <Route path="/salom/gbp" element={<GBPPage />} />
-          <Route path="/salom/rub" element={<RUBPage />} />
-          <Route path="/BusinessKredit" element={<BusinessKredit />} />
-          <Route path="/contact" element={<Contacts />} />
-          <Route path="/kredit" element={<Kredit />} />
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/card" element={<CardSection />} />
-          <Route path="/omonat" element={<Deposits />} />
-          <Route path="/transfer" element={<Transfer />} />
-          <Route path="/omonat/deposits" element={<Deposits1 />} />
-          <Route path="/autoKredit" element={<AutoKredit />} />
-          <Route path="/IstemolKredit" element={<IstemolKredit />} />
-          <Route path="/IpotekaKredit" element={<IpotekaKredit />} />
+        {/* Butun sayt fonini dark mode-ga moslash uchun o'rovchi div (ixtiyoriy) */}
+        <div className="min-h-screen transition-colors duration-300 bg-white dark:bg-gray-900 dark:text-white">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/hisob-ochish" element={<OpenAccount />} />
+            <Route path="/corporateva" element={<CorporateServices />} />
+            <Route path="/BankingServices" element={<BankingServices />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/salom" element={<CurrencyExchangePage />} />
+            <Route path="/salom/usd" element={<USDPage />} />
+            <Route path="/map" element={<CardMap />} />
+            <Route path="/salom/eur" element={<EURPage />} />
+            <Route path="/salom/gbp" element={<GBPPage />} />
+            <Route path="/salom/rub" element={<RUBPage />} />
+            <Route path="/BusinessKredit" element={<BusinessKredit />} />
+            <Route path="/contact" element={<Contacts />} />
+            <Route path="/kredit" element={<Kredit />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/card" element={<CardSection />} />
+            <Route path="/omonat" element={<Deposits />} />
+            <Route path="/transfer" element={<Transfer />} />
+            <Route path="/omonat/deposits" element={<Deposits1 />} />
+            <Route path="/autoKredit" element={<AutoKredit />} />
+            <Route path="/IstemolKredit" element={<IstemolKredit />} />
+            <Route path="/IpotekaKredit" element={<IpotekaKredit />} />
 
+            <Route path="/dashboard" element={<Dashboard />}>
+              <Route index element={<Navigate to="profile" replace />} />
+              <Route path="profile" element={<Profile />} />
+              <Route path="settings" element={<Settings />} />
+              <Route path="transactions" element={<Transactions />} />
+              <Route path="srm" element={<Srm />} />
+            </Route>
 
-
-    
-          <Route path="/dashboard" element={<Dashboard />}>
-            <Route index element={<Navigate to="profile" replace />} /> 
-            <Route path="profile" element={<Profile />} />
-            <Route path="settings" element={<Settings />} />
-            <Route path="transactions" element={<Transactions />} />
-            <Route path="srm" element={<Srm />} />
-          </Route>
-
-          {/* 404 */}
-          <Route path="/404" element={<NotFound />} />
-          <Route path="*" element={<Navigate to="/404" replace />} />
-        </Routes>
+            {/* 404 */}
+            <Route path="/404" element={<NotFound />} />
+            <Route path="*" element={<Navigate to="/404" replace />} />
+          </Routes>
+        </div>
 
         {!isNotFound && <Footer />}
       </UserProvider>
