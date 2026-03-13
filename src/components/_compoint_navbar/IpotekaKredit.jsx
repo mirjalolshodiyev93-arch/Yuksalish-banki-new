@@ -67,7 +67,7 @@ export default function IpotekaKredit() {
       <ToastContainer transition={Slide} />
 
       <div className="max-w-[1240px] mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="flex flex-col items-center justify-between gap-12 md:flex-row">
           
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -79,19 +79,19 @@ export default function IpotekaKredit() {
               {t("ipoteka.badge")}
             </span>
 
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 leading-tight">
+            <h1 className="mb-6 text-4xl font-extrabold leading-tight md:text-6xl text-slate-900">
               <Trans i18nKey="ipoteka.title">
-                Orzuyingizdagi <span className="text-green-600">uyga ega bo‘ling</span>
+                <span className="text-green-600">uyga ega bo‘ling</span>
               </Trans>
             </h1>
 
-            <p className="text-gray-600 mb-8 text-lg md:text-xl leading-relaxed max-w-lg">
+            <p className="max-w-lg mb-8 text-lg leading-relaxed text-gray-600 md:text-xl">
               {t("ipoteka.description")}
             </p>
 
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-green-600 text-white px-10 py-4 rounded-2xl hover:bg-green-700 font-bold transition-all shadow-lg shadow-green-200 active:scale-95"
+              className="px-10 py-4 font-bold text-white transition-all bg-green-600 shadow-lg rounded-2xl hover:bg-green-700 shadow-green-200 active:scale-95"
             >
               {t("ipoteka.button")}
             </button>
@@ -101,9 +101,9 @@ export default function IpotekaKredit() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="flex-1 relative"
+            className="relative flex-1"
           >
-            <div className="absolute -z-10 w-72 h-72 bg-green-200 rounded-full blur-3xl opacity-30 -top-10 -right-10"></div>
+            <div className="absolute bg-green-200 rounded-full -z-10 w-72 h-72 blur-3xl opacity-30 -top-10 -right-10"></div>
             <img src={ipotekaImg} alt="Ipoteka" className="rounded-[40px] w-full max-h-[550px] object-cover shadow-2xl border-8 border-white" />
           </motion.div>
         </div>
@@ -119,24 +119,24 @@ export default function IpotekaKredit() {
               initial={{ scale: 0.9, y: 20 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.9, y: 20 }}
               className="bg-white p-8 rounded-[32px] w-full max-w-md relative shadow-2xl"
             >
-              <button className="absolute top-5 right-5 text-gray-400 hover:text-gray-600" onClick={() => setIsModalOpen(false)}>✕</button>
+              <button className="absolute text-gray-400 top-5 right-5 hover:text-gray-600" onClick={() => setIsModalOpen(false)}>✕</button>
 
               {!isSuccess ? (
                 <>
-                  <h2 className="text-3xl font-bold text-center mb-6">{t("ipoteka.modal_title")}</h2>
+                  <h2 className="mb-6 text-3xl font-bold text-center">{t("ipoteka.modal_title")}</h2>
                   <input
                     type="text"
                     placeholder={t("ipoteka.placeholder_name")}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full p-4 mb-4 border rounded-2xl outline-none focus:ring-2 focus:ring-green-500"
+                    className="w-full p-4 mb-4 border outline-none rounded-2xl focus:ring-2 focus:ring-green-500"
                   />
                   <input
                     type="text"
                     placeholder="+998 90 123-45-67"
                     value={phone}
                     onChange={handlePhoneChange}
-                    className="w-full p-4 mb-6 border rounded-2xl outline-none focus:ring-2 focus:ring-green-500"
+                    className="w-full p-4 mb-6 border outline-none rounded-2xl focus:ring-2 focus:ring-green-500"
                   />
                   <button
                     disabled={loading}
@@ -147,8 +147,8 @@ export default function IpotekaKredit() {
                   </button>
                 </>
               ) : (
-                <div className="text-center py-10">
-                  <h3 className="text-2xl font-bold mb-2 text-green-600">{t("ipoteka.success_title")}</h3>
+                <div className="py-10 text-center">
+                  <h3 className="mb-2 text-2xl font-bold text-green-600">{t("ipoteka.success_title")}</h3>
                   <p>{t("ipoteka.success_desc")}</p>
                 </div>
               )}

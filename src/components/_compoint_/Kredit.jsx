@@ -30,7 +30,7 @@ export default function Kredit() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false); 
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   const handleSubmitModal = () => {
     setIsSuccess(true);
@@ -38,11 +38,6 @@ export default function Kredit() {
       setIsModalOpen(false);
       setIsSuccess(false);
     }, 3000);
-  };
-
-  const capitalizeName = (str) => {
-    if (!str) return "";
-    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
   };
 
   const oylikTolov = () => {
@@ -55,7 +50,7 @@ export default function Kredit() {
   const handlePhoneChange = (e) => {
     let val = e.target.value.replace(/\D/g, "");
     if (val.startsWith("998")) val = val.slice(3);
-    if (val.length > 9) val = val.slice(0, 9); 
+    if (val.length > 9) val = val.slice(0, 9);
     let formatted = "+998";
     if (val.length > 0) formatted += " " + val.slice(0, 2);
     if (val.length >= 3) formatted += "-" + val.slice(2, 5);
@@ -64,34 +59,14 @@ export default function Kredit() {
     setPhone(formatted);
   };
 
-  
-  const handleSummaChange = (e) => {
-    let val = e.target.value.toString().replace(/\D/g, "");
-    if (val.length > 10) val = val.slice(0, 10);
-    setSumma(Number(val));
-  };
-  const handleMuddatChange = (e) => {
-    let val = e.target.value.toString().replace(/\D/g, "");
-    if (val.length > 10) val = val.slice(0, 10);
-    setMuddat(Number(val));
-  };
-  const handleFoizChange = (e) => {
-    let val = e.target.value.toString().replace(/\D/g, "");
-    if (val.length > 10) val = val.slice(0, 10);
-    setFoiz(Number(val));
-  };
-
   const sendToTelegram = async () => {
-    if (isFormSubmitted) return
-
-    const formattedName = capitalizeName(name.trim());
-    const digits = phone.replace(/\D/g, "").slice(3);
-    if (formattedName.length < 2 || digits.length !== 9 || !type) {
-      toast.error("Barcha maydonni toldiring", { autoClose: 3000 });
+    if (isFormSubmitted) return;
+    if (name.length < 2 || phone.length < 13 || !type) {
+      toast.error("Barcha maydonlarni to'ldiring", { autoClose: 3000 });
       return;
     }
 
-    const message = `📩 ${t("kredit.form_title")} 👤 ${t("kredit.placeholder_name")}: ${formattedName} 📞 ${t("kredit.placeholder_phone")}: ${phone} 💳 ${t("kredit.select_type")}: ${type} 💰 Summa: ${summa.toLocaleString()} UZS`;
+    const message = `📩 KREDIT ARIZA\n👤 Ism: ${name}\n📞 Tel: ${phone}\n💳 Tur: ${type}\n💰 Summa: ${summa.toLocaleString()} UZS`;
 
     try {
       await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
@@ -100,84 +75,83 @@ export default function Kredit() {
         body: JSON.stringify({ chat_id: CHAT_ID, text: message }),
       });
       toast.success("✅ Ariza muvaffaqiyatli yuborildi!", { autoClose: 3000 });
-      setIsFormSubmitted(true); 
+      setIsFormSubmitted(true);
       setName("");
       setPhone("");
       setType("");
     } catch (err) {
-      toast.error(" Xabar yuborilmadi, iltimos qayta urinib ko‘ring!", { autoClose: 3000 });
+      toast.error("Xatolik yuz berdi!", { autoClose: 3000 });
     }
   };
 
   return (
-    <div className="bg-white pt-[100px] text-gray-800">
+    <div className="min-h-screen font-sans bg-white selection:bg-emerald-100 selection:text-emerald-900">
       <ToastContainer position="top-right" />
 
-      
-      <section className="max-w-[1400px] mx-auto px-4 md:px-6 py-12 md:py-20 grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <h1 className="text-3xl md:text-5xl font-bold mb-6">{t("kredit.hero_title")}</h1>
-          <p className="text-gray-600 mb-6 text-lg">{t("kredit.hero_subtitle")}</p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button
-              className="bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 font-bold shadow-lg shadow-green-100 transition-all"
-              onClick={() => setIsModalOpen(true)}
-            >
-              {t("kredit.btn_get")}
-            </button>
-            <button
-              className="border border-green-600 text-green-600 px-6 py-3 rounded-xl font-bold hover:bg-green-50 transition-all"
-              onClick={() => kalkulyatorRef.current?.scrollIntoView({ behavior: "smooth" })}
-            >
-              {t("kredit.btn_calc")}
-            </button>
+      {/* HERO SECTION */}
+      <section className="relative px-6 pt-32 pb-20 overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-emerald-50/50 -z-10 rounded-l-[100px] hidden lg:block"></div>
+        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-8">
+            <h1 className="text-5xl md:text-7xl font-black text-slate-800 leading-[1.1]">
+              {t("kredit.hero_title")} <br/>
+    
+            </h1>
+            <p className="max-w-lg text-xl font-medium leading-relaxed text-slate-500">
+              {t("kredit.hero_subtitle")}
+            </p>
+            <div className="flex flex-wrap gap-5">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="px-10 py-5 font-bold text-white transition-all shadow-xl bg-emerald-600 rounded-2xl hover:bg-emerald-700 shadow-emerald-200 hover:-translate-y-1 active:scale-95"
+              >
+                {t("kredit.btn_get")}
+              </button>
+              <button
+                onClick={() => kalkulyatorRef.current?.scrollIntoView({ behavior: "smooth" })}
+                className="px-10 py-5 font-bold transition-all bg-white border-2 border-emerald-600 text-emerald-600 rounded-2xl hover:bg-emerald-50 active:scale-95"
+              >
+                {t("kredit.btn_calc")}
+              </button>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="absolute -inset-4 bg-emerald-100 rounded-[3rem] blur-2xl opacity-30 animate-pulse"></div>
+            <img
+              src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c"
+              alt="kredit"
+              className="relative rounded-[3rem] w-full h-[400px] md:h-[550px] object-cover shadow-2xl shadow-emerald-900/10"
+            />
           </div>
         </div>
-        <img
-          src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c"
-          alt="kredit"
-          className="rounded-3xl w-full h-[300px] md:h-[450px] object-cover shadow-lg"
-        />
       </section>
 
- 
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white p-8 rounded-2xl w-full max-w-md relative">
-            <button className="absolute top-4 right-4 text-gray-400 hover:text-gray-600" onClick={() => setIsModalOpen(false)}>✖</button>
-            {!isSuccess ? (
-              <>
-                <h2 className="text-xl font-bold mb-4 text-green-700">{t("kredit.form_title")}</h2>
-                <p className="mb-6 text-gray-600">Siz kredit olish bo‘yicha ariza qoldirishingiz mumkin.</p>
-                <button className="bg-green-600 text-white w-full py-3 rounded-xl hover:bg-green-700 transition font-bold" onClick={handleSubmitModal}>
-                  Ariza yuborish
-                </button>
-              </>
-            ) : (
-              <div className="bg-green-50 border border-green-200 p-6 rounded-xl text-center">
-                <h3 className="text-green-800 font-bold text-lg mb-2">✅ Ariza muvaffaqiyatli yuborildi!</h3>
-                <p className="text-green-700">Biz siz bilan tez orada bog‘lanamiz.</p>
-              </div>
-            )}
-          </div>
+      {/* CREDIT TYPES */}
+      <section className="max-w-[1400px] mx-auto px-6 py-24">
+        <div className="mb-16 space-y-4 text-center">
+          <h2 className="text-3xl font-black md:text-5xl text-slate-800">{t("kredit.types_title")}</h2>
+          <div className="w-24 h-2 mx-auto rounded-full bg-emerald-500"></div>
         </div>
-      )}
-
-  
-      <section className="max-w-[1400px] mx-auto px-4 md:px-6 py-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-900">{t("kredit.types_title")}</h2>
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {kreditTurlari.map((item) => (
-            <Link to={item.link} key={item.id} className="block">
-              <div className="bg-gray-50 p-6 rounded-2xl hover:shadow-xl transition border border-gray-100 group">
-                <h3 className="text-xl font-bold mb-4 text-green-600">{item.title}</h3>
-                <div className="space-y-2 text-sm">
-                  <p className="text-gray-600"><strong>{t("kredit.rate_label")}:</strong> {item.rate}</p>
-                  <p className="text-gray-600"><strong>{t("kredit.max_label")}:</strong> {item.max}</p>
-                  <p className="text-gray-600"><strong>{t("kredit.term_label")}:</strong> {item.term}</p>
+            <Link to={item.link} key={item.id} className="group">
+              <div className="h-full bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-emerald-100/50 transition-all duration-500">
+                <div className="flex items-center justify-center mb-6 transition-colors w-14 h-14 bg-emerald-50 rounded-2xl group-hover:bg-emerald-600">
+                  <svg className="w-8 h-8 text-emerald-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 </div>
-                <button className="mt-6 bg-white border border-green-600 text-green-600 group-hover:bg-green-600 group-hover:text-white px-4 py-2 rounded-lg w-full transition font-semibold">
-                  {t("kredit.btn_more")}
+                <h3 className="mb-6 text-2xl font-bold text-slate-800">{item.title}</h3>
+                <div className="mb-8 space-y-4">
+                  <div className="flex justify-between font-medium text-slate-500">
+                    <span>Stavka:</span>
+                    <span className="font-bold text-emerald-600">{item.rate}</span>
+                  </div>
+                  <div className="flex justify-between font-medium text-slate-500">
+                    <span>Maksimal:</span>
+                    <span className="font-bold text-slate-800">{item.max}</span>
+                  </div>
+                </div>
+                <button className="w-full py-4 font-bold transition-all bg-slate-50 text-slate-600 rounded-xl group-hover:bg-emerald-600 group-hover:text-white">
+                  Batafsil
                 </button>
               </div>
             </Link>
@@ -185,116 +159,131 @@ export default function Kredit() {
         </div>
       </section>
 
-     <div className="max-w-[1400px] mx-auto px-4 py-16 flex flex-col-reverse lg:flex-row items-center gap-12">
-        <section ref={kalkulyatorRef} className="w-full lg:w-1/2">
-          <h2 className="text-2xl md:text-3xl font-bold mb-10 text-green-700 text-center lg:text-left">
-            {t("kredit.calc_title")}
-          </h2>
-          <div className="bg-green-50 p-6 md:p-10 rounded-3xl space-y-6 shadow-xl border border-green-100">
-            <div>
-              <label className="block text-sm font-semibold mb-2 text-green-900">{t("kredit.placeholder_sum")}</label>
-              <input type="number" value={summa} onChange={handleSummaChange} className="w-full p-3 rounded-xl border-green-200 focus:ring-2 focus:ring-green-500 outline-none bg-white" />
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-green-900">{t("kredit.placeholder_term")}</label>
-                <input type="number" value={muddat} onChange={handleMuddatChange} className="w-full p-3 rounded-xl border-green-200 focus:ring-2 focus:ring-green-500 outline-none bg-white" />
+      
+      <section ref={kalkulyatorRef} className="px-6 py-24 bg-slate-50">
+        <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-20 items-center">
+          <div className="w-full space-y-10 lg:w-1/2">
+            <h2 className="text-4xl font-black text-slate-800">{t("kredit.calc_title")}</h2>
+            <div className="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-white">
+              <div className="space-y-8">
+                <div>
+                  <label className="block mb-4 text-xs font-bold tracking-widest uppercase text-slate-400">Kredit Summasi (UZS)</label>
+                  <input 
+                    type="number" 
+                    value={summa} 
+                    onChange={(e) => setSumma(Number(e.target.value))} 
+                    className="w-full p-4 text-2xl font-black transition border-none outline-none rounded-2xl bg-slate-50 focus:ring-2 focus:ring-emerald-500"
+                  />
+                </div>
+                <div className="grid grid-cols-2 gap-6">
+                  <div>
+                    <label className="block mb-4 text-xs font-bold tracking-widest uppercase text-slate-400">Muddat (oy)</label>
+                    <input type="number" value={muddat} onChange={(e) => setMuddat(Number(e.target.value))} className="w-full p-4 text-xl font-bold outline-none rounded-2xl bg-slate-50 focus:ring-2 focus:ring-emerald-500" />
+                  </div>
+                  <div>
+                    <label className="block mb-4 text-xs font-bold tracking-widest uppercase text-slate-400">Stavka (%)</label>
+                    <input type="number" value={foiz} onChange={(e) => setFoiz(Number(e.target.value))} className="w-full p-4 text-xl font-bold outline-none rounded-2xl bg-slate-50 focus:ring-2 focus:ring-emerald-500" />
+                  </div>
+                </div>
+                <div className="pt-8 border-t border-slate-100">
+                  <p className="mb-2 text-sm font-bold text-slate-400">Oylik to'lov:</p>
+                  <div className="text-4xl font-black text-emerald-600">
+                    {oylikTolov()} <span className="text-lg">UZS</span>
+                  </div>
+                </div>
               </div>
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-green-900">{t("kredit.placeholder_percent")}</label>
-                <input type="number" value={foiz} onChange={handleFoizChange} className="w-full p-3 rounded-xl border-green-200 focus:ring-2 focus:ring-green-500 outline-none bg-white" />
-              </div>
-            </div>
-            <div className="text-2xl font-extrabold text-center text-green-700 bg-white p-5 rounded-2xl shadow-sm border border-green-100">
-              {t("kredit.monthly_payment")}:
-              <span className="ml-2">{oylikTolov()} {t("kredit.currency")}</span>
             </div>
           </div>
-        </section>
-        <div className="w-full lg:w-1/2 flex justify-center">
-          <img src={kridit} alt="Kredit" className="w-full max-w-[450px] rounded-3xl shadow-2xl h-auto lg:h-[600px] object-cover" />
-        </div>
-      </div>
-
-    
-      <div className="max-w-[1400px] mx-auto px-4 py-12 flex flex-col lg:flex-row items-center gap-10 mb-20">
-        <div className="w-full lg:w-1/2 flex justify-center">
-          <img src={ariza} alt="Ariza" className="w-full h-auto max-w-[500px] rounded-2xl shadow-xl lg:h-[600px] object-cover" />
-        </div>
- 
-<section className="w-full lg:w-1/2">
-  <div className="bg-white p-8 md:p-10 rounded-3xl space-y-6 shadow-2xl border border-gray-50">
-    <h2 className="text-2xl font-bold text-center text-green-700">{t("kredit.form_title")}</h2>
-
-    <input
-      type="text"
-      placeholder={t("kredit.placeholder_name")}
-      value={name}
-      onChange={(e) => setName(e.target.value)}
-      className="w-full p-4 rounded-xl border bg-gray-50 focus:bg-white focus:ring-2 focus:ring-green-500 transition outline-none"
-      disabled={isFormSubmitted}
-    />
-
-    <input
-      type="text"
-      placeholder="+998 99-999-99-99"
-      value={phone}
-      onChange={handlePhoneChange}
-      className="w-full p-4 rounded-xl border bg-gray-50 focus:bg-white focus:ring-2 focus:ring-green-500 transition outline-none"
-      disabled={isFormSubmitted}
-    />
-
-    <input
-      type="number"
-      placeholder="Summa (maks 100 000 000 UZS)"
-      value={summa}
-      onChange={(e) => {
-        let val = e.target.value.toString().replace(/\D/g, "");
-        if (val.length > 10) val = val.slice(0, 10);
-        let num = Number(val);
-        if (num > 100_000_000) num = 100_000_000;
-        setSumma(num);
-      }}
-      className="w-full p-4 rounded-xl border bg-gray-50 focus:bg-white focus:ring-2 focus:ring-green-500 transition outline-none"
-      disabled={isFormSubmitted}
-    />
-
-    <select
-      value={type}
-      onChange={(e) => setType(e.target.value)}
-      className="w-full p-4 rounded-xl border bg-gray-50 focus:bg-white focus:ring-2 focus:ring-green-500 transition outline-none"
-      disabled={isFormSubmitted}
-    >
-      <option value="">{t("kredit.select_type")}</option>
-      {kreditTurlari.map((item) => (
-        <option key={item.id} value={item.title}>{item.title}</option>
-      ))}
-    </select>
-
-
-    {type && (
-      <div className="bg-green-50 border border-green-200 p-4 rounded-xl mt-4 shadow-sm">
-        {kreditTurlari.filter(k => k.title === type).map((k) => (
-          <div key={k.id} className="space-y-2">
-            <h3 className="text-lg font-bold text-green-700">{k.title}</h3>
-            <p className="text-gray-700"><strong>Foiz:</strong> {k.rate}</p>
-            <p className="text-gray-700"><strong>Maks summa:</strong> {k.max}</p>
-            <p className="text-gray-700"><strong>Muddat:</strong> {k.term}</p>
+          <div className="relative w-full lg:w-1/2">
+             <img src={kridit} alt="Kredit" className="w-full rounded-[3rem] shadow-2xl h-[500px] lg:h-[650px] object-cover" />
+             <div className="absolute hidden p-8 bg-white shadow-2xl -bottom-10 -left-10 rounded-3xl md:block">
+                <p className="text-3xl font-black text-emerald-600">24/7</p>
+                <p className="text-xs font-bold tracking-widest uppercase text-slate-500">Online Ariza</p>
+             </div>
           </div>
-        ))}
-      </div>
-    )}
+        </div>
+      </section>
 
-    <button
-      onClick={sendToTelegram}
-      className={`bg-green-600 text-white w-full py-4 rounded-xl font-bold hover:bg-green-700 shadow-lg shadow-green-100 active:scale-95 transition-all ${isFormSubmitted ? "opacity-50 cursor-not-allowed" : ""}`}
-      disabled={isFormSubmitted}
-    >
-      {t("kredit.btn_send")}
-    </button>
-  </div>
-</section>
-      </div>
+      {/* APPLICATION FORM SECTION */}
+      <section className="py-24 px-6 max-w-[1400px] mx-auto">
+        <div className="flex flex-col items-center gap-16 lg:flex-row">
+          <div className="w-full lg:w-1/2">
+            <img src={ariza} alt="Ariza" className="w-full rounded-[3rem] shadow-2xl h-[500px] object-cover" />
+          </div>
+          <div className="w-full lg:w-1/2">
+            <div className="bg-white p-10 md:p-14 rounded-[3.5rem] shadow-2xl border border-slate-50">
+              <h2 className="mb-4 text-3xl font-black text-slate-800">{t("kredit.form_title")}</h2>
+              <p className="mb-10 font-medium text-slate-400">Ma'lumotlaringizni qoldiring, biz sizga qo'ng'iroq qilamiz.</p>
+              
+              <div className="space-y-6">
+                <input
+                  type="text"
+                  placeholder={t("kredit.placeholder_name")}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full p-5 font-bold transition border-none outline-none rounded-2xl bg-slate-50 focus:ring-2 focus:ring-emerald-500"
+                  disabled={isFormSubmitted}
+                />
+                <input
+                  type="text"
+                  placeholder="+998 90 123 45 67"
+                  value={phone}
+                  onChange={handlePhoneChange}
+                  className="w-full p-5 font-bold transition border-none outline-none rounded-2xl bg-slate-50 focus:ring-2 focus:ring-emerald-500"
+                  disabled={isFormSubmitted}
+                />
+                <select
+                  value={type}
+                  onChange={(e) => setType(e.target.value)}
+                  className="w-full p-5 font-bold transition border-none outline-none appearance-none rounded-2xl bg-slate-50 focus:ring-2 focus:ring-emerald-500"
+                  disabled={isFormSubmitted}
+                >
+                  <option value="">{t("kredit.select_type")}</option>
+                  {kreditTurlari.map((item) => (
+                    <option key={item.id} value={item.title}>{item.title}</option>
+                  ))}
+                </select>
+
+                <button
+                  onClick={sendToTelegram}
+                  className={`w-full py-6 rounded-2xl font-black text-lg transition-all shadow-xl ${isFormSubmitted ? "bg-slate-200 text-slate-400 cursor-not-allowed" : "bg-emerald-600 text-white hover:bg-emerald-700 shadow-emerald-200 active:scale-95 hover:-translate-y-1"}`}
+                  disabled={isFormSubmitted}
+                >
+                  {isFormSubmitted ? "Yuborildi" : t("kredit.btn_send")}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MODAL */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-[100] p-4">
+          <div className="bg-white p-10 rounded-[3rem] w-full max-w-md relative shadow-2xl">
+            <button className="absolute transition-colors top-6 right-6 text-slate-300 hover:text-slate-600" onClick={() => setIsModalOpen(false)}>
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            {!isSuccess ? (
+              <div className="space-y-6">
+                <h2 className="text-3xl font-black leading-tight text-slate-800">Tezkor Ariza</h2>
+                <p className="font-medium text-slate-500">Shaxsiy menejer bilan bog'lanish uchun tugmani bosing.</p>
+                <button className="w-full py-5 text-lg font-black text-white transition shadow-xl bg-emerald-600 rounded-2xl hover:bg-emerald-700 shadow-emerald-100" onClick={handleSubmitModal}>
+                  Bog'lanish
+                </button>
+              </div>
+            ) : (
+              <div className="py-6 space-y-4 text-center">
+                <div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 rounded-full bg-emerald-100 text-emerald-600">
+                  <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <h3 className="text-2xl font-black text-slate-800">Muvaffaqiyatli!</h3>
+                <p className="font-medium text-slate-500">Siz bilan tez orada bog'lanamiz.</p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

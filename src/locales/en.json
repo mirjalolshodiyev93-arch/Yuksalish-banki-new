@@ -803,5 +803,61 @@
       "success": "Your message has been sent successfully!",
       "error": "An error occurred, please try again"
     }
-  }
+  },
+  "deposit": {
+    "title": "Open Deposit",
+    "back": "Go back",
+    "selected": "Selected type:",
+    "notSelected": "Not selected",
+    "fullname": "Full name",
+    "fullnamePlaceholder": "Example: Azizbek Ahmedov",
+    "phone": "Phone number",
+    "amount": "Estimated investment amount (UZS)",
+    "info": "ℹ️ After submitting the application, our specialist will contact you to finalize the agreement.",
+    "submit": "Submit application",
+    "success": "Your application has been received! Our operators will contact you soon."
+  },
+  "deposits": {
+      "title": "Deposits",
+      "subtitle": "Grow your funds reliably and with high returns. Plan your future with us today.",
+      "typesTitle": "Deposit Types",
+      "calculatorTitle": "Calculate Your Earnings",
+      "investmentAmount": "Investment Amount:",
+      "annualProfit": "Annual Net Profit (25%):",
+      "totalReturn": "Total Return:",
+      "ctaTitle": "Have questions? Contact a specialist",
+      "ctaButton": "Contact",
+      "depositButton": "Open Deposit"
+    },
+    "depositTypes": {
+      "onlineDeposit": {
+        "title": "Online Deposit",
+        "rate": "22%",
+        "term": "12 months",
+        "minAmount": "500,000 UZS",
+        "partialWithdrawal": "Partial Withdrawal"
+      },
+      "maxProfit": {
+        "title": "Maximum Profit",
+        "rate": "25%",
+        "term": "24 months",
+        "minAmount": "1,000,000 UZS",
+        "partialWithdrawal": "Partial Withdrawal"
+      },
+      "flexSavings": {
+        "title": "Flexible Savings",
+        "rate": "18%",
+        "term": "6 months",
+        "minAmount": "100,000 UZS",
+        "partialWithdrawal": "Partial Withdrawal"
+      }
+    },
+    "rangePlaceholder": "1,000,000 UZS",
+    "errors": {
+      "fillAllFields": "Please fill in all fields!"
+    },
+    "success3": {
+      "depositOpened": "Deposit opened successfully!"
+    }
+  
 }

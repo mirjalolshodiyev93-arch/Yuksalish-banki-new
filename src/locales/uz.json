@@ -785,5 +785,63 @@
       "success": "Sizning murojaatingiz muvaffaqiyatli yuborildi!",
       "error": "Xatolik yuz berdi, iltimos qayta urinib ko'ring"
     }
+  },
+  "deposit": {
+    "title": "Omonat ochish",
+    "back": "Orqaga qaytish",
+    "selected": "Tanlangan tur:",
+    "notSelected": "Tanlanmagan",
+    "fullname": "To'liq ism-sharifingiz",
+    "fullnamePlaceholder": "Masalan: Azizbek Ahmedov",
+    "phone": "Telefon raqamingiz",
+    "amount": "Taxminiy sarmoya miqdori (so'm)",
+    "info": "ℹ️ Arizani yuborganingizdan so'ng, mutaxassisimiz shartnomani rasmiylashtirish uchun siz bilan bog'lanadi.",
+    "submit": "Arizani yuborish",
+    "success": "Arizangiz qabul qilindi! Tez orada operatorlarimiz bog'lanishadi."
+  },
+
+
+  
+  "deposits": {
+    "title": "Omonatlar (Depozitlar)",
+    "subtitle": "Mablag‘laringizni ishonchli va yuqori daromad bilan ko‘paytiring. Biz bilan kelajagingizni bugundan rejalashtiring.",
+    "typesTitle": "Omonat turlari",
+    "calculatorTitle": "Daromadingizni hisoblang",
+    "investmentAmount": "Sarmoya miqdori:",
+    "annualProfit": "Yillik sof foyda (25%):",
+    "totalReturn": "Jami qaytariladi:",
+    "ctaTitle": "Savollaringiz bormi? Mutaxassis bilan bog'laning",
+    "ctaButton": "Bog'lanish",
+    "depositButton": "Omonat ochish"
+  },
+  "depositTypes": {
+    "onlineDeposit": {
+      "title": "Onlayn Omonat",
+      "rate": "22%",
+      "term": "12 oy",
+      "minAmount": "500 000 so'm",
+      "partialWithdrawal": "Qisman yechish"
+    },
+    "maxProfit": {
+      "title": "Maksimal Daromad",
+      "rate": "25%",
+      "term": "24 oy",
+      "minAmount": "1 000 000 so'm",
+      "partialWithdrawal": "Qisman yechish"
+    },
+    "flexSavings": {
+      "title": "Erkin Jamg'arma",
+      "rate": "18%",
+      "term": "6 oy",
+      "minAmount": "100 000 so'm",
+      "partialWithdrawal": "Qisman yechish"
+    }
+  },
+  "rangePlaceholder": "1 000 000 so'm",
+  "errors": {
+    "fillAllFields": "Iltimos barcha maydonlarni to'ldiring!"
+  },
+  "success3": {
+    "depositOpened": "Omonat muvaffaqiyatli ochildi!"
   }
 }

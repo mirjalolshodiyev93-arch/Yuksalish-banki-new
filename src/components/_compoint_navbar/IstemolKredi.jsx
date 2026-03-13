@@ -68,7 +68,7 @@ export default function IstemolKredit() {
       <ToastContainer transition={Slide} />
 
       <div className="max-w-[1240px] mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="flex flex-col items-center justify-between gap-12 md:flex-row">
           
        
           <motion.div 
@@ -80,18 +80,18 @@ export default function IstemolKredit() {
             <span className="inline-block px-4 py-1.5 mb-4 text-sm font-semibold tracking-wider text-blue-700 uppercase bg-blue-100 rounded-full">
               {t("consumer.badge")}
             </span>
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 leading-tight">
+            <h1 className="mb-6 text-4xl font-extrabold leading-tight md:text-6xl text-slate-900">
               <Trans i18nKey="consumer.title">
-                Orzularingizni <span className="text-blue-600">ro‘yobga chiqaring</span> oson kredit bilan!
+                <span className="text-blue-600"></span> 
               </Trans>
             </h1>
-            <p className="text-gray-600 mb-8 text-lg md:text-xl leading-relaxed max-w-lg">
+            <p className="max-w-lg mb-8 text-lg leading-relaxed text-gray-600 md:text-xl">
               {t("consumer.description")}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <div className="flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="bg-blue-600 text-white px-10 py-4 rounded-2xl hover:bg-blue-700 font-bold transition-all shadow-lg shadow-blue-200 active:scale-95"
+                className="px-10 py-4 font-bold text-white transition-all bg-blue-600 shadow-lg rounded-2xl hover:bg-blue-700 shadow-blue-200 active:scale-95"
               >
                 {t("consumer.button")}
               </button>
@@ -103,9 +103,9 @@ export default function IstemolKredit() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex-1 relative"
+            className="relative flex-1"
           >
-            <div className="absolute -z-10 w-72 h-72 bg-blue-200 rounded-full blur-3xl opacity-30 -top-10 -right-10"></div>
+            <div className="absolute bg-blue-200 rounded-full -z-10 w-72 h-72 blur-3xl opacity-30 -top-10 -right-10"></div>
             <img src={consumerImg} alt="Istemol" className="rounded-[40px] w-full max-h-[550px] object-cover shadow-2xl border-8 border-white" />
           </motion.div>
         </div>
@@ -122,36 +122,36 @@ export default function IstemolKredit() {
               initial={{ scale: 0.9, y: 20 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.9, y: 20 }}
               className="bg-white p-8 rounded-[32px] w-full max-w-md relative shadow-2xl"
             >
-              <button className="absolute top-5 right-5 text-gray-400 hover:text-gray-600 transition" onClick={() => setIsModalOpen(false)}>
+              <button className="absolute text-gray-400 transition top-5 right-5 hover:text-gray-600" onClick={() => setIsModalOpen(false)}>
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
               </button>
 
               {!isSuccess ? (
                 <>
                   <div className="mb-8 text-center">
-                    <h2 className="text-3xl font-bold text-slate-800 mb-2">{t("consumer.modal_title")}</h2>
+                    <h2 className="mb-2 text-3xl font-bold text-slate-800">{t("consumer.modal_title")}</h2>
                     <p className="text-slate-500">{t("consumer.modal_desc")}</p>
                   </div>
                   
                   <div className="space-y-4">
                     <div>
-                      <label className="text-sm font-semibold text-slate-700 ml-1 mb-1 block">{t("consumer.label_name")}</label>
+                      <label className="block mb-1 ml-1 text-sm font-semibold text-slate-700">{t("consumer.label_name")}</label>
                       <input
                         type="text"
                         placeholder={t("consumer.placeholder_name")}
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none transition"
+                        className="w-full p-4 transition border outline-none bg-slate-50 border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500"
                       />
                     </div>
                     <div>
-                      <label className="text-sm font-semibold text-slate-700 ml-1 mb-1 block">{t("consumer.label_phone")}</label>
+                      <label className="block mb-1 ml-1 text-sm font-semibold text-slate-700">{t("consumer.label_phone")}</label>
                       <input
                         type="text"
                         placeholder="+998 90 123-45-67"
                         value={phone}
                         onChange={handlePhoneChange}
-                        className="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none transition"
+                        className="w-full p-4 transition border outline-none bg-slate-50 border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500"
                       />
                     </div>
                     <button
@@ -165,10 +165,10 @@ export default function IstemolKredit() {
                 </>
               ) : (
                 <motion.div initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} className="py-10 text-center">
-                  <div className="w-20 h-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 text-blue-600 bg-blue-100 rounded-full">
                     <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-800 mb-2">{t("consumer.success_title")}</h3>
+                  <h3 className="mb-2 text-2xl font-bold text-slate-800">{t("consumer.success_title")}</h3>
                   <p className="text-slate-600">{t("consumer.success_desc")}</p>
                 </motion.div>
               )}
