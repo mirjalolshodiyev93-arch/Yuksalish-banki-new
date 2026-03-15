@@ -68,7 +68,8 @@ export function Testimonials() {
   };
 
   return (
-    <section className="bg-gray-50 dark:bg-slate-950 max-w-[1400px] mx-auto py-24 px-4 sm:px-10 lg:px-20 transition-colors duration-500">
+   <div className="w-ful dark:bg-slate-950">
+     <section className=" dark:bg-slate-950 max-w-[1400px] mx-auto py-24 px-4 sm:px-10 lg:px-20 transition-colors duration-500">
       <motion.div {...fadeIn} className="mb-12 text-center">
         <h2 className="mb-4 text-3xl font-bold md:text-5xl dark:text-white">
           {t("uz.title")}
@@ -210,5 +211,6 @@ export function Testimonials() {
         ))}
       </div>
     </section>
+   </div>
   );
 }

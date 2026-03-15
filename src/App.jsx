@@ -38,6 +38,7 @@ import IstemolKredit from "./components/_compoint_navbar/IstemolKredi";
 import IpotekaKredit from "./components/_compoint_navbar/IpotekaKredit";
 import CorporateServices from "./components/components/CorporateServices";
 import BankingServices from "./context/BankingServices";
+import { div } from "framer-motion/client";
 
 function App() {
   const location = useLocation();
@@ -62,12 +63,13 @@ function App() {
   const isNotFound = location.pathname === "/404";
 
   return (
-    <ErrorBoundary>
+    <div className="bg-blackomonat">
+      <ErrorBoundary>
       <UserProvider>
-        {/* Navbar-ga darkMode va setDarkMode uzatildi */}
+        
         {!isNotFound && <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />}
 
-        {/* Butun sayt fonini dark mode-ga moslash uchun o'rovchi div (ixtiyoriy) */}
+       
         <div className="min-h-screen transition-colors duration-300 bg-white dark:bg-gray-900 dark:text-white">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -111,6 +113,7 @@ function App() {
         {!isNotFound && <Footer />}
       </UserProvider>
     </ErrorBoundary>
+    </div>
   );
 }
 

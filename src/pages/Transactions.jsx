@@ -1,15 +1,42 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { transactions } from "../data/transactions";
+import { Sun, Moon } from "lucide-react"; // Ikonkalar uchun
 
 export default function Transactions() {
   const { t } = useTranslation();
+  
+  // Dark mode holatini tekshirish va saqlash
+  const [darkMode, setDarkMode] = useState(
+    localStorage.getItem("theme") === "dark" || 
+    (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+  );
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
 
   return (
-    <div className="max-w-6xl p-4 mx-auto transition-colors duration-500">
-      <h1 className="mb-8 text-3xl font-bold text-slate-800 dark:text-white">
-        {t("transactions.title")}
-      </h1>
+    <div className="max-w-6xl p-4 mx-auto transition-colors duration-500 min-h-screen">
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-3xl font-bold text-slate-800 dark:text-white">
+          {t("transactions.title")}
+        </h1>
+        
+        {/* Dark Mode Toggle Button */}
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className="p-3 rounded-2xl bg-gray-100 dark:bg-slate-800 text-slate-600 dark:text-yellow-400 transition-all hover:scale-110"
+        >
+          {darkMode ? <Sun size={24} /> : <Moon size={24} />}
+        </button>
+      </div>
 
       <div className="bg-white dark:bg-slate-900 rounded-[2rem] shadow-sm border border-gray-100 dark:border-slate-800 overflow-hidden transition-colors duration-500">
         <div className="overflow-x-auto">

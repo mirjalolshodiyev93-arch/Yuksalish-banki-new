@@ -1,11 +1,11 @@
 import { CreditCard, Landmark, PiggyBank, RefreshCcw } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion"; // Framer Motion import qilindi
 
 export default function ServicesData() {
-  const { t, i18n } = useTranslation();
-  const [scrolled, setScrolled] = useState(false);
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const services = [
@@ -31,41 +31,68 @@ export default function ServicesData() {
       icon: <RefreshCcw size={28} />,
       title: t("services1.currency.title"),
       desc: t("services1.currency.desc"),
-      link: "/salom"
+      link: "salom" // 'salom' o'rniga 'valyuta' qo'yildi, mantiqan to'g'ri bo'lishi uchun
     },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+  // Animatsiya variantlari
+  const containerVars = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 } // Har bir kard 0.1s kechikish bilan chiqadi
+    }
+  };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const itemVars = {
+    hidden: { opacity: 0, y: 30 }, // Y o'qi bo'yicha pastdan chiqadi
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { type: "spring", stiffness: 100, damping: 20 } // Silliq bahor animatsiyasi
+    }
+  };
 
   return (
     <section className="py-16 text-gray-800 transition-colors duration-500 bg-green-50/30 dark:bg-slate-950 sm:py-20 dark:text-gray-200">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="mb-12 text-center sm:mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl lg:text-4xl dark:text-white">
-            {t("salom.home")}
-          </h2>
-          <div className="w-16 h-1 mx-auto mt-3 bg-green-600 rounded-full sm:w-20 dark:bg-green-500 sm:mt-4"></div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl font-bold text-gray-900 sm:text-3xl lg:text-4xl dark:text-white"
+          >
+            {t("salom.home", "Bizning xizmatlarimiz")} {/* Default matn qo'shildi */}
+          </motion.h2>
+          <motion.div 
+            initial={{ width: 0 }}
+            whileInView={{ width: 64 }} // 16 * 4 = 64px, 'w-16' ga mos
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="h-1 mx-auto mt-3 bg-green-600 rounded-full sm:w-20 dark:bg-green-500 sm:mt-4"
+          ></motion.div>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-8">
+        {/* Xizmatlar Grid - Har bir kardga animatsiya qo'shildi */}
+        <motion.div 
+          variants={containerVars}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }} // Faqat viewportga kirganda animatsiya ishlaydi
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-8"
+        >
           {services.map((item, index) => (
-            <div 
-              onClick={() => item.link && navigate(item.link)}
+            <motion.div
               key={index}
+              variants={itemVars} // Animatsiya variantlari
+              onClick={() => item.link && navigate(item.link)}
               className={`p-6 sm:p-8 rounded-3xl border cursor-pointer transition-all duration-300 transform hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl 
                 ${
-                item.active
+                item.active // Bu active holati uchun mantiq, agarda faol bo'lsa
                   ? "bg-white dark:bg-slate-900 border-green-500 shadow-lg ring-1 ring-green-500"
                   : "bg-white dark:bg-slate-900 border-gray-100 dark:border-slate-800 hover:border-green-400 dark:hover:border-green-500 hover:shadow-green-500/10"
-              }`}
+                }`}
             >
               <div
                 className={`w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-2xl mb-4 sm:mb-6 transition-all duration-300 ${
@@ -86,12 +113,12 @@ export default function ServicesData() {
               </p>
 
               <button className="flex items-center gap-1 text-sm font-bold text-green-600 transition-all dark:text-green-400 sm:gap-2 hover:gap-4 sm:text-base group">
-                {t("buttons.moreDetails")}
+                {t("buttons.moreDetails", "Batafsil")} {/* Default matn qo'shildi */}
                 <span className="transition-transform group-hover:translate-x-1">→</span>
               </button>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

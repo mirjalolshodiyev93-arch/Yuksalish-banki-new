@@ -42,17 +42,47 @@
     "experience": "Years Experience",
     "service": "Service"
   },
-  "hero": {
-    "badle": "No.1 digital bank in Uzbekistan",
-    "desc": "Build your financial future confidently with Lodo Bank.",
-    "title": "Trust, Security,",
-    "subtitle": "Growth",
-    "button": "Services",
-    "button1": "More Details",
-    "hero_title": "Confidence in the world of finance",
-    "hero_desc": "Your reliable bank and center of modern financial solutions",
-    "hero_subtitle": "New standards"
-  },
+ "hero": {
+  "badle": "The #1 digital bank in Uzbekistan",
+  "desc": "Build your financial future with confidence with Lodo Bank.",
+  "title": "Trust, Security,",
+  "subtitle": "Growth",
+  "button": "Services",
+  "button1": "Learn More",
+  "hero_title": "Confidence in the world of finance",
+  "hero_desc": "Your trusted bank and a center for modern financial solutions",
+  "hero_subtitle": "New standards",
+
+  "slides": [
+    {
+      "id": 1,
+      "badge": "The #1 digital bank in Uzbekistan",
+      "title": "Trust, Security,",
+      "subtitle": "Growth",
+      "desc": "Build your financial future with confidence with Lodo Bank.",
+            "cardImg": "https://static.vecteezy.com/system/resources/thumbnails/045/900/116/small/modern-gradient-minimalist-background-design-free-vector.jpg",
+            "backImg": "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1200"
+    },
+    {
+      "id": 2,
+      "badge": "Premium Banking",
+      "title": "International level",
+      "subtitle": "Visa Platinum",
+      "desc": "Travel around the world and enjoy exclusive benefits. Cashback and premium services await you.",
+    "cardImg": "https://i.pinimg.com/170x/e8/53/28/e8532804130712c9a242bfa0ac794056.jpg",
+            "backImg": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200"
+    },
+    {
+      "id": 3,
+      "badge": "Smart Savings",
+      "title": "Grow your funds",
+      "subtitle": "With us",
+      "desc": "Profitable deposits with up to 25% annual return. Start planning your future today with us.",
+        "cardImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLuaabt4ptv3HTGbWKUvXOYCZodxkidpmBxg&s",
+            "backImg": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200"
+    }
+  ]
+},
   "services": {
     "title": "Our Services",
     "card1": {
@@ -262,6 +292,15 @@
     }
   },
   "about": {
+    "modal": {
+      "title": "About Company",
+      "text": "For over 10 years, we have been providing our clients with safe and innovative financial solutions. Our goal is to ensure financial freedom for everyone.",
+      "globalTitle": "Global Scale",
+      "globalDesc": "Services based on international standards.",
+      "teamTitle": "Reliable Team",
+      "teamDesc": "Services from professional experts.",
+      "closeBtn": "Got it"
+    },
     "badge": "Future Bank",
     "heroTitle": "Yuksalish Bank",
     "heroSubtitle": "A NEW ERA",

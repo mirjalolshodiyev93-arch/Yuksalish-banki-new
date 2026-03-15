@@ -41,17 +41,49 @@
     "experience": "Yillik tajriba",
     "service": "Xizmat"
   },
-  "hero": {
-    "badle": "O'zbekistonda №1 raqamli bank",
-    "desc": "Lodo Bank bilan moliyaviy kelajagingizni ishonch bilan quring.",
-    "title": "Ishonch, Xavfsizlik,",
-    "subtitle": "Rivojlanish",
-    "button": "Xizmatlar",
-    "button1": "Batafsil",
-    "hero_title": "Moliya olamida ishonch bilan",
-    "hero_desc": "Sizning ishonchli bankingiz va zamonaviy moliyaviy yechimlar markazi",
-    "hero_subtitle": "Yangi standartlar"
-  },
+  
+      "hero": {
+        "badle": "O'zbekistonda №1 raqamli bank",
+        "desc": "Lodo Bank bilan moliyaviy kelajagingizni ishonch bilan quring.",
+        "title": "Ishonch, Xavfsizlik,",
+        "subtitle": "Rivojlanish",
+        "button": "Xizmatlar",
+        "button1": "Batafsil",
+        "hero_title": "Moliya olamida ishonch bilan",
+        "hero_desc": "Sizning ishonchli bankingiz va zamonaviy moliyaviy yechimlar markazi",
+        "hero_subtitle": "Yangi standartlar",
+
+        "slides": [
+          {
+            "id": 1,
+            "badge": "O'zbekistonda №1 raqamli bank",
+            "title": "Ishonch, Xavfsizlik,",
+            "subtitle": "Rivojlanish",
+            "desc": "Lodo Bank bilan moliyaviy kelajagingizni ishonch bilan quring.",
+            "cardImg": "https://static.vecteezy.com/system/resources/thumbnails/045/900/116/small/modern-gradient-minimalist-background-design-free-vector.jpg",
+            "backImg": "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1200"
+          },
+          {
+            "id": 2,
+            "badge": "Premium Banking",
+            "title": "Xalqaro darajadagi",
+            "subtitle": "Visa Platinum",
+            "desc": "Dunyo bo'ylab sayohat qiling va maxsus imtiyozlardan foydalaning. Cashback va eksklyuziv xizmatlar sizni kutmoqda.",
+            "cardImg": "https://i.pinimg.com/170x/e8/53/28/e8532804130712c9a242bfa0ac794056.jpg",
+            "backImg": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200"
+          },
+          {
+            "id": 3,
+            "badge": "Smart Savings",
+            "title": "Mablag'ingizni biz",
+            "subtitle": "Bilan ko'paytiring",
+            "desc": "Yillik 25% gacha bo'lgan foydali omonatlar. Kelajagingizni bugundan boshlab biz bilan rejalashtiring.",
+            "cardImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLuaabt4ptv3HTGbWKUvXOYCZodxkidpmBxg&s",
+            "backImg": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200"
+          }
+        ]
+      },
+
   "services": {
     "title": "Bizning xizmatlar",
     "card1": {
@@ -260,6 +292,15 @@
     }
   },
   "about": {
+    "modal": {
+      "title": "Kompaniya haqida",
+      "text": "Biz 10 yildan ortiq vaqt davomida mijozlarimizga xavfsiz va innovatsion moliyaviy yechimlarni taqdim etib kelmoqdamiz. Maqsadimiz — har bir inson uchun moliyaviy erkinlikni ta'minlash.",
+      "globalTitle": "Global miqyos",
+      "globalDesc": "Xalqaro standartlar asosida xizmat ko'rsatish.",
+      "teamTitle": "Ishonchli jamoa",
+      "teamDesc": "Professional mutaxassislar xizmati.",
+      "closeBtn": "Tushunarli"
+    },
     "badge": "Kelejak Banki",
     "heroTitle": "Yuksalish Bank",
     "heroSubtitle": "BILAN YANGI DAVR",

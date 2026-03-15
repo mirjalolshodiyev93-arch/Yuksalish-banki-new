@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.61.3",
+    "aos": "^2.3.4",
     "framer-motion": "^12.34.3",
     "i18next": "^25.8.13",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.574.0",
+    "nprogress": "^0.2.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-hot-toast": "^2.6.0",
