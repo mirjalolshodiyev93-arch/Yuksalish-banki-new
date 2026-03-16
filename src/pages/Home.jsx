@@ -45,13 +45,13 @@ export default function Home() {
               <motion.div 
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
-                className="absolute inset-0 border-t-4 border-b-4 border-emerald-600 rounded-full"
+                className="absolute inset-0 border-t-4 border-b-4 rounded-full border-emerald-600"
               ></motion.div>
               
               <motion.div 
                 animate={{ rotate: -360 }}
                 transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-                className="absolute inset-2 border-r-4 border-l-4 border-slate-200 dark:border-slate-800 rounded-full"
+                className="absolute border-l-4 border-r-4 rounded-full inset-2 border-slate-200 dark:border-slate-800"
               ></motion.div>
             </div>
 
@@ -65,7 +65,7 @@ export default function Home() {
               <h2 className="text-xl font-black tracking-[0.4em] uppercase text-slate-800 dark:text-white">
                 {t("loading") || "ASR BANK"}
               </h2>
-              <p className="mt-2 text-xs font-medium text-slate-400 uppercase tracking-widest">
+              <p className="mt-2 text-xs font-medium tracking-widest uppercase text-slate-400">
                 Xavfsiz bank tizimi yuklanmoqda...
               </p>
             </motion.div>

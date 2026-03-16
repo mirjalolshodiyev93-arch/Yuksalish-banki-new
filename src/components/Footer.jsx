@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react"; // useEffect qo'shildi
 import { useTranslation } from "react-i18next";
 import logo from "../assets/logo.png";
+import AOS from "aos"; // AOS import qilindi
+import "aos/dist/aos.css"; // AOS stillari
 
 // Ijtimoiy tarmoq logotiplari (O'zgarishsiz qoldi)
 const InstagramLogo = () => (
@@ -26,6 +28,15 @@ export default function Footer() {
   const [email, setEmail] = useState("");
   const [card, setCard] = useState(null);
 
+  // AOS-ni ishga tushirish
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // animatsiya davomiyligi
+      once: true,     // faqat bir marta animatsiya bo'lishi uchun
+      easing: "ease-out-cubic",
+    });
+  }, []);
+
   const handleSubmit = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (emailRegex.test(email)) {
@@ -38,8 +49,7 @@ export default function Footer() {
   };
 
   return (
-    // 1. Tashqi wrapper: Butun ekran kengligida (w-full) va ranglar foni
-    <footer className="w-full bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-600 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-500 border-t border-white/20 dark:border-slate-800 text-white">
+    <footer className="w-full overflow-hidden text-white transition-colors duration-500 border-t bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-600 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 border-white/20 dark:border-slate-800">
       
       {/* Toast Notification */}
       {card && (
@@ -55,72 +65,69 @@ export default function Footer() {
         </div>
       )}
 
-      {/* 2. Ichki Container: Kontentni o'rtada saqlash uchun */}
-      <div className="container mx-auto px-6 py-12 lg:py-16">
-        
-        {/* Footer Grid */}
+      <div className="container px-6 py-12 mx-auto lg:py-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
 
           {/* Kolonna 1: Logo va Haqida */}
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-4" data-aos="fade-up" data-aos-delay="0">
             <Link to="/" className="inline-block w-[180px] transition-transform hover:scale-105">
               <img src={logo} alt="Logo" className="w-full h-auto dark:brightness-110" />
             </Link>
-            <p className="text-sm leading-relaxed text-white/80 dark:text-slate-400 italic">
+            <p className="text-sm italic leading-relaxed text-white/80 dark:text-slate-400">
               {t("footer.bank_desc")}
             </p>
             <div className="flex items-center gap-4 pt-2">
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-9 h-9 hover:scale-110 transition-transform"><InstagramLogo /></a>
-              <a href="https://t.me" target="_blank" rel="noreferrer" className="w-9 h-9 hover:scale-110 transition-transform"><TelegramLogo /></a>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="transition-transform w-9 h-9 hover:scale-110"><InstagramLogo /></a>
+              <a href="https://t.me" target="_blank" rel="noreferrer" className="transition-transform w-9 h-9 hover:scale-110"><TelegramLogo /></a>
               <a href="#" className="w-9 h-9 rounded-lg bg-[#1877F2] flex items-center justify-center hover:scale-110 transition-transform font-bold text-xl shadow-inner">f</a>
             </div>
           </div>
 
           {/* Kolonna 2: Xizmatlar */}
-          <div>
-            <h3 className="text-lg font-bold mb-6 border-b border-white/20 dark:border-slate-700 pb-2 inline-block">
+          <div data-aos="fade-up" data-aos-delay="100">
+            <h3 className="inline-block pb-2 mb-6 text-lg font-bold border-b border-white/20 dark:border-slate-700">
               {t("footer.services")}
             </h3>
             <ul className="space-y-4 text-sm text-white/70 dark:text-slate-400">
-              <li><Link to="/kredit" className="hover:text-white dark:hover:text-green-400 transition-colors">{t("footer.credits")}</Link></li>
-              <li><Link to="/omonat" className="hover:text-white dark:hover:text-green-400 transition-colors">{t("footer.deposits")}</Link></li>
-              <li><Link to="/card" className="hover:text-white dark:hover:text-green-400 transition-colors">{t("footer.cards")}</Link></li>
-              <li><Link to="/transfer" className="hover:text-white dark:hover:text-green-400 transition-colors">{t("footer.transfers")}</Link></li>
+              <li><Link to="/kredit" className="transition-colors hover:text-white dark:hover:text-green-400">{t("footer.credits")}</Link></li>
+              <li><Link to="/omonat" className="transition-colors hover:text-white dark:hover:text-green-400">{t("footer.deposits")}</Link></li>
+              <li><Link to="/card" className="transition-colors hover:text-white dark:hover:text-green-400">{t("footer.cards")}</Link></li>
+              <li><Link to="/transfer" className="transition-colors hover:text-white dark:hover:text-green-400">{t("footer.transfers")}</Link></li>
             </ul>
           </div>
 
           {/* Kolonna 3: Yordam */}
-          <div>
-            <h3 className="text-lg font-bold mb-6 border-b border-white/20 dark:border-slate-700 pb-2 inline-block">
+          <div data-aos="fade-up" data-aos-delay="200">
+            <h3 className="inline-block pb-2 mb-6 text-lg font-bold border-b border-white/20 dark:border-slate-700">
               {t("footer.help")}
             </h3>
             <ul className="space-y-4 text-sm text-white/70 dark:text-slate-400">
-              <li><Link to="/tariflar" className="hover:text-white dark:hover:text-green-400 transition-colors">{t("footer.tariffs")}</Link></li>
-              <li><Link to="/map" className="hover:text-white dark:hover:text-green-400 transition-colors">{t("footer.branches")}</Link></li>
-              <li><Link to="/faq" className="hover:text-white dark:hover:text-green-400 transition-colors">{t("footer.faq")}</Link></li>
-              <li><Link to="/contact" className="hover:text-white dark:hover:text-green-400 transition-colors">{t("footer.contact")}</Link></li>
+              <li><Link to="/tariflar" className="transition-colors hover:text-white dark:hover:text-green-400">{t("footer.tariffs")}</Link></li>
+              <li><Link to="/map" className="transition-colors hover:text-white dark:hover:text-green-400">{t("footer.branches")}</Link></li>
+              <li><Link to="/faq" className="transition-colors hover:text-white dark:hover:text-green-400">{t("footer.faq")}</Link></li>
+              <li><Link to="/contact" className="transition-colors hover:text-white dark:hover:text-green-400">{t("footer.contact")}</Link></li>
             </ul>
           </div>
 
           {/* Kolonna 4: Obuna */}
-          <div>
-            <h3 className="text-lg font-bold mb-6 border-b border-white/20 dark:border-slate-700 pb-2 inline-block">
+          <div data-aos="fade-up" data-aos-delay="300">
+            <h3 className="inline-block pb-2 mb-6 text-lg font-bold border-b border-white/20 dark:border-slate-700">
               {t("footer.news")}
             </h3>
-            <p className="text-sm text-white/80 dark:text-slate-400 mb-4 italic">
+            <p className="mb-4 text-sm italic text-white/80 dark:text-slate-400">
               {t("footer.news_desc")}
             </p>
-            <div className="flex overflow-hidden rounded-xl border border-white/30 dark:border-slate-700 focus-within:border-white transition-all">
+            <div className="flex overflow-hidden transition-all border rounded-xl border-white/30 dark:border-slate-700 focus-within:border-white">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t("footer.email_placeholder")}
-                className="w-full bg-white/10 dark:bg-slate-800 px-4 py-3 text-sm focus:outline-none"
+                className="w-full px-4 py-3 text-sm bg-white/10 dark:bg-slate-800 focus:outline-none"
               />
               <button 
                 onClick={handleSubmit}
-                className="bg-white/20 dark:bg-slate-700 px-5 hover:bg-white/30 transition-colors border-l border-white/20"
+                className="px-5 transition-colors border-l bg-white/20 dark:bg-slate-700 hover:bg-white/30 border-white/20"
               >
                 ➤
               </button>
@@ -128,13 +135,17 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* 3. Bottom Bar: Chiziqdan pastdagi qism */}
-        <div className="mt-16 pt-8 border-t border-white/20 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] sm:text-xs text-white/60 dark:text-slate-500 uppercase tracking-widest">
+        {/* Bottom Bar */}
+        <div 
+          className="mt-16 pt-8 border-t border-white/20 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] sm:text-xs text-white/60 dark:text-slate-500 uppercase tracking-widest"
+          data-aos="fade-zoom-in"
+          data-aos-offset="0"
+        >
           <p>{t("footer.copyright")}</p>
           <div className="flex flex-wrap justify-center gap-6">
-            <span className="hover:text-white dark:hover:text-green-400 cursor-pointer transition-colors">{t("footer.privacy")}</span>
-            <span className="hover:text-white dark:hover:text-green-400 cursor-pointer transition-colors">{t("footer.offer")}</span>
-            <span className="hover:text-white dark:hover:text-green-400 cursor-pointer transition-colors">{t("footer.license")}</span>
+            <span className="transition-colors cursor-pointer hover:text-white dark:hover:text-green-400">{t("footer.privacy")}</span>
+            <span className="transition-colors cursor-pointer hover:text-white dark:hover:text-green-400">{t("footer.offer")}</span>
+            <span className="transition-colors cursor-pointer hover:text-white dark:hover:text-green-400">{t("footer.license")}</span>
           </div>
         </div>
       </div>

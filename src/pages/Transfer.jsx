@@ -1,183 +1,219 @@
-    import React, { useState } from "react";
-    import Earch from "../assets/salom.png";
-        import Earch1 from "../assets/salom2.png";
-            import Earch2 from "../assets/salom3.png";
-    export default function Transfer() {
-    const [activeService, setActiveService] = useState(null);
-    const [amount, setAmount] = useState("");
-    const [isSuccess, setIsSuccess] = useState(false);
+import React, { useState } from "react";
+// Rasmlarni o'z joyida qoldiramiz
+import Earch from "../assets/salom.png";
+import Earch1 from "../assets/salom2.png";
+import Earch2 from "../assets/salom3.png";
 
-    const handleAmountChange = (e) => {
-        const val = e.target.value;
-    
-        if (val === "" || (val >= 0 && val.length <= 7)) {
-        setAmount(val);
-        }
-    };
+export default function Transfer() {
+  const [activeService, setActiveService] = useState(null);
+  const [amount, setAmount] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-    const getCommissionRate = () => {
-        if (activeService === "inner") return 0;
-        if (activeService === "p2p") return 0.5;
-        if (activeService === "intl") return 1.0;
-        return 0;
-    };
-
-    const handleTransfer = () => {
-        if (amount > 0) {
-        setIsSuccess(true);
-      
-        setTimeout(() => {
-            setIsSuccess(false);
-            setActiveService(null);
-            setAmount("");
-        }, 3500);
-        }
-    };
-
-    const commissionRate = getCommissionRate();
-    const commissionAmount = amount ? (amount * commissionRate) / 100 : 0;
-    const totalAmount = amount ? Number(amount) - commissionAmount : 0;
-
-    return (
-        <div className="bg-gray-50 min-h-screen font-sans relative">
-        
-      
-        {isSuccess && (
-            <div className="fixed top-[100px] right-6 z-50 animate-in fade-in slide-in-from-right-full duration-500">
-            <div className="bg-white border-l-[6px] border-green-500 text-[#013220] px-6 py-5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] flex items-center gap-4 min-w-[350px] relative overflow-hidden">
-                <div className="bg-green-500 text-white rounded-full p-2 shrink-0 shadow-lg shadow-green-200">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                </div>
-                <div>
-                <h4 className="font-extrabold text-green-700 text-lg leading-tight">Muvaffaqiyatli!</h4>
-                <p className="text-sm text-gray-500 font-medium tracking-tight">O'tkazmangiz muvaffaqiyatli amalga oshirildi.</p>
-                </div>
-               
-                <div className="absolute bottom-0 left-0 h-1 bg-green-100 w-full">
-                <div className="h-full bg-green-500 animate-[progress_3.5s_linear]"></div>
-                </div>
-            </div>
-            </div>
-        )}
-
-     
-        <style>{`
-            input::-webkit-outer-spin-button,
-            input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-            input[type=number] { -moz-appearance: textfield; }
-            @keyframes progress {
-            from { width: 100%; }
-            to { width: 0%; }
-            }
-        `}</style>
-
-        <div className="max-w-[1400px] mx-auto px-6 py-16">
-            <div className="text-center mb-16">
-            <h1 className="text-4xl font-extrabold text-[#013220] mb-4">Yuksalish Bank</h1>
-            <p className="text-gray-500 font-medium">Xavfsiz pul o'tkazmalari tizimi</p>
-            </div>
-
-        
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {[
-                { id: "inner", title: "Bank ichida", icon: Earch2, desc: "Komissiya 0%" },
-                { id: "p2p", title: "Kartadan kartaga", icon: Earch1, desc: "Komissiya 0.5%" },
-                { id: "intl", title: "Xalqaro", icon: Earch, desc: "Komissiya 1.0%" }
-            ].map((item) => (
-                <button 
-                key={item.id}
-                onClick={() => { setActiveService(item.id); setAmount(""); setIsSuccess(false); }}
-                className={`p-8 bg-white border-b-4 rounded-[32px] shadow-lg transition-all text-left group ${
-                    activeService === item.id ? "border-green-600 scale-105" : "border-gray-100 hover:border-green-400"
-                }`}
-                >
-                <div className="text-5xl h-24 w-24 mb-6 group-hover:scale-110 transition-transform">
-                    <img src={item.icon} alt={item.title} />
-                </div>
-                <h3 className="font-bold text-xl text-gray-800">{item.title}</h3>
-                <p className="text-sm text-gray-400 mt-2 font-medium">{item.desc}</p>
-                </button>
-            ))}
-            </div>
-
-        
-            {activeService && (
-            <div className="animate-in fade-in zoom-in duration-300 max-w-4xl mx-auto">
-                <div className="bg-[#013220] p-12 rounded-[48px] text-white shadow-2xl relative overflow-hidden">
-                <div className="flex justify-between items-center mb-10 border-b border-white/10 pb-6">
-                    <h3 className="text-2xl font-bold text-green-400 italic">
-                    {activeService.toUpperCase()} O'TKAZMA
-                    </h3>
-                    <button 
-                    onClick={() => setActiveService(null)} 
-                    className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition"
-                    >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                    </button>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-12">
-                    <div className="space-y-8">
-                    <div>
-                        <label className="text-xs text-gray-400 uppercase tracking-widest block mb-4 font-bold">Yuborish summasi</label>
-                        <div className="relative">
-                        <input 
-                            type="number" 
-                            value={amount}
-                            onChange={handleAmountChange}
-                            className="w-full bg-white/5 border border-green-800/50 rounded-2xl px-6 py-5 text-2xl font-mono outline-none focus:border-green-500 focus:bg-white/10 transition"
-                            placeholder="0"
-                        />
-                        <span className="absolute right-6 top-1/2 -translate-y-1/2 text-green-500 font-bold">UZS</span>
-                        </div>
-                    </div>
-
-                    <div className="bg-black/20 p-6 rounded-3xl space-y-4 border border-white/5">
-                        <div className="flex justify-between text-sm text-gray-400">
-                        <span>Xizmat haqi:</span>
-                        <span className="text-white font-bold">{commissionRate}%</span>
-                        </div>
-                        <div className="flex justify-between items-center pt-4 border-t border-white/10">
-                        <span className="text-lg font-medium">Jami summa:</span>
-                        <span className="text-3xl font-black text-green-400">
-                            {totalAmount.toLocaleString()} <small className="text-sm font-normal text-white/60">UZS</small>
-                        </span>
-                        </div>
-                    </div>
-
-                    <button 
-                        onClick={handleTransfer}
-                        className="w-full bg-green-500 hover:bg-green-600 text-[#013220] font-black py-6 rounded-2xl shadow-xl active:scale-95 transition-all tracking-widest uppercase text-lg"
-                    >
-                        Davom etish
-                    </button>
-                    </div>
-
-                    <div className="hidden md:flex flex-col justify-center p-8 border border-white/10 rounded-[32px] bg-gradient-to-br from-white/5 to-transparent">
-                    <p className="text-gray-400 italic text-center leading-relaxed">
-                        "Mablag'laringiz xavfsizligi bizning ustuvor vazifamizdir. Har bir tranzaksiya bank nazoratida."
-                    </p>
-                    <div className="mt-6 flex justify-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                        <div className="w-2 h-2 rounded-full bg-green-500/40"></div>
-                        <div className="w-2 h-2 rounded-full bg-green-500/20"></div>
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-            )}
-
-        
-            {!activeService && (
-            <div className="text-center py-24 border-4 border-dotted border-gray-200 rounded-[60px] mt-10">
-                <div className="text-5xl mb-4 opacity-20">✨</div>
-                <p className="text-xl font-bold text-gray-300">Davom etish uchun o'tkazma turini tanlang</p>
-            </div>
-            )}
-        </div>
-        </div>
-    );
+  const handleAmountChange = (e) => {
+    const val = e.target.value;
+    if (val === "" || (Number(val) >= 0 && val.length <= 9)) {
+      setAmount(val);
     }
+  };
+
+  const getCommissionRate = () => {
+    if (activeService === "inner") return 0;
+    if (activeService === "p2p") return 0.5;
+    if (activeService === "intl") return 1.0;
+    return 0;
+  };
+
+  const handleTransfer = () => {
+    if (amount > 0) {
+      setIsLoading(true);
+      setTimeout(() => {
+        setIsLoading(false);
+        setIsSuccess(true);
+        setTimeout(() => {
+          setIsSuccess(false);
+          setActiveService(null);
+          setAmount("");
+        }, 3500);
+      }, 2000);
+    }
+  };
+
+  const commissionRate = getCommissionRate();
+  const commissionAmount = amount ? (amount * commissionRate) / 100 : 0;
+  const totalAmount = amount ? Number(amount) - commissionAmount : 0;
+
+  return (
+    <div className="relative min-h-screen font-sans bg-[#050807] text-gray-100 selection:bg-green-500/30">
+      {/* Toast Notification */}
+      {isSuccess && (
+        <div className="fixed top-10 right-6 z-[100] animate-in fade-in slide-in-from-right-full duration-500">
+          <div className="bg-[#0c1410] border border-green-500/30 backdrop-blur-xl text-green-400 px-6 py-5 rounded-2xl shadow-[0_0_50px_rgba(34,197,94,0.2)] flex items-center gap-4 min-w-[350px]">
+            <div className="p-2 text-black bg-green-500 rounded-full shadow-[0_0_15px_rgba(34,197,94,0.5)]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div>
+              <h4 className="text-lg font-bold">Muvaffaqiyatli!</h4>
+              <p className="text-sm opacity-70">Mablag' manzilga yo'llandi.</p>
+            </div>
+            <div className="absolute bottom-0 left-0 w-full h-1 bg-white/5">
+              <div className="h-full bg-green-500 animate-[progress_3.5s_linear]"></div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <style>{`
+        @keyframes progress { from { width: 100%; } to { width: 0%; } }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .yb-spinner {
+          width: 22px; height: 22px;
+          border: 3px solid rgba(0,0,0,0.1);
+          border-top-color: #000;
+          border-radius: 50%;
+          animation: spin 0.8s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+        }
+        .dark-glass {
+          background: rgba(17, 26, 22, 0.6);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(34, 197, 94, 0.1);
+        }
+      `}</style>
+
+      <div className="max-w-[1200px] mx-auto px-6 py-20">
+        {/* Header */}
+        <div className="mb-20 text-center">
+          <div className="inline-block px-4 py-1 mb-4 text-xs font-bold tracking-widest text-green-500 uppercase border rounded-full bg-green-500/10 border-green-500/20">
+            Secure Banking
+          </div>
+          <h1 className="text-5xl font-black tracking-tighter text-white md:text-6xl">
+            Yuksalish <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">Bank</span>
+          </h1>
+          <p className="mt-4 text-[#5a7d61] font-medium max-w-md mx-auto">
+            Premium darajadagi xavfsiz o'tkazmalar tizimi.
+          </p>
+        </div>
+
+        {/* Service cards */}
+        <div className="grid gap-6 mb-16 md:grid-cols-3">
+          {[
+            { id: "inner", title: "Bank ichida", icon: Earch2, desc: "0% komissiya" },
+            { id: "p2p", title: "P2P o'tkazma", icon: Earch1, desc: "0.5% komissiya" },
+            { id: "intl", title: "Xalqaro SWIFT", icon: Earch, desc: "1.0% komissiya" },
+          ].map((item) => (
+            <button
+              key={item.id}
+              onClick={() => { setActiveService(item.id); setAmount(""); }}
+              className={`relative overflow-hidden p-8 rounded-[32px] transition-all duration-500 text-left group border-2 ${
+                activeService === item.id
+                  ? "bg-[#0d1a12] border-green-500 shadow-[0_0_40px_rgba(34,197,94,0.1)] scale-105"
+                  : "bg-[#111a16]/40 border-white/5 hover:border-green-500/30 hover:bg-[#111a16]/60"
+              }`}
+            >
+              <div className="relative z-10">
+                <div className="w-20 h-20 mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+                  <img src={item.icon} alt={item.title} className="object-contain w-full h-full" />
+                </div>
+                <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                <p className="mt-2 text-sm font-semibold text-green-500/80">{item.desc}</p>
+              </div>
+              {activeService === item.id && (
+                <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 blur-[60px] rounded-full -mr-10 -mt-10" />
+              )}
+            </button>
+          ))}
+        </div>
+
+        {/* Transfer Form */}
+        {activeService ? (
+          <div className="max-w-3xl mx-auto duration-700 animate-in fade-in slide-in-from-bottom-10">
+            <div className="dark-glass p-10 md:p-14 rounded-[40px] shadow-2xl relative">
+              <div className="flex items-center justify-between mb-12">
+                <div>
+                  <h3 className="text-3xl font-black tracking-tight text-white uppercase">
+                    {activeService === 'inner' ? 'Bank ichida' : activeService === 'p2p' ? 'Kartadan kartaga' : 'Xalqaro'}
+                  </h3>
+                  <div className="w-12 h-1 mt-2 bg-green-500 rounded-full"></div>
+                </div>
+                <button
+                  onClick={() => setActiveService(null)}
+                  className="p-3 transition-colors rounded-2xl bg-white/5 hover:bg-red-500/20 text-white/50 hover:text-red-400"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+
+              <div className="grid gap-12">
+                <div className="space-y-8">
+                  <div className="group">
+                    <label className="block mb-4 text-xs font-black tracking-[0.2em] text-[#5a7d61] uppercase">
+                      Yuboriladigan summa
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="number"
+                        value={amount}
+                        onChange={handleAmountChange}
+                        className="w-full px-8 py-6 font-mono text-4xl transition-all border-2 outline-none bg-black/40 border-white/5 rounded-[24px] focus:border-green-500/50 focus:ring-4 ring-green-500/5 text-white placeholder:text-white/5"
+                        placeholder="0"
+                      />
+                      <span className="absolute text-xl font-black text-green-500 -translate-y-1/2 right-8 top-1/2">UZS</span>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="p-6 border rounded-3xl bg-white/5 border-white/5">
+                      <p className="text-xs text-[#5a7d61] uppercase font-bold mb-1">Komissiya ({commissionRate}%)</p>
+                      <p className="text-xl font-bold text-white">{Math.round(commissionAmount).toLocaleString()} <span className="text-xs opacity-40">UZS</span></p>
+                    </div>
+                    <div className="p-6 border rounded-3xl bg-green-500/5 border-green-500/10">
+                      <p className="mb-1 text-xs font-bold uppercase text-green-500/60">Jami chiqim</p>
+                      <p className="text-xl font-bold text-green-400">{Math.round(Number(amount)).toLocaleString()} <span className="text-xs opacity-40">UZS</span></p>
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={handleTransfer}
+                    disabled={!amount || amount <= 0 || isLoading}
+                    className="w-full relative overflow-hidden group bg-green-500 hover:bg-green-400 disabled:opacity-30 disabled:grayscale text-black font-black py-7 rounded-[24px] shadow-[0_20px_40px_rgba(34,197,94,0.2)] active:scale-[0.98] transition-all uppercase tracking-widest text-lg"
+                  >
+                    <span className="relative z-10 flex items-center justify-center gap-3">
+                      {isLoading ? (
+                        <>
+                          <div className="yb-spinner"></div>
+                          Yuborilmoqda...
+                        </>
+                      ) : (
+                        "O'tkazmani tasdiqlash"
+                      )}
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          /* Empty State */
+          <div className="text-center py-32 border-2 border-dashed border-white/5 rounded-[60px] bg-[#111a16]/20 backdrop-blur-sm">
+            <div className="inline-flex items-center justify-center w-20 h-20 mb-6 text-4xl rounded-full bg-white/5 animate-bounce">
+              🏦
+            </div>
+            <h2 className="text-2xl font-bold text-white/80">Xizmatni tanlang</h2>
+            <p className="mt-2 text-[#5a7d61]">O'tkazmani boshlash uchun yuqoridagi kartalardan birini bosing</p>
+          </div>
+        )}
+      </div>
+
+      {/* Background decoration */}
+      <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-green-900/10 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-emerald-900/10 blur-[120px] rounded-full"></div>
+      </div>
+    </div>
+  );
+}
