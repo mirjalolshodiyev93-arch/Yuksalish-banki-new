@@ -888,5 +888,40 @@
   },
   "success3": {
     "depositOpened": "Deposit successfully opened!"
-  }
+  },
+  "deposits1": {
+    "title": "Deposits",
+    "subtitle": "Grow your funds securely with us.",
+    "yearly": "ANNUAL",
+    "open_button": "Open a deposit",
+    "calculator": {
+      "title": "Calculator",
+      "amount_label": "Investment Amount",
+      "profit_label": "Annual Profit",
+      "total_label": "Total"
+    },
+    "modal": {
+      "title": "Submit Application",
+      "name_label": "Your Full Name",
+      "name_placeholder": "Azizbek Karimov",
+      "phone_label": "Phone Number",
+      "confirm_button": "CONFIRM",
+      "error_fill": "Please fill in all fields!"
+    },
+    "success": {
+      "title": "Done!",
+      "message": "Your application has been accepted. Our operators will contact you within 15 minutes.",
+      "close_button": "Close"
+    }
+  },
+  "Yuklanmoqda...": "Loading catalog...",
+  "Bank Kartasi": "Bank Card",
+  "buyurtma": "Order now",
+  "buyurtma_text": "Submit an application for a card",
+  "ism": "Your full name",
+  "telefon": "Your phone number",
+  "yuborish": "Submit application",
+  "Ma'lumotlarni to'liq kiriting!": "Please fill in all fields correctly!",
+  "Muvaffaqiyatli!": "Success!",
+  "Tez orada operatorlarimiz bog'lanishadi.": "Your application has been accepted. Our operators will contact you shortly."
 }

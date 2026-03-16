@@ -888,5 +888,40 @@
   },
   "success3": {
     "depositOpened": "Omonat muvaffaqiyatli ochildi!"
-  }
+  },
+  "deposits1": {
+    "title": "Omonatlar",
+    "subtitle": "Mablag'laringizni biz bilan ishonchli ko'paytiring.",
+    "yearly": "YILLIK",
+    "open_button": "Omonat ochish",
+    "calculator": {
+      "title": "Kalkulyator",
+      "amount_label": "Sarmoya miqdori",
+      "profit_label": "Yillik foyda",
+      "total_label": "Jami"
+    },
+    "modal": {
+      "title": "Ariza berish",
+      "name_label": "To'liq Ismingiz",
+      "name_placeholder": "Azizbek Karimov",
+      "phone_label": "Telefon raqam",
+      "confirm_button": "TASDIQLASH",
+      "error_fill": "Iltimos, barcha maydonlarni to'ldiring!"
+    },
+    "success": {
+      "title": "Tayyor!",
+      "message": "Sizning arizangiz qabul qilindi. Operatorlarimiz 15 daqiqa ichida bog'lanishadi.",
+      "close_button": "Yopish"
+    }
+  },
+  "Yuklanmoqda...": "Katalogni yuklamoqdamiz...",
+  "Bank Kartasi": "Bank Kartasi",
+  "buyurtma": "Buyurtma berish",
+  "buyurtma_text": "Karta olish uchun ariza qoldiring",
+  "ism": "To'liq ismingiz",
+  "telefon": "Telefon raqamingiz",
+  "yuborish": "Arizani yuborish",
+  "Ma'lumotlarni to'liq kiriting!": "Iltimos, ma'lumotlarni to'liq kiriting!",
+  "Muvaffaqiyatli!": "Muvaffaqiyatli!",
+  "Tez orada operatorlarimiz bog'lanishadi.": "Sizning arizangiz qabul qilindi. Operatorlarimiz tez orada siz bilan bog'lanishadi."
 }

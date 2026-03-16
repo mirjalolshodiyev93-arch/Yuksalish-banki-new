@@ -53,7 +53,6 @@ export default function Deposits() {
 
   const handleOpenModal = (deposit) => {
     setSelectedDeposit(deposit);
-
     setFormData({ fullName: "", phone: "998" });
     setErrors({ fullName: false, phone: false });
     setIsModalOpen(true);
@@ -77,18 +76,16 @@ export default function Deposits() {
 
     if (hasError) {
       setErrors(newErrors);
-      toast.error("Iltimos, barcha maydonlarni to'ldiring!", { position: "top-center" });
+      // JSON dagi error_fill kaliti ishlatildi
+      toast.error(t("deposits1.modal.error_fill"), { position: "top-center" });
       return;
     }
 
     setIsSubmitting(true);
-
     setTimeout(() => {
       setIsSubmitting(false);
       setIsModalOpen(false);
       setIsSuccess(true);
-      
-  
       setFormData({ fullName: "", phone: "998" });
     }, 2000);
   };
@@ -114,8 +111,12 @@ export default function Deposits() {
       {!isLoadingPage && (
         <div className="px-4 mx-auto max-w-7xl">
           <header className="py-16 text-center" data-aos="fade-down">
-            <h1 className="mb-6 text-5xl font-black tracking-tighter uppercase md:text-7xl">Omonatlar</h1>
-            <p className="max-w-xl mx-auto text-lg italic text-slate-500 dark:text-gray-400">Mablag'laringizni biz bilan ishonchli ko'paytiring.</p>
+            <h1 className="mb-6 text-5xl font-black tracking-tighter uppercase md:text-7xl">
+              {t("deposits1.title")}
+            </h1>
+            <p className="max-w-xl mx-auto text-lg italic text-slate-500 dark:text-gray-400">
+              {t("deposits1.subtitle")}
+            </p>
           </header>
 
           <div className="grid grid-cols-1 gap-8 mb-20 md:grid-cols-3">
@@ -128,12 +129,14 @@ export default function Deposits() {
                   <ShieldCheck size={30} />
                 </div>
                 <h3 className="mb-2 text-2xl font-bold">{item.title}</h3>
-                <div className="mb-6 text-4xl font-black text-emerald-600">{item.rate} <span className="text-xs text-gray-400">YILLIK</span></div>
+                <div className="mb-6 text-4xl font-black text-emerald-600">
+                  {item.rate} <span className="text-xs text-gray-400">{t("deposits1.yearly")}</span>
+                </div>
                 <button 
                   onClick={() => handleOpenModal(item)}
                   className="w-full py-4 font-bold text-white transition-all shadow-lg bg-slate-900 dark:bg-emerald-600 rounded-2xl hover:bg-emerald-600 dark:hover:bg-emerald-700"
                 >
-                  Omonat ochish
+                  {t("deposits1.open_button")}
                 </button>
               </div>
             ))}
@@ -141,12 +144,16 @@ export default function Deposits() {
 
           <section className="py-20" data-aos="zoom-in">
             <div className="bg-white dark:bg-gray-900 border border-slate-100 dark:border-gray-800 rounded-[3.5rem] p-8 md:p-14 shadow-2xl">
-               <div className="flex flex-col items-center gap-12 md:flex-row">
+                <div className="flex flex-col items-center gap-12 md:flex-row">
                   <div className="flex-1 w-full space-y-8">
-                    <h2 className="flex items-center gap-3 text-3xl font-bold"><Calculator className="text-emerald-500" /> Kalkulyator</h2>
+                    <h2 className="flex items-center gap-3 text-3xl font-bold">
+                      <Calculator className="text-emerald-500" /> {t("deposits1.calculator.title")}
+                    </h2>
                     <div className="space-y-6">
                       <div className="flex items-end justify-between">
-                        <label className="text-xs font-bold tracking-widest text-gray-400 uppercase">Sarmoya miqdori</label>
+                        <label className="text-xs font-bold tracking-widest text-gray-400 uppercase">
+                          {t("deposits1.calculator.amount_label")}
+                        </label>
                         <span className="text-2xl font-black text-emerald-600">{amount.toLocaleString()} UZS</span>
                       </div>
                       <input 
@@ -157,12 +164,16 @@ export default function Deposits() {
                     </div>
                   </div>
                   <div className="w-full md:w-80 p-8 bg-slate-900 dark:bg-emerald-950 rounded-[2.5rem] text-white space-y-6">
-                    <p className="text-[10px] uppercase text-emerald-400 font-bold mb-1 tracking-widest">Yillik foyda</p>
+                    <p className="text-[10px] uppercase text-emerald-400 font-bold mb-1 tracking-widest">
+                      {t("deposits1.calculator.profit_label")}
+                    </p>
                     <p className="text-4xl font-black">+{(amount * 0.24).toLocaleString()}</p>
                     <div className="h-px bg-white/10" />
-                    <p className="text-sm text-gray-400">Jami: {(amount * 1.24).toLocaleString()} UZS</p>
+                    <p className="text-sm text-gray-400">
+                      {t("deposits1.calculator.total_label")}: {(amount * 1.24).toLocaleString()} UZS
+                    </p>
                   </div>
-               </div>
+                </div>
             </div>
           </section>
         </div>
@@ -175,14 +186,17 @@ export default function Deposits() {
             <motion.div initial={{ scale: 0.9, y: 20 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.9, y: 20 }} className="relative w-full max-w-lg bg-white dark:bg-gray-900 rounded-[3rem] p-10 shadow-2xl overflow-hidden">
               <button onClick={() => setIsModalOpen(false)} className="absolute text-gray-400 transition-colors top-8 right-8 hover:text-black dark:hover:text-white"><X size={24} /></button>
               
-              <h2 className="mb-2 text-3xl font-black">Ariza berish</h2>
+              <h2 className="mb-2 text-3xl font-black">{t("deposits1.modal.title")}</h2>
               <p className="mb-8 text-sm italic font-bold tracking-tighter uppercase text-emerald-600 dark:text-emerald-400">{selectedDeposit?.title}</p>
 
               <form onSubmit={handleConfirmDeposit} className="space-y-6">
                 <div className="relative">
-                  <label className={`text-[10px] font-bold uppercase ml-1 ${errors.fullName ? "text-red-500" : "text-gray-400"}`}>To'liq Ismingiz</label>
+                  <label className={`text-[10px] font-bold uppercase ml-1 ${errors.fullName ? "text-red-500" : "text-gray-400"}`}>
+                    {t("deposits1.modal.name_label")}
+                  </label>
                   <input 
-                    type="text" placeholder="Azizbek Karimov"
+                    type="text" 
+                    placeholder={t("deposits1.modal.name_placeholder")}
                     value={formData.fullName}
                     onChange={(e) => { setFormData({...formData, fullName: e.target.value}); setErrors({...errors, fullName: false}); }}
                     className={`w-full p-4 mt-1 rounded-2xl bg-slate-50 dark:bg-gray-800 outline-none border-2 transition-all ${errors.fullName ? "border-red-500 bg-red-50/50 dark:bg-red-950/20" : "border-transparent focus:border-emerald-500 text-slate-900 dark:text-white"}`}
@@ -191,7 +205,9 @@ export default function Deposits() {
                 </div>
 
                 <div className="relative">
-                  <label className={`text-[10px] font-bold uppercase ml-1 ${errors.phone ? "text-red-500" : "text-gray-400"}`}>Telefon raqam</label>
+                  <label className={`text-[10px] font-bold uppercase ml-1 ${errors.phone ? "text-red-500" : "text-gray-400"}`}>
+                    {t("deposits1.modal.phone_label")}
+                  </label>
                   <input 
                     type="text" value={formData.phone} onChange={handlePhoneChange}
                     className={`w-full p-4 mt-1 rounded-2xl bg-slate-50 dark:bg-gray-800 font-mono text-lg border-2 transition-all ${errors.phone ? "border-red-500 bg-red-50/50 dark:bg-red-950/20" : "border-transparent focus:border-emerald-500 text-slate-900 dark:text-white"}`}
@@ -203,7 +219,7 @@ export default function Deposits() {
                   disabled={isSubmitting}
                   className="flex items-center justify-center w-full gap-3 py-5 font-black text-white transition-all shadow-2xl bg-emerald-600 rounded-3xl hover:bg-emerald-700 active:scale-95 disabled:opacity-50"
                 >
-                  {isSubmitting ? <Loader2 className="animate-spin" size={24} /> : "TASDIQLASH"}
+                  {isSubmitting ? <Loader2 className="animate-spin" size={24} /> : t("deposits1.modal.confirm_button")}
                 </button>
               </form>
             </motion.div>
@@ -219,9 +235,13 @@ export default function Deposits() {
               <div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600">
                 <CheckCircle2 size={50} />
               </div>
-              <h2 className="mb-4 text-3xl font-black">Tayyor!</h2>
-              <p className="mb-8 text-sm font-medium text-gray-500 dark:text-gray-400">Sizning arizangiz qabul qilindi. Operatorlarimiz 15 daqiqa ichida bog'lanishadi.</p>
-              <button onClick={() => setIsSuccess(false)} className="w-full py-4 font-bold text-white transition-transform bg-slate-900 dark:bg-emerald-600 rounded-2xl active:scale-95">Yopish</button>
+              <h2 className="mb-4 text-3xl font-black">{t("deposits1.success.title")}</h2>
+              <p className="mb-8 text-sm font-medium text-gray-500 dark:text-gray-400">
+                {t("deposits1.success.message")}
+              </p>
+              <button onClick={() => setIsSuccess(false)} className="w-full py-4 font-bold text-white transition-transform bg-slate-900 dark:bg-emerald-600 rounded-2xl active:scale-95">
+                {t("deposits1.success.close_button")}
+              </button>
             </motion.div>
           </div>
         )}
