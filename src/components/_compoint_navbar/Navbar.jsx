@@ -117,38 +117,45 @@ export default function Navbar({ darkMode, setDarkMode }) {
               </Link>
             ))}
 
-            {/* "YANA" TUGMASI (Dropdown) */}
-            <div className="relative">
-              <button 
-                onMouseEnter={() => setMoreOpen(true)}
-                className="flex items-center gap-1 group transition-opacity hover:opacity-80"
-              >
-                {t("navbar.more") || "Yana"} 
-                <ChevronDown size={14} className={`transition-transform duration-300 ${moreOpen ? "rotate-180" : ""}`} />
-              </button>
+{/* "YANA" TUGMASI (Dropdown) */}
+<div 
+  className="relative h-full flex items-center"
+  onMouseLeave={() => setMoreOpen(false)} // Sichqoncha uzoqlashsa baribir yopiladi (xavfsizlik uchun)
+>
+  <button 
+    onMouseEnter={() => setMoreOpen(true)} // Sichqoncha borganda ochiladi
+    onClick={() => setMoreOpen(!moreOpen)}  // Bosilganda ochiladi, ikkinchi marta bosilganda yopiladi
+    className="flex items-center gap-1 group transition-opacity hover:opacity-80 py-4 outline-none"
+  >
+    {t("navbar.more") || "Yana"} 
+    <ChevronDown 
+      size={14} 
+      className={`transition-transform duration-300 ${moreOpen ? "rotate-180" : ""}`} 
+    />
+  </button>
 
-              <AnimatePresence>
-                {moreOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 15 }}
-                    onMouseLeave={() => setMoreOpen(false)}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-800 p-2 overflow-hidden"
-                  >
-                    {extraNavItems.map((item) => (
-                      <Link
-                        key={item}
-                        to={`/${item}`}
-                        className="block px-4 py-3 text-[11px] rounded-xl transition-colors hover:bg-emerald-50 dark:hover:bg-slate-800 text-slate-800 dark:text-gray-200"
-                      >
-                        {t(`navbar.${item}`)}
-                      </Link>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+  <AnimatePresence>
+    {moreOpen && (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95, y: 10 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 10 }}
+        className="absolute top-[85%] left-1/2 -translate-x-1/2 mt-2 w-48 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-800 p-2 z-[60]"
+      >
+        {extraNavItems.map((item) => (
+          <Link
+            key={item}
+            to={`/${item}`}
+            onClick={() => setMoreOpen(false)} // Link tanlanganda menyu yopiladi
+            className="block px-4 py-3 text-[11px] rounded-xl transition-all hover:bg-emerald-50 dark:hover:bg-slate-800 text-slate-800 dark:text-gray-200 hover:pl-6"
+          >
+            {t(`navbar.${item}`)}
+          </Link>
+        ))}
+      </motion.div>
+    )}
+  </AnimatePresence>
+</div>
           </div>
 
           <div className="flex items-center gap-4">
