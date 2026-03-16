@@ -14,7 +14,7 @@ export default function DashboardLayout() {
 
   const toggleSidebar = () => setIsOpen(!isOpen);
 
-  // 1. Initial Loading va AOS boshqaruvi
+
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -30,8 +30,8 @@ export default function DashboardLayout() {
     return () => clearTimeout(timer);
   }, []);
 
-  // 2. Har safar sahifa (path) o'zgarganda AOSni yangilash
-  // Bu link bosilganda sidebar elementlari yo'qolib qolishini oldini oladi
+
+
   useEffect(() => {
     AOS.refresh();
   }, [location.pathname]);
@@ -45,7 +45,7 @@ export default function DashboardLayout() {
 
   return (
     <>
-      {/* LOADING OVERLAY */}
+    
       <AnimatePresence>
         {isLoading && (
           <motion.div
@@ -57,7 +57,7 @@ export default function DashboardLayout() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-                className="w-20 h-20 border-4 border-emerald-500/20 border-t-emerald-600 rounded-full"
+                className="w-20 h-20 border-4 rounded-full border-emerald-500/20 border-t-emerald-600"
               />
               <LayoutDashboard className="absolute text-emerald-600 animate-pulse" size={32} />
             </div>
@@ -67,7 +67,7 @@ export default function DashboardLayout() {
 
       <div className="max-w-[1400px] mx-auto flex min-h-screen bg-gray-100 dark:bg-gray-950 transition-colors duration-500 relative pt-[100px]">
         
-        {/* MOBILE MENU BUTTON */}
+        
         <button
           className={`md:hidden fixed top-[115px] right-6 z-40 bg-white dark:bg-gray-800 p-3 rounded-full shadow-lg border border-emerald-100 dark:border-gray-700 active:scale-95 transition-all duration-300 ${
             isOpen ? "opacity-0 pointer-events-none scale-0" : "opacity-100 scale-100"
@@ -77,12 +77,11 @@ export default function DashboardLayout() {
           <Menu size={24} className="text-emerald-600 dark:text-emerald-400" />
         </button>
 
-        {/* DESKTOP SIDEBAR */}
         <aside 
           className="w-64 bg-white dark:bg-gray-900 shadow-md p-6 hidden md:flex flex-col sticky top-[100px] h-[calc(100vh-100px)] overflow-y-auto border-r border-gray-200 dark:border-gray-800"
         >
           <div className="flex items-center gap-3 mb-8">
-            <div className="p-2 bg-emerald-100 dark:bg-emerald-900/40 rounded-lg">
+            <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-900/40">
               <LayoutDashboard size={20} className="text-emerald-600 dark:text-emerald-400" />
             </div>
             <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100">{t("dashboard.title")}</h2>
@@ -107,30 +106,30 @@ export default function DashboardLayout() {
 
           <Link 
             to="/" 
-            className="flex items-center gap-3 p-3 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/20 text-red-600 dark:text-red-400 mt-auto font-bold transition-colors"
+            className="flex items-center gap-3 p-3 mt-auto font-bold text-red-600 transition-colors rounded-xl hover:bg-red-50 dark:hover:bg-red-900/20 dark:text-red-400"
           >
             <LogOut size={18} />
             {t("dashboard.chiqish")}
           </Link>
         </aside>
 
-        {/* MOBILE SIDEBAR */}
+        
         <div
           className={`fixed top-[100px] right-0 w-80 h-[calc(100vh-100px)] bg-white dark:bg-gray-900 shadow-[-15px_0_30px_rgba(0,0,0,0.1)] z-50 transform transition-transform duration-500 ease-in-out
                       ${isOpen ? "translate-x-0" : "translate-x-full"} md:hidden flex flex-col`}
         >
           <div className="bg-gradient-to-br from-emerald-600 to-green-500 p-6 relative min-h-[1400px] flex flex-col justify-end overflow-hidden">
-             {/* Bezak uchun doira */}
-            <div className="absolute -top-10 -left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
+           
+            <div className="absolute w-32 h-32 rounded-full -top-10 -left-10 bg-white/10 blur-2xl" />
             
-            <button onClick={toggleSidebar} className="absolute top-4 right-4 bg-white/20 p-2 rounded-full text-white hover:bg-white/30 transition">
+            <button onClick={toggleSidebar} className="absolute p-2 text-white transition rounded-full top-4 right-4 bg-white/20 hover:bg-white/30">
               <X size={24} />
             </button>
-            <h2 className="text-white font-bold text-xl relative z-10">Yuksalish Bank</h2>
-            <p className="text-white/80 text-xs italic relative z-10">Shaxsiy kabinet</p>
+            <h2 className="relative z-10 text-xl font-bold text-white">Yuksalish Bank</h2>
+            <p className="relative z-10 text-xs italic text-white/80">Shaxsiy kabinet</p>
           </div>
 
-          <nav className="p-4 flex flex-col gap-2 flex-1 dark:bg-gray-900">
+          <nav className="flex flex-col flex-1 gap-2 p-4 dark:bg-gray-900">
             {navLinks.map((link) => (
               <Link 
                 key={link.to}
@@ -147,15 +146,15 @@ export default function DashboardLayout() {
               </Link>
             ))}
             
-            <div className="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
-              <Link to="/" className="flex items-center gap-3 p-4 text-red-500 font-bold italic">
+            <div className="pt-4 mt-auto border-t border-gray-100 dark:border-gray-800">
+              <Link to="/" className="flex items-center gap-3 p-4 italic font-bold text-red-500">
                 <LogOut size={18} /> {t("dashboard.chiqish")}
               </Link>
             </div>
           </nav>
         </div>
 
-        {/* OVERLAY */}
+     
         {isOpen && (
           <div 
             onClick={toggleSidebar} 
@@ -163,8 +162,8 @@ export default function DashboardLayout() {
           />
         )}
 
-        {/* MAIN CONTENT AREA */}
-        <main className="flex-1 p-4 sm:p-10 overflow-y-auto bg-gray-50 dark:bg-gray-950 transition-colors">
+      
+        <main className="flex-1 p-4 overflow-y-auto transition-colors sm:p-10 bg-gray-50 dark:bg-gray-950">
           <div className="max-w-5xl mx-auto">
               <motion.div
                 key={location.pathname}

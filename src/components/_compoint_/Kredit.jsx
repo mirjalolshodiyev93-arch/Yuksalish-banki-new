@@ -105,16 +105,16 @@ export default function Kredit() {
           >
             <div className="relative w-24 h-24">
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-10 h-10 bg-emerald-600 rounded-lg animate-pulse"></div>
+                <div className="w-10 h-10 rounded-lg bg-emerald-600 animate-pulse"></div>
               </div>
               <motion.div 
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
-                className="absolute inset-0 border-t-4 border-b-4 border-emerald-600 rounded-full"
+                className="absolute inset-0 border-t-4 border-b-4 rounded-full border-emerald-600"
               ></motion.div>
             </div>
             <motion.p className="mt-8 text-sm font-bold tracking-[0.3em] uppercase text-slate-500 dark:text-slate-400">
-              {/* Loader matni uchun json'ga "loading" qo'shish tavsiya etiladi, hozircha qo'lda */}
+  
               Loading...
             </motion.p>
           </motion.div>
@@ -127,7 +127,7 @@ export default function Kredit() {
           >
             <ToastContainer position="top-right" theme="colored" />
 
-            {/* HERO SECTION */}
+  
             <section className="relative px-6 pt-32 pb-20 overflow-hidden">
               <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 items-center">
                 <motion.div className="space-y-8">
@@ -152,9 +152,9 @@ export default function Kredit() {
               </div>
             </section>
 
-            {/* CREDIT TYPES */}
+        
             <section className="max-w-[1400px] mx-auto px-6 py-24">
-              <h2 className="mb-16 text-center text-3xl font-black md:text-5xl">{t("kredit.types_title")}</h2>
+              <h2 className="mb-16 text-3xl font-black text-center md:text-5xl">{t("kredit.types_title")}</h2>
               <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
                 {kreditTurlari.map((item) => (
                   <Link key={item.id} to={item.link} className="group">
@@ -170,7 +170,7 @@ export default function Kredit() {
                           <span className="font-bold">{item.max}</span>
                         </div>
                       </div>
-                      <button className="w-full py-4 font-bold bg-slate-50 dark:bg-slate-800 rounded-xl group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                      <button className="w-full py-4 font-bold transition-all bg-slate-50 dark:bg-slate-800 rounded-xl group-hover:bg-emerald-600 group-hover:text-white">
                         {t("kredit.btn_more")}
                       </button>
                     </div>
@@ -179,25 +179,25 @@ export default function Kredit() {
               </div>
             </section>
 
-            {/* CALCULATOR SECTION */}
+    
             <section ref={kalkulyatorRef} className="px-6 py-24 bg-slate-50 dark:bg-slate-900/50">
               <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-20 items-center">
-                <div className="w-full lg:w-1/2 space-y-10">
+                <div className="w-full space-y-10 lg:w-1/2">
                   <h2 className="text-4xl font-black">{t("kredit.calc_title")}</h2>
                   <div className="bg-white dark:bg-slate-900 p-8 md:p-12 rounded-[3rem] shadow-xl">
                     <div className="space-y-8">
                       <div>
                         <label className="block mb-4 text-xs font-bold uppercase text-slate-400">{t("kredit.placeholder_sum")} ({t("kredit.currency")})</label>
-                        <input type="number" value={summa || ""} onChange={(e) => setSumma(Number(e.target.value))} className="w-full p-4 text-2xl font-black bg-slate-50 dark:bg-slate-800 rounded-2xl outline-none focus:ring-2 focus:ring-emerald-500" />
+                        <input type="number" value={summa || ""} onChange={(e) => setSumma(Number(e.target.value))} className="w-full p-4 text-2xl font-black outline-none bg-slate-50 dark:bg-slate-800 rounded-2xl focus:ring-2 focus:ring-emerald-500" />
                       </div>
                       <div className="grid grid-cols-2 gap-6">
                         <div>
                           <label className="block mb-4 text-xs font-bold uppercase text-slate-400">{t("kredit.placeholder_term")}</label>
-                          <input type="number" value={muddat || ""} onChange={(e) => setMuddat(Number(e.target.value))} className="w-full p-4 font-bold bg-slate-50 dark:bg-slate-800 rounded-2xl outline-none" />
+                          <input type="number" value={muddat || ""} onChange={(e) => setMuddat(Number(e.target.value))} className="w-full p-4 font-bold outline-none bg-slate-50 dark:bg-slate-800 rounded-2xl" />
                         </div>
                         <div>
                           <label className="block mb-4 text-xs font-bold uppercase text-slate-400">{t("kredit.placeholder_percent")}</label>
-                          <input type="number" value={foiz || ""} onChange={(e) => setFoiz(Number(e.target.value))} className="w-full p-4 font-bold bg-slate-50 dark:bg-slate-800 rounded-2xl outline-none" />
+                          <input type="number" value={foiz || ""} onChange={(e) => setFoiz(Number(e.target.value))} className="w-full p-4 font-bold outline-none bg-slate-50 dark:bg-slate-800 rounded-2xl" />
                         </div>
                       </div>
                       <div className="pt-8 border-t dark:border-slate-800">
@@ -215,9 +215,9 @@ export default function Kredit() {
               </div>
             </section>
 
-            {/* FORM SECTION */}
+            
             <section className="py-24 px-6 max-w-[1400px] mx-auto">
-              <div className="flex flex-col lg:flex-row items-center gap-16">
+              <div className="flex flex-col items-center gap-16 lg:flex-row">
                 <div className="w-full lg:w-1/2">
                   <img src={ariza} alt="Ariza" className="w-full rounded-[3rem] shadow-2xl h-[500px] object-cover" />
                 </div>
@@ -225,9 +225,9 @@ export default function Kredit() {
                   <div className="bg-white dark:bg-slate-900 p-10 rounded-[3.5rem] shadow-2xl border dark:border-slate-800">
                     <h2 className="mb-4 text-3xl font-black">{t("kredit.form_title")}</h2>
                     <div className="space-y-6">
-                      <input type="text" placeholder={t("kredit.placeholder_name")} value={name} onChange={(e) => setName(e.target.value)} className="w-full p-5 font-bold bg-slate-50 dark:bg-slate-800 rounded-2xl outline-none" />
-                      <input type="text" placeholder={t("kredit.placeholder_phone")} value={phone} onChange={handlePhoneChange} className="w-full p-5 font-bold bg-slate-50 dark:bg-slate-800 rounded-2xl outline-none" />
-                      <select value={type} onChange={(e) => setType(e.target.value)} className="w-full p-5 font-bold bg-slate-50 dark:bg-slate-800 rounded-2xl outline-none appearance-none">
+                      <input type="text" placeholder={t("kredit.placeholder_name")} value={name} onChange={(e) => setName(e.target.value)} className="w-full p-5 font-bold outline-none bg-slate-50 dark:bg-slate-800 rounded-2xl" />
+                      <input type="text" placeholder={t("kredit.placeholder_phone")} value={phone} onChange={handlePhoneChange} className="w-full p-5 font-bold outline-none bg-slate-50 dark:bg-slate-800 rounded-2xl" />
+                      <select value={type} onChange={(e) => setType(e.target.value)} className="w-full p-5 font-bold outline-none appearance-none bg-slate-50 dark:bg-slate-800 rounded-2xl">
                         <option value="">{t("kredit.select_type")}</option>
                         {kreditTurlari.map((item) => <option key={item.id} value={item.title}>{item.title}</option>)}
                       </select>
@@ -240,7 +240,7 @@ export default function Kredit() {
               </div>
             </section>
 
-            {/* MODAL */}
+
             <AnimatePresence>
               {isModalOpen && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-[100] p-4">
@@ -257,7 +257,7 @@ export default function Kredit() {
                         </button>
                       </div>
                     ) : (
-                      <div className="py-6 text-center space-y-4">
+                      <div className="py-6 space-y-4 text-center">
                         <h3 className="text-2xl font-black text-emerald-600">{t("kredit.modal_success")}</h3>
                         <p>{t("kredit.modal_success_desc")}</p>
                       </div>

@@ -9,7 +9,7 @@
   import "swiper/css/pagination";
   import "swiper/css/effect-creative";
 
-  // ─── Animated background canvas ──────────────────────────────────────────────
+
   function NetworkCanvas() {
     const canvasRef = useRef(null);
 
@@ -30,8 +30,6 @@
         canvas.width = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
       };
-
-      // Use ResizeObserver instead of window resize for accuracy
       const ro = new ResizeObserver(resize);
       ro.observe(canvas);
       resize();
@@ -107,7 +105,7 @@
     return (
       <div className="relative h-6 overflow-hidden rounded-md shadow-inner w-9 sm:w-12 sm:h-8 shrink-0 bg-gradient-to-br from-yellow-200 via-yellow-400 to-yellow-600">
         <div className="absolute inset-[3px] rounded-[3px] border border-yellow-800/25" />
-        {/* chip lines */}
+    
         <div className="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-[3px] pl-[3px]">
           {[0,1,2].map(i => (
             <div key={i} className="w-1.5 h-[1.5px] bg-yellow-800/30 rounded-full" />
@@ -150,7 +148,7 @@
                   h-[148px] min-[500px]:h-[182px] sm:h-[212px] md:h-[244px] lg:h-[268px]"
         style={{ perspective: 1000 }}
       >
-        {/* Back card — desktop only */}
+      
         <motion.div
           initial={{ opacity: 0, x: 40, rotate: 15 }}
           animate={{ opacity: 1, x: 0, rotate: 12, y: [0, -8, 0] }}
@@ -165,7 +163,7 @@
           <div className="absolute inset-0 bg-black/35 backdrop-blur-[1px]" />
         </motion.div>
 
-        {/* Main card */}
+      
         <motion.div
           style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
           initial={{ opacity: 0, scale: 0.82 }}
@@ -180,9 +178,9 @@
             loading="lazy"
             draggable={false}
           />
-          {/* gradient overlay */}
+        
           <div className="absolute inset-0 bg-gradient-to-tr from-black/65 via-black/10 to-white/5" />
-          {/* shimmer on hover */}
+        
           <div className="absolute inset-0 transition-opacity duration-700 opacity-0 group-hover:opacity-100 bg-gradient-to-tr from-transparent via-white/8 to-transparent" />
 
           <div className="relative flex flex-col justify-between h-full p-3.5 sm:p-5 text-white">
@@ -208,7 +206,7 @@
     );
   }
 
-  // ─── Text content block ───────────────────────────────────────────────────────
+  
   const containerVars = {
     hidden: { opacity: 0 },
     visible: {
@@ -229,7 +227,7 @@
         animate="visible"
         className="z-10 w-full text-center lg:w-1/2 lg:text-left pb-14 lg:pb-0"
       >
-        {/* Badge */}
+      
         <motion.div
           variants={itemVars}
           className="inline-flex items-center gap-2 bg-green-50 dark:bg-emerald-500/10
@@ -243,7 +241,7 @@
           {slide.badge}
         </motion.div>
 
-        {/* Heading */}
+      
         <motion.h1
           variants={itemVars}
           className="text-2xl min-[500px]:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl
@@ -256,7 +254,7 @@
           </span>
         </motion.h1>
 
-        {/* Description */}
+        
         <motion.p
           variants={itemVars}
           className="max-w-lg mx-auto mb-6 text-sm leading-relaxed sm:text-base lg:text-lg text-slate-500 dark:text-slate-400 sm:mb-10 lg:mx-0"
@@ -264,7 +262,7 @@
           {slide.desc}
         </motion.p>
 
-        {/* CTA buttons */}
+  
         <motion.div
           variants={itemVars}
           className="flex flex-col gap-3 justify-center min-[450px]:flex-row lg:justify-start sm:gap-4"
@@ -286,7 +284,7 @@
     );
   }
 
-  // ─── Main Hero ────────────────────────────────────────────────────────────────
+
   export default function Hero() {
     const { t } = useTranslation();
     const navigate = useNavigate();
@@ -296,7 +294,7 @@
       <section className="relative w-full transition-colors duration-700 bg-white mpt-in-h-screen dark:bg-slate-950 pt-[50px]">
         <NetworkCanvas />
 
-        {/* Subtle radial glow for depth */}
+       
         <div className="pointer-events-none absolute inset-0 z-0
                         bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(34,197,94,0.07),transparent)]
                         dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(52,211,153,0.06),transparent)]" />
@@ -330,28 +328,7 @@
           ))}
         </Swiper>
 
-        <style>{`
-          .swiper-pagination-bullet {
-            background: #22c55e !important;
-            width: 6px; height: 6px;
-            opacity: 0.5;
-            transition: all 0.3s ease;
-          }
-          .swiper-pagination-bullet-active {
-            width: 22px;
-            border-radius: 4px;
-            opacity: 1;
-          }
-          .swiper-pagination {
-            bottom: 20px !important;
-          }
-          @media (max-width: 1000px) {
-            .swiper-pagination { bottom: 10px !important; }
-          }
-          @media (max-height: 680px) and (max-width: 600px) {
-            .container { gap: 0.75rem !important; }
-          }
-        `}</style>
+      
       </section>
     );
   }

@@ -4,7 +4,6 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-// Marker icon fix
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
@@ -50,12 +49,12 @@ export default function CardMap() {
 
       <div className="container mx-auto max-w-[1400px]">
 
-        {/* TITLE */}
+  
        
 
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col gap-8 lg:flex-row">
 
-          {/* SIDEBAR */}
+      
           <div className="w-full lg:w-1/3 flex flex-col gap-4 overflow-y-auto max-h-[700px] pr-2 custom-scrollbar">
 
             {locs.map((loc) => (
@@ -73,8 +72,8 @@ export default function CardMap() {
                 }`}
               >
 
-                <div className="flex justify-between items-start">
-                  <h3 className="font-bold text-lg group-hover:text-green-200 transition-colors italic">
+                <div className="flex items-start justify-between">
+                  <h3 className="text-lg italic font-bold transition-colors group-hover:text-green-200">
                     {loc.name}
                   </h3>
 
@@ -83,18 +82,18 @@ export default function CardMap() {
                   </span>
                 </div>
 
-                <p className="text-sm mt-2 text-white/70 dark:text-slate-400">
+                <p className="mt-2 text-sm text-white/70 dark:text-slate-400">
                   {loc.status}
                 </p>
 
-                <div className="mt-3 flex items-center text-xs font-bold text-white/50 group-hover:text-white transition-all">
+                <div className="flex items-center mt-3 text-xs font-bold transition-all text-white/50 group-hover:text-white">
                   MANZILGA QARASH ➤
                 </div>
               </div>
             ))}
           </div>
 
-          {/* MAP */}
+    
       <div className="h-[80vh] md:h-[100vh] w-full relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
 
             {loading && (
@@ -102,9 +101,9 @@ export default function CardMap() {
 
                 <div className="flex flex-col items-center gap-4">
 
-                  <div className="w-12 h-12 border-4 border-white/30 border-t-white dark:border-slate-700 dark:border-t-green-500 rounded-full animate-spin"></div>
+                  <div className="w-12 h-12 border-4 rounded-full border-white/30 border-t-white dark:border-slate-700 dark:border-t-green-500 animate-spin"></div>
 
-                  <span className="text-sm font-medium tracking-widest animate-pulse uppercase">
+                  <span className="text-sm font-medium tracking-widest uppercase animate-pulse">
                     Yuklanmoqda...
                   </span>
 
@@ -137,7 +136,7 @@ export default function CardMap() {
                         {loc.name}
                       </strong>
 
-                      <p className="text-xs text-slate-500 mt-1">
+                      <p className="mt-1 text-xs text-slate-500">
                         {loc.type}
                       </p>
 

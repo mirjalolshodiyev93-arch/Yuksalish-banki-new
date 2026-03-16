@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// Rasmlarni o'z joyida qoldiramiz
 import Earch from "../assets/salom.png";
 import Earch1 from "../assets/salom2.png";
 import Earch2 from "../assets/salom3.png";
@@ -83,7 +82,7 @@ export default function Transfer() {
       `}</style>
 
       <div className="max-w-[1200px] mx-auto px-6 py-20">
-        {/* Header */}
+      
         <div className="mb-20 text-center">
           <div className="inline-block px-4 py-1 mb-4 text-xs font-bold tracking-widest text-green-500 uppercase border rounded-full bg-green-500/10 border-green-500/20">
             Secure Banking
@@ -96,7 +95,7 @@ export default function Transfer() {
           </p>
         </div>
 
-        {/* Service cards */}
+    
         <div className="grid gap-6 mb-16 md:grid-cols-3">
           {[
             { id: "inner", title: "Bank ichida", icon: Earch2, desc: "0% komissiya" },
@@ -126,7 +125,7 @@ export default function Transfer() {
           ))}
         </div>
 
-        {/* Transfer Form */}
+    
         {activeService ? (
           <div className="max-w-3xl mx-auto duration-700 animate-in fade-in slide-in-from-bottom-10">
             <div className="dark-glass p-10 md:p-14 rounded-[40px] shadow-2xl relative">
@@ -198,7 +197,7 @@ export default function Transfer() {
             </div>
           </div>
         ) : (
-          /* Empty State */
+          
           <div className="text-center py-32 border-2 border-dashed border-white/5 rounded-[60px] bg-[#111a16]/20 backdrop-blur-sm">
             <div className="inline-flex items-center justify-center w-20 h-20 mb-6 text-4xl rounded-full bg-white/5 animate-bounce">
               🏦
@@ -209,7 +208,7 @@ export default function Transfer() {
         )}
       </div>
 
-      {/* Background decoration */}
+
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-green-900/10 blur-[120px] rounded-full"></div>
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-emerald-900/10 blur-[120px] rounded-full"></div>

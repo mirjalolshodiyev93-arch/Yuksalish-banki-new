@@ -4,7 +4,7 @@ import { services as getServices } from "../data/homeData";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Swiper importlari
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 import 'swiper/css';
@@ -23,7 +23,7 @@ export default function Service() {
 
   const translatedServices = getServices(t);
 
-  // Slayder ma'lumotlari - i18n kalitlarini tekshirib chiqing
+  
   const heroSlides = [
     {
       img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f",
@@ -66,7 +66,7 @@ export default function Service() {
             className="fixed inset-0 z-[999] flex flex-col items-center justify-center bg-white dark:bg-slate-950"
           >
             <div className="relative flex items-center justify-center">
-              <div className="w-24 h-24 border-4 border-emerald-100 rounded-full dark:border-emerald-900/20"></div>
+              <div className="w-24 h-24 border-4 rounded-full border-emerald-100 dark:border-emerald-900/20"></div>
               <div className="absolute w-24 h-24 border-4 rounded-full border-t-emerald-600 animate-spin"></div>
               <div className="absolute w-4 h-4 rounded-full bg-emerald-600 animate-ping"></div>
             </div>
@@ -85,7 +85,7 @@ export default function Service() {
             animate={{ opacity: 1 }}
             className="w-full min-h-screen transition-colors duration-500 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100"
           >
-            {/* HERO SECTION WITH SLIDER */}
+        
             <div className="relative h-[500px] w-full overflow-hidden">
               <Swiper
                 modules={[Autoplay, Pagination, EffectFade]}
@@ -94,15 +94,15 @@ export default function Service() {
                 autoplay={{ delay: 5000, disableOnInteraction: false }}
                 pagination={{ clickable: true }}
                 onSlideChange={() => {
-                  // Slayd o'zgarganda animatsiyalarni yangilash
+            
                   setTimeout(() => AOS.refresh(), 100);
                 }}
                 className="h-full"
               >
                 {heroSlides.map((slide, index) => (
                   <SwiperSlide key={index}>
-                    <div className="relative w-full h-full flex items-center overflow-hidden bg-white dark:bg-slate-950">
-                      {/* Fon rasmi */}
+                    <div className="relative flex items-center w-full h-full overflow-hidden bg-white dark:bg-slate-950">
+              
                       <div className="absolute inset-0 z-0">
                         <img 
                           src={slide.img} 
@@ -112,7 +112,7 @@ export default function Service() {
                         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-slate-950 dark:via-slate-950/80"></div>
                       </div>
 
-                      {/* Kontent */}
+              
                       <div className="relative z-10 px-6 max-w-[1400px] mx-auto w-full">
                         <div className="max-w-3xl">
                           <h1 

@@ -44,7 +44,7 @@ export default function RUBPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-gray-950 transition-colors duration-500 font-sans">
+    <div className="min-h-screen font-sans transition-colors duration-500 bg-slate-50 dark:bg-gray-950">
       <AnimatePresence>
         {isLoading && (
           <motion.div 
@@ -53,7 +53,7 @@ export default function RUBPage() {
           >
             <div className="flex flex-col items-center gap-4">
               <Loader2 size={48} className="text-red-600 animate-spin" />
-              <p className="text-slate-500 dark:text-gray-400 font-medium animate-pulse">RUB ma'lumotlari yuklanmoqda...</p>
+              <p className="font-medium text-slate-500 dark:text-gray-400 animate-pulse">RUB ma'lumotlari yuklanmoqda...</p>
             </div>
           </motion.div>
         )}
@@ -63,16 +63,16 @@ export default function RUBPage() {
         <section className="p-4 md:p-10">
           <div className="max-w-6xl mx-auto pt-[100px]">
 
-            {/* HEADER */}
-            <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-6" data-aos="fade-down">
+          
+            <div className="flex flex-col items-center justify-between gap-6 mb-10 md:flex-row" data-aos="fade-down">
               <div>
-                <h1 className="text-4xl font-extrabold text-slate-900 dark:text-white flex items-center gap-3">
+                <h1 className="flex items-center gap-3 text-4xl font-extrabold text-slate-900 dark:text-white">
                   <Globe className="text-red-600" /> {t('rubPage.title')}
                 </h1>
-                <p className="text-slate-500 dark:text-gray-400 mt-2">{t('rubPage.subtitle')}</p>
+                <p className="mt-2 text-slate-500 dark:text-gray-400">{t('rubPage.subtitle')}</p>
               </div>
 
-              <div className="bg-white dark:bg-gray-900 px-6 py-4 rounded-3xl shadow-sm border border-slate-100 dark:border-gray-800 flex gap-8">
+              <div className="flex gap-8 px-6 py-4 bg-white border shadow-sm dark:bg-gray-900 rounded-3xl border-slate-100 dark:border-gray-800">
                 <div>
                   <p className="text-[10px] text-slate-400 dark:text-gray-500 uppercase font-bold tracking-widest">{t('rubPage.buy')}</p>
                   <p className="text-2xl font-black text-emerald-500">{buyRate.toLocaleString()} UZS</p>
@@ -85,21 +85,20 @@ export default function RUBPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
               
-              {/* CONVERTER */}
+        
               <div className="lg:col-span-1 bg-white dark:bg-gray-900 p-8 rounded-[2.5rem] shadow-xl shadow-red-100/20 dark:shadow-none border border-red-50 dark:border-gray-800 h-fit" data-aos="fade-right">
-                <h2 className="text-xl font-bold mb-8 flex items-center gap-2 dark:text-white">
+                <h2 className="flex items-center gap-2 mb-8 text-xl font-bold dark:text-white">
                   <ArrowUpDown size={20} className="text-red-600" /> {t('rubPage.converter')}
                 </h2>
 
                 <div className="space-y-6">
                   <div>
-                    <label className="block text-xs font-bold text-slate-400 dark:text-gray-500 uppercase mb-3 ml-1">{t('rubPage.enterAmount')}</label>
+                    <label className="block mb-3 ml-1 text-xs font-bold uppercase text-slate-400 dark:text-gray-500">{t('rubPage.enterAmount')}</label>
                     <div className="relative">
                       <input
                         type="number"
-                        // Agar state 0 bo'lsa, input ichini bo'sh ko'rsatadi
                         value={amount === 0 ? "" : amount}
                         onChange={(e) => {
                           let val = e.target.value;
@@ -107,36 +106,36 @@ export default function RUBPage() {
                             setAmount(0);
                             return;
                           }
-                          // Faqat raqamlarni olish va uzunlikni cheklash
+                       
                           let cleanVal = val.replace(/\D/g, "");
                           if (cleanVal.length > 7) cleanVal = cleanVal.slice(0, 7);
                           setAmount(Number(cleanVal));
                         }}
                         placeholder="0"
-                        className="w-full pr-16 p-5 bg-slate-50 dark:bg-gray-800 border-2 border-transparent focus:border-red-500 focus:bg-white dark:focus:bg-gray-800 rounded-2xl outline-none transition-all text-2xl font-black dark:text-white"
+                        className="w-full p-5 pr-16 text-2xl font-black transition-all border-2 border-transparent outline-none bg-slate-50 dark:bg-gray-800 focus:border-red-500 focus:bg-white dark:focus:bg-gray-800 rounded-2xl dark:text-white"
                       />
-                      <span className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 font-bold pointer-events-none tracking-tighter">RUB</span>
+                      <span className="absolute font-bold tracking-tighter -translate-y-1/2 pointer-events-none right-5 top-1/2 text-slate-400">RUB</span>
                     </div>
                   </div>
 
-                  <div className="p-5 bg-red-50 dark:bg-red-900/20 rounded-2xl border border-red-100 dark:border-red-800/30">
-                    <p className="text-xs text-red-600 dark:text-red-400 font-bold uppercase tracking-wider">{t('rubPage.youGet') || "Siz olasiz"}:</p>
-                    <p className="text-3xl font-black text-red-800 dark:text-red-300 mt-2 break-words leading-tight">{(amount * buyRate).toLocaleString()} <span className="text-sm font-medium opacity-70 tracking-normal">UZS</span></p>
+                  <div className="p-5 border border-red-100 bg-red-50 dark:bg-red-900/20 rounded-2xl dark:border-red-800/30">
+                    <p className="text-xs font-bold tracking-wider text-red-600 uppercase dark:text-red-400">{t('rubPage.youGet') || "Siz olasiz"}:</p>
+                    <p className="mt-2 text-3xl font-black leading-tight text-red-800 break-words dark:text-red-300">{(amount * buyRate).toLocaleString()} <span className="text-sm font-medium tracking-normal opacity-70">UZS</span></p>
                   </div>
 
                   <button
                     onClick={handleExchange}
-                    className="w-full py-5 bg-red-600 hover:bg-red-700 text-white font-black rounded-2xl transition-all active:scale-95 shadow-lg shadow-red-200 dark:shadow-none uppercase tracking-widest text-sm"
+                    className="w-full py-5 text-sm font-black tracking-widest text-white uppercase transition-all bg-red-600 shadow-lg hover:bg-red-700 rounded-2xl active:scale-95 shadow-red-200 dark:shadow-none"
                   >
                     {t('rubPage.exchange')}
                   </button>
                 </div>
               </div>
 
-              {/* CHART */}
+    
               <div className="lg:col-span-2" data-aos="fade-left">
                 <div className="bg-white dark:bg-gray-900 p-8 rounded-[2.5rem] shadow-sm border border-slate-100 dark:border-gray-800 h-full min-h-[400px]">
-                  <h3 className="font-bold text-slate-800 dark:text-white flex items-center gap-2 mb-8">
+                  <h3 className="flex items-center gap-2 mb-8 font-bold text-slate-800 dark:text-white">
                     <TrendingUp size={18} className="text-red-600" /> {t('rubPage.weeklyRate')}
                   </h3>
 
@@ -177,7 +176,7 @@ export default function RUBPage() {
 
             </div>
 
-            {/* MODAL */}
+    
             <AnimatePresence>
               {isModalOpen && (
                 <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
@@ -196,26 +195,26 @@ export default function RUBPage() {
                   >
                     <button onClick={() => setIsModalOpen(false)} className="absolute top-6 right-6 text-slate-400 hover:text-slate-900 dark:hover:text-white"><X size={24}/></button>
                     
-                    <div className="w-16 h-16 bg-red-100 dark:bg-red-900/30 text-red-600 rounded-2xl flex items-center justify-center mb-6">
+                    <div className="flex items-center justify-center w-16 h-16 mb-6 text-red-600 bg-red-100 dark:bg-red-900/30 rounded-2xl">
                       <CheckCircle2 size={32} />
                     </div>
 
-                    <h2 className="text-2xl font-black mb-2 dark:text-white">{t("rubPage.modalTitle")}</h2>
-                    <p className="text-slate-500 dark:text-gray-400 text-sm mb-6">{t("rubPage.modalText")}</p>
+                    <h2 className="mb-2 text-2xl font-black dark:text-white">{t("rubPage.modalTitle")}</h2>
+                    <p className="mb-6 text-sm text-slate-500 dark:text-gray-400">{t("rubPage.modalText")}</p>
                     
-                    <div className="p-6 bg-slate-50 dark:bg-gray-800 rounded-2xl border border-slate-100 dark:border-gray-700 mb-8 text-center">
+                    <div className="p-6 mb-8 text-center border bg-slate-50 dark:bg-gray-800 rounded-2xl border-slate-100 dark:border-gray-700">
                       <p className="text-3xl font-black text-red-600 dark:text-red-400">{result ? result.toLocaleString() : 0} <span className="text-lg">UZS</span></p>
                     </div>
 
                     <div className="flex flex-col gap-3">
                       <button
-                        className="w-full py-4 bg-red-600 text-white font-bold rounded-2xl hover:bg-red-700 transition-all"
+                        className="w-full py-4 font-bold text-white transition-all bg-red-600 rounded-2xl hover:bg-red-700"
                         onClick={() => setIsModalOpen(false)}
                       >
                         {t("rubPage.confirm")}
                       </button>
                       <button
-                        className="w-full py-4 text-slate-500 dark:text-gray-400 font-bold hover:bg-slate-100 dark:hover:bg-gray-800 rounded-2xl transition-all"
+                        className="w-full py-4 font-bold transition-all text-slate-500 dark:text-gray-400 hover:bg-slate-100 dark:hover:bg-gray-800 rounded-2xl"
                         onClick={() => setIsModalOpen(false)}
                       >
                         {t("rubPage.cancel")}

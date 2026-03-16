@@ -2,7 +2,7 @@ import { CreditCard, Landmark, PiggyBank, RefreshCcw } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion"; // Framer Motion import qilindi
+import { motion } from "framer-motion"; 
 
 export default function ServicesData() {
   const { t } = useTranslation();
@@ -31,25 +31,23 @@ export default function ServicesData() {
       icon: <RefreshCcw size={28} />,
       title: t("services1.currency.title"),
       desc: t("services1.currency.desc"),
-      link: "salom" // 'salom' o'rniga 'valyuta' qo'yildi, mantiqan to'g'ri bo'lishi uchun
+      link: "salom" 
     },
-  ];
-
-  // Animatsiya variantlari
+  ]
   const containerVars = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 } // Har bir kard 0.1s kechikish bilan chiqadi
+      transition: { staggerChildren: 0.1 } 
     }
   };
 
   const itemVars = {
-    hidden: { opacity: 0, y: 30 }, // Y o'qi bo'yicha pastdan chiqadi
+    hidden: { opacity: 0, y: 30 },
     visible: { 
       opacity: 1, 
       y: 0, 
-      transition: { type: "spring", stiffness: 100, damping: 20 } // Silliq bahor animatsiyasi
+      transition: { type: "spring", stiffness: 100, damping: 20 } 
     }
   };
 
@@ -64,32 +62,32 @@ export default function ServicesData() {
             transition={{ duration: 0.5 }}
             className="text-2xl font-bold text-gray-900 sm:text-3xl lg:text-4xl dark:text-white"
           >
-            {t("salom.home", "Bizning xizmatlarimiz")} {/* Default matn qo'shildi */}
+            {t("salom.home", "Bizning xizmatlarimiz")} 
           </motion.h2>
           <motion.div 
             initial={{ width: 0 }}
-            whileInView={{ width: 64 }} // 16 * 4 = 64px, 'w-16' ga mos
+            whileInView={{ width: 64 }} 
             transition={{ duration: 0.7, delay: 0.2 }}
             className="h-1 mx-auto mt-3 bg-green-600 rounded-full sm:w-20 dark:bg-green-500 sm:mt-4"
           ></motion.div>
         </div>
 
-        {/* Xizmatlar Grid - Har bir kardga animatsiya qo'shildi */}
+        
         <motion.div 
           variants={containerVars}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }} // Faqat viewportga kirganda animatsiya ishlaydi
+          viewport={{ once: true, amount: 0.2 }} 
           className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-8"
         >
           {services.map((item, index) => (
             <motion.div
               key={index}
-              variants={itemVars} // Animatsiya variantlari
+              variants={itemVars} 
               onClick={() => item.link && navigate(item.link)}
               className={`p-6 sm:p-8 rounded-3xl border cursor-pointer transition-all duration-300 transform hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl 
                 ${
-                item.active // Bu active holati uchun mantiq, agarda faol bo'lsa
+                item.active 
                   ? "bg-white dark:bg-slate-900 border-green-500 shadow-lg ring-1 ring-green-500"
                   : "bg-white dark:bg-slate-900 border-gray-100 dark:border-slate-800 hover:border-green-400 dark:hover:border-green-500 hover:shadow-green-500/10"
                 }`}
@@ -113,8 +111,8 @@ export default function ServicesData() {
               </p>
 
               <button className="flex items-center gap-1 text-sm font-bold text-green-600 transition-all dark:text-green-400 sm:gap-2 hover:gap-4 sm:text-base group">
-                {t("buttons.moreDetails", "Batafsil")} {/* Default matn qo'shildi */}
-                <span className="transition-transform group-hover:translate-x-1">→</span>
+                {t("buttons.moreDetails", "Batafsil")} 
+                <span className="transition-transform group-hover:translate-x-1"></span>
               </button>
             </motion.div>
           ))}

@@ -17,7 +17,7 @@ export default function Sidebar() {
     
       <button
         onClick={() => setOpen(!open)}
-        className="md:hidden fixed top-5 left-5 z-50 p-2 rounded-md bg-blue-600 text-white"
+        className="fixed z-50 p-2 text-white bg-blue-600 rounded-md md:hidden top-5 left-5"
       >
         <Menu size={24} />
       </button>
@@ -32,14 +32,14 @@ export default function Sidebar() {
           z-40
         `}
       >
-        <h1 className="text-2xl font-bold mb-10">Agrobank CRM</h1>
+        <h1 className="mb-10 text-2xl font-bold">Agrobank CRM</h1>
 
         <nav className="space-y-4">
           {links.map((item, index) => (
             <NavLink
               key={index}
               to={item.path}
-              className="flex gap-3 items-center hover:text-green-400 transition"
+              className="flex items-center gap-3 transition hover:text-green-400"
               onClick={() => setOpen(false)}
             >
               {item.icon} {item.title}
@@ -52,7 +52,7 @@ export default function Sidebar() {
       {open && (
         <div
           onClick={() => setOpen(false)}
-          className="fixed inset-0 bg-black/30 z-30 md:hidden"
+          className="fixed inset-0 z-30 bg-black/30 md:hidden"
         ></div>
       )}
     </>

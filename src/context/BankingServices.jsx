@@ -11,14 +11,14 @@ export default function CorporateServices() {
   const [successMessage, setSuccessMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // AOS va Loadingni sozlash
+
   useEffect(() => {
     AOS.init({ duration: 1000, once: true, easing: "ease-out-back" });
     const timer = setTimeout(() => setIsLoading(false), 1200);
     return () => clearTimeout(timer);
   }, []);
 
-  // Ma'lumotlar yuklangandan keyin AOSni yangilash
+
   useEffect(() => {
     if (!isLoading) AOS.refresh();
   }, [isLoading]);
@@ -39,9 +39,8 @@ export default function CorporateServices() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-gray-950 transition-colors duration-500 font-sans">
-      {/* LOADING SCREEN */}
-      <AnimatePresence>
+    <div className="min-h-screen font-sans transition-colors duration-500 bg-slate-50 dark:bg-gray-950">
+       <AnimatePresence>
         {isLoading && (
           <motion.div
             exit={{ opacity: 0 }}
@@ -49,7 +48,7 @@ export default function CorporateServices() {
           >
             <div className="flex flex-col items-center gap-4">
               <Loader2 size={48} className="text-emerald-600 animate-spin" />
-              <p className="text-slate-500 dark:text-gray-400 font-medium animate-pulse">
+              <p className="font-medium text-slate-500 dark:text-gray-400 animate-pulse">
                 Xizmatlar yuklanmoqda...
               </p>
             </div>
@@ -59,14 +58,14 @@ export default function CorporateServices() {
 
       {!isLoading && (
         <section className="relative pt-[150px] pb-32 px-6">
-          {/* SUCCESS NOTIFICATION */}
+        
           <AnimatePresence>
             {successMessage && (
               <motion.div
                 initial={{ y: -100, x: "-50%", opacity: 0 }}
                 animate={{ y: 20, x: "-50%", opacity: 1 }}
                 exit={{ y: -100, x: "-50%", opacity: 0 }}
-                className="fixed top-20 left-1/2 bg-emerald-100 dark:bg-emerald-900/30 border border-emerald-300 dark:border-emerald-800 text-emerald-800 dark:text-emerald-200 rounded-2xl px-6 py-4 flex items-center gap-3 shadow-xl z-50"
+                className="fixed z-50 flex items-center gap-3 px-6 py-4 border shadow-xl top-20 left-1/2 bg-emerald-100 dark:bg-emerald-900/30 border-emerald-300 dark:border-emerald-800 text-emerald-800 dark:text-emerald-200 rounded-2xl"
               >
                 <CheckCircle size={24} />
                 <span className="font-semibold">{successMessage}</span>
@@ -74,18 +73,17 @@ export default function CorporateServices() {
             )}
           </AnimatePresence>
 
-          {/* HERO SECTION */}
-          <div className="max-w-7xl mx-auto text-center mb-20" data-aos="fade-down">
-            <h1 className="text-5xl md:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
+          <div className="mx-auto mb-20 text-center max-w-7xl" data-aos="fade-down">
+            <h1 className="mb-6 text-5xl font-black tracking-tight md:text-6xl text-slate-900 dark:text-white">
               {t("hero1.title")}
             </h1>
-            <p className="text-lg text-slate-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="max-w-2xl mx-auto text-lg leading-relaxed text-slate-600 dark:text-gray-400">
               {t("hero1.description")}
             </p>
           </div>
 
-          {/* SERVICES GRID */}
-          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+       
+          <div className="grid grid-cols-1 gap-8 mx-auto max-w-7xl sm:grid-cols-2 lg:grid-cols-4">
             {servicesKeys.map((key, idx) => {
               const service = t(`services2.${key}`, { returnObjects: true });
               return (
@@ -96,16 +94,16 @@ export default function CorporateServices() {
                   onClick={() => setModalData({ ...service, key })}
                   className="bg-white dark:bg-gray-900 p-8 rounded-[2.5rem] shadow-sm border border-slate-100 dark:border-gray-800 hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300 group cursor-pointer hover:-translate-y-2"
                 >
-                  <div className="w-16 h-16 mb-8 flex items-center justify-center bg-emerald-50 dark:bg-emerald-900/20 rounded-2xl transition-all group-hover:scale-110 group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/40">
+                  <div className="flex items-center justify-center w-16 h-16 mb-8 transition-all bg-emerald-50 dark:bg-emerald-900/20 rounded-2xl group-hover:scale-110 group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/40">
                     {servicesIcons[idx]}
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white group-hover:text-emerald-600 transition-colors">
+                  <h3 className="mb-3 text-xl font-bold transition-colors text-slate-900 dark:text-white group-hover:text-emerald-600">
                     {service.title}
                   </h3>
-                  <p className="text-slate-500 dark:text-gray-400 text-sm leading-relaxed">
+                  <p className="text-sm leading-relaxed text-slate-500 dark:text-gray-400">
                     {service.description}
                   </p>
-                  <div className="mt-8 flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold text-sm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
+                  <div className="flex items-center gap-2 mt-8 text-sm font-bold tracking-wider uppercase transition-all transform translate-y-2 opacity-0 text-emerald-600 dark:text-emerald-400 group-hover:opacity-100 group-hover:translate-y-0">
                     {t("buttons1.details")} 
                   </div>
                 </div>
@@ -113,7 +111,7 @@ export default function CorporateServices() {
             })}
           </div>
 
-          {/* MODAL */}
+  
           <AnimatePresence>
             {modalData && (
               <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
@@ -132,7 +130,7 @@ export default function CorporateServices() {
                 >
                   <button
                     onClick={() => setModalData(null)}
-                    className="absolute top-6 right-6 text-slate-400 hover:text-slate-900 dark:hover:text-white transition"
+                    className="absolute transition top-6 right-6 text-slate-400 hover:text-slate-900 dark:hover:text-white"
                   >
                     <X size={24} />
                   </button>
@@ -146,15 +144,15 @@ export default function CorporateServices() {
                     </h2>
                   </div>
 
-                  <div className="space-y-4 mb-10">
-                    <p className="text-slate-600 dark:text-gray-300 text-lg leading-relaxed">
+                  <div className="mb-10 space-y-4">
+                    <p className="text-lg leading-relaxed text-slate-600 dark:text-gray-300">
                       {modalData.details}
                     </p>
-                    <div className="h-1 w-20 bg-emerald-500 rounded-full" />
+                    <div className="w-20 h-1 rounded-full bg-emerald-500" />
                   </div>
 
                   <button
-                    className="w-full py-5 bg-emerald-600 hover:bg-emerald-700 text-white font-black rounded-2xl transition-all active:scale-95 shadow-lg shadow-emerald-200 dark:shadow-none uppercase tracking-widest"
+                    className="w-full py-5 font-black tracking-widest text-white uppercase transition-all shadow-lg bg-emerald-600 hover:bg-emerald-700 rounded-2xl active:scale-95 shadow-emerald-200 dark:shadow-none"
                     onClick={handleSubmit}
                   >
                     {t("buttons1.request")}
@@ -164,12 +162,12 @@ export default function CorporateServices() {
             )}
           </AnimatePresence>
 
-          {/* FOOTER TEXT */}
+        
           <div className="max-w-4xl mx-auto mt-40 text-center" data-aos="fade-up">
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
+            <h2 className="mb-6 text-3xl font-bold text-slate-900 dark:text-white">
               {t("footer1.title")}
             </h2>
-            <p className="text-slate-500 dark:text-gray-400 leading-relaxed italic">
+            <p className="italic leading-relaxed text-slate-500 dark:text-gray-400">
               "{t("footer1.description")}"
             </p>
           </div>

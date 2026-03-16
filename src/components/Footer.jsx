@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react"; // useEffect qo'shildi
+import { useState, useEffect } from "react"; 
 import { useTranslation } from "react-i18next";
 import logo from "../assets/logo.png";
-import AOS from "aos"; // AOS import qilindi
-import "aos/dist/aos.css"; // AOS stillari
-
-// Ijtimoiy tarmoq logotiplari (O'zgarishsiz qoldi)
+import AOS from "aos"; 
+import "aos/dist/aos.css"; 
 const InstagramLogo = () => (
   <div className="w-full h-full flex items-center justify-center rounded-lg bg-[radial-gradient(circle_at_30%_107%,#fdf497_0%,#fdf497_5%,#fd5949_45%,#d6249f_60%,#285AEB_90%)] shadow-inner">
     <div className="w-5 h-5 border-[2px] border-white rounded-[6px] flex items-center justify-center relative">
@@ -28,11 +26,11 @@ export default function Footer() {
   const [email, setEmail] = useState("");
   const [card, setCard] = useState(null);
 
-  // AOS-ni ishga tushirish
+  
   useEffect(() => {
     AOS.init({
-      duration: 1000, // animatsiya davomiyligi
-      once: true,     // faqat bir marta animatsiya bo'lishi uchun
+      duration: 1000, 
+      once: true,     
       easing: "ease-out-cubic",
     });
   }, []);
@@ -51,7 +49,7 @@ export default function Footer() {
   return (
     <footer className="w-full overflow-hidden text-white transition-colors duration-500 border-t bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-600 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 border-white/20 dark:border-slate-800">
       
-      {/* Toast Notification */}
+    
       {card && (
         <div className="fixed top-[100px] right-6 z-50 animate-[toastIn_.4s_ease]">
           <div className={`relative flex items-center gap-3 px-5 py-3 rounded-xl shadow-xl backdrop-blur-md border overflow-hidden
@@ -68,7 +66,7 @@ export default function Footer() {
       <div className="container px-6 py-12 mx-auto lg:py-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
 
-          {/* Kolonna 1: Logo va Haqida */}
+       
           <div className="flex flex-col space-y-4" data-aos="fade-up" data-aos-delay="0">
             <Link to="/" className="inline-block w-[180px] transition-transform hover:scale-105">
               <img src={logo} alt="Logo" className="w-full h-auto dark:brightness-110" />
@@ -83,7 +81,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Kolonna 2: Xizmatlar */}
+      
           <div data-aos="fade-up" data-aos-delay="100">
             <h3 className="inline-block pb-2 mb-6 text-lg font-bold border-b border-white/20 dark:border-slate-700">
               {t("footer.services")}
@@ -96,7 +94,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Kolonna 3: Yordam */}
           <div data-aos="fade-up" data-aos-delay="200">
             <h3 className="inline-block pb-2 mb-6 text-lg font-bold border-b border-white/20 dark:border-slate-700">
               {t("footer.help")}
@@ -109,7 +106,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Kolonna 4: Obuna */}
+      
           <div data-aos="fade-up" data-aos-delay="300">
             <h3 className="inline-block pb-2 mb-6 text-lg font-bold border-b border-white/20 dark:border-slate-700">
               {t("footer.news")}
@@ -135,7 +132,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div 
           className="mt-16 pt-8 border-t border-white/20 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] sm:text-xs text-white/60 dark:text-slate-500 uppercase tracking-widest"
           data-aos="fade-zoom-in"

@@ -51,10 +51,9 @@ export default function Deposits() {
     }
   };
 
-  // 👇 BU YERDA INPUTLARNI TOZALASH QO'SHILDI
   const handleOpenModal = (deposit) => {
     setSelectedDeposit(deposit);
-    // Modal ochilganda ichini tozalaymiz
+
     setFormData({ fullName: "", phone: "998" });
     setErrors({ fullName: false, phone: false });
     setIsModalOpen(true);
@@ -89,7 +88,7 @@ export default function Deposits() {
       setIsModalOpen(false);
       setIsSuccess(true);
       
-      // Yuborilgandan keyin ham tozalab qo'yamiz
+  
       setFormData({ fullName: "", phone: "998" });
     }, 2000);
   };
@@ -113,26 +112,26 @@ export default function Deposits() {
       </AnimatePresence>
 
       {!isLoadingPage && (
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="px-4 mx-auto max-w-7xl">
           <header className="py-16 text-center" data-aos="fade-down">
-            <h1 className="text-5xl font-black md:text-7xl mb-6 tracking-tighter uppercase">Omonatlar</h1>
-            <p className="text-slate-500 dark:text-gray-400 text-lg max-w-xl mx-auto italic">Mablag'laringizni biz bilan ishonchli ko'paytiring.</p>
+            <h1 className="mb-6 text-5xl font-black tracking-tighter uppercase md:text-7xl">Omonatlar</h1>
+            <p className="max-w-xl mx-auto text-lg italic text-slate-500 dark:text-gray-400">Mablag'laringizni biz bilan ishonchli ko'paytiring.</p>
           </header>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          <div className="grid grid-cols-1 gap-8 mb-20 md:grid-cols-3">
             {depositTypes.map((item, index) => (
               <div 
                 key={item.id} data-aos="fade-up" data-aos-delay={index * 150}
                 className="bg-white dark:bg-gray-900 p-8 rounded-[3rem] border border-slate-100 dark:border-gray-800 shadow-xl hover:-translate-y-4 transition-all"
               >
-                <div className="w-14 h-14 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 rounded-2xl flex items-center justify-center mb-6">
+                <div className="flex items-center justify-center mb-6 w-14 h-14 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 rounded-2xl">
                   <ShieldCheck size={30} />
                 </div>
-                <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
-                <div className="text-4xl font-black text-emerald-600 mb-6">{item.rate} <span className="text-xs text-gray-400">YILLIK</span></div>
+                <h3 className="mb-2 text-2xl font-bold">{item.title}</h3>
+                <div className="mb-6 text-4xl font-black text-emerald-600">{item.rate} <span className="text-xs text-gray-400">YILLIK</span></div>
                 <button 
                   onClick={() => handleOpenModal(item)}
-                  className="w-full py-4 bg-slate-900 dark:bg-emerald-600 text-white font-bold rounded-2xl hover:bg-emerald-600 dark:hover:bg-emerald-700 transition-all shadow-lg"
+                  className="w-full py-4 font-bold text-white transition-all shadow-lg bg-slate-900 dark:bg-emerald-600 rounded-2xl hover:bg-emerald-600 dark:hover:bg-emerald-700"
                 >
                   Omonat ochish
                 </button>
@@ -142,18 +141,18 @@ export default function Deposits() {
 
           <section className="py-20" data-aos="zoom-in">
             <div className="bg-white dark:bg-gray-900 border border-slate-100 dark:border-gray-800 rounded-[3.5rem] p-8 md:p-14 shadow-2xl">
-               <div className="flex flex-col md:flex-row items-center gap-12">
+               <div className="flex flex-col items-center gap-12 md:flex-row">
                   <div className="flex-1 w-full space-y-8">
-                    <h2 className="text-3xl font-bold flex items-center gap-3"><Calculator className="text-emerald-500" /> Kalkulyator</h2>
+                    <h2 className="flex items-center gap-3 text-3xl font-bold"><Calculator className="text-emerald-500" /> Kalkulyator</h2>
                     <div className="space-y-6">
-                      <div className="flex justify-between items-end">
-                        <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">Sarmoya miqdori</label>
+                      <div className="flex items-end justify-between">
+                        <label className="text-xs font-bold tracking-widest text-gray-400 uppercase">Sarmoya miqdori</label>
                         <span className="text-2xl font-black text-emerald-600">{amount.toLocaleString()} UZS</span>
                       </div>
                       <input 
                         type="range" min="1000000" max="100000000" step="1000000"
                         value={amount} onChange={(e) => setAmount(Number(e.target.value))}
-                        className="w-full h-3 bg-slate-100 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-emerald-600"
+                        className="w-full h-3 rounded-lg appearance-none cursor-pointer bg-slate-100 dark:bg-gray-800 accent-emerald-600"
                       />
                     </div>
                   </div>
@@ -174,10 +173,10 @@ export default function Deposits() {
           <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setIsModalOpen(false)} className="absolute inset-0 bg-slate-900/60 dark:bg-black/80 backdrop-blur-md" />
             <motion.div initial={{ scale: 0.9, y: 20 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.9, y: 20 }} className="relative w-full max-w-lg bg-white dark:bg-gray-900 rounded-[3rem] p-10 shadow-2xl overflow-hidden">
-              <button onClick={() => setIsModalOpen(false)} className="absolute top-8 right-8 text-gray-400 hover:text-black dark:hover:text-white transition-colors"><X size={24} /></button>
+              <button onClick={() => setIsModalOpen(false)} className="absolute text-gray-400 transition-colors top-8 right-8 hover:text-black dark:hover:text-white"><X size={24} /></button>
               
-              <h2 className="text-3xl font-black mb-2">Ariza berish</h2>
-              <p className="text-emerald-600 dark:text-emerald-400 font-bold text-sm mb-8 uppercase tracking-tighter italic">{selectedDeposit?.title}</p>
+              <h2 className="mb-2 text-3xl font-black">Ariza berish</h2>
+              <p className="mb-8 text-sm italic font-bold tracking-tighter uppercase text-emerald-600 dark:text-emerald-400">{selectedDeposit?.title}</p>
 
               <form onSubmit={handleConfirmDeposit} className="space-y-6">
                 <div className="relative">
@@ -188,7 +187,7 @@ export default function Deposits() {
                     onChange={(e) => { setFormData({...formData, fullName: e.target.value}); setErrors({...errors, fullName: false}); }}
                     className={`w-full p-4 mt-1 rounded-2xl bg-slate-50 dark:bg-gray-800 outline-none border-2 transition-all ${errors.fullName ? "border-red-500 bg-red-50/50 dark:bg-red-950/20" : "border-transparent focus:border-emerald-500 text-slate-900 dark:text-white"}`}
                   />
-                  {errors.fullName && <div className="absolute right-4 top-11 text-red-500"><AlertCircle size={20} /></div>}
+                  {errors.fullName && <div className="absolute text-red-500 right-4 top-11"><AlertCircle size={20} /></div>}
                 </div>
 
                 <div className="relative">
@@ -197,12 +196,12 @@ export default function Deposits() {
                     type="text" value={formData.phone} onChange={handlePhoneChange}
                     className={`w-full p-4 mt-1 rounded-2xl bg-slate-50 dark:bg-gray-800 font-mono text-lg border-2 transition-all ${errors.phone ? "border-red-500 bg-red-50/50 dark:bg-red-950/20" : "border-transparent focus:border-emerald-500 text-slate-900 dark:text-white"}`}
                   />
-                  {errors.phone && <div className="absolute right-4 top-11 text-red-500"><AlertCircle size={20} /></div>}
+                  {errors.phone && <div className="absolute text-red-500 right-4 top-11"><AlertCircle size={20} /></div>}
                 </div>
 
                 <button 
                   disabled={isSubmitting}
-                  className="w-full py-5 bg-emerald-600 text-white font-black rounded-3xl hover:bg-emerald-700 shadow-2xl transition-all active:scale-95 disabled:opacity-50 flex justify-center items-center gap-3"
+                  className="flex items-center justify-center w-full gap-3 py-5 font-black text-white transition-all shadow-2xl bg-emerald-600 rounded-3xl hover:bg-emerald-700 active:scale-95 disabled:opacity-50"
                 >
                   {isSubmitting ? <Loader2 className="animate-spin" size={24} /> : "TASDIQLASH"}
                 </button>
@@ -217,12 +216,12 @@ export default function Deposits() {
           <div className="fixed inset-0 z-[210] flex items-center justify-center p-4">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setIsSuccess(false)} className="absolute inset-0 bg-emerald-900/20 backdrop-blur-xl" />
             <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.8, opacity: 0 }} className="relative w-full max-w-sm bg-white dark:bg-gray-900 rounded-[3.5rem] p-12 text-center shadow-3xl">
-              <div className="w-20 h-20 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600">
                 <CheckCircle2 size={50} />
               </div>
-              <h2 className="text-3xl font-black mb-4">Tayyor!</h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-8 text-sm font-medium">Sizning arizangiz qabul qilindi. Operatorlarimiz 15 daqiqa ichida bog'lanishadi.</p>
-              <button onClick={() => setIsSuccess(false)} className="w-full py-4 bg-slate-900 dark:bg-emerald-600 text-white font-bold rounded-2xl active:scale-95 transition-transform">Yopish</button>
+              <h2 className="mb-4 text-3xl font-black">Tayyor!</h2>
+              <p className="mb-8 text-sm font-medium text-gray-500 dark:text-gray-400">Sizning arizangiz qabul qilindi. Operatorlarimiz 15 daqiqa ichida bog'lanishadi.</p>
+              <button onClick={() => setIsSuccess(false)} className="w-full py-4 font-bold text-white transition-transform bg-slate-900 dark:bg-emerald-600 rounded-2xl active:scale-95">Yopish</button>
             </motion.div>
           </div>
         )}

@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { cards } from "../../data/cards";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, CreditCard, Loader2 } from "lucide-react"; // Ikonkalar uchun
-
-// 👇 AOS import
+import { X, CreditCard, Loader2 } from "lucide-react"; 
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -22,17 +20,15 @@ export default function CardSection() {
   };
 
   useEffect(() => {
-    // 1. AOSni sozlash
     AOS.init({
       duration: 1000,
       once: true,
       easing: "ease-in-out",
     });
 
-    // 2. Sun'iy loading (ma'lumotlar kelishini simulyatsiya qilish)
     const timer = setTimeout(() => {
       setIsLoading(false);
-      // Loading tugagach AOSni yangilash
+   
       setTimeout(() => {
         AOS.refresh();
       }, 100);
@@ -44,7 +40,7 @@ export default function CardSection() {
   return (
     <section className="pb-16 pt-32 bg-[#f5f5f5] min-h-screen relative">
       
-      {/* 👇 SECTION LOADING OVERLAY */}
+
       <AnimatePresence>
         {isLoading && (
           <motion.div
@@ -58,7 +54,7 @@ export default function CardSection() {
             >
               <Loader2 size={40} className="text-green-600" />
             </motion.div>
-            <p className="mt-4 text-gray-500 font-medium animate-pulse">
+            <p className="mt-4 font-medium text-gray-500 animate-pulse">
               Katalogni yuklamoqdamiz...
             </p>
           </motion.div>
@@ -69,32 +65,32 @@ export default function CardSection() {
         {!isLoading && cardData.map((card, index) => (
           <div
             key={card.id}
-            data-aos={index % 2 === 0 ? "fade-right" : "fade-left"} // Juft va toq kartalar har xil tomondan chiqadi
+            data-aos={index % 2 === 0 ? "fade-right" : "fade-left"} 
             className="flex flex-col items-center justify-between gap-10 p-8 transition-all duration-500 bg-white border border-gray-200 shadow-sm rounded-2xl lg:flex-row hover:shadow-xl hover:-translate-y-1"
           >
             
             <div className="flex-1 space-y-6">
-              <div className="inline-block px-4 py-1 bg-green-50 text-green-700 text-sm font-bold rounded-full uppercase tracking-wider">
+              <div className="inline-block px-4 py-1 text-sm font-bold tracking-wider text-green-700 uppercase rounded-full bg-green-50">
                 Bank Kartasi
               </div>
-              <h2 className="text-4xl font-black text-black leading-tight">{card.title}</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">{card.description}</p>
-              <p className="text-md text-gray-400 italic">{card.subDescription}</p>
+              <h2 className="text-4xl font-black leading-tight text-black">{card.title}</h2>
+              <p className="text-lg leading-relaxed text-gray-600">{card.description}</p>
+              <p className="italic text-gray-400 text-md">{card.subDescription}</p>
 
               <div className="flex flex-wrap gap-10 pt-4 border-t border-gray-100">
                 <div data-aos="zoom-in" data-aos-delay="300">
                   <h3 className="text-2xl font-bold text-black">{card.price}</h3>
-                  <p className="text-gray-500 text-sm">{card.priceLabel}</p>
+                  <p className="text-sm text-gray-500">{card.priceLabel}</p>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="500">
                   <h3 className="text-2xl font-bold text-black">{card.deposit}</h3>
-                  <p className="text-gray-500 text-sm">{card.depositLabel}</p>
+                  <p className="text-sm text-gray-500">{card.depositLabel}</p>
                 </div>
               </div>
 
               <button
                 onClick={() => openOrderModal(card)}
-                className="group flex items-center gap-3 px-8 py-4 mt-4 text-white font-bold transition-all bg-green-600 rounded-xl hover:bg-green-700 hover:shadow-lg active:scale-95"
+                className="flex items-center gap-3 px-8 py-4 mt-4 font-bold text-white transition-all bg-green-600 group rounded-xl hover:bg-green-700 hover:shadow-lg active:scale-95"
               >
                 <CreditCard size={20} />
                 {t("buyurtma")}
@@ -116,7 +112,7 @@ export default function CardSection() {
         ))}
       </div>
 
-      {/* 👇 MODAL WITH ANIMATION */}
+
       <AnimatePresence>
         {openModal && (
           <motion.div 
@@ -129,43 +125,43 @@ export default function CardSection() {
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="w-full max-w-md p-8 bg-white rounded-3xl shadow-2xl relative"
+              className="relative w-full max-w-md p-8 bg-white shadow-2xl rounded-3xl"
             >
               <button
                 onClick={() => setOpenModal(false)}
-                className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-400 hover:text-black"
+                className="absolute p-2 text-gray-400 transition-colors rounded-full top-4 right-4 hover:bg-gray-100 hover:text-black"
               >
                 <X size={24} />
               </button>
 
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div className="mb-6 text-center">
+                <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 text-green-600 bg-green-100 rounded-2xl">
                    <CreditCard size={32} />
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900">{selectedCard?.title}</h2>
-                <p className="text-gray-500 mt-2">{t("buyurtma_text")}</p>
+                <p className="mt-2 text-gray-500">{t("buyurtma_text")}</p>
               </div>
 
               <div className="space-y-4">
                 <div className="space-y-1">
-                  <label className="text-sm font-semibold text-gray-700 ml-1">{t("ism")}</label>
+                  <label className="ml-1 text-sm font-semibold text-gray-700">{t("ism")}</label>
                   <input
                     type="text"
                     placeholder="Ismingizni kiriting"
-                    className="w-full p-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all"
+                    className="w-full p-4 transition-all border border-gray-200 outline-none rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-sm font-semibold text-gray-700 ml-1">{t("telefon")}</label>
+                  <label className="ml-1 text-sm font-semibold text-gray-700">{t("telefon")}</label>
                   <input
                     type="tel"
                     placeholder="+998 (__) ___-__-__"
-                    className="w-full p-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all"
+                    className="w-full p-4 transition-all border border-gray-200 outline-none rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   />
                 </div>
 
-                <button className="w-full py-4 text-white font-bold bg-green-600 rounded-xl hover:bg-green-700 shadow-lg shadow-green-200 transition-all active:scale-95 mt-2">
+                <button className="w-full py-4 mt-2 font-bold text-white transition-all bg-green-600 shadow-lg rounded-xl hover:bg-green-700 shadow-green-200 active:scale-95">
                   {t("yuborish")}
                 </button>
               </div>

@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'; // useEffect qo'shildi
+import React, { useEffect } from 'react'; 
 import { useTranslation } from "react-i18next";
-import AOS from "aos"; // AOS import
-import "aos/dist/aos.css"; // AOS stillari
+import AOS from "aos"; 
+import "aos/dist/aos.css"; 
 
 import img10 from "../../assets/img10.png";
 import img9 from "../../assets/rasm.jpg";
@@ -10,19 +10,18 @@ export default function YuksalishPage() {
   const { t } = useTranslation();
 
   useEffect(() => {
-    // AOSni ishga tushirish
+  
     AOS.init({
-      duration: 1000, // Animatsiya davomiyligi (ms)
-      once: true,     // Faqat bir marta ishlashi uchun
+      duration: 1000, 
+      once: true,    
       easing: 'ease-out-cubic',
     });
   }, []);
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4 font-sans transition-colors duration-500 bg-white dark:bg-slate-950 md:p-8 lg:p-12 overflow-hidden">
+    <div className="flex items-center justify-center min-h-screen p-4 overflow-hidden font-sans transition-colors duration-500 bg-white dark:bg-slate-950 md:p-8 lg:p-12">
       <div className="flex flex-col w-full gap-6 max-w-7xl lg:flex-row md:gap-8">
         
-        {/* Chap taraf - Instagram Promo (Chapdan chiqib keladi) */}
         <div 
           data-aos="fade-right" 
           className="flex flex-col items-center bg-[#f8fafc] dark:bg-slate-900 p-6 md:p-8 rounded-[35px] w-full lg:w-[360px] text-center shadow-sm border border-gray-100 dark:border-slate-800 transition-colors"
@@ -53,19 +52,11 @@ export default function YuksalishPage() {
           </a>
         </div>
 
-        {/* O'ng taraf - App Download Promo (O'ngdan chiqib keladi) */}
-        <div 
-          data-aos="fade-left"
-          data-aos-delay="200" // Biroz kechikish bilan chiqadi
-          className="flex flex-col lg:flex-row items-center justify-between bg-[#f8fafc] dark:bg-slate-900 p-6 md:p-10 rounded-[35px] flex-1 shadow-sm border border-gray-100 dark:border-slate-800 overflow-hidden transition-colors"
-        >
+
+        <div data-aos="fade-left" data-aos-delay="200" className="flex flex-col lg:flex-row items-center justify-between bg-[#f8fafc] dark:bg-slate-900 p-6 md:p-10 rounded-[35px] flex-1 shadow-sm border border-gray-100 dark:border-slate-800 overflow-hidden transition-colors">
           
           <div className="relative w-full lg:w-1/2 h-[250px] md:h-[350px] lg:h-[420px] flex items-center justify-center mb-8 lg:mb-0">
-            <img
-              className="object-contain w-full h-full drop-shadow-2xl"
-              src={img10}
-              alt="Yuksalish app"
-            />
+            <img className="object-contain w-full h-full drop-shadow-2xl" src={img10} alt="Yuksalish app" />
           </div>
 
           <div className="flex flex-col items-center w-full text-center lg:w-1/2 lg:items-start lg:text-left">

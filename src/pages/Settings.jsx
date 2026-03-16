@@ -31,7 +31,6 @@ export default function Settings() {
     setStatus("Sozlamalar saqlandi ✅");
     setPassword("");
     
-    // 3 soniyadan keyin statusni o'chirish
     setTimeout(() => setStatus(null), 3000);
   };
 
@@ -41,7 +40,7 @@ export default function Settings() {
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-6">
         
-        {/* Avatar Section */}
+
         <div className="flex items-center gap-6 p-4 border border-gray-200 border-dashed bg-gray-50 dark:bg-slate-800/50 rounded-2xl dark:border-slate-700">
           <img
             src={avatar}
@@ -62,7 +61,7 @@ export default function Settings() {
           </div>
         </div>
 
-        {/* Name Input */}
+    
         <label className="flex flex-col gap-2">
           <span className="ml-1 text-sm font-bold text-slate-500 dark:text-slate-400">Ism:</span>
           <input
@@ -74,7 +73,7 @@ export default function Settings() {
           />
         </label>
 
-        {/* Email Input */}
+    
         <label className="flex flex-col gap-2">
           <span className="ml-1 text-sm font-bold text-slate-500 dark:text-slate-400">Email:</span>
           <input
@@ -86,7 +85,7 @@ export default function Settings() {
           />
         </label>
 
-        {/* Password Input */}
+  
         <label className="flex flex-col gap-2">
           <span className="ml-1 text-sm font-bold text-slate-500 dark:text-slate-400">Yangi parol:</span>
           <input

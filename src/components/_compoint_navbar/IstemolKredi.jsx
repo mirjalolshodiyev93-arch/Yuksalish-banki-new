@@ -16,8 +16,8 @@ export default function IstemolKredit() {
   const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [loading, setLoading] = useState(false); // Telegram loading
-  const [pageLoading, setPageLoading] = useState(true); // Sahifa loading
+  const [loading, setLoading] = useState(false); 
+  const [pageLoading, setPageLoading] = useState(true); 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("+998");
 
@@ -74,10 +74,10 @@ export default function IstemolKredit() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-gray-950 transition-colors duration-500 font-sans">
+    <div className="min-h-screen font-sans transition-colors duration-500 bg-slate-50 dark:bg-gray-950">
       <ToastContainer transition={Slide} theme="colored" />
 
-      {/* PAGE INITIAL LOADING */}
+     
       <AnimatePresence>
         {pageLoading && (
           <motion.div
@@ -86,7 +86,7 @@ export default function IstemolKredit() {
           >
             <div className="flex flex-col items-center gap-4">
               <Loader2 size={48} className="text-blue-600 animate-spin" />
-              <p className="text-slate-500 dark:text-gray-400 font-medium animate-pulse">
+              <p className="font-medium text-slate-500 dark:text-gray-400 animate-pulse">
                 Iste'mol krediti yuklanmoqda...
               </p>
             </div>
@@ -96,10 +96,9 @@ export default function IstemolKredit() {
 
       {!pageLoading && (
         <section className="pt-[150px] pb-20 px-6">
-          <div className="max-w-7xl mx-auto">
+          <div className="mx-auto max-w-7xl">
             <div className="flex flex-col items-center justify-between gap-12 lg:flex-row">
-              
-              {/* TEXT CONTENT */}
+        
               <div className="flex-1 text-center lg:text-left" data-aos="fade-right">
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-sm font-bold tracking-wider text-blue-700 dark:text-blue-400 uppercase bg-blue-100 dark:bg-blue-900/30 rounded-full">
                   <ShoppingBag size={16} /> {t("consumer.badge")}
@@ -123,7 +122,7 @@ export default function IstemolKredit() {
                 </button>
               </div>
 
-              {/* IMAGE CONTENT */}
+            
               <div className="relative flex-1" data-aos="zoom-in-up" data-aos-delay="200">
                 <div className="absolute -z-10 w-80 h-80 bg-blue-400/20 rounded-full blur-[100px] -top-10 -right-10"></div>
                 <motion.div
@@ -142,7 +141,7 @@ export default function IstemolKredit() {
         </section>
       )}
 
-      {/* MODAL WINDOW */}
+    
       <AnimatePresence>
         {isModalOpen && (
           <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
@@ -159,7 +158,7 @@ export default function IstemolKredit() {
               className="relative bg-white dark:bg-gray-900 p-8 md:p-10 rounded-[3rem] w-full max-w-md shadow-2xl border border-white dark:border-gray-800"
             >
               <button 
-                className="absolute top-6 right-6 text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" 
+                className="absolute transition-colors top-6 right-6 text-slate-400 hover:text-slate-900 dark:hover:text-white" 
                 onClick={() => setIsModalOpen(false)}
               >
                 <X size={24} />
@@ -167,40 +166,40 @@ export default function IstemolKredit() {
 
               {!isSuccess ? (
                 <>
-                  <div className="text-center mb-8">
-                    <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-2">
+                  <div className="mb-8 text-center">
+                    <h2 className="mb-2 text-3xl font-black text-slate-900 dark:text-white">
                       {t("consumer.modal_title")}
                     </h2>
-                    <p className="text-slate-500 dark:text-gray-400 text-sm">
+                    <p className="text-sm text-slate-500 dark:text-gray-400">
                       {t("consumer.modal_desc")}
                     </p>
                   </div>
 
                   <div className="space-y-5">
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-slate-400 uppercase ml-1 tracking-widest">{t("consumer.label_name")}</label>
+                      <label className="ml-1 text-xs font-bold tracking-widest uppercase text-slate-400">{t("consumer.label_name")}</label>
                       <div className="relative">
-                        <User className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
+                        <User className="absolute -translate-y-1/2 left-4 top-1/2 text-slate-400" size={20} />
                         <input
                           type="text"
                           placeholder={t("consumer.placeholder_name")}
                           value={name}
                           onChange={(e) => setName(e.target.value)}
-                          className="w-full pl-12 pr-4 py-4 bg-slate-50 dark:bg-gray-800 border-2 border-transparent focus:border-blue-500 dark:text-white outline-none rounded-2xl transition-all"
+                          className="w-full py-4 pl-12 pr-4 transition-all border-2 border-transparent outline-none bg-slate-50 dark:bg-gray-800 focus:border-blue-500 dark:text-white rounded-2xl"
                         />
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-slate-400 uppercase ml-1 tracking-widest">{t("consumer.label_phone")}</label>
+                      <label className="ml-1 text-xs font-bold tracking-widest uppercase text-slate-400">{t("consumer.label_phone")}</label>
                       <div className="relative">
-                        <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
+                        <Phone className="absolute -translate-y-1/2 left-4 top-1/2 text-slate-400" size={20} />
                         <input
                           type="text"
                           placeholder="+998 90 123-45-67"
                           value={phone}
                           onChange={handlePhoneChange}
-                          className="w-full pl-12 pr-4 py-4 bg-slate-50 dark:bg-gray-800 border-2 border-transparent focus:border-blue-500 dark:text-white outline-none rounded-2xl transition-all font-mono"
+                          className="w-full py-4 pl-12 pr-4 font-mono transition-all border-2 border-transparent outline-none bg-slate-50 dark:bg-gray-800 focus:border-blue-500 dark:text-white rounded-2xl"
                         />
                       </div>
                     </div>
@@ -208,7 +207,7 @@ export default function IstemolKredit() {
                     <button
                       disabled={loading}
                       onClick={sendToTelegram}
-                      className="w-full py-5 mt-4 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-300 dark:disabled:bg-gray-800 text-white font-black rounded-2xl transition-all shadow-lg shadow-blue-200 dark:shadow-none flex items-center justify-center gap-2"
+                      className="flex items-center justify-center w-full gap-2 py-5 mt-4 font-black text-white transition-all bg-blue-600 shadow-lg hover:bg-blue-700 disabled:bg-slate-300 dark:disabled:bg-gray-800 rounded-2xl shadow-blue-200 dark:shadow-none"
                     >
                       {loading && <Loader2 className="animate-spin" size={20} />}
                       {loading ? t("consumer.sending") : t("consumer.submit_btn")}
@@ -221,13 +220,13 @@ export default function IstemolKredit() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="py-10 text-center"
                 >
-                  <div className="w-20 h-20 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 text-blue-600 bg-blue-100 rounded-full dark:bg-blue-900/30 dark:text-blue-400">
                     <CheckCircle2 size={48} />
                   </div>
-                  <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-2">
+                  <h3 className="mb-2 text-2xl font-black text-slate-900 dark:text-white">
                     {t("consumer.success_title")}
                   </h3>
-                  <p className="text-slate-500 dark:text-gray-400 leading-relaxed">
+                  <p className="leading-relaxed text-slate-500 dark:text-gray-400">
                     {t("consumer.success_desc")}
                   </p>
                 </motion.div>

@@ -2,13 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Loading bar rangi */
 #nprogress .bar {
-  background: #10b981 !important; /* Emerald-500 */
+  background: #10b981 !important;
   height: 3px !important;
 }
 
-/* O'ng tomondagi "glow" (nurlanish) effekti */
 #nprogress .peg {
   box-shadow: 0 0 10px #10b981, 0 0 5px #10b981 !important;
 }

@@ -12,7 +12,7 @@ export default function Profile() {
   return (
     <div className="min-h-screen p-4 transition-colors duration-500 bg-gray-50 dark:bg-slate-950 sm:p-8 lg:p-12">
       
-      {/* Foydalanuvchi Profili Sarlavhasi */}
+    
       <div className="flex items-center p-6 mb-8 transition-colors bg-white border border-gray-100 shadow-sm dark:bg-slate-900 rounded-3xl dark:border-slate-800">
         <img
           src={user.avatar}
@@ -27,7 +27,7 @@ export default function Profile() {
         </div>
       </div>
 
-      {/* Statistika Kartalari */}
+  
       <div className="grid grid-cols-1 gap-4 mb-8 sm:grid-cols-2 lg:grid-cols-4 sm:gap-6 sm:mb-10">
         {[
           { label: t("stats1.clients"), value: "12,840" },
@@ -44,7 +44,7 @@ export default function Profile() {
         ))}
       </div>
 
-      {/* Grafik Seksiyasi */}
+
       <div className="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-[2rem] shadow-sm border border-gray-100 dark:border-slate-800 transition-colors">
         <div className="flex items-center justify-between mb-8">
           <h3 className="text-lg font-bold text-slate-800 dark:text-white">

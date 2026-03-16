@@ -61,7 +61,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
               transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
               className="relative w-16 h-16 border-4 border-emerald-500 border-t-transparent rounded-full shadow-[0_0_20px_rgba(16,185,129,0.4)]"
             >
-              <Sparkles className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-emerald-500" size={20} />
+              <Sparkles className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 text-emerald-500" size={20} />
             </motion.div>
             <motion.p 
               initial={{ y: 10, opacity: 0 }}
@@ -84,7 +84,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
       >
         <div className="max-w-[1400px] mx-auto px-4 sm:px-8 w-full flex justify-between items-center">
 
-          {/* LOGO */}
+        
         <Link to="/">
   <div
     className={`transition-all duration-500 flex items-center justify-center overflow-hidden ${
@@ -101,27 +101,27 @@ export default function Navbar({ darkMode, setDarkMode }) {
       className={`w-full h-[110px] object-cover object-center transition-all duration-500 ${
         scrolled
           ? darkMode 
-            ? "drop-shadow-[0_1px_2px_rgba(255,255,255,0.4)]" // Dark mode: yengil oq soya
-            : "drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]"       // Light mode: qora soya
+            ? "drop-shadow-[0_1px_2px_rgba(255,255,255,0.4)]" 
+            : "drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]"    
           : "drop-shadow-none"
-      } ${darkMode ? "brightness-110" : "brightness-100"}`} // Dark modeda logotip biroz yorqinroq ko'rinishi uchun
+      } ${darkMode ? "brightness-110" : "brightness-100"}`}
     />
   </div>
 </Link>
 
-          {/* DESKTOP NAV */}
+    
           <div className={`hidden md:flex gap-8 uppercase text-[12px] font-black tracking-[2px] ${
               scrolled ? "text-slate-900 dark:text-white" : "text-white"
             }`}>
             {navItems.slice(0, 4).map((item) => (
-              <Link key={item} to={item === "home" ? "/" : `/${item}`} className="relative group overflow-hidden">
+              <Link key={item} to={item === "home" ? "/" : `/${item}`} className="relative overflow-hidden group">
                 {t(`navbar.${item}`)}
                 <span className={`absolute left-0 -bottom-1 w-0 h-[2px] transition-all duration-300 group-hover:w-full ${scrolled ? "bg-emerald-600 dark:bg-white" : "bg-white"}`}></span>
               </Link>
             ))}
           </div>
 
-          {/* RIGHT SIDE TOOLS */}
+
           <div className="flex items-center gap-4">
             
             <motion.button
@@ -147,9 +147,9 @@ export default function Navbar({ darkMode, setDarkMode }) {
               </AnimatePresence>
             </motion.button>
 
-            {/* DESKTOP AUTH */}
+    
             <SignedOut>
-              <div className="hidden lg:flex gap-3">
+              <div className="hidden gap-3 lg:flex">
                 <SignInButton mode="modal">
                   <button className={`px-7 py-3 rounded-2xl text-[11px] font-black tracking-[1.5px] uppercase transition-all duration-300 border ${
                     scrolled 
@@ -169,7 +169,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
             </SignedOut>
 
             <SignedIn>
-              <div className="p-1 border-2 border-emerald-400 rounded-full hover:scale-110 transition-transform">
+              <div className="p-1 transition-transform border-2 rounded-full border-emerald-400 hover:scale-110">
                 <UserButton afterSignOutUrl="/" />
               </div>
             </SignedIn>
@@ -178,7 +178,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
               <LanguageDetector />
             </div>
 
-            {/* MOBILE MENU BUTTON */}
+          
             <button
               onClick={() => setMenuOpen(true)}
               className={`md:hidden p-3 rounded-xl transition-colors ${
@@ -190,8 +190,6 @@ export default function Navbar({ darkMode, setDarkMode }) {
           </div>
         </div>
       </nav>
-
-      {/* 📱 MOBILE MENU - O'zgarishsiz qoldi faqat ranglar mantiqi moslandi */}
       <AnimatePresence>
         {menuOpen && (
           <>
@@ -210,7 +208,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
               className="fixed right-0 top-0 w-[320px] h-full bg-white dark:bg-slate-950 z-[101] shadow-[-20px_0_50px_rgba(0,0,0,0.3)] flex flex-col"
             >
-              <div className="p-6 flex justify-between items-center border-b dark:border-slate-800">
+              <div className="flex items-center justify-between p-6 border-b dark:border-slate-800">
                 <img src={logo} alt="logo" className="h-12" />
                 <button 
                   onClick={() => setMenuOpen(false)}
@@ -220,13 +218,13 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 </button>
               </div>
 
-              <div className="flex-1 px-6 py-8 overflow-y-auto space-y-4">
+              <div className="flex-1 px-6 py-8 space-y-4 overflow-y-auto">
                 {navItems.map((item) => (
                   <Link
                     key={item}
                     to={item === "home" ? "/" : `/${item}`}
                     onClick={() => setMenuOpen(false)}
-                    className="flex items-center justify-between p-4 rounded-2xl hover:bg-emerald-50 dark:hover:bg-slate-900 text-slate-900 dark:text-white font-black text-xs uppercase tracking-widest transition-all"
+                    className="flex items-center justify-between p-4 text-xs font-black tracking-widest uppercase transition-all rounded-2xl hover:bg-emerald-50 dark:hover:bg-slate-900 text-slate-900 dark:text-white"
                   >
                     {t(`navbar.${item}`)}
                     <ArrowRight size={18} className="text-emerald-500" />
@@ -234,8 +232,8 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 ))}
               </div>
 
-              <div className="p-8 border-t dark:border-slate-800 space-y-5 bg-slate-50 dark:bg-slate-900/50">
-                <div className="flex justify-between items-center bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm">
+              <div className="p-8 space-y-5 border-t dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
+                <div className="flex items-center justify-between p-4 bg-white shadow-sm dark:bg-slate-800 rounded-2xl">
                   <span className="text-[10px] font-black uppercase text-slate-400 tracking-widest">Language</span>
                   <LanguageDetector />
                 </div>

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion"; // Animatsiyalar uchun
+import { motion, AnimatePresence } from "framer-motion"; 
 
 export default function Contacts() {
   const { t } = useTranslation();
-  const [loading, setLoading] = useState(true); // Yuklanish holati
+  const [loading, setLoading] = useState(true); 
 
   const [formData, setFormData] = useState({
     name: "",
@@ -14,7 +14,7 @@ export default function Contacts() {
   });
 
   useEffect(() => {
-    // Sahifa yuklanish simulyatsiyasi
+  
     const timer = setTimeout(() => {
       setLoading(false);
     }, 1200);
@@ -54,7 +54,7 @@ export default function Contacts() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-                className="w-16 h-16 border-4 border-green-200 border-t-green-600 rounded-full"
+                className="w-16 h-16 border-4 border-green-200 rounded-full border-t-green-600"
               />
               <motion.div
                 initial={{ opacity: 0 }}

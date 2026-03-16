@@ -47,21 +47,21 @@ export default function ScrollToTop() {
           whileTap={{ scale: 0.88 }}
           transition={{ type: "spring", stiffness: 300, damping: 22 }}
           aria-label="Scroll to top"
-          className="fixed bottom-8 right-8 z-50 w-14 h-14 flex items-center justify-center"
+          className="fixed z-50 flex items-center justify-center bottom-8 right-8 w-14 h-14"
         >
-          {/* Progress ring */}
+      
           <svg
             className="absolute inset-0 w-full h-full -rotate-90"
             viewBox="0 0 48 48"
           >
-            {/* Track */}
+
             <circle
               cx="24" cy="24" r="22"
               fill="none"
               stroke="rgba(52,211,153,0.15)"
               strokeWidth="2"
             />
-            {/* Fill */}
+    
             <motion.circle
               cx="24" cy="24" r="22"
               fill="none"
@@ -80,7 +80,7 @@ export default function ScrollToTop() {
             </defs>
           </svg>
 
-          {/* Glass button core */}
+          
           <div className="relative w-10 h-10 rounded-[14px] flex items-center justify-center
                           bg-gradient-to-br from-emerald-400/90 to-emerald-600/90
                           backdrop-blur-md
@@ -89,10 +89,10 @@ export default function ScrollToTop() {
                           overflow-hidden
                           transition-shadow duration-300
                           hover:shadow-[0_12px_32px_-4px_rgba(16,185,129,0.7),inset_0_1px_0_rgba(255,255,255,0.35)]">
-            {/* Inner sheen */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent pointer-events-none" />
+      
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-white/20 to-transparent" />
 
-            {/* Arrow */}
+      
             <motion.svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -101,7 +101,7 @@ export default function ScrollToTop() {
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="w-5 h-5 relative z-10 drop-shadow-sm"
+              className="relative z-10 w-5 h-5 drop-shadow-sm"
               animate={{ y: [0, -2, 0] }}
               transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
             >
@@ -109,7 +109,7 @@ export default function ScrollToTop() {
             </motion.svg>
           </div>
 
-          {/* Glow pulse */}
+      
           <span className="absolute inset-[6px] rounded-[12px] bg-emerald-400 blur-md opacity-30 animate-pulse pointer-events-none" />
         </motion.button>
       )}

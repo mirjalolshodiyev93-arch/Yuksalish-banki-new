@@ -47,21 +47,21 @@ export default function CurrencyExchangePage() {
           >
             <div className="flex flex-col items-center gap-4">
               <Loader2 size={48} className="text-emerald-600 animate-spin" />
-              <p className="text-slate-500 dark:text-gray-400 font-medium animate-pulse">Kurslar yangilanmoqda...</p>
+              <p className="font-medium text-slate-500 dark:text-gray-400 animate-pulse">Kurslar yangilanmoqda...</p>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
       {!isLoading && (
-        <section className="relative overflow-hidden min-h-screen pt-16 pb-24 px-6">
-          {/* Orqa fon effektlari - Dark modeda xiralashtirilgan */}
+        <section className="relative min-h-screen px-6 pt-16 pb-24 overflow-hidden">
+          
           <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-green-200 dark:bg-emerald-900 rounded-full blur-[120px] opacity-40 dark:opacity-20 animate-pulse"></div>
           <div className="absolute bottom-[5%] left-[-10%] w-[500px] h-[500px] bg-emerald-100 dark:bg-green-900 rounded-full blur-[100px] opacity-50 dark:opacity-10"></div>
 
-          {/* HERO SECTION */}
-          <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
-            <div className="lg:w-1/2 text-center lg:text-left" data-aos="fade-right">
+          
+          <div className="relative z-10 flex flex-col items-center justify-between gap-12 mx-auto max-w-7xl lg:flex-row lg:gap-20">
+            <div className="text-center lg:w-1/2 lg:text-left" data-aos="fade-right">
               <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-900/30 rounded-full">
                 ✨ {t("currencyExchange.rates.realTime")}
               </span>
@@ -71,22 +71,22 @@ export default function CurrencyExchangePage() {
                 ))}
               </h1>
 
-              <p className="mt-8 text-slate-600 dark:text-gray-400 text-lg lg:text-xl max-w-xl leading-relaxed">
+              <p className="max-w-xl mt-8 text-lg leading-relaxed text-slate-600 dark:text-gray-400 lg:text-xl">
                 {t("currencyExchange.hero.subtitle")}
               </p>
 
-              <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <div className="flex flex-col justify-center gap-4 mt-10 sm:flex-row lg:justify-start">
                 <button
                   onClick={handleScrollToRates}
                   className="group relative px-8 py-4 bg-emerald-600 text-white rounded-2xl font-bold shadow-[0_20px_40px_-12px_rgba(16,185,129,0.35)] hover:bg-emerald-700 transition-all duration-300 active:scale-95 flex items-center justify-center gap-2"
                 >
                   {t("currencyExchange.hero.btnExchange")}
-                  <ArrowUpRight size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  <ArrowUpRight size={20} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </button>
               </div>
             </div>
 
-            <div className="lg:w-1/2 flex justify-center relative" data-aos="fade-left" data-aos-delay="200">
+            <div className="relative flex justify-center lg:w-1/2" data-aos="fade-left" data-aos-delay="200">
               <div className="absolute inset-0 bg-emerald-400 blur-[100px] opacity-10 rounded-full scale-75"></div>
               <img
                 src={CardImg}
@@ -96,21 +96,21 @@ export default function CurrencyExchangePage() {
             </div>
           </div>
 
-          {/* RATES SECTION */}
-          <div ref={ratesRef} className="relative z-10 max-w-7xl mx-auto mt-32">
-            <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6 text-center md:text-left px-4" data-aos="fade-up">
+        
+          <div ref={ratesRef} className="relative z-10 mx-auto mt-32 max-w-7xl">
+            <div className="flex flex-col items-end justify-between gap-6 px-4 mb-12 text-center md:flex-row md:text-left" data-aos="fade-up">
               <div>
-                <h3 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
+                <h3 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
                   {t("currencyExchange.rates.title")}
                 </h3>
-                <p className="text-slate-500 dark:text-gray-400 mt-2 flex items-center justify-center md:justify-start gap-2">
+                <p className="flex items-center justify-center gap-2 mt-2 text-slate-500 dark:text-gray-400 md:justify-start">
                   <RefreshCcw size={16} className="animate-spin-slow text-emerald-500" />
                   Oxirgi yangilanish: Hozirgina
                 </p>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {currencies.map((c, index) => (
                 <div
                   key={c.code}
@@ -124,26 +124,26 @@ export default function CurrencyExchangePage() {
                       <div className={`w-12 h-12 ${c.color} rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg`}>
                         {c.code.substring(0, 1)}
                       </div>
-                      <span className="text-2xl font-black text-slate-800 dark:text-white tracking-tighter">{c.code}</span>
+                      <span className="text-2xl font-black tracking-tighter text-slate-800 dark:text-white">{c.code}</span>
                     </div>
 
                     <div className="space-y-4">
-                      <div className="flex justify-between items-center bg-white dark:bg-gray-800 p-3 rounded-xl border border-slate-50 dark:border-gray-700">
-                        <span className="text-slate-400 dark:text-gray-500 text-xs font-semibold uppercase">{t("currencyExchange.rates.buy")}</span>
-                        <span className="font-bold text-slate-900 dark:text-gray-200 flex items-center gap-1">
+                      <div className="flex items-center justify-between p-3 bg-white border dark:bg-gray-800 rounded-xl border-slate-50 dark:border-gray-700">
+                        <span className="text-xs font-semibold uppercase text-slate-400 dark:text-gray-500">{t("currencyExchange.rates.buy")}</span>
+                        <span className="flex items-center gap-1 font-bold text-slate-900 dark:text-gray-200">
                           <ArrowDownLeft size={14} className="text-emerald-500" /> {c.buy}
                         </span>
                       </div>
 
-                      <div className="flex justify-between items-center bg-white dark:bg-gray-800 p-3 rounded-xl border border-slate-50 dark:border-gray-700">
-                        <span className="text-slate-400 dark:text-gray-500 text-xs font-semibold uppercase">{t("currencyExchange.rates.sell")}</span>
-                        <span className="font-bold text-slate-900 dark:text-gray-200 flex items-center gap-1">
+                      <div className="flex items-center justify-between p-3 bg-white border dark:bg-gray-800 rounded-xl border-slate-50 dark:border-gray-700">
+                        <span className="text-xs font-semibold uppercase text-slate-400 dark:text-gray-500">{t("currencyExchange.rates.sell")}</span>
+                        <span className="flex items-center gap-1 font-bold text-slate-900 dark:text-gray-200">
                           <ArrowUpRight size={14} className="text-rose-500" /> {c.sell}
                         </span>
                       </div>
                     </div>
                     
-                    <div className="mt-6 w-full py-2 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 text-xs font-bold rounded-lg text-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="w-full py-2 mt-6 text-xs font-bold text-center transition-opacity rounded-lg opacity-0 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 group-hover:opacity-100">
                       Ayirboshlash →
                     </div>
                   </div>
@@ -152,21 +152,21 @@ export default function CurrencyExchangePage() {
             </div>
           </div>
 
-          {/* FEATURES */}
+      
           <div className="relative z-10 max-w-5xl mx-auto mt-24" data-aos="fade-up">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {[
                 { label: t("currencyExchange.features.fast"), icon: "" },
                 { label: t("currencyExchange.features.secure"), icon: "" },
                 { label: t("currencyExchange.features.anytime"), icon: "" }
               ].map((item, idx) => (
-                <div key={idx} className="flex items-center gap-4 bg-white/60 dark:bg-gray-900/60 backdrop-blur-md p-6 rounded-2xl border border-white dark:border-gray-800 shadow-sm hover:bg-white dark:hover:bg-gray-800 transition-colors">
+                <div key={idx} className="flex items-center gap-4 p-6 transition-colors border border-white shadow-sm bg-white/60 dark:bg-gray-900/60 backdrop-blur-md rounded-2xl dark:border-gray-800 hover:bg-white dark:hover:bg-gray-800">
                   <span className="text-2xl">{item.icon}</span>
                   <span className="font-semibold text-slate-700 dark:text-gray-300">{item.label}</span>
                 </div>
               ))}
             </div>
-            <p className="mt-12 text-slate-500 dark:text-gray-500 text-center max-w-2xl mx-auto leading-relaxed italic">
+            <p className="max-w-2xl mx-auto mt-12 italic leading-relaxed text-center text-slate-500 dark:text-gray-500">
               "{t("currencyExchange.features.description")}"
             </p>
           </div>

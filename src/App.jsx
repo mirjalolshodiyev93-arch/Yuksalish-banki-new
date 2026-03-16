@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react"; // useState va useEffect qo'shildi
+import { useState, useEffect } from "react"; 
 import Navbar from "./components/_compoint_navbar/Navbar";
 import Footer from "./components/Footer";
 
@@ -43,9 +43,9 @@ import { div } from "framer-motion/client";
 function App() {
   const location = useLocation();
 
-  // --- DARK MODE LOGIKASI BOSHLANDI ---
+
   const [darkMode, setDarkMode] = useState(() => {
-    // Sahifa yangilanganda tanlangan rejimni eslab qolish
+
     return localStorage.getItem("theme") === "dark";
   });
 
@@ -58,7 +58,7 @@ function App() {
       localStorage.setItem("theme", "light");
     }
   }, [darkMode]);
-  // --- DARK MODE LOGIKASI TUGADI ---
+
 
   const isNotFound = location.pathname === "/404";
 
@@ -104,7 +104,7 @@ function App() {
               <Route path="srm" element={<Srm />} />
             </Route>
 
-            {/* 404 */}
+    
             <Route path="/404" element={<NotFound />} />
             <Route path="*" element={<Navigate to="/404" replace />} />
           </Routes>

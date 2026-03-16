@@ -15,12 +15,10 @@ export default function Srm() {
       return;
     }
     
-    // Yuborish simulyatsiyasi
     setError(false);
-    setStatus("So'rovingiz muvaffaqiyatli yuborildi ✅");
+    setStatus("So'rovingiz muvaffaqiyatli yuborildi ");
     setMessage("");
 
-    // 3 soniyadan keyin statusni o'chirish
     setTimeout(() => setStatus(null), 3000);
   };
 
