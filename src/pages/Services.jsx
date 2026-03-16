@@ -4,7 +4,13 @@ import { services as getServices } from "../data/homeData";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
-// 👇 AOS importlari
+// Swiper importlari
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -17,17 +23,31 @@ export default function Service() {
 
   const translatedServices = getServices(t);
 
+  // Slayder ma'lumotlari - i18n kalitlarini tekshirib chiqing
+  const heroSlides = [
+    {
+      img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f",
+      title: t("hero.hero_title"),
+      subtitle: t("hero.hero_subtitle"),
+      desc: t("hero.hero_desc")
+    },
+    {
+      img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+      title: t("hero.hero_title_2") || "Modern Financial Center",
+      subtitle: t("hero.hero_subtitle_2") || "Future Solutions",
+      desc: t("hero.hero_desc_2") || "We provide high-end consulting and modern financial strategies for your business."
+    }
+  ];
+
   useEffect(() => {
-    // 👇 AOSni ishga tushirish
     AOS.init({
-      duration: 1000, // Animatsiya davomiyligi
-      once: true,     // Faqat bir marta ishlashi uchun
+      duration: 1000, 
+      once: true,    
       easing: "ease-in-out",
     });
 
     const timer = setTimeout(() => {
       setLoading(false);
-      // Content yuklangandan keyin AOSni qayta yangilash (refresh)
       setTimeout(() => AOS.refresh(), 100);
     }, 1200);
 
@@ -39,7 +59,6 @@ export default function Service() {
     <>
       <AnimatePresence>
         {loading ? (
-          /* --- LOADING SCREEN --- */
           <motion.div
             key="loader"
             initial={{ opacity: 1 }}
@@ -60,42 +79,69 @@ export default function Service() {
             </motion.p>
           </motion.div>
         ) : (
-          /* --- ASOSIY CONTENT --- */
           <motion.div
             key="content"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="w-full min-h-screen transition-colors duration-500 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100"
           >
-            {/* HERO SECTION */}
-            <div className="relative h-[450px] flex items-center overflow-hidden">
-              <div className="absolute inset-0 z-0">
-                <img 
-                  src="https://images.unsplash.com/photo-1554224155-6726b3ff858f" 
-                  className="object-cover w-full h-full opacity-20 dark:opacity-10 dark:grayscale" 
-                  alt="background"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white dark:to-slate-950"></div>
-              </div>
+            {/* HERO SECTION WITH SLIDER */}
+            <div className="relative h-[500px] w-full overflow-hidden">
+              <Swiper
+                modules={[Autoplay, Pagination, EffectFade]}
+                effect="fade"
+                speed={1000}
+                autoplay={{ delay: 5000, disableOnInteraction: false }}
+                pagination={{ clickable: true }}
+                onSlideChange={() => {
+                  // Slayd o'zgarganda animatsiyalarni yangilash
+                  setTimeout(() => AOS.refresh(), 100);
+                }}
+                className="h-full"
+              >
+                {heroSlides.map((slide, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="relative w-full h-full flex items-center overflow-hidden bg-white dark:bg-slate-950">
+                      {/* Fon rasmi */}
+                      <div className="absolute inset-0 z-0">
+                        <img 
+                          src={slide.img} 
+                          className="object-cover w-full h-full opacity-30 dark:opacity-20 dark:grayscale" 
+                          alt="background"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-slate-950 dark:via-slate-950/80"></div>
+                      </div>
 
-              <div className="relative z-10 px-6 max-w-[1400px] mx-auto w-full">
-                {/* 👇 AOS: Sarlavha chapdan kiradi */}
-                <h1 
-                  data-aos="fade-right"
-                  className="mb-6 text-4xl font-black leading-tight md:text-6xl text-slate-800 dark:text-white"
-                >
-                  {t("hero.hero_title")} <br />
-                  <span className="text-emerald-600 dark:text-emerald-500">{t("hero.hero_subtitle")}</span>
-                </h1>
-                {/* 👇 AOS: Tavsif 200ms kechikish bilan chiqadi */}
-                <p 
-                  data-aos="fade-right"
-                  data-aos-delay="200"
-                  className="max-w-xl text-lg font-medium leading-relaxed text-slate-600 dark:text-slate-400"
-                >
-                  {t("hero.hero_desc")}
-                </p>
-              </div>
+                      {/* Kontent */}
+                      <div className="relative z-10 px-6 max-w-[1400px] mx-auto w-full">
+                        <div className="max-w-3xl">
+                          <h1 
+                            data-aos="fade-right"
+                            className="mb-4 text-4xl font-black leading-tight md:text-6xl text-slate-800 dark:text-white"
+                          >
+                            {slide.title} <br />
+                            <span className="text-emerald-600 dark:text-emerald-500">{slide.subtitle}</span>
+                          </h1>
+                          <p 
+                            data-aos="fade-right"
+                            data-aos-delay="200"
+                            className="text-lg font-medium leading-relaxed text-slate-600 dark:text-slate-400"
+                          >
+                            {slide.desc}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+              
+              {/* Pagination uchun maxsus stil */}
+              <style jsx global>{`
+                .swiper-pagination-bullet { width: 12px; height: 12px; background: #94a3b8; opacity: 0.5; }
+                .swiper-pagination-bullet-active { width: 30px; border-radius: 6px; background: #10b981 !important; opacity: 1; }
+                .swiper-slide-active [data-aos] { opacity: 1; transform: translate3d(0,0,0); }
+              `}</style>
             </div>
 
             {/* SERVICES GRID */}
@@ -103,7 +149,6 @@ export default function Service() {
               {translatedServices.map((item, index) => (
                 <div
                   key={item.id}
-                  // 👇 AOS: Kartalar pastdan yuqoriga birin-ketin chiqadi
                   data-aos="fade-up"
                   data-aos-delay={index * 100}
                 >
@@ -140,7 +185,6 @@ export default function Service() {
             {/* CALCULATOR SECTION */}
             <section 
               className="max-w-[1200px] mx-auto px-6 py-10 mb-20"
-              // 👇 AOS: Kalkulyator bloki "zoom-in" bo'lib chiqadi
               data-aos="zoom-in-up"
             >
               <div className="bg-slate-50 dark:bg-slate-900/50 rounded-[3.5rem] p-8 md:p-16 border border-white dark:border-slate-800 shadow-inner">
@@ -186,7 +230,6 @@ export default function Service() {
                     </div>
                   </div>
                   
-                  {/* O'ng tomon natija qismi */}
                   <div 
                     className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-10 shadow-xl border border-emerald-50 dark:border-slate-800"
                     data-aos="fade-left"
@@ -213,7 +256,6 @@ export default function Service() {
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </section>

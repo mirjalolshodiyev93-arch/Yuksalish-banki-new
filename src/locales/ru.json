@@ -34,7 +34,8 @@
     "services": "Услуги",
     "about": "О нас",
     "contact": "Контакты",
-    "login": "Вход"
+    "SignIn": "Войти",
+  "signup": "Регистрация"
   },
   "stats": {
     "clients": "Клиенты",
@@ -42,47 +43,56 @@
     "experience": "Лет опыта",
     "service": "Сервис"
   },
- "hero": {
-  "badle": "№1 цифровой банк в Узбекистане",
-  "desc": "Стройте своё финансовое будущее с уверенностью вместе с Lodo Bank.",
-  "title": "Доверие, Безопасность,",
-  "subtitle": "Развитие",
-  "button": "Услуги",
-  "button1": "Подробнее",
-  "hero_title": "Уверенность в мире финансов",
-  "hero_desc": "Ваш надежный банк и центр современных финансовых решений",
-  "hero_subtitle": "Новые стандарты",
-
-  "slides": [
-    {
-      "id": 1,
-      "badge": "№1 цифровой банк в Узбекистане",
-      "title": "Доверие, Безопасность,",
-      "subtitle": "Развитие",
-      "desc": "Стройте своё финансовое будущее с уверенностью вместе с Lodo Bank.",
-            "cardImg": "https://static.vecteezy.com/system/resources/thumbnails/045/900/116/small/modern-gradient-minimalist-background-design-free-vector.jpg",
+"hero": {
+    "badle": "Цифровой банк №1 в Узбекистане",
+    "desc": "Стройте свое финансовое будущее с уверенностью вместе с Lodo Bank.",
+    "title": "Доверие, Безопасность,",
+    "subtitle": "Развитие",
+    "button": "Услуги",
+    "button1": "Подробнее",
+    "hero_title": "С уверенностью в мире финансов",
+    "hero_desc": "Ваш надежный банк и центр современных финансовых решений",
+    "hero_subtitle": "Новые стандарты",
+    "hero_title_2": "Современный финансовый центр",
+    "hero_subtitle_2": "Технологии будущего",
+    "hero_desc_2": "Мы предоставляем лучшие инструменты для успеха вашего бизнеса и финансовой стабильности.",
+    "slides": [
+      {
+        "id": 1,
+        "badge": "Цифровой банк №1 в Узбекистане",
+        "title": "Доверие, Безопасность,",
+        "subtitle": "Развитие",
+        "desc": "Стройте свое финансовое будущее с уверенностью вместе с Lodo Bank.",
+         "cardImg": "https://static.vecteezy.com/system/resources/thumbnails/045/900/116/small/modern-gradient-minimalist-background-design-free-vector.jpg",
             "backImg": "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1200"
-    },
-    {
-      "id": 2,
-      "badge": "Премиум банкинг",
-      "title": "Международный уровень",
-      "subtitle": "Visa Platinum",
-      "desc": "Путешествуйте по всему миру и пользуйтесь эксклюзивными привилегиями. Кэшбэк и премиальные услуги ждут вас.",
-      "cardImg": "https://i.pinimg.com/170x/e8/53/28/e8532804130712c9a242bfa0ac794056.jpg",
+      },
+      {
+        "id": 2,
+        "badge": "Premium Banking",
+        "title": "Международный уровень",
+        "subtitle": "Visa Platinum",
+        "desc": "Путешествуйте по миру и пользуйтесь особыми привилегиями. Вас ждут кэшбэк и эксклюзивные услуги.",
+        "cardImg": "https://i.pinimg.com/170x/e8/53/28/e8532804130712c9a242bfa0ac794056.jpg",
             "backImg": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200"
-    },
-    {
-      "id": 3,
-      "badge": "Умные сбережения",
-      "title": "Увеличьте свои средства",
-      "subtitle": "Вместе с нами",
-      "desc": "Выгодные депозиты с доходностью до 25% годовых. Начните планировать своё будущее уже сегодня.",
-        "cardImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLuaabt4ptv3HTGbWKUvXOYCZodxkidpmBxg&s",
+      },
+      {
+        "id": 3,
+        "badge": "Smart Savings",
+        "title": "Приумножайте средства",
+        "subtitle": "Вместе с нами",
+        "desc": "Выгодные вклады до 25% годовых. Планируйте свое будущее вместе с нами уже сегодня.",
+         "cardImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLuaabt4ptv3HTGbWKUvXOYCZodxkidpmBxg&s",
             "backImg": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200"
-    }
-  ]
-},
+      }
+    ]
+  },
+  "loading": "Загрузка...",
+  "xizmatlar": {
+    "calc_title": "Калькулятор дохода",
+    "calc_amount": "Сумма инвестиций",
+    "calc_total": "Общая сумма",
+    "calc_profit": "Чистая прибыль"
+  },
   "services": {
     "title": "Наши услуги",
     "card1": {
@@ -225,12 +235,7 @@
     "desc": "Мобильный и веб-банкинг",
     "btn": "Зарегистрироваться"
   },
-  "xizmatlar": {
-    "calc_title": "Рассчитаем ваш доход",
-    "calc_total": "Сумма в конце срока",
-    "calc_profit": "Чистая прибыль",
-    "calc_amount": "Сумма инвестиций"
-  },
+
   "contacts": {
     "title": "Контакты",
     "subtitle": "Свяжитесь с нами удобным для вас способом. Мы всегда готовы помочь.",
@@ -249,9 +254,9 @@
     "message_placeholder": "Напишите ваше сообщение здесь...",
     "send_btn": "Отправить сообщение"
   },
-  "kredit": {
-    "hero_title": "Быстрые и надежные кредитные услуги",
-    "hero_subtitle": "Самые выгодные процентные ставки и быстрое одобрение.",
+ "kredit": {
+    "hero_title": "Быстрый и надежный кредитный сервис",
+    "hero_subtitle": "Самые выгодные проценты и быстрое одобрение.",
     "btn_get": "Получить кредит",
     "btn_calc": "Рассчитать",
     "types_title": "Виды кредитов",
@@ -261,17 +266,23 @@
     "placeholder_term": "Срок (мес)",
     "placeholder_percent": "Процент (%)",
     "monthly_payment": "Ежемесячный платеж",
-    "form_title": "Оставить заявку на кредит",
+    "form_title": "Оставьте заявку на кредит",
     "placeholder_name": "Ваше имя",
     "placeholder_phone": "Телефон",
-    "select_type": "Выберите тип кредита",
+    "select_type": "Выберите кредит",
     "btn_send": "Отправить",
+    "btn_sent": "Отправлено",
     "alert_fill": "Пожалуйста, заполните все поля",
     "alert_success": "Заявка отправлена ✅",
     "currency": "сум",
-    "rate_label": "Ставка",
+    "rate_label": "Процент",
     "max_label": "Макс",
     "term_label": "Срок",
+    "modal_title": "Быстрая заявка",
+    "modal_desc": "Нажмите кнопку, чтобы связаться с персональным менеджером.",
+    "modal_success": "Успешно!",
+    "modal_success_desc": "Мы свяжемся с вами в ближайшее время.",
+    "modal_btn": "Связаться",
     "types": {
       "mortgage": "Ипотечный кредит",
       "auto": "Автокредит",

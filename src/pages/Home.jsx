@@ -71,7 +71,7 @@ export default function Home() {
             </motion.div>
           </motion.div>
         ) : (
-          /* --- ASOSIY SAHIFA KONTENTI --- */
+       
           <motion.main
             key="home-content"
             initial={{ opacity: 0 }}

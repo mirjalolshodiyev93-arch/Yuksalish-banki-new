@@ -6,19 +6,19 @@
     },
     "loans": {
       "title": "Loans",
-      "desc": "Microloans with preferential interest rates and fast processing."
+      "desc": "Microloans with favorable interest rates and quick processing."
     },
     "deposits": {
       "title": "Deposits",
-      "desc": "Grow your funds reliably with high returns."
+      "desc": "Grow your funds reliably with high profitability."
     },
     "currency": {
       "title": "Currency",
-      "desc": "24/7 online currency exchange at the most favorable rates."
+      "desc": "24/7 online currency exchange at the best rates."
     }
   },
   "buttons": {
-    "moreDetails": "More Details →",
+    "moreDetails": "Details →",
     "orderOnline": "Order Online"
   },
   "salom": {
@@ -26,67 +26,77 @@
   },
   "navbar": {
     "more": "MORE",
-    "aboutus": "AboutUs",
+    "aboutus": "About Us",
     "dashboard": "Dashboard",
     "card": "Card",
-    "kredit": "Loan",
+    "kredit": "Credit",
     "home": "Home",
     "services": "Services",
-    "about": "About Us",
-    "contact": "Contacts",
-    "login": "Login"
+    "about": "About",
+    "contact": "Contact",
+    "SignIn": "Sign In",
+    "signup": "Sign Up"
   },
   "stats": {
     "clients": "Clients",
     "branches": "Branches",
-    "experience": "Years Experience",
+    "experience": "Years of Experience",
     "service": "Service"
   },
- "hero": {
-  "badle": "The #1 digital bank in Uzbekistan",
-  "desc": "Build your financial future with confidence with Lodo Bank.",
-  "title": "Trust, Security,",
-  "subtitle": "Growth",
-  "button": "Services",
-  "button1": "Learn More",
-  "hero_title": "Confidence in the world of finance",
-  "hero_desc": "Your trusted bank and a center for modern financial solutions",
-  "hero_subtitle": "New standards",
-
-  "slides": [
-    {
-      "id": 1,
-      "badge": "The #1 digital bank in Uzbekistan",
-      "title": "Trust, Security,",
-      "subtitle": "Growth",
-      "desc": "Build your financial future with confidence with Lodo Bank.",
-            "cardImg": "https://static.vecteezy.com/system/resources/thumbnails/045/900/116/small/modern-gradient-minimalist-background-design-free-vector.jpg",
-            "backImg": "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1200"
-    },
-    {
-      "id": 2,
-      "badge": "Premium Banking",
-      "title": "International level",
-      "subtitle": "Visa Platinum",
-      "desc": "Travel around the world and enjoy exclusive benefits. Cashback and premium services await you.",
-    "cardImg": "https://i.pinimg.com/170x/e8/53/28/e8532804130712c9a242bfa0ac794056.jpg",
-            "backImg": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200"
-    },
-    {
-      "id": 3,
-      "badge": "Smart Savings",
-      "title": "Grow your funds",
-      "subtitle": "With us",
-      "desc": "Profitable deposits with up to 25% annual return. Start planning your future today with us.",
+  "hero": {
+    "badle": "No.1 Digital Bank in Uzbekistan",
+    "desc": "Build your financial future with confidence together with Lodo Bank.",
+    "title": "Trust, Security,",
+    "subtitle": "Development",
+    "button": "Services",
+    "button1": "More Details",
+    "hero_title": "With Confidence in the World of Finance",
+    "hero_desc": "Your reliable bank and center for modern financial solutions",
+    "hero_subtitle": "New Standards",
+    "hero_title_2": "Modern Financial Center",
+    "hero_subtitle_2": "Future Technologies",
+    "hero_desc_2": "We provide the best tools for your business success and financial stability.",
+    "slides": [
+      {
+        "id": 1,
+        "badge": "No.1 Digital Bank in Uzbekistan",
+        "title": "Trust, Security,",
+        "subtitle": "Development",
+        "desc": "Build your financial future with confidence together with Lodo Bank.",
+        "cardImg": "https://static.vecteezy.com/system/resources/thumbnails/045/900/116/small/modern-gradient-minimalist-background-design-free-vector.jpg",
+        "backImg": "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1200"
+      },
+      {
+        "id": 2,
+        "badge": "Premium Banking",
+        "title": "International Level",
+        "subtitle": "Visa Platinum",
+        "desc": "Travel the world and enjoy special privileges. Cashback and exclusive services await you.",
+        "cardImg": "https://i.pinimg.com/170x/e8/53/28/e8532804130712c9a242bfa0ac794056.jpg",
+        "backImg": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200"
+      },
+      {
+        "id": 3,
+        "badge": "Smart Savings",
+        "title": "Multiply Your Funds",
+        "subtitle": "With Us",
+        "desc": "Profitable deposits up to 25% per annum. Plan your future with us today.",
         "cardImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLuaabt4ptv3HTGbWKUvXOYCZodxkidpmBxg&s",
-            "backImg": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200"
-    }
-  ]
-},
+        "backImg": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200"
+      }
+    ]
+  },
+  "loading": "Loading...",
+  "xizmatlar": {
+    "calc_title": "Income Calculator",
+    "calc_amount": "Investment Amount",
+    "calc_total": "Total Amount",
+    "calc_profit": "Net Profit"
+  },
   "services": {
     "title": "Our Services",
     "card1": {
-      "title": "Online Loan",
+      "title": "Online Credit",
       "desc": "Opportunity to get a loan quickly and conveniently"
     },
     "card2": {
@@ -111,81 +121,80 @@
     "question": "Question",
     "subjectType": "Subject Type",
     "legal": "Legal Entity",
-    "physical": "Physical Person",
+    "physical": "Individual",
     "message": "Message",
-    "agree": "I agree to the terms",
+    "agree": "I accept the terms",
     "alerts": {
       "success": "Request sent successfully",
       "error": "An error occurred",
       "network": "Network error, please try again"
     },
     "errors": {
-      "fullNameWords": "Full name must consist of 3 words",
-      "fullNameFormat": "Invalid full name format",
+      "fullNameWords": "Full Name must consist of 3 words",
+      "fullNameFormat": "Invalid Full Name format",
       "region": "Region is required",
       "city": "City is required",
-      "email": "Invalid email",
+      "email": "Invalid Email",
       "phone": "Phone format: +998 XX XXX-XX-XX",
-      "message": "Message must be at least 10 characters long",
+      "message": "Message must contain at least 10 characters",
       "agree": "You must accept the terms"
     }
   },
- 
   "cards": {
     "visa": {
       "title": "VISA",
-      "description": "Card production time is 3 working days.",
-      "subDescription": "Minimum balance 10$",
+      "description": "Card production time — 3 working days.",
+      "subDescription": "Minimum balance $10",
       "price": "FREE",
-      "priceLabel": "Card Issuance",
-      "deposit": "10$",
-      "depositLabel": "Min. balance"
+      "priceLabel": "Card issuance",
+      "deposit": "$10",
+      "depositLabel": "Minimum balance"
     },
     "mastercard": {
       "title": "MASTERCARD",
       "description": "Card production takes up to 5 working days.",
-      "subDescription": "Minimum balance 20$",
+      "subDescription": "Minimum balance $20",
       "price": "FREE",
-      "priceLabel": "Card Issuance",
-      "deposit": "20$",
-      "depositLabel": "Min. balance"
+      "priceLabel": "Card issuance",
+      "deposit": "$20",
+      "depositLabel": "Minimum balance"
     }
   },
   "timeline": {
-    "badge": "Historical Journey",
-    "title_part1": "Towards ",
+    "badge": "Historical Path",
+    "title_part1": "Path to ",
     "title_brand": "Bank",
-    "title_part2": " of Excellence",
+    "title_part2": " Success",
     "data": [
       {
         "year": "2003",
-        "title": "Foundation",
-        "desc": "The bank started its operations and opened its doors to the first customers."
+        "title": "Founding",
+        "desc": "The bank began its operations and opened its doors to the first clients."
       },
       {
         "year": "2008",
-        "title": "National Coverage",
-        "desc": "Expansion across the country began, and the branch network reached 50."
+        "title": "National Reach",
+        "desc": "A period of expansion across the republic began, reaching 50 branches."
       },
       {
         "year": "2012",
         "title": "Digital Transformation",
-        "desc": "Innovative banking services were introduced, and the first online transactions were launched."
+        "desc": "Innovative banking services were introduced and first online transactions were launched."
       },
       {
         "year": "2017",
         "title": "Peak of Success",
-        "desc": "The number of our customers exceeded 1 million. We gained international recognition."
+        "desc": "Our client base exceeded 1 million. We received international recognition."
       },
       {
         "year": "2021",
-        "title": "Intellectual Bank",
-        "desc": "A personal approach to customers based on AI and Big Data analytics began."
+        "title": "Intelligent Bank",
+        "desc": "Personalized approach based on AI and Big Data was initiated."
       },
       {
         "year": "2024",
         "title": "Bank of the Future",
-        "desc": "A bank ecosystem was created - 2M+ customers and a fully digital financial world."
+        "desc": "Created a bank ecosystem with over 2 million clients and a fully digital world of finance."
       }
     ]
   },
@@ -193,96 +202,96 @@
     "id": 1,
     "title": "Plastic Cards",
     "desc": "Visa / Mastercard / Humo cards",
-    "btn": "More Details"
+    "btn": "Details"
   },
   "ss2": {
     "id": 2,
     "title": "Loans",
-    "desc": "Preferential interest rates",
-    "btn": "Apply Now"
+    "desc": "Favorable interest rates",
+    "btn": "Apply"
   },
   "ss3": {
     "id": 3,
-    "title": "Savings Accounts",
-    "desc": "High-yield deposit options",
+    "title": "Deposits",
+    "desc": "High-yield deposits",
     "btn": "Open Account"
   },
   "ss4": {
     "id": 4,
     "title": "Business Services",
     "desc": "For corporate clients",
-    "btn": "More Details"
+    "btn": "Details"
   },
   "ss5": {
     "id": 5,
     "title": "Currency Exchange",
-    "desc": "24/7 online exchange",
+    "desc": "24/7 Online exchange",
     "btn": "View Rates"
   },
   "ss6": {
     "id": 6,
     "title": "Internet Banking",
-    "desc": "Mobile and web banking",
-    "btn": "Register Now"
-  },
-  "xizmatlar": {
-    "calc_title": "Calculate your profit",
-    "calc_total": "Amount at the end of the term",
-    "calc_profit": "Net profit",
-    "calc_amount": "Investment amount"
+    "desc": "Mobile and Web banking",
+    "btn": "Register"
   },
   "contacts": {
     "title": "Contacts",
-    "subtitle": "Contact us in any way convenient for you. We are always ready to help.",
+    "subtitle": "Contact us in a way convenient for you. We are always ready to help.",
     "phone": "Phone",
     "email": "Email",
     "address": "Address",
-    "address_text": "108 Amir Temur Str., Tashkent city",
+    "address_text": "108 Amir Temur Str., Tashkent",
     "work_hours": "Working Hours",
     "work_hours_text": "Mon-Fri: 09:00 – 18:00",
     "form_title": "Send a Message",
     "name_label": "Your Name",
     "name_placeholder": "Enter your name",
-    "email_label": "Email Address",
+    "email_label": "Your Email",
     "email_placeholder": "example@mail.com",
     "message_label": "Your Message",
     "message_placeholder": "Write your message here...",
     "send_btn": "Send Message"
   },
   "kredit": {
-    "hero_title": "Fast and Reliable Credit Services",
-    "hero_subtitle": "The most favorable interest rates and fast approval.",
-    "btn_get": "Get a loan",
+    "hero_title": "Fast and Reliable Credit Service",
+    "hero_subtitle": "Best interest rates and quick approval.",
+    "btn_get": "Get a Loan",
     "btn_calc": "Calculate",
     "types_title": "Loan Types",
-    "btn_more": "Learn more",
+    "btn_more": "Details",
     "calc_title": "Loan Calculator",
     "placeholder_sum": "Amount",
     "placeholder_term": "Term (months)",
-    "placeholder_percent": "Interest (%)",
-    "monthly_payment": "Monthly payment",
+    "placeholder_percent": "Percent (%)",
+    "monthly_payment": "Monthly Payment",
     "form_title": "Apply for a Loan",
-    "placeholder_name": "Your name",
+    "placeholder_name": "Your Name",
     "placeholder_phone": "Phone",
-    "select_type": "Select loan type",
+    "select_type": "Select Loan Type",
     "btn_send": "Send",
+    "btn_sent": "Sent",
     "alert_fill": "Please fill in all fields",
     "alert_success": "Application sent ✅",
-    "currency": "soum",
-    "rate_label": "Rate",
+    "currency": "sum",
+    "rate_label": "Interest",
     "max_label": "Max",
     "term_label": "Term",
+    "modal_title": "Quick Application",
+    "modal_desc": "Click the button to contact a personal manager.",
+    "modal_success": "Success!",
+    "modal_success_desc": "We will contact you shortly.",
+    "modal_btn": "Contact",
     "types": {
       "mortgage": "Mortgage Loan",
-      "auto": "Car Loan",
+      "auto": "Auto Loan",
       "business": "Business Loan",
       "consumer": "Consumer Loan"
     },
     "max_values": {
-      "1b": "1 billion UZS",
-      "500m": "500 million UZS",
-      "2b": "2 billion UZS",
-      "200m": "200 million UZS"
+      "1b": "1 bln sum",
+      "500m": "500 mln sum",
+      "2b": "2 bln sum",
+      "200m": "200 mln sum"
     },
     "terms": {
       "20y": "20 years",
@@ -294,18 +303,18 @@
   "about": {
     "modal": {
       "title": "About Company",
-      "text": "For over 10 years, we have been providing our clients with safe and innovative financial solutions. Our goal is to ensure financial freedom for everyone.",
+      "text": "For over 10 years, we have been providing our clients with secure and innovative financial solutions. Our goal is to ensure financial freedom for every individual.",
       "globalTitle": "Global Scale",
-      "globalDesc": "Services based on international standards.",
+      "globalDesc": "Service based on international standards.",
       "teamTitle": "Reliable Team",
-      "teamDesc": "Services from professional experts.",
-      "closeBtn": "Got it"
+      "teamDesc": "Services from professional specialists.",
+      "closeBtn": "Understood"
     },
-    "badge": "Future Bank",
+    "badge": "Bank of the Future",
     "heroTitle": "Yuksalish Bank",
-    "heroSubtitle": "A NEW ERA",
-    "heroDesc": "We are not just a bank, we are your trusted partner on the path to financial success. Innovative solutions and security are our core principles.",
-    "btnMore": "Learn More",
+    "heroSubtitle": "A NEW ERA WITH US",
+    "heroDesc": "We are not just a bank, we are your reliable partner on the path to financial success. Innovation and security are our core principles.",
+    "btnMore": "Details",
     "stats": {
       "clients": "Our Clients",
       "experience": "Experience",
@@ -313,62 +322,61 @@
     },
     "mission": {
       "title": "Our Mission",
-      "desc": "Creating a convenient and modern financial ecosystem with an individual approach for every client."
+      "desc": "Creating a highly convenient and modern financial ecosystem through an individual approach to each client."
     },
     "vision": {
       "title": "Our Vision",
-      "desc": "To become the most innovative and trusted digital banking brand in Central Asia."
+      "desc": "To become the most innovative and reliable digital banking brand in Central Asia."
     },
     "team": {
-      "title": "Management Team",
+      "title": "Management",
       "roles": {
         "founder": "Founder & Chairman",
-        "ceo": "Chief Executive Officer (CEO)",
-        "cfo": "Chief Financial Officer (CFO)"
+        "ceo": "CEO",
+        "cfo": "CFO"
       }
     },
     "cta": {
       "title": "Have Questions?",
-      "desc": "Our specialists are ready to assist you. Contact us now and take advantage of our services.",
-      "btn": "Contact Us"
+      "desc": "Our specialists are ready to help. Contact us now and use our services.",
+      "btn": "Contact"
     }
   },
   "uz": {
     "title": "What Our Clients Say",
-    "desc": "Read how our clients have achieved success with Yuksalish Bank and leave your feedback.",
+    "desc": "Find out how our clients achieved success with Yuksalish Bank and leave your review.",
     "stats": "reviews",
     "form": {
       "name": "Your Name",
       "role": "Your Role",
-      "msg": "Your Feedback...",
-      "submit": "Send Feedback",
-      "success": "Your feedback has been submitted! You can only send it once."
+      "msg": "Your review...",
+      "submit": "Submit Review",
+      "success": "Your review has been sent! You can only send a review once."
     }
   },
   "uz1": [
     {
       "name": "Ali Rustam",
-      "role": "Credit User",
+      "role": "Loan User",
       "rating": 5,
-      "message": "The services at Yuksalish Bank are very convenient and fast. I am very pleased with opening a deposit.",
+      "message": "Yuksalish Bank services are very convenient and fast. I am very satisfied with opening a deposit.",
       "img": "https://i.pravatar.cc/100?img=12"
     },
     {
       "name": "Malika Karimova",
       "role": "Bank Card User",
       "rating": 4,
-      "message": "The online banking interface is very simple and clear. Customer service is excellent.",
+      "message": "The online bank interface is very simple and clear. Customer service level is top-notch.",
       "img": "https://i.pravatar.cc/100?img=32"
     },
     {
-      "name": "Jumaqulva J",
+      "name": "Jumakulva J",
       "role": "Currency Trader",
       "rating": 5,
-      "message": "Currency rates are updated and always convenient. I always work with this bank.",
+      "message": "Exchange rates are updated and always convenient. I always work with this bank.",
       "img": "https://i.pravatar.cc/100?img=44"
     }
   ],
-  "loan": "Loan Growth Trends",
   "loans": {
     "jan": "Jan",
     "mar": "Mar",
@@ -380,36 +388,37 @@
   "stats1": {
     "clients": "Total Clients",
     "loans": "Active Loans",
-    "deposits": "Total Deposits",
+    "deposits": "Total Deposit Volume",
     "revenue": "Monthly Revenue"
   },
+  "loan": "Loan Growth Trends",
   "transactions": {
     "title": "Recent Transactions",
     "t1": {
-      "date": "Oct 24, 2023",
+      "date": "24 Oct 2023",
       "client": "Jahongir Saidov",
       "type": "Agro Loan",
       "amount": "45,000,000 UZS",
       "status": "Completed"
     },
     "t2": {
-      "date": "Nov 02, 2023",
+      "date": "02 Nov 2023",
       "client": "Dilshod Karimov",
       "type": "Business Loan",
       "amount": "120,000,000 UZS",
       "status": "Pending"
     },
     "t3": {
-      "date": "Dec 15, 2023",
+      "date": "15 Dec 2023",
       "client": "Malika Tursunova",
       "type": "Mortgage",
       "amount": "350,000,000 UZS",
       "status": "Completed"
     },
     "t4": {
-      "date": "Jan 08, 2024",
+      "date": "08 Jan 2024",
       "client": "Azizbek Yuldashev",
-      "type": "Car Loan",
+      "type": "Auto Loan",
       "amount": "85,000,000 UZS",
       "status": "Rejected"
     }
@@ -422,7 +431,7 @@
     "status": "Status"
   },
   "dashboard": {
-        "title":"Dashboard",
+    "title": "Control Panel",
     "profil": "Profile",
     "sozlamalar": "Settings",
     "tranzaksiyalar": "Transactions",
@@ -430,110 +439,104 @@
     "chiqish": "Logout"
   },
   "footer": {
-    "bank_desc": "Modern and reliable banking services for your financial growth and prosperity.",
-
+    "bank_desc": "Modern and reliable banking services for your financial growth and well-being.",
     "services": "Services",
     "credits": "Loans",
     "deposits": "Deposits",
     "cards": "Bank Cards",
     "transfers": "Money Transfers",
-
-    "help": "Support",
+    "help": "Help",
     "tariffs": "Tariffs",
     "branches": "Branches & ATMs",
     "faq": "FAQ",
     "contact": "Contact",
-
     "news": "News",
     "news_desc": "Stay informed about bank news and promotions.",
     "email_placeholder": "Your email",
-
     "success": "Email sent successfully!",
     "error": "Invalid email!",
-
-    "copyright": "© 2026 Yuksalish Bank. All rights reserved.",
-
+    "copyright": "© 2026 \"Yuksalish Bank\". All rights reserved.",
     "privacy": "Privacy Policy",
     "offer": "Public Offer",
     "license": "License"
   },
   "auto_kredit": {
-    "badge": "Your car dreams",
+    "badge": "Your Car Dreams",
     "title": "Get a car <0>with ease</0>!",
     "description": "Buy a new or used car on favorable terms, quickly and without unnecessary documents.",
-    "button": "Submit application",
+    "button": "Apply Now",
     "modal_title": "Submit Application",
     "modal_desc": "Enter your details, our specialists will contact you.",
-    "label_name": "Your full name",
+    "label_name": "Your Full Name",
     "placeholder_name": "Example: Azizbek Karimov",
-    "label_phone": "Your phone number",
-    "submit_btn": "Send Application",
-    "sending": "Sending...",
-    "success_title": "Success!",
-    "success_desc": "Your application has been accepted. Our managers will call you soon.",
-    "error_fill": "Please fill in all the information!",
-    "error_server": "An error occurred. Please try again."
-  },
-  "ipoteka": {
-    "badge": "For home purchase",
-    "title": "Own your <0>dream home</0>",
-    "description": "Buy a new house or apartment with flexible payment terms through a mortgage loan.",
-    "button": "Submit application",
-    "modal_title": "Submit Application",
-    "placeholder_name": "Your Name",
-    "submit_btn": "Send Application",
+    "label_phone": "Your Phone Number",
+    "submit_btn": "Submit Application",
     "sending": "Sending...",
     "success_title": "Success!",
     "success_desc": "Your application has been accepted. Our managers will contact you soon.",
-    "error_fill": "Please fill in all the information!",
+    "error_fill": "Please fill in all details completely!",
+    "error_server": "An error occurred. Please try again."
+  },
+  "ipoteka": {
+    "badge": "For Home Purchase",
+    "title": "Become an owner of <0>your dream home</0>",
+    "description": "Buy a new house or apartment on favorable payment terms through a mortgage loan.",
+    "button": "Apply Now",
+    "modal_title": "Submit Application",
+    "placeholder_name": "Your Name",
+    "submit_btn": "Submit Application",
+    "sending": "Sending...",
+    "success_title": "Success!",
+    "success_desc": "Your application has been accepted. Our managers will contact you soon.",
+    "error_fill": "Please fill in all details completely!",
     "error_server": "An error occurred. Please try again."
   },
   "business": {
-    "badge": "Opportunity for your business",
-    "title": "Elevate your business <0>with us</0>!",
-    "description": "Get a fast loan for your small or medium business development on the most favorable terms without extra paperwork.",
-    "button": "Submit application",
+    "badge": "Opportunity for Your Business",
+    "title": "Boost your business <0>with us</0>!",
+    "description": "Get a fast loan for small and medium business development on favorable terms and without unnecessary documents.",
+    "button": "Apply Now",
     "modal_title": "Submit Application",
     "modal_desc": "Enter your details, our specialists will contact you.",
-    "label_name": "Your full name",
+    "label_name": "Your Full Name",
     "placeholder_name": "Example: Azizbek Karimov",
-    "label_phone": "Your phone number",
-    "submit_btn": "Send Application",
+    "label_phone": "Your Phone Number",
+    "submit_btn": "Submit Application",
     "sending": "Sending...",
     "success_title": "Success!",
-    "success_desc": "Your application has been accepted. Our managers will call you soon.",
-    "error_fill": "Please fill in all the information correctly!",
+    "success_desc": "Your application has been accepted. Our managers will contact you soon.",
+    "error_fill": "Please fill in all details completely!",
     "error_server": "An error occurred. Please try again."
   },
   "consumer": {
-    "badge": "Personal financial assistance",
-    "title": "Make your <0>dreams come true</0> with an easy loan!",
-    "description": "Cover any expenses with consumer loans: education, home appliances, medical services, or travel.",
-    "button": "Submit application",
+    "badge": "Personal Financial Help",
+    "title": "Turn your <0>dreams into reality</0> with an easy loan!",
+    "description": "Cover any expenses with consumer loans: education, appliances, medical services, or travel.",
+    "button": "Apply Now",
     "modal_title": "Submit Application",
     "modal_desc": "Enter your details, our specialists will contact you.",
-    "label_name": "Your full name",
+    "label_name": "Your Full Name",
     "placeholder_name": "Example: Azizbek Karimov",
-    "label_phone": "Your phone number",
-    "submit_btn": "Send Application",
+    "label_phone": "Your Phone Number",
+    "submit_btn": "Submit Application",
     "sending": "Sending...",
     "success_title": "Success!",
-    "success_desc": "Your application has been accepted. Our managers will call you soon.",
-    "error_fill": "Please fill in all the information correctly!",
+    "success_desc": "Your application has been accepted. Our managers will contact you soon.",
+    "error_fill": "Please fill in all details completely!",
     "error_server": "An error occurred. Please try again."
   },
   "details": {
     "back": "Back",
     "title": "Detailed Information",
-    "p1": "Yuksalish Bank provides you with the best financial services. Along with account opening, credit, and deposit services, we ensure your financial security.",
-    "p2": "With bank cards, online banking, mobile apps, and other innovative solutions, you can perform easy and fast financial operations.",
-    "p3": "To learn more about our detailed services and tariffs, scroll down or go to the 'Services' section.",
+    "p1": "Yuksalish Bank offers you the best financial services. Along with account opening, loans, and deposit services, we ensure your financial security.",
+    "p2": "Using bank cards, online banking, mobile apps, and other innovative solutions, you can easily and quickly perform financial transactions.",
+    "p3": "To check our detailed services and tariffs, scroll down or go to the 'Services' section.",
     "banking_title": "Online Banking",
     "banking_desc": "Control your account anytime and anywhere.",
     "credit_title": "Credit Services",
-    "credit_desc": "Get a loan with flexible terms.",
+    "credit_desc": "Get a loan on flexible terms.",
     "deposit_title": "Deposits",
-    "deposit_desc": "Save and increase your income in a secure place.",
+    "deposit_desc": "Store and grow your income in a safe place.",
     "app_title": "Mobile App",
     "app_desc": "Always convenient and fast banking experience."
   },
@@ -553,21 +556,21 @@
       "status": "Open"
     },
     "l2": {
-      "name": "Yunusobod Branch",
+      "name": "Yunusabad Branch",
       "type": "Branch",
       "lat": 41.345,
       "lng": 69.265,
       "status": "Open"
     },
     "l3": {
-      "name": "Chilonzor ATM",
+      "name": "Chilanzar ATM",
       "type": "ATM",
       "lat": 41.289,
       "lng": 69.200,
       "status": "24/7"
     },
     "l4": {
-      "name": "Mirzo Ulug'bek Branch",
+      "name": "Mirzo-Ulugbek Branch",
       "type": "Branch",
       "lat": 41.333,
       "lng": 69.290,
@@ -581,14 +584,14 @@
       "status": "Maintenance"
     },
     "l6": {
-      "name": "Mirobod Branch",
+      "name": "Mirabad Branch",
       "type": "Branch",
       "lat": 41.312,
       "lng": 69.260,
       "status": "Open"
     },
     "l7": {
-      "name": "Yashnobod ATM",
+      "name": "Yashnabad ATM",
       "type": "ATM",
       "lat": 41.320,
       "lng": 69.210,
@@ -598,18 +601,18 @@
   "currencyExchange": {
     "hero": {
       "title": "24/7 Online \n Currency Exchange",
-      "subtitle": "Exchange your currency at the most favorable rates, anytime you want.",
-      "btnExchange": "Exchange Now",
-      "btnMore": "Learn More"
+      "subtitle": "Exchange currency at the best rates at any time convenient for you.",
+      "btnExchange": "Exchange",
+      "btnMore": "More Details"
     },
     "rates": {
       "title": "Latest Rates",
       "buy": "Buy",
       "sell": "Sell",
-      "realTime": "Real-time"
+      "realTime": "In Real Time"
     },
     "features": {
-      "description": "Through our online currency exchange service, you can exchange currency quickly and securely 24/7 based on real-time exchange rates.",
+      "description": "Through our online currency exchange service, you can quickly and safely exchange currency 24/7 based on real-time rates.",
       "fast": "⚡ Fast Operation",
       "secure": "🔒 Secure System",
       "anytime": "🌍 24/7 Service"
@@ -645,9 +648,8 @@
       }
     }
   },
-   "usdPage": {
-    
-"modalTitle": "Confirm Exchange",
+  "usdPage": {
+    "modalTitle": "Exchange Confirmation",
     "modalText": "You will receive the following amount:",
     "cancel": "Cancel",
     "confirm": "Confirm",
@@ -660,46 +662,36 @@
       "sat": "Sat",
       "sun": "Sun"
     },
-
     "title": "US Dollar (USD)",
-    "subtitle": "Real-time Central Bank and market exchange rate",
-
+    "subtitle": "Central Bank and Market rates in real-time",
     "buy": "Buy",
     "sell": "Sell",
-
-    "converter": "Converter",
-    "enterAmount": "Enter amount (USD)",
-    "youGet": "You get (UZS)",
-    "exchange": "Start exchange",
-
-    "weeklyRate": "Weekly exchange rate dynamics",
-
-    "secureTransaction": "Secure transaction",
+    "converter": "Conversion",
+    "enterAmount": "Enter Amount (USD)",
+    "youGet": "You Receive (UZS)",
+    "exchange": "Start Exchange",
+    "weeklyRate": "Weekly Rate Dynamics",
+    "secureTransaction": "Secure Transaction",
     "secureDesc": "All operations are protected by Yuksalish Bank.",
-
-    "bestRate": "Best rate",
-    "bestRateDesc": "We offer one of the most competitive rates on the market.",
-
-    "lastUpdate": "Last update",
+    "bestRate": "Best Rate",
+    "bestRateDesc": "We offer one of the best rates on the market.",
+    "lastUpdate": "Last Update",
     "autoUpdate": "Data updates automatically"
   },
-  "eurPage": {"modalTitle": "Confirm Exchange",
+  "eurPage": {
+    "modalTitle": "Exchange Confirmation",
     "modalText": "You will receive the following amount:",
     "cancel": "Cancel",
     "confirm": "Confirm",
-    "title": "Euro Currency (EUR)",
-    "subtitle": "Eurozone and Central Bank exchange rate",
-
+    "title": "Euro (EUR)",
+    "subtitle": "Euro rate in the region and Central Bank",
     "buy": "Buy",
     "sell": "Sell",
-
     "converter": "EUR Converter",
-    "enterAmount": "Enter amount (EUR)",
-    "youGet": "You get (UZS)",
+    "enterAmount": "Enter Amount (EUR)",
+    "youGet": "You Receive (UZS)",
     "exchange": "Exchange EUR",
-
-    "weeklyRate": "Weekly EUR Dynamics",
-
+    "weeklyRate": "Weekly EUR Rate Dynamics",
     "days": {
       "mon": "Mon",
       "tue": "Tue",
@@ -709,23 +701,21 @@
       "sat": "Sat",
       "sun": "Sun"
     }
-  }, "gbpPage": {"modalTitle": "Confirm Exchange",
+  },
+  "gbpPage": {
+    "modalTitle": "Exchange Confirmation",
     "modalText": "You will receive the following amount:",
     "cancel": "Cancel",
     "confirm": "Confirm",
     "title": "British Pound Sterling (GBP)",
-    "subtitle": "London Stock Exchange and Central Bank real-time rate",
-
+    "subtitle": "London Exchange and CB rate in real-time",
     "buy": "Buy",
     "sell": "Sell",
-
     "converter": "GBP Converter",
-    "enterAmount": "Enter amount (GBP)",
-    "youGet": "You get (UZS)",
+    "enterAmount": "Enter Amount (GBP)",
+    "youGet": "You Receive (UZS)",
     "exchange": "Exchange GBP",
-
-    "weeklyRate": "Weekly GBP Dynamics",
-
+    "weeklyRate": "Weekly GBP Rate Dynamics",
     "days": {
       "mon": "Mon",
       "tue": "Tue",
@@ -735,8 +725,9 @@
       "sat": "Sat",
       "sun": "Sun"
     }
-  },  "rubPage": {
-    "modalTitle": "Confirm Exchange",
+  },
+  "rubPage": {
+    "modalTitle": "Exchange Confirmation",
     "modalText": "You will receive the following amount:",
     "cancel": "Cancel",
     "confirm": "Confirm",
@@ -745,10 +736,10 @@
     "buy": "Buy",
     "sell": "Sell",
     "converter": "RUB Converter",
-    "enterAmount": "Enter amount (RUB)",
-    "youGet": "You get (UZS)",
+    "enterAmount": "Enter Amount (RUB)",
+    "youGet": "You Receive (UZS)",
     "exchange": "Exchange RUB",
-    "weeklyRate": "Weekly RUB Dynamics",
+    "weeklyRate": "Weekly RUB Rate Dynamics",
     "days": {
       "mon": "Mon",
       "tue": "Tue",
@@ -759,35 +750,35 @@
       "sun": "Sun"
     }
   },
-    "hero1": {
+  "hero1": {
     "title": "Business Services",
-    "description": "Special financial and service packages created for our corporate clients."
+    "description": "Specially developed financial and service packages for corporate clients."
   },
   "services2": {
     "corporate": {
-      "title": "Corporate Accounts",
+      "title": "Corporate Settlements",
       "description": "Fast and secure financial operations for your business.",
-      "details": "Corporate accounts allow you to open special accounts for employees and provide fast and secure transactions."
+      "details": "With corporate settlements, special accounts for company employees are opened, providing fast and secure operations."
     },
     "employees": {
-      "title": "Employee Services",
-      "description": "Special accounts, cash, and bonus systems for employees.",
-      "details": "Employee services: cash withdrawals, bonus system, and account monitoring."
+      "title": "Services for Employees",
+      "description": "Special settlements, cash, and bonus systems for employees.",
+      "details": "Special services for employees: cash withdrawal, bonus system, and settlement monitoring."
     },
     "financial": {
-      "title": "Financial Analysis & Reports",
-      "description": "Track your company's financial status in real time.",
-      "details": "Financial analysis and reports help you track your company's expenses and income in real time."
+      "title": "Financial Analysis and Reports",
+      "description": "Track your company's financial status in real-time.",
+      "details": "With financial analysis and reports, you can track your company's expenses and income in real-time."
     },
     "security": {
-      "title": "Security & Guarantee",
+      "title": "Security and Guarantee",
       "description": "Your business data is protected and guaranteed.",
-      "details": "All data in our system is encrypted and security is guaranteed."
+      "details": "In our system, all data is encrypted and security is guaranteed."
     }
   },
   "footer1": {
-    "title": "Why choose us?",
-    "description": "With our corporate services, you can manage your company's finances quickly, safely, and reliably."
+    "title": "Why Choose Us?",
+    "description": "With our corporate services, you can manage your company's financial processes quickly, safely, and reliably."
   },
   "buttons1": {
     "request": "Send Request",
@@ -795,24 +786,24 @@
   },
   "success": "Request for {{service}} sent successfully!",
   "hero2": {
-    "title": "Internet & Mobile Banking",
-    "description": "Manage your financial operations quickly, safely, and conveniently."
+    "title": "Internet and Mobile Banking",
+    "description": "Ability to manage your financial operations quickly, safely, and conveniently."
   },
   "services3": {
     "internetBanking": {
       "title": "Internet Banking",
-      "description": "Manage your financial operations quickly and securely.",
-      "details": "Through Internet Banking, you can monitor your account anytime and perform payments and transfers."
+      "description": "Manage your financial operations quickly and safely.",
+      "details": "Through Internet Banking, you can track your account anytime and make payments and transfers."
     },
     "mobileBanking": {
       "title": "Mobile Banking",
-      "description": "All banking services at your fingertips through a mobile app.",
-      "details": "With Mobile Banking, you can quickly access cash, balance, transfers, and all other services."
+      "description": "All banking services at your fingertips through the mobile app.",
+      "details": "With the mobile app, you can quickly use cash, balance, transfers, and other services."
     }
   },
   "footer2": {
-    "title": "Why choose us?",
-    "description": "With Internet & Mobile Banking services, you always maintain financial control and all operations are secure."
+    "title": "Why Choose Us?",
+    "description": "With Internet and Mobile Banking services, you always control your finances, and all operations are secure."
   },
   "buttons2": {
     "request": "Send Request",
@@ -825,15 +816,15 @@
     "city": "City",
     "email": "Email",
     "phone": "Phone",
-    "message": "Message",
-    "agree": "I agree to the terms",
+    "message": "Message Text",
+    "agree": "Accept Terms",
     "send": "Send",
     "errors": {
       "fullNameWords": "Please enter your name",
-      "fullNameFormat": "Please enter your full name (first and last name)",
+      "fullNameFormat": "Please enter full name (first and last name)",
       "email": "Please enter a valid email address",
-      "phone": "Please enter a valid phone number (+998 XX XXX-XX-XX)",
-      "message": "Message must be at least 10 characters",
+      "phone": "Please enter a correct phone number (+998 XX XXX-XX-XX)",
+      "message": "Message must contain at least 10 characters",
       "region": "Please select a region",
       "city": "Please enter a city",
       "agree": "Please accept the terms"
@@ -845,58 +836,57 @@
   },
   "deposit": {
     "title": "Open Deposit",
-    "back": "Go back",
-    "selected": "Selected type:",
-    "notSelected": "Not selected",
-    "fullname": "Full name",
+    "back": "Back",
+    "selected": "Selected Type:",
+    "notSelected": "Not Selected",
+    "fullname": "Your Full Name",
     "fullnamePlaceholder": "Example: Azizbek Ahmedov",
-    "phone": "Phone number",
-    "amount": "Estimated investment amount (UZS)",
-    "info": "ℹ️ After submitting the application, our specialist will contact you to finalize the agreement.",
-    "submit": "Submit application",
-    "success": "Your application has been received! Our operators will contact you soon."
+    "phone": "Your Phone Number",
+    "amount": "Approximate Deposit Amount (sum)",
+    "info": "ℹ️ After submitting the application, our specialist will contact you to finalize the contract.",
+    "submit": "Submit Application",
+    "success": "Your application has been accepted! Our operators will contact you soon."
   },
   "deposits": {
-      "title": "Deposits",
-      "subtitle": "Grow your funds reliably and with high returns. Plan your future with us today.",
-      "typesTitle": "Deposit Types",
-      "calculatorTitle": "Calculate Your Earnings",
-      "investmentAmount": "Investment Amount:",
-      "annualProfit": "Annual Net Profit (25%):",
-      "totalReturn": "Total Return:",
-      "ctaTitle": "Have questions? Contact a specialist",
-      "ctaButton": "Contact",
-      "depositButton": "Open Deposit"
+    "title": "Deposits",
+    "subtitle": "Increase your funds reliably and with high returns. Plan your future with us today.",
+    "typesTitle": "Deposit Types",
+    "calculatorTitle": "Calculate Income",
+    "investmentAmount": "Investment Amount:",
+    "annualProfit": "Annual Net Profit (25%):",
+    "totalReturn": "Total to Return:",
+    "ctaTitle": "Have Questions? Contact a Specialist",
+    "ctaButton": "Contact",
+    "depositButton": "Open Deposit"
+  },
+  "depositTypes": {
+    "onlineDeposit": {
+      "title": "Online Deposit",
+      "rate": "22%",
+      "term": "12 months",
+      "minAmount": "500,000 sum",
+      "partialWithdrawal": "Partial Withdrawal"
     },
-    "depositTypes": {
-      "onlineDeposit": {
-        "title": "Online Deposit",
-        "rate": "22%",
-        "term": "12 months",
-        "minAmount": "500,000 UZS",
-        "partialWithdrawal": "Partial Withdrawal"
-      },
-      "maxProfit": {
-        "title": "Maximum Profit",
-        "rate": "25%",
-        "term": "24 months",
-        "minAmount": "1,000,000 UZS",
-        "partialWithdrawal": "Partial Withdrawal"
-      },
-      "flexSavings": {
-        "title": "Flexible Savings",
-        "rate": "18%",
-        "term": "6 months",
-        "minAmount": "100,000 UZS",
-        "partialWithdrawal": "Partial Withdrawal"
-      }
+    "maxProfit": {
+      "title": "Maximum Profit",
+      "rate": "25%",
+      "term": "24 months",
+      "minAmount": "1,000,000 sum",
+      "partialWithdrawal": "Partial Withdrawal"
     },
-    "rangePlaceholder": "1,000,000 UZS",
-    "errors": {
-      "fillAllFields": "Please fill in all fields!"
-    },
-    "success3": {
-      "depositOpened": "Deposit opened successfully!"
+    "flexSavings": {
+      "title": "Flexible Savings",
+      "rate": "18%",
+      "term": "6 months",
+      "minAmount": "100,000 sum",
+      "partialWithdrawal": "Partial Withdrawal"
     }
-  
+  },
+  "rangePlaceholder": "1,000,000 sum",
+  "errors": {
+    "fillAllFields": "Please fill in all fields!"
+  },
+  "success3": {
+    "depositOpened": "Deposit successfully opened!"
+  }
 }

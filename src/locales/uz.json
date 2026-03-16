@@ -2,109 +2,118 @@
   "services1": {
     "plasticCards": {
       "title": "Plastik kartalar",
-      "desc": "Plastik kartalar bo‘yicha tez va xavfsiz xizmatlar."
+      "desc": "Plastik kartalar bo'yicha tezkor va xavfsiz xizmatlar."
     },
     "loans": {
       "title": "Kreditlar",
-      "desc": "Imtiyozli foiz stavkalari va tez rasmiylashtirish bilan mikrokreditlar."
+      "desc": "Imtiyozli foiz stavkalari va tez rasmiylashtiriladigan mikroqarzlar."
     },
     "deposits": {
-      "title": "Omonat (Depozitlar)",
-      "desc": "Mablag‘laringizni ishonchli va yuqori daromad bilan ko‘paytiring."
+      "title": "Omonatlar (Depozitlar)",
+      "desc": "Mablag'laringizni yuqori daromad bilan ishonchli ko'paytiring."
     },
     "currency": {
       "title": "Valyuta",
-      "desc": "24/7 onlayn valyuta ayirboshlash eng qulay kurslarda."
+      "desc": "Onlayn valyuta ayirboshlash 24/7 eng foydali kurslarda."
     }
   },
   "buttons": {
-    "moreDetails": "Batafsil →"
+    "moreDetails": "Batafsil →",
+    "orderOnline": "Onlayn rasmiylashtirish"
   },
   "salom": {
-    "home": "Bizning xizmatlar"
+    "home": "Xizmatlarimiz"
   },
   "navbar": {
     "more": "YANA",
-    "kredit": "Kredit",
-    "home": "Bosh sahifa",
     "aboutus": "Biz haqimizda",
     "dashboard": "Dashboard",
     "card": "Karta",
+    "kredit": "Kredit",
+    "home": "Bosh sahifa",
     "services": "Xizmatlar",
     "about": "Biz haqimizda",
     "contact": "Kontaktlar",
-    "login": "Kirish"
+    "SignIn": "Kirish",
+    "signup": "Ro'yxatdan o'tish"
   },
   "stats": {
     "clients": "Mijozlar",
     "branches": "Filiallar",
     "experience": "Yillik tajriba",
-    "service": "Xizmat"
+    "service": "Servis"
   },
-  
-      "hero": {
-        "badle": "O'zbekistonda №1 raqamli bank",
-        "desc": "Lodo Bank bilan moliyaviy kelajagingizni ishonch bilan quring.",
+  "hero": {
+    "badle": "O'zbekistondagi №1 raqamli bank",
+    "desc": "Lodo Bank bilan birgalikda o'z moliyaviy kelajagingizni ishonch bilan quring.",
+    "title": "Ishonch, Xavfsizlik,",
+    "subtitle": "Rivojlanish",
+    "button": "Xizmatlar",
+    "button1": "Batafsil",
+    "hero_title": "Moliya olamida ishonch bilan",
+    "hero_desc": "Sizning ishonchli bankingiz va zamonaviy moliyaviy yechimlar markazi",
+    "hero_subtitle": "Yangi standartlar",
+    "hero_title_2": "Zamonaviy moliya markazi",
+    "hero_subtitle_2": "Kelajak texnologiyalari",
+    "hero_desc_2": "Biz sizning biznesingiz muvaffaqiyati va moliyaviy barqarorligingiz uchun eng yaxshi vositalarni taqdim etamiz.",
+    "slides": [
+      {
+        "id": 1,
+        "badge": "O'zbekistondagi №1 raqamli bank",
         "title": "Ishonch, Xavfsizlik,",
         "subtitle": "Rivojlanish",
-        "button": "Xizmatlar",
-        "button1": "Batafsil",
-        "hero_title": "Moliya olamida ishonch bilan",
-        "hero_desc": "Sizning ishonchli bankingiz va zamonaviy moliyaviy yechimlar markazi",
-        "hero_subtitle": "Yangi standartlar",
-
-        "slides": [
-          {
-            "id": 1,
-            "badge": "O'zbekistonda №1 raqamli bank",
-            "title": "Ishonch, Xavfsizlik,",
-            "subtitle": "Rivojlanish",
-            "desc": "Lodo Bank bilan moliyaviy kelajagingizni ishonch bilan quring.",
-            "cardImg": "https://static.vecteezy.com/system/resources/thumbnails/045/900/116/small/modern-gradient-minimalist-background-design-free-vector.jpg",
-            "backImg": "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1200"
-          },
-          {
-            "id": 2,
-            "badge": "Premium Banking",
-            "title": "Xalqaro darajadagi",
-            "subtitle": "Visa Platinum",
-            "desc": "Dunyo bo'ylab sayohat qiling va maxsus imtiyozlardan foydalaning. Cashback va eksklyuziv xizmatlar sizni kutmoqda.",
-            "cardImg": "https://i.pinimg.com/170x/e8/53/28/e8532804130712c9a242bfa0ac794056.jpg",
-            "backImg": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200"
-          },
-          {
-            "id": 3,
-            "badge": "Smart Savings",
-            "title": "Mablag'ingizni biz",
-            "subtitle": "Bilan ko'paytiring",
-            "desc": "Yillik 25% gacha bo'lgan foydali omonatlar. Kelajagingizni bugundan boshlab biz bilan rejalashtiring.",
-            "cardImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLuaabt4ptv3HTGbWKUvXOYCZodxkidpmBxg&s",
-            "backImg": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200"
-          }
-        ]
+        "desc": "Lodo Bank bilan birgalikda o'z moliyaviy kelajagingizni ishonch bilan quring.",
+        "cardImg": "https://static.vecteezy.com/system/resources/thumbnails/045/900/116/small/modern-gradient-minimalist-background-design-free-vector.jpg",
+        "backImg": "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1200"
       },
-
+      {
+        "id": 2,
+        "badge": "Premium Banking",
+        "title": "Xalqaro daraja",
+        "subtitle": "Visa Platinum",
+        "desc": "Dunyo bo'ylab sayohat qiling va maxsus imtiyozlardan foydalaning. Sizni keshbek va eksklyuziv xizmatlar kutmoqda.",
+        "cardImg": "https://i.pinimg.com/170x/e8/53/28/e8532804130712c9a242bfa0ac794056.jpg",
+        "backImg": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200"
+      },
+      {
+        "id": 3,
+        "badge": "Smart Savings",
+        "title": "Mablag'larni ko'paytiring",
+        "subtitle": "Biz bilan birga",
+        "desc": "Yillik 25% gacha foydali omonatlar. Kelajagingizni bugundan biz bilan rejalashtiring.",
+        "cardImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLuaabt4ptv3HTGbWKUvXOYCZodxkidpmBxg&s",
+        "backImg": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200"
+      }
+    ]
+  },
+  "loading": "Yuklanmoqda...",
+  "xizmatlar": {
+    "calc_title": "Daromad kalkulyatori",
+    "calc_amount": "Investitsiya summasi",
+    "calc_total": "Umumiy summa",
+    "calc_profit": "Sof foyda"
+  },
   "services": {
-    "title": "Bizning xizmatlar",
+    "title": "Xizmatlarimiz",
     "card1": {
       "title": "Onlayn kredit",
-      "desc": "Tez va qulay kredit olish imkoniyati"
+      "desc": "Tez va qulay tarzda kredit olish imkoniyati"
     },
     "card2": {
       "title": "Plastik kartalar",
       "desc": "Visa va Mastercard kartalari"
     },
     "card3": {
-      "title": "Pul o‘tkazmalari",
-      "desc": "Xalqaro va mahalliy pul o‘tkazmalari"
+      "title": "Pul o'tkazmalari",
+      "desc": "Xalqaro va mahalliy pul o'tkazmalari"
     }
   },
   "translation": {
     "send": "Yuborish",
-    "fullName": "F.I.Sh",
+    "fullName": "F.I.SH",
     "region": "Viloyat",
     "city": "Shahar",
-    "email": "Email",
+    "email": "Elektron pochta",
     "phone": "Telefon",
     "requestType": "Murojaat turi",
     "complaint": "Shikoyat",
@@ -118,26 +127,26 @@
     "alerts": {
       "success": "Murojaat muvaffaqiyatli yuborildi",
       "error": "Xatolik yuz berdi",
-      "network": "Tarmoq xatosi, qayta urinib ko‘ring"
+      "network": "Tarmoq xatosi, qaytadan urinib ko'ring"
     },
     "errors": {
-      "fullNameWords": "F.I.Sh 3 ta so‘zdan iborat bo‘lishi kerak",
-      "fullNameFormat": "F.I.Sh noto‘g‘ri formatda",
-      "region": "Viloyat kiritilishi shart",
-      "city": "Shahar kiritilishi shart",
-      "email": "Email noto‘g‘ri",
+      "fullNameWords": "F.I.SH 3 ta so'zdan iborat bo'lishi kerak",
+      "fullNameFormat": "F.I.SH formati noto'g'ri",
+      "region": "Viloyatni tanlash majburiy",
+      "city": "Shaharni kiritish majburiy",
+      "email": "Email noto'g'ri",
       "phone": "Telefon formati: +998 XX XXX-XX-XX",
-      "message": "Xabar kamida 10 ta belgidan iborat bo‘lishi kerak",
-      "agree": "Shartlarni qabul qilishingiz shart"
+      "message": "Xabar kamida 10 ta belgidan iborat bo'lishi kerak",
+      "agree": "Siz shartlarni qabul qilishingiz kerak"
     }
   },
   "cards": {
     "visa": {
       "title": "VISA",
-      "description": "Karta tayyorlash muddati 3 ish kuni.",
+      "description": "Kartani tayyorlash muddati — 3 ish kuni.",
       "subDescription": "Minimal balans 10$",
       "price": "BEPUL",
-      "priceLabel": "Kartani chiqarish",
+      "priceLabel": "Karta chiqarish",
       "deposit": "10$",
       "depositLabel": "Minimal balans"
     },
@@ -146,7 +155,7 @@
       "description": "Kartani tayyorlash 5 ish kunigacha davom etadi.",
       "subDescription": "Minimal balans 20$",
       "price": "BEPUL",
-      "priceLabel": "Kartani chiqarish",
+      "priceLabel": "Karta chiqarish",
       "deposit": "20$",
       "depositLabel": "Minimal balans"
     }
@@ -154,23 +163,23 @@
   "timeline": {
     "badge": "Tarixiy yo'l",
     "title_part1": "Muvaffaqiyat ",
-    "title_brand": "Banki",
-    "title_part2": " sari",
+    "title_brand": "Bankiga",
+    "title_part2": " yo'l",
     "data": [
       {
         "year": "2003",
-        "title": "Tamal toshi",
-        "desc": "Bank o'z faoliyatini boshlab, ilk mijozlariga eshiklarini ochdi."
+        "title": "Asos solinishi",
+        "desc": "Bank o'z faoliyatini boshladi va ilk mijozlari uchun eshiklarini ochdi."
       },
       {
         "year": "2008",
         "title": "Milliy qamrov",
-        "desc": "Respublika bo'ylab kengayish davri boshlandi va filiallar tarmog'i 50 taga yetdi."
+        "desc": "Respublika bo'ylab kengayish davri boshlandi, filiallar tarmog'i 50 taga yetdi."
       },
       {
         "year": "2012",
         "title": "Raqamli transformatsiya",
-        "desc": "Innovatsion banking xizmatlari joriy etilib, ilk bor onlayn tranzaksiyalar yo'lga qo'yildi."
+        "desc": "Innovatsion bank xizmatlari joriy etildi va ilk onlayn tranzaksiyalar yo'lga qo'yildi."
       },
       {
         "year": "2017",
@@ -180,12 +189,12 @@
       {
         "year": "2021",
         "title": "Intellektual bank",
-        "desc": "Sun'iy intellekt va Big Data tahlili asosida mijozlarga shaxsiy yondashuv boshlandi."
+        "desc": "Sun'iy intellekt va Big Data asosida mijozlarga shaxsiy yondashuv boshlandi."
       },
       {
         "year": "2024",
         "title": "Kelajak banki",
-        "desc": "Bank ekotizimi yaratildi - 2M+ mijoz va to'liq raqamli moliya dunyosi."
+        "desc": "Bank ekotizimi yaratildi - 2 milliondan ortiq mijoz va to'liq raqamli moliya olami."
       }
     ]
   },
@@ -203,80 +212,80 @@
   },
   "ss3": {
     "id": 3,
-    "title": "Omonat",
+    "title": "Omonatlar",
     "desc": "Yuqori daromadli omonatlar",
     "btn": "Hisob ochish"
   },
   "ss4": {
     "id": 4,
-    "title": "Biznes xizmatlari",
+    "title": "Biznes xizmatlar",
     "desc": "Korporativ mijozlar uchun",
     "btn": "Batafsil"
   },
   "ss5": {
     "id": 5,
     "title": "Valyuta ayirboshlash",
-    "desc": "24/7 onlayn ayirboshlash",
-    "btn": "Kurslarni ko‘rish"
+    "desc": "Onlayn ayirboshlash 24/7",
+    "btn": "Kurslarni ko'rish"
   },
   "ss6": {
     "id": 6,
-    "title": "Internet Banking",
-    "desc": "Mobil va web banking",
-    "btn": "Ro‘yxatdan o‘tish"
-  },
-  "xizmatlar": {
-    "calc_title": "Hisoblaymiz sizning daromadingiz",
-    "calc_total": "Muddat oxiridagi summa",
-    "calc_profit": "Sof foyda",
-    "calc_amount": "Investitsiya summasi"
+    "title": "Internet-banking",
+    "desc": "Mobil va veb-banking",
+    "btn": "Ro'yxatdan o'tish"
   },
   "contacts": {
     "title": "Kontaktlar",
-    "subtitle": "Biz bilan o'zingizga qulay usulda bog'laning. Biz har doim yordamga tayyormiz.",
+    "subtitle": "Sizga qulay usulda biz bilan bog'laning. Biz har doim yordamga tayyormiz.",
     "phone": "Telefon",
-    "email": "Email",
+    "email": "Elektron pochta",
     "address": "Manzil",
-    "address_text": "Toshkent sh., Amir Temur ko'chasi, 108-uy",
+    "address_text": "Toshkent sh., Amir Temur ko'chasi, 108",
     "work_hours": "Ish tartibi",
-    "work_hours_text": "Dush-Jum: 09:00 – 18:00",
-    "form_title": "Xabar yo'llash",
+    "work_hours_text": "Du-Ju: 09:00 – 18:00",
+    "form_title": "Xabar yuborish",
     "name_label": "Ismingiz",
     "name_placeholder": "Ismingizni kiriting",
-    "email_label": "Email manzilingiz",
+    "email_label": "Emailingiz",
     "email_placeholder": "example@mail.com",
     "message_label": "Xabaringiz",
     "message_placeholder": "Xabaringizni shu yerga yozing...",
     "send_btn": "Xabarni yuborish"
   },
   "kredit": {
-    "hero_title": "Tez va Ishonchli Kredit Xizmati",
-    "hero_subtitle": "Eng qulay foizlar va tezkor tasdiqlash.",
+    "hero_title": "Tezkor va ishonchli kredit xizmati",
+    "hero_subtitle": "Eng foydali foizlar va tezkor tasdiqlash.",
     "btn_get": "Kredit olish",
     "btn_calc": "Hisoblash",
-    "types_title": "Kredit Turlari",
+    "types_title": "Kredit turlari",
     "btn_more": "Batafsil",
-    "calc_title": "Kredit Kalkulyator",
+    "calc_title": "Kredit kalkulyatori",
     "placeholder_sum": "Summa",
     "placeholder_term": "Muddat (oy)",
     "placeholder_percent": "Foiz (%)",
     "monthly_payment": "Oylik to'lov",
-    "form_title": "Kreditga Ariza Qoldiring",
+    "form_title": "Kreditga ariza qoldiring",
     "placeholder_name": "Ismingiz",
     "placeholder_phone": "Telefon",
-    "select_type": "Kredit tanlang",
+    "select_type": "Kreditni tanlang",
     "btn_send": "Yuborish",
-    "alert_fill": "Iltimos barcha maydonlarni to‘ldiring",
+    "btn_sent": "Yuborildi",
+    "alert_fill": "Iltimos, barcha maydonlarni to'ldiring",
     "alert_success": "Ariza yuborildi ✅",
     "currency": "so'm",
     "rate_label": "Foiz",
     "max_label": "Maks",
     "term_label": "Muddat",
+    "modal_title": "Tezkor ariza",
+    "modal_desc": "Shaxsiy menejer bilan bog'lanish uchun tugmani bosing.",
+    "modal_success": "Muvaffaqiyatli!",
+    "modal_success_desc": "Tez orada siz bilan bog'lanamiz.",
+    "modal_btn": "Bog'lanish",
     "types": {
       "mortgage": "Ipoteka krediti",
       "auto": "Avtokredit",
-      "business": "Biznes krediti",
-      "consumer": "Iste’mol krediti"
+      "business": "Biznes kredit",
+      "consumer": "Iste'mol krediti"
     },
     "max_values": {
       "1b": "1 mlrd so'm",
@@ -294,77 +303,77 @@
   "about": {
     "modal": {
       "title": "Kompaniya haqida",
-      "text": "Biz 10 yildan ortiq vaqt davomida mijozlarimizga xavfsiz va innovatsion moliyaviy yechimlarni taqdim etib kelmoqdamiz. Maqsadimiz — har bir inson uchun moliyaviy erkinlikni ta'minlash.",
+      "text": "10 yildan ortiq vaqt mobaynida biz mijozlarimizga xavfsiz va innovatsion moliyaviy yechimlarni taqdim etib kelmoqdamiz. Maqsadimiz — har bir inson uchun moliyaviy erkinlikni ta'minlash.",
       "globalTitle": "Global miqyos",
       "globalDesc": "Xalqaro standartlar asosida xizmat ko'rsatish.",
       "teamTitle": "Ishonchli jamoa",
       "teamDesc": "Professional mutaxassislar xizmati.",
       "closeBtn": "Tushunarli"
     },
-    "badge": "Kelejak Banki",
+    "badge": "Kelajak Banki",
     "heroTitle": "Yuksalish Bank",
-    "heroSubtitle": "BILAN YANGI DAVR",
-    "heroDesc": "Biz faqat bank emasmiz, biz sizning moliyaviy muvaffaqiyatingiz yo'lidagi ishonchli hamkoringizmiz. Innovatsion yechimlar va xavfsizlik — bizning bosh tamoyilimiz.",
+    "heroSubtitle": "BIZ BILAN YANGI ERA",
+    "heroDesc": "Biz shunchaki bank emasmiz, biz sizning moliyaviy muvaffaqiyat yo'lidagi ishonchli hamkoringizmiz. Innovatsion yechimlar va xavfsizlik — bizning asosiy tamoyillarimiz.",
     "btnMore": "Batafsil",
     "stats": {
       "clients": "Mijozlarimiz",
-      "experience": "Tajriba",
+      "experience": "Ish tajribasi",
       "branches": "Filiallar"
     },
     "mission": {
-      "title": "Bizning Missiyamiz",
-      "desc": "Har bir mijoz uchun individual yondashuv orqali eng qulay va zamonaviy moliyaviy ekotizimni yaratish."
+      "title": "Bizning missiyamiz",
+      "desc": "Har bir mijozga individual yondashuv orqali maksimal qulay va zamonaviy moliyaviy ekotizim yaratish."
     },
     "vision": {
-      "title": "Bizning Vizyonimiz",
-      "desc": "Markaziy Osiyoda raqamli bank xizmatlari bo'yicha eng innovatsion va ishonchli brendga aylanish."
+      "title": "Bizning qarashlarimiz",
+      "desc": "Markaziy Osiyodagi eng innovatsion va ishonchli raqamli bank xizmatlari brendiga aylanish."
     },
     "team": {
-      "title": "Rahbariyat Jamoasi",
+      "title": "Rahbariyat",
       "roles": {
-        "founder": "Asoschi & Rais",
-        "ceo": "Bosh Direktor (CEO)",
-        "cfo": "Moliya Direktori (CFO)"
+        "founder": "Asoschi va Rais",
+        "ceo": "Bosh direktor (CEO)",
+        "cfo": "Moliyaviy direktor (CFO)"
       }
     },
     "cta": {
       "title": "Savollaringiz bormi?",
-      "desc": "Mutaxassislarimiz sizga yordam berishga tayyor. Hoziroq bog'laning va xizmatlarimizdan foydalaning.",
+      "desc": "Mutaxassislarimiz sizga yordam berishga tayyor. Hoziroq biz bilan bog'laning va xizmatlarimizdan foydalaning.",
       "btn": "Bog'lanish"
     }
   },
   "uz": {
-    "title": "Mijozlarimiz Nima Deydi",
-    "desc": "Bizning mijozlarimiz Yuksalish Bank bilan qanday muvaffaqiyatga erishganini o'qing va o'z fikringizni qoldiring.",
-    "stats": "ta fikr",
+    "title": "Mijozlarimiz nima deydi",
+    "desc": "Mijozlarimiz Yuksalish Bank bilan qanday muvaffaqiyatga erishganini bilib oling va o'z fikringizni qoldiring.",
+    "stats": "sharhlar",
     "form": {
       "name": "Ismingiz",
-      "role": "Rolingiz",
-      "msg": "Fikringiz...",
-      "submit": "Fikringizni yuboring",
-      "success": "Sizning fikringiz yuborildi! Fikrni faqat bir marta yuborishingiz mumkin."
+      "role": "Lavozimingiz",
+      "msg": "Sizning sharhingiz...",
+      "submit": "Sharh yuborish",
+      "success": "Sharhingiz yuborildi! Siz faqat bir marta sharh qoldirishingiz mumkin."
     }
   },
   "uz1": [
     {
       "name": "Ali Rustam",
-      "role": "Kredit Foydalanuvchisi",
+      "role": "Kredit foydalanuvchisi",
       "rating": 5,
-      "message": "Yuksalish Bankdagi xizmatlar juda qulay va tezkor. Men omonatni ochishdan juda mamnunman.",
+      "message": "Yuksalish Bank xizmatlari juda qulay va tezkor. Omonat ochganimdan juda mamnunman.",
       "img": "https://i.pravatar.cc/100?img=12"
     },
     {
       "name": "Malika Karimova",
       "role": "Bank kartasi foydalanuvchisi",
       "rating": 4,
-      "message": "Online banking interfeysi juda sodda va tushunarli. Mijozlarga xizmat darajasi a’lo.",
+      "message": "Onlayn-bank interfeysi juda oddiy va tushunarli. Mijozlarga xizmat ko'rsatish darajasi yuqori.",
       "img": "https://i.pravatar.cc/100?img=32"
     },
     {
-      "name": "Jumaqulva J",
-      "role": "Valyuta savdogari",
+      "name": "Jumaqulova J",
+      "role": "Valyuta treyderi",
       "rating": 5,
-      "message": "Valyuta kurslari yangilanadi va har doim qulay. Men doimo bu bank bilan ishlayman.",
+      "message": "Valyuta kurslari yangilanib turadi va har doim qulay. Men doim shu bank bilan ishlayman.",
       "img": "https://i.pravatar.cc/100?img=44"
     }
   ],
@@ -372,30 +381,30 @@
     "jan": "Yan",
     "mar": "Mar",
     "may": "May",
-    "jul": "Iyl",
+    "jul": "Iyul",
     "sep": "Sen",
     "nov": "Noy"
   },
-  "loan": "Kredit o‘sish tendensiyalari",
   "stats1": {
     "clients": "Jami mijozlar",
-    "loans": "Faol kreditlar",
-    "deposits": "Jami omonatlar",
+    "loans": "Aktiv kreditlar",
+    "deposits": "Omonatlarning umumiy hajmi",
     "revenue": "Oylik daromad"
   },
+  "loan": "Kredit o'sish tendensiyalari",
   "transactions": {
-    "title": "So‘nggi Tranzaksiyalar",
+    "title": "Oxirgi tranzaksiyalar",
     "t1": {
       "date": "24 Okt 2023",
       "client": "Jahongir Saidov",
-      "type": "Agro krediti",
+      "type": "Agro kredit",
       "amount": "45,000,000 UZS",
-      "status": "Bajarildi"
+      "status": "Yakunlangan"
     },
     "t2": {
       "date": "02 Noy 2023",
       "client": "Dilshod Karimov",
-      "type": "Biznes krediti",
+      "type": "Biznes kredit",
       "amount": "120,000,000 UZS",
       "status": "Kutilmoqda"
     },
@@ -404,22 +413,22 @@
       "client": "Malika Tursunova",
       "type": "Ipoteka",
       "amount": "350,000,000 UZS",
-      "status": "Bajarildi"
+      "status": "Yakunlangan"
     },
     "t4": {
       "date": "08 Yan 2024",
       "client": "Azizbek Yuldashev",
-      "type": "Avto krediti",
+      "type": "Avtokredit",
       "amount": "85,000,000 UZS",
-      "status": "Rad etildi"
+      "status": "Rad etilgan"
     }
   },
   "table": {
     "date": "Sana",
     "client": "Mijoz",
     "type": "Turi",
-    "amount": "Miqdori",
-    "status": "Holati"
+    "amount": "Summa",
+    "status": "Status"
   },
   "dashboard": {
     "title": "Boshqaruv paneli",
@@ -430,7 +439,7 @@
     "chiqish": "Chiqish"
   },
   "footer": {
-    "bank_desc": "Sizning moliyaviy o'sishingiz va farovonligingiz uchun zamonaviy va ishonchli bank xizmatlari.",
+    "bank_desc": "Moliyaviy o'sishingiz va farovonligingiz uchun zamonaviy hamda ishonchli bank xizmatlari.",
     "services": "Xizmatlar",
     "credits": "Kreditlar",
     "deposits": "Omonatlar",
@@ -440,149 +449,149 @@
     "tariffs": "Tariflar",
     "branches": "Filiallar va bankomatlar",
     "faq": "Savol va javoblar",
-    "contact": "Bog'lanish",
+    "contact": "Kontaktlar",
     "news": "Yangiliklar",
     "news_desc": "Bank yangiliklari va aksiyalaridan xabardor bo'ling.",
-    "email_placeholder": "Email manzilingiz",
+    "email_placeholder": "Emailingiz",
     "success": "Email muvaffaqiyatli yuborildi!",
-    "error": "Email noto‘g‘ri kiritildi!",
-    "copyright": "© 2026 \"Yuksalish Bank\" ATB. Barcha huquqlar himoyalangan.",
+    "error": "Email noto'g'ri!",
+    "copyright": "© 2026 \"Yuksalish Bank\". Barcha huquqlar himoyalangan.",
     "privacy": "Maxfiylik siyosati",
     "offer": "Ommaviy oferta",
     "license": "Litsenziya"
   },
   "auto_kredit": {
-    "badge": "Sizning avtomobil orzularingiz",
+    "badge": "Avtomobil orzularingiz",
     "title": "Avtomobilni <0>osonlik bilan</0> oling!",
-    "description": "Yangi yoki ishlatilgan avtomobilni qulay shartlarda, tez va ortiqcha hujjatlarsiz sotib oling.",
+    "description": "Yangi yoki haydalgan avtomobilni foydali shartlarda, tez va ortiqcha hujjatlarsiz sotib oling.",
     "button": "Ariza qoldirish",
     "modal_title": "Ariza qoldirish",
-    "modal_desc": "Ma'lumotlaringizni kiriting, mutaxassislarimiz bog'lanishadi.",
+    "modal_desc": "Ma'lumotlaringizni kiriting, mutaxassislarimiz siz bilan bog'lanishadi.",
     "label_name": "To'liq ismingiz",
     "placeholder_name": "Masalan: Azizbek Karimov",
     "label_phone": "Telefon raqamingiz",
-    "submit_btn": "Arizani yuborish",
+    "submit_btn": "Ariza yuborish",
     "sending": "Yuborilmoqda...",
     "success_title": "Muvaffaqiyatli!",
-    "success_desc": "Arizangiz qabul qilindi. Tez orada menejerlarimiz qo'ng'iroq qilishadi.",
-    "error_fill": "Iltimos, ma'lumotlarni to'liq kiriting!",
-    "error_server": "Xatolik yuz berdi. Qayta urinib ko'ring."
+    "success_desc": "Arizangiz qabul qilindi. Menejerlarimiz tez orada siz bilan bog'lanishadi.",
+    "error_fill": "Iltimos, barcha ma'lumotlarni to'liq to'ldiring!",
+    "error_server": "Xatolik yuz berdi. Qaytadan urinib ko'ring."
   },
   "ipoteka": {
     "badge": "Uy sotib olish uchun",
-    "title": "Orzuyingizdagi <0>uyga ega bo‘ling</0>",
-    "description": "Ipoteka krediti orqali yangi uy yoki kvartirani qulay to‘lov shartlari bilan sotib oling.",
+    "title": "<0>Orzungizdagi uy</0> sohibiga aylaning",
+    "description": "Ipoteka krediti orqali yangi uy yoki kvartirani qulay to'lov shartlari bilan sotib oling.",
     "button": "Ariza qoldirish",
     "modal_title": "Ariza qoldirish",
     "placeholder_name": "Ismingiz",
-    "submit_btn": "Arizani yuborish",
+    "submit_btn": "Ariza yuborish",
     "sending": "Yuborilmoqda...",
     "success_title": "Muvaffaqiyatli!",
-    "success_desc": "Arizangiz qabul qilindi. Tez orada menejerlarimiz bog‘lanishadi.",
-    "error_fill": "Iltimos, ma'lumotlarni to'liq kiriting!",
-    "error_server": "Xatolik yuz berdi. Qayta urinib ko'ring."
+    "success_desc": "Arizangiz qabul qilindi. Menejerlarimiz tez orada siz bilan bog'lanishadi.",
+    "error_fill": "Iltimos, barcha ma'lumotlarni to'liq to'ldiring!",
+    "error_server": "Xatolik yuz berdi. Qaytadan urinib ko'ring."
   },
   "business": {
     "badge": "Biznesingiz uchun imkoniyat",
-    "title": "Biznesingizni <0>biz bilan</0> yuqoriga ko'taring!",
-    "description": "Kichik va o‘rta biznesingiz rivoji uchun eng qulay shartlarda, ortiqcha hujjatlarsiz tezkor kredit oling.",
+    "title": "Biznesingizni <0>biz bilan birga</0> yuksaltiring!",
+    "description": "Kichik va o'rta biznesni rivojlantirish uchun tezkor kreditni foydali shartlarda va ortiqcha hujjatlarsiz oling.",
     "button": "Ariza qoldirish",
     "modal_title": "Ariza qoldirish",
-    "modal_desc": "Ma'lumotlaringizni kiriting, mutaxassislarimiz bog'lanishadi.",
+    "modal_desc": "Ma'lumotlaringizni kiriting, mutaxassislarimiz siz bilan bog'lanishadi.",
     "label_name": "To'liq ismingiz",
     "placeholder_name": "Masalan: Azizbek Karimov",
     "label_phone": "Telefon raqamingiz",
-    "submit_btn": "Arizani yuborish",
+    "submit_btn": "Ariza yuborish",
     "sending": "Yuborilmoqda...",
     "success_title": "Muvaffaqiyatli!",
-    "success_desc": "Arizangiz qabul qilindi. Tez orada menejerlarimiz qo'ng'iroq qilishadi.",
-    "error_fill": "Iltimos, ma'lumotlarni to'liq kiriting!",
-    "error_server": "Xatolik yuz berdi. Qayta urinib ko'ring."
+    "success_desc": "Arizangiz qabul qilindi. Menejerlarimiz tez orada siz bilan bog'lanishadi.",
+    "error_fill": "Iltimos, barcha ma'lumotlarni to'liq to'ldiring!",
+    "error_server": "Xatolik yuz berdi. Qaytadan urinib ko'ring."
   },
   "consumer": {
     "badge": "Shaxsiy moliyaviy yordam",
-    "title": "Orzularingizni <0>ro‘yobga chiqaring</0> oson kredit bilan!",
-    "description": "Istemol kreditlari bilan istalgan xarajatlaringizni qoplang: ta’lim, uy jihozlari, tibbiy xizmatlar yoki sayohat.",
+    "title": "Oson kredit bilan <0>orzularingizni haqiqatga</0> aylantiring!",
+    "description": "Iste'mol kreditlari bilan har qanday xarajatlarni qoplang: ta'lim, maishiy texnika, tibbiy xizmatlar yoki sayohat.",
     "button": "Ariza qoldirish",
     "modal_title": "Ariza qoldirish",
-    "modal_desc": "Ma'lumotlaringizni kiriting, mutaxassislarimiz bog'lanishadi.",
+    "modal_desc": "Ma'lumotlaringizni kiriting, mutaxassislarimiz siz bilan bog'lanishadi.",
     "label_name": "To'liq ismingiz",
     "placeholder_name": "Masalan: Azizbek Karimov",
     "label_phone": "Telefon raqamingiz",
-    "submit_btn": "Arizani yuborish",
+    "submit_btn": "Ariza yuborish",
     "sending": "Yuborilmoqda...",
     "success_title": "Muvaffaqiyatli!",
-    "success_desc": "Arizangiz qabul qilindi. Tez orada menejerlarimiz qo'ng'iroq qilishadi.",
-    "error_fill": "Iltimos, ma'lumotlarni to'liq kiriting!",
-    "error_server": "Xatolik yuz berdi. Qayta urinib ko'ring."
+    "success_desc": "Arizangiz qabul qilindi. Menejerlarimiz tez orada siz bilan bog'lanishadi.",
+    "error_fill": "Iltimos, barcha ma'lumotlarni to'liq to'ldiring!",
+    "error_server": "Xatolik yuz berdi. Qaytadan urinib ko'ring."
   },
   "details": {
     "back": "Orqaga",
-    "title": "Batafsil Ma'lumot",
-    "p1": "Yuksalish Bank sizga eng yaxshi moliyaviy xizmatlarni taqdim etadi. Hisob ochish, kredit va depozit xizmatlari bilan bir qatorda, sizning moliyaviy xavfsizligingizni ham ta’minlaymiz.",
-    "p2": "Bank kartalari, onlayn banking, mobil ilovalar va boshqa innovatsion yechimlar yordamida siz oson va tezkor moliyaviy operatsiyalarni amalga oshirishingiz mumkin.",
-    "p3": "Batafsil xizmatlarimiz va tariflarimiz bilan tanishish uchun siz sahifani pastga aylantiring yoki “Xizmatlar” bo‘limiga o‘ting.",
-    "banking_title": "Onlayn Banking",
-    "banking_desc": "Har doim va har yerda hisobingizni nazorat qiling.",
-    "credit_title": "Kredit Xizmatlari",
-    "credit_desc": "Moslashuvchan shartlar bilan kredit oling.",
-    "deposit_title": "Depozitlar",
-    "deposit_desc": "Daromadingizni xavfsiz joyda saqlang va oshiring.",
-    "app_title": "Mobil Ilova",
-    "app_desc": "Har doim qulay va tezkor banking tajribasi."
+    "title": "Batafsil ma'lumot",
+    "p1": "Yuksalish Bank sizga eng yaxshi moliyaviy xizmatlarni taklif etadi. Hisob raqamlar ochish, kreditlar va omonat xizmatlari bilan bir qatorda, biz sizning moliyaviy xavfsizligingizni ta'minlaymiz.",
+    "p2": "Bank kartalari, onlayn-banking, mobil ilovalar va boshqa innovatsion yechimlar yordamida siz moliyaviy operatsiyalarni oson va tez amalga oshirishingiz mumkin.",
+    "p3": "Batafsil xizmatlarimiz va tariflarimiz bilan tanishish uchun sahifani pastga aylantiring yoki «Xizmatlar» bo'limiga o'ting.",
+    "banking_title": "Onlayn-banking",
+    "banking_desc": "Hisobingizni har doim va hamma joyda nazorat qiling.",
+    "credit_title": "Kredit xizmatlari",
+    "credit_desc": "Moslashuvchan shartlarda kredit oling.",
+    "deposit_title": "Omonatlar",
+    "deposit_desc": "Daromadingizni ishonchli joyda saqlang va ko'paytiring.",
+    "app_title": "Mobil ilova",
+    "app_desc": "Har doim qulay va tezkor bank tajribasi."
   },
   "promo": {
-    "instagram_title": "Yuksalish bank Instagramga obuna bo'ling",
+    "instagram_title": "Yuksalish Bank Instagram sahifasiga obuna bo'ling",
     "subscribe": "Obuna bo'lish",
-    "bank_name": "Yuksalish bank",
-    "app_download": "Mobil ilovasini yuklab oling!"
+    "bank_name": "Yuksalish Bank",
+    "app_download": "Mobil ilovani yuklab oling!"
   },
   "filiali_va_bankomatlari": {
     "title": "Filiallar va bankomatlar",
     "l1": {
-      "name": "Agrobank Markaz",
+      "name": "Agrobank Markazi",
       "type": "Filial",
       "lat": 41.2936485,
       "lng": 69.2195442,
       "status": "Ochiq"
     },
     "l2": {
-      "name": "Yunusobod Filiali",
+      "name": "Yunusobod filiali",
       "type": "Filial",
       "lat": 41.345,
       "lng": 69.265,
       "status": "Ochiq"
     },
     "l3": {
-      "name": "Chilonzor Bankomati",
+      "name": "Chilonzor bankomati",
       "type": "Bankomat",
       "lat": 41.289,
       "lng": 69.200,
       "status": "24/7"
     },
     "l4": {
-      "name": "Mirzo Ulug'bek Filiali",
+      "name": "Mirzo Ulug'bek filiali",
       "type": "Filial",
       "lat": 41.333,
       "lng": 69.290,
       "status": "Ochiq"
     },
     "l5": {
-      "name": "Sergeli Bankomati",
+      "name": "Sergeli bankomati",
       "type": "Bankomat",
       "lat": 41.260,
       "lng": 69.230,
-      "status": "Texnik xizmat"
+      "status": "Texnik xizmat ko'rsatish"
     },
     "l6": {
-      "name": "Mirobod Filiali",
+      "name": "Mirobod filiali",
       "type": "Filial",
       "lat": 41.312,
       "lng": 69.260,
       "status": "Ochiq"
     },
     "l7": {
-      "name": "Yashnobod Bankomati",
+      "name": "Yashnobod bankomati",
       "type": "Bankomat",
       "lat": 41.320,
       "lng": 69.210,
@@ -591,19 +600,19 @@
   },
   "currencyExchange": {
     "hero": {
-      "title": "24/7 Onlayn \n Valyuta Ayirboshlash",
-      "subtitle": "Eng qulay kurslarda, istalgan vaqtda valyutangizni almashtiring.",
+      "title": "Onlayn valyuta \n ayirboshlash 24/7",
+      "subtitle": "Valyutani istalgan vaqtda eng foydali kurslarda ayirboshlang.",
       "btnExchange": "Ayirboshlash",
       "btnMore": "Batafsil"
     },
     "rates": {
-      "title": "Eng so‘nggi kurslar",
+      "title": "So'nggi kurslar",
       "buy": "Sotib olish",
       "sell": "Sotish",
-      "realTime": "Real vaqt"
+      "realTime": "Real vaqtda"
     },
     "features": {
-      "description": "Bizning onlayn valyuta ayirboshlash xizmati orqali siz 24/7 rejimda real vaqt kurslari asosida valyutani tez va xavfsiz tarzda almashtirishingiz mumkin.",
+      "description": "Bizning onlayn valyuta ayirboshlash xizmatimiz orqali siz real vaqtdagi kurslar asosida 24/7 tez va xavfsiz ayirboshlashingiz mumkin.",
       "fast": "⚡ Tezkor operatsiya",
       "secure": "🔒 Xavfsiz tizim",
       "anytime": "🌍 24/7 xizmat"
@@ -641,237 +650,232 @@
   },
   "usdPage": {
     "modalTitle": "Ayirboshlashni tasdiqlash",
-    "modalText": "Siz quyidagicha miqdorni olasiz:",
+    "modalText": "Siz quyidagi summani olasiz:",
     "cancel": "Bekor qilish",
     "confirm": "Tasdiqlash",
     "days": {
-      "mon": "Dush",
-      "tue": "Sesh",
-      "wed": "Chor",
-      "thu": "Pay",
-      "fri": "Jum",
-      "sat": "Shan",
+      "mon": "Du",
+      "tue": "Se",
+      "wed": "Ch",
+      "thu": "Pa",
+      "fri": "Ju",
+      "sat": "Sha",
       "sun": "Yak"
     },
     "title": "AQSH Dollari (USD)",
-    "subtitle": "Markaziy bank va bozorning real vaqtdagi kursi",
+    "subtitle": "Markaziy bank va bozor kursi real vaqtda",
     "buy": "Sotib olish",
     "sell": "Sotish",
     "converter": "Konvertatsiya",
-    "enterAmount": "Miqdorni kiriting (USD)",
+    "enterAmount": "Summani kiriting (USD)",
     "youGet": "Siz olasiz (UZS)",
     "exchange": "Ayirboshlashni boshlash",
-    "weeklyRate": "Haftalik kurs dinamikasi",
+    "weeklyRate": "Kursning haftalik dinamikasi",
     "secureTransaction": "Xavfsiz tranzaksiya",
-    "secureDesc": "Barcha amallar Yuksalish Banki himoyasida.",
+    "secureDesc": "Barcha operatsiyalar Yuksalish Bank tomonidan himoyalangan.",
     "bestRate": "Eng yaxshi kurs",
-    "bestRateDesc": "Biz bozordagi eng yaxshi kursni taqdim etamiz.",
+    "bestRateDesc": "Biz bozordagi eng yaxshi kurslardan birini taklif qilamiz.",
     "lastUpdate": "Oxirgi yangilanish",
     "autoUpdate": "Ma'lumotlar avtomatik yangilanadi"
   },
   "eurPage": {
-    "title": "Yevropa Valyutasi (EUR)",
-    "subtitle": "Yevro hududi va Markaziy bank kursi",
     "modalTitle": "Ayirboshlashni tasdiqlash",
-    "modalText": "Siz quyidagicha miqdorni olasiz:",
+    "modalText": "Siz quyidagi summani olasiz:",
     "cancel": "Bekor qilish",
     "confirm": "Tasdiqlash",
+    "title": "Yevropa valyutasi (EUR)",
+    "subtitle": "Yevro kursi mintaqada va Markaziy bankda",
     "buy": "Sotib olish",
     "sell": "Sotish",
-    "converter": "EUR Konvertatsiya",
-    "enterAmount": "Miqdorni kiriting (EUR)",
+    "converter": "EUR konverteri",
+    "enterAmount": "Summani kiriting (EUR)",
     "youGet": "Siz olasiz (UZS)",
-    "exchange": "EUR Ayirboshlash",
-    "weeklyRate": "Haftalik EUR Dinamikasi",
+    "exchange": "EUR ayirboshlash",
+    "weeklyRate": "EUR kursining haftalik dinamikasi",
     "days": {
-      "mon": "Dush",
-      "tue": "Sesh",
-      "wed": "Chor",
-      "thu": "Pay",
-      "fri": "Jum",
-      "sat": "Shan",
+      "mon": "Du",
+      "tue": "Se",
+      "wed": "Ch",
+      "thu": "Pa",
+      "fri": "Ju",
+      "sat": "Sha",
       "sun": "Yak"
     }
   },
   "gbpPage": {
-    "title": "Britaniya Funti (GBP)",
-    "subtitle": "Bozor va banklararo eng so'nggi kurslar",
-    "buy": "Sotib olish",
-    "sell": "Sotish",
-    "converter": "GBP Konvertatsiya",
-    "enterAmount": "Miqdorni kiriting (GBP)",
-    "youGet": "Siz olasiz (UZS)",
-    "exchange": "GBP Ayirboshlash",
-    "weeklyRate": "Haftalik GBP Dinamikasi",
-    "lastUpdate": "Oxirgi yangilanish",
-    "autoUpdate": "Avtomatik yangilanish",
     "modalTitle": "Ayirboshlashni tasdiqlash",
-    "modalText": "Siz quyidagicha miqdorni olasiz:",
+    "modalText": "Siz quyidagi summani olasiz:",
     "cancel": "Bekor qilish",
     "confirm": "Tasdiqlash",
+    "title": "Britaniya Funt Sterlingi (GBP)",
+    "subtitle": "London birjasi va MB kursi real vaqtda",
+    "buy": "Sotib olish",
+    "sell": "Sotish",
+    "converter": "GBP konverteri",
+    "enterAmount": "Summani kiriting (GBP)",
+    "youGet": "Siz olasiz (UZS)",
+    "exchange": "GBP ayirboshlash",
+    "weeklyRate": "GBP kursining haftalik dinamikasi",
     "days": {
-      "mon": "Dush",
-      "tue": "Sesh",
-      "wed": "Chor",
-      "thu": "Pay",
-      "fri": "Jum",
-      "sat": "Shan",
+      "mon": "Du",
+      "tue": "Se",
+      "wed": "Ch",
+      "thu": "Pa",
+      "fri": "Ju",
+      "sat": "Sha",
       "sun": "Yak"
     }
   },
   "rubPage": {
-    "title": "Rossiya Rubli (RUB)",
-    "subtitle": "Bozor va banklararo eng so'nggi kurslar",
-    "buy": "Sotib olish",
-    "sell": "Sotish",
-    "converter": "RUB Konvertatsiya",
-    "enterAmount": "Miqdorni kiriting (RUB)",
-    "youGet": "Siz olasiz (UZS)",
-    "exchange": "RUB Ayirboshlash",
-    "weeklyRate": "Haftalik RUB Dinamikasi",
     "modalTitle": "Ayirboshlashni tasdiqlash",
-    "modalText": "Siz quyidagicha miqdorni olasiz:",
+    "modalText": "Siz quyidagi summani olasiz:",
     "cancel": "Bekor qilish",
     "confirm": "Tasdiqlash",
+    "title": "Rossiya Rubli (RUB)",
+    "subtitle": "So'nggi bozor va banklararo kurslar",
+    "buy": "Sotib olish",
+    "sell": "Sotish",
+    "converter": "RUB konverteri",
+    "enterAmount": "Summani kiriting (RUB)",
+    "youGet": "Siz olasiz (UZS)",
+    "exchange": "RUB ayirboshlash",
+    "weeklyRate": "RUB kursining haftalik dinamikasi",
     "days": {
-      "mon": "Dush",
-      "tue": "Sesh",
-      "wed": "Chor",
-      "thu": "Pay",
-      "fri": "Jum",
-      "sat": "Shan",
+      "mon": "Du",
+      "tue": "Se",
+      "wed": "Ch",
+      "thu": "Pa",
+      "fri": "Ju",
+      "sat": "Sha",
       "sun": "Yak"
     }
   },
   "hero1": {
-    "title": "Biznes xizmatlari",
-    "description": "Korporativ mijozlarimiz uchun maxsus yaratilgan moliyaviy va xizmat paketlari."
+    "title": "Biznes xizmatlar",
+    "description": "Korporativ mijozlar uchun maxsus ishlab chiqilgan moliyaviy va servis paketlari."
   },
   "services2": {
     "corporate": {
       "title": "Korporativ hisob-kitoblar",
-      "description": "Biznesingiz uchun tezkor va xavfsiz moliyaviy operatsiyalarni taqdim etamiz.",
-      "details": "Korporativ hisob-kitoblar orqali kompaniyangiz xodimlari uchun maxsus hisob raqamlar ochiladi, tezkor va xavfsiz operatsiyalar taqdim etiladi."
+      "description": "Biznesingiz uchun tezkor va xavfsiz moliyaviy operatsiyalar.",
+      "details": "Korporativ hisob-kitoblar yordamida kompaniya xodimlari uchun maxsus hisoblar ochiladi, tezkor va xavfsiz operatsiyalar ta'minlanadi."
     },
     "employees": {
       "title": "Xodimlar uchun xizmatlar",
-      "description": "Ishchilar uchun maxsus hisob-kitob, naqd pul va bonus tizimlari.",
+      "description": "Xodimlar uchun maxsus hisob-kitob, naqd pul va bonus tizimlari.",
       "details": "Xodimlar uchun maxsus xizmatlar: naqd pul olish, bonus tizimi va hisob-kitoblar monitoringi."
     },
     "financial": {
       "title": "Moliyaviy tahlil va hisobotlar",
-      "description": "Kompaniyangiz moliyaviy holatini real vaqt rejimida kuzatish.",
-      "details": "Moliyaviy tahlil va hisobotlar yordamida siz kompaniyangiz xarajat va daromadlarini real vaqt rejimida kuzatishingiz mumkin."
+      "description": "Kompaniyangiz moliyaviy holatini real vaqtda kuzatib boring.",
+      "details": "Moliyaviy tahlil va hisobotlar yordamida kompaniyangizning xarajat va daromadlarini real vaqtda kuzatib borishingiz mumkin."
     },
     "security": {
       "title": "Xavfsizlik va kafolat",
-      "description": "Sizning biznesingiz ma’lumotlari himoyalangan va kafolatlangan.",
-      "details": "Bizning tizimimizda barcha ma’lumotlar shifrlanadi va xavfsizlik kafolatlangan."
+      "description": "Sizning biznes ma'lumotlaringiz himoyalangan va kafolatlangan.",
+      "details": "Tizimimizda barcha ma'lumotlar shifrlanadi va xavfsizlik kafolatlanadi."
     }
   },
   "footer1": {
-    "title": "Nima uchun bizni tanlaysiz?",
-    "description": "Bizning korporativ xizmatlarimiz orqali kompaniyangizning moliyaviy ishlarini tez, xavfsiz va ishonchli boshqarishingiz mumkin."
+    "title": "Nega bizni tanlashadi?",
+    "description": "Korporativ xizmatlarimiz yordamida kompaniyangizning moliyaviy jarayonlarini tez, xavfsiz va ishonchli boshqarishingiz mumkin."
   },
   "buttons1": {
-    "request": "So‘rov yuborish",
+    "request": "So'rov yuborish",
     "details": "Batafsil →"
   },
-  "success": "{{service}} uchun so‘rov muvaffaqiyatli yuborildi!",
+  "success": "{{service}} uchun so'rov muvaffaqiyatli yuborildi!",
   "hero2": {
-    "title": "Internet va Mobile Banking",
-    "description": "Sizning moliyaviy operatsiyalaringizni tez, xavfsiz va qulay boshqarish imkoniyati."
+    "title": "Internet va Mobil Banking",
+    "description": "Moliyaviy operatsiyalaringizni tez, xavfsiz va qulay boshqarish imkoniyati."
   },
   "services3": {
     "internetBanking": {
       "title": "Internet Banking",
-      "description": "Sizning moliyaviy operatsiyalaringizni tez va xavfsiz boshqarish.",
-      "details": "Internet Banking orqali hisobingizni istalgan vaqtda kuzatishingiz, to‘lov va transferlarni amalga oshirishingiz mumkin."
+      "description": "Moliyaviy operatsiyalaringizni tez va xavfsiz boshqaring.",
+      "details": "Internet Banking orqali istalgan vaqtda hisobingizni kuzatib borishingiz, to'lov va o'tkazmalarni amalga oshirishingiz mumkin."
     },
     "mobileBanking": {
-      "title": "Mobile Banking",
-      "description": "Mobil ilova orqali barcha bank xizmatlari sizning qo‘lingizda.",
-      "details": "Mobile Banking ilovasi orqali naqd pul, balans, transfer va boshqa barcha xizmatlardan tezkor foydalanishingiz mumkin."
+      "title": "Mobil Banking",
+      "description": "Mobil ilova orqali barcha bank xizmatlari qo'lingizda.",
+      "details": "Mobil ilova yordamida naqd pul, balans, o'tkazmalar va boshqa xizmatlardan tezkor foydalanishingiz mumkin."
     }
   },
   "footer2": {
-    "title": "Nima uchun bizni tanlaysiz?",
-    "description": "Internet va Mobile Banking xizmatlari bilan siz har doim moliyaviy nazoratni qo‘lga kiritasiz va barcha operatsiyalar xavfsiz bo‘ladi."
+    "title": "Nega bizni tanlashadi?",
+    "description": "Internet va Mobil Banking xizmatlari bilan moliya har doim nazoratingizda bo'ladi va barcha operatsiyalar xavfsizdir."
   },
   "buttons2": {
-    "request": "So‘rov yuborish",
+    "request": "So'rov yuborish",
     "details": "Batafsil →"
   },
-  "success1": "{{service}} uchun so‘rov muvaffaqiyatli yuborildi!",
-  "salom1":{
-    "fullName": "To'liq ismingiz",
+  "success1": "{{service}} uchun so'rov muvaffaqiyatli yuborildi!",
+  "salom1": {
+    "fullName": "To'liq ism",
     "region": "Viloyat",
     "city": "Shahar",
-    "email": "Email",
+    "email": "El. pochta",
     "phone": "Telefon",
     "message": "Xabar matni",
     "agree": "Shartlarni qabul qilaman",
     "send": "Yuborish",
     "errors": {
       "fullNameWords": "Iltimos, ismingizni kiriting",
-      "fullNameFormat": "Iltimos, to'liq ismingizni kiriting (familiya va ism)",
-      "email": "Iltimos, to'g'ri email manzilingizni kiriting",
-      "phone": "Iltimos, to'g'ri telefon raqamingizni kiriting (+998 XX XXX-XX-XX)",
-      "message": "Xabaringiz kamida 10 ta belgidan iborat bo'lishi kerak",
+      "fullNameFormat": "Iltimos, to'liq ism-familiyangizni kiriting",
+      "email": "Iltimos, to'g'ri elektron pochta manzilini kiriting",
+      "phone": "Iltimos, to'g'ri telefon raqamini kiriting (+998 XX XXX-XX-XX)",
+      "message": "Xabar kamida 10 ta belgidan iborat bo'lishi kerak",
       "region": "Iltimos, viloyatni tanlang",
       "city": "Iltimos, shaharni kiriting",
       "agree": "Iltimos, shartlarni qabul qiling"
     },
     "alerts": {
-      "success": "Sizning murojaatingiz muvaffaqiyatli yuborildi!",
-      "error": "Xatolik yuz berdi, iltimos qayta urinib ko'ring"
+      "success": "Xabaringiz muvaffaqiyatli yuborildi!",
+      "error": "Xatolik yuz berdi, qaytadan urinib ko'ring"
     }
   },
   "deposit": {
     "title": "Omonat ochish",
-    "back": "Orqaga qaytish",
+    "back": "Orqaga",
     "selected": "Tanlangan tur:",
     "notSelected": "Tanlanmagan",
-    "fullname": "To'liq ism-sharifingiz",
+    "fullname": "To'liq ismingiz",
     "fullnamePlaceholder": "Masalan: Azizbek Ahmedov",
     "phone": "Telefon raqamingiz",
-    "amount": "Taxminiy sarmoya miqdori (so'm)",
-    "info": "ℹ️ Arizani yuborganingizdan so'ng, mutaxassisimiz shartnomani rasmiylashtirish uchun siz bilan bog'lanadi.",
-    "submit": "Arizani yuborish",
-    "success": "Arizangiz qabul qilindi! Tez orada operatorlarimiz bog'lanishadi."
+    "amount": "Taxminiy omonat summasi (so'm)",
+    "info": "ℹ️ Ariza yuborilgandan so'ng, mutaxassisimiz shartnomani rasmiylashtirish uchun siz bilan bog'lanadi.",
+    "submit": "Ariza yuborish",
+    "success": "Arizangiz qabul qilindi! Operatorlarimiz tez orada siz bilan bog'lanishadi."
   },
-
-
-  
   "deposits": {
     "title": "Omonatlar (Depozitlar)",
-    "subtitle": "Mablag‘laringizni ishonchli va yuqori daromad bilan ko‘paytiring. Biz bilan kelajagingizni bugundan rejalashtiring.",
+    "subtitle": "Mablag'laringizni ishonchli va yuqori daromad bilan ko'paytiring. Kelajagingizni bugundan biz bilan rejalashtiring.",
     "typesTitle": "Omonat turlari",
-    "calculatorTitle": "Daromadingizni hisoblang",
-    "investmentAmount": "Sarmoya miqdori:",
+    "calculatorTitle": "Daromadni hisoblang",
+    "investmentAmount": "Investitsiya summasi:",
     "annualProfit": "Yillik sof foyda (25%):",
-    "totalReturn": "Jami qaytariladi:",
+    "totalReturn": "Qaytariladigan umumiy summa:",
     "ctaTitle": "Savollaringiz bormi? Mutaxassis bilan bog'laning",
     "ctaButton": "Bog'lanish",
     "depositButton": "Omonat ochish"
   },
   "depositTypes": {
     "onlineDeposit": {
-      "title": "Onlayn Omonat",
+      "title": "Onlayn omonat",
       "rate": "22%",
       "term": "12 oy",
       "minAmount": "500 000 so'm",
       "partialWithdrawal": "Qisman yechish"
     },
     "maxProfit": {
-      "title": "Maksimal Daromad",
+      "title": "Maksimal daromad",
       "rate": "25%",
       "term": "24 oy",
       "minAmount": "1 000 000 so'm",
       "partialWithdrawal": "Qisman yechish"
     },
     "flexSavings": {
-      "title": "Erkin Jamg'arma",
+      "title": "Erkin jamg'arma",
       "rate": "18%",
       "term": "6 oy",
       "minAmount": "100 000 so'm",
@@ -880,7 +884,7 @@
   },
   "rangePlaceholder": "1 000 000 so'm",
   "errors": {
-    "fillAllFields": "Iltimos barcha maydonlarni to'ldiring!"
+    "fillAllFields": "Iltimos, barcha maydonlarni to'ldiring!"
   },
   "success3": {
     "depositOpened": "Omonat muvaffaqiyatli ochildi!"

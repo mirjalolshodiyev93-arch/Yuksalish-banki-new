@@ -11,7 +11,7 @@ import {
   X, 
   ArrowRight, 
   Sparkles 
-} from "lucide-react"; // Ikonkalar uchun
+} from "lucide-react";
 
 import {
   SignedIn,
@@ -47,7 +47,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
 
   return (
     <>
-      {/* 🚀 PREMIUM DARK MODE LOADER */}
+     
       <AnimatePresence>
         {isSwitching && (
           <motion.div
@@ -74,34 +74,49 @@ export default function Navbar({ darkMode, setDarkMode }) {
         )}
       </AnimatePresence>
 
-      {/* 🧭 NAVBAR */}
+   
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 flex items-center ${
           scrolled
-            ? "h-[75px] bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl shadow-2xl border-b border-gray-200 dark:border-gray-800"
-            : "h-[100px] bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-600 dark:from-gray-900 dark:via-slate-900 dark:to-gray-900"
+            ? "h-[85px] bg-white dark:bg-slate-950 shadow-2xl border-b border-gray-200 dark:border-gray-800"
+            : "h-[105px] bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-600 dark:from-gray-950 dark:via-slate-950 dark:to-gray-950"
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-4 sm:px-8 w-full flex justify-between items-center">
 
           {/* LOGO */}
-          <Link to="/" className="group">
-            <motion.img 
-              whileHover={{ scale: 1.05 }}
-              src={logo} 
-              alt="logo" 
-              className={`transition-all duration-500 ${scrolled ? "h-[50px]" : "h-[70px] drop-shadow-lg"}`} 
-            />
-          </Link>
+        <Link to="/">
+  <div
+    className={`transition-all duration-500 flex items-center justify-center overflow-hidden ${
+      scrolled ? "bg-transparent p-2" : "bg-transparent"
+    }`}
+    style={{
+      width: scrolled ? "150px" : "140px",
+      height: scrolled ? "60px" : "100px"
+    }}
+  >
+    <img
+      src={logo}
+      alt="Logo"
+      className={`w-full h-[110px] object-cover object-center transition-all duration-500 ${
+        scrolled
+          ? darkMode 
+            ? "drop-shadow-[0_1px_2px_rgba(255,255,255,0.4)]" // Dark mode: yengil oq soya
+            : "drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]"       // Light mode: qora soya
+          : "drop-shadow-none"
+      } ${darkMode ? "brightness-110" : "brightness-100"}`} // Dark modeda logotip biroz yorqinroq ko'rinishi uchun
+    />
+  </div>
+</Link>
 
           {/* DESKTOP NAV */}
-          <div className={`hidden md:flex gap-8 uppercase text-[11px] font-bold tracking-[2px] ${
-              scrolled ? "text-slate-700 dark:text-gray-200" : "text-white"
+          <div className={`hidden md:flex gap-8 uppercase text-[12px] font-black tracking-[2px] ${
+              scrolled ? "text-slate-900 dark:text-white" : "text-white"
             }`}>
             {navItems.slice(0, 4).map((item) => (
               <Link key={item} to={item === "home" ? "/" : `/${item}`} className="relative group overflow-hidden">
                 {t(`navbar.${item}`)}
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-emerald-400 transition-all duration-300 group-hover:w-full"></span>
+                <span className={`absolute left-0 -bottom-1 w-0 h-[2px] transition-all duration-300 group-hover:w-full ${scrolled ? "bg-emerald-600 dark:bg-white" : "bg-white"}`}></span>
               </Link>
             ))}
           </div>
@@ -109,12 +124,11 @@ export default function Navbar({ darkMode, setDarkMode }) {
           {/* RIGHT SIDE TOOLS */}
           <div className="flex items-center gap-4">
             
-            {/* 🌗 ZOR DARK MODE TOGGLE */}
             <motion.button
               whileTap={{ scale: 0.9 }}
               whileHover={{ rotate: 15 }}
               onClick={toggleDarkMode}
-              className={`p-2.5 rounded-2xl transition-all duration-300 shadow-lg ${
+              className={`p-3 rounded-2xl transition-all duration-300 shadow-lg ${
                 scrolled 
                   ? "bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-yellow-400" 
                   : "bg-white/20 backdrop-blur-md text-yellow-300 border border-white/20"
@@ -128,7 +142,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                   exit={{ y: 20, opacity: 0, rotate: 90 }}
                   transition={{ duration: 0.2 }}
                 >
-                  {darkMode ? <Moon size={20} /> : <Sun size={20} />}
+                  {darkMode ? <Moon size={22} /> : <Sun size={22} />}
                 </motion.div>
               </AnimatePresence>
             </motion.button>
@@ -137,25 +151,25 @@ export default function Navbar({ darkMode, setDarkMode }) {
             <SignedOut>
               <div className="hidden lg:flex gap-3">
                 <SignInButton mode="modal">
-                  <button className={`px-6 py-2.5 rounded-2xl text-[11px] font-black tracking-[1px] uppercase transition-all duration-300 border ${
+                  <button className={`px-7 py-3 rounded-2xl text-[11px] font-black tracking-[1.5px] uppercase transition-all duration-300 border ${
                     scrolled 
-                      ? "border-emerald-500 text-emerald-600 hover:bg-emerald-50" 
-                      : "border-white/30 bg-white/10 text-white hover:bg-white hover:text-emerald-600"
+                      ? "border-slate-900 dark:border-white text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black" 
+                      : "border-white/40 bg-white/10 text-white hover:bg-white hover:text-emerald-600"
                   }`}>
-                    {t("navbar.login") || "Sign In"}
+                    {t("navbar.SignIn")}
                   </button>
                 </SignInButton>
 
                 <SignUpButton mode="modal">
-                  <button className="px-6 py-2.5 rounded-2xl text-[11px] font-black tracking-[1px] uppercase bg-emerald-500 text-white shadow-lg shadow-emerald-500/30 hover:bg-emerald-600 transition-all hover:-translate-y-1 active:translate-y-0">
-                    {t("navbar.signup") || "Join Now"}
+                  <button className="px-7 py-3 rounded-2xl text-[11px] font-black tracking-[1.5px] uppercase bg-emerald-500 text-white shadow-lg shadow-emerald-500/30 hover:bg-emerald-600 transition-all hover:-translate-y-1 active:translate-y-0">
+                    {t("navbar.signup")}
                   </button>
                 </SignUpButton>
               </div>
             </SignedOut>
 
             <SignedIn>
-              <div className="p-1 border-2 border-emerald-400 rounded-full">
+              <div className="p-1 border-2 border-emerald-400 rounded-full hover:scale-110 transition-transform">
                 <UserButton afterSignOutUrl="/" />
               </div>
             </SignedIn>
@@ -167,17 +181,17 @@ export default function Navbar({ darkMode, setDarkMode }) {
             {/* MOBILE MENU BUTTON */}
             <button
               onClick={() => setMenuOpen(true)}
-              className={`md:hidden p-2 rounded-xl transition-colors ${
-                scrolled ? "bg-emerald-50 text-emerald-600" : "bg-white/10 text-white"
+              className={`md:hidden p-3 rounded-xl transition-colors ${
+                scrolled ? "bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white" : "bg-white/10 text-white"
               }`}
             >
-              <Menu size={24} />
+              <Menu size={26} />
             </button>
           </div>
         </div>
       </nav>
 
-      {/* 📱 MOBILE MENU */}
+      {/* 📱 MOBILE MENU - O'zgarishsiz qoldi faqat ranglar mantiqi moslandi */}
       <AnimatePresence>
         {menuOpen && (
           <>
@@ -194,61 +208,52 @@ export default function Navbar({ darkMode, setDarkMode }) {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed right-0 top-0 w-[300px] h-full bg-white dark:bg-slate-950 z-[101] shadow-[-20px_0_50px_rgba(0,0,0,0.2)] flex flex-col"
+              className="fixed right-0 top-0 w-[320px] h-full bg-white dark:bg-slate-950 z-[101] shadow-[-20px_0_50px_rgba(0,0,0,0.3)] flex flex-col"
             >
               <div className="p-6 flex justify-between items-center border-b dark:border-slate-800">
-                <img src={logo} alt="logo" className="h-10" />
+                <img src={logo} alt="logo" className="h-12" />
                 <button 
                   onClick={() => setMenuOpen(false)}
-                  className="p-2 rounded-full bg-slate-100 dark:bg-slate-800 dark:text-white"
+                  className="p-3 rounded-full bg-slate-100 dark:bg-slate-800 dark:text-white"
                 >
-                  <X size={20} />
+                  <X size={24} />
                 </button>
               </div>
 
-              <div className="flex-1 px-6 py-8 overflow-y-auto space-y-2">
+              <div className="flex-1 px-6 py-8 overflow-y-auto space-y-4">
                 {navItems.map((item) => (
                   <Link
                     key={item}
                     to={item === "home" ? "/" : `/${item}`}
                     onClick={() => setMenuOpen(false)}
-                    className="flex items-center justify-between p-4 rounded-2xl hover:bg-emerald-50 dark:hover:bg-emerald-900/20 text-slate-700 dark:text-gray-200 font-bold text-sm uppercase tracking-widest transition-all"
+                    className="flex items-center justify-between p-4 rounded-2xl hover:bg-emerald-50 dark:hover:bg-slate-900 text-slate-900 dark:text-white font-black text-xs uppercase tracking-widest transition-all"
                   >
                     {t(`navbar.${item}`)}
-                    <ArrowRight size={16} className="opacity-0 group-hover:opacity-100" />
+                    <ArrowRight size={18} className="text-emerald-500" />
                   </Link>
                 ))}
               </div>
 
-              <div className="p-8 border-t dark:border-slate-800 space-y-4 bg-slate-50 dark:bg-slate-900/50">
+              <div className="p-8 border-t dark:border-slate-800 space-y-5 bg-slate-50 dark:bg-slate-900/50">
                 <div className="flex justify-between items-center bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm">
-                  <span className="text-[10px] font-black uppercase text-slate-400 tracking-widest">
-                    Language
-                  </span>
+                  <span className="text-[10px] font-black uppercase text-slate-400 tracking-widest">Language</span>
                   <LanguageDetector />
                 </div>
 
                 <SignedOut>
                   <div className="grid grid-cols-1 gap-3">
                     <SignInButton mode="modal">
-                      <button className="w-full py-4 rounded-2xl border-2 border-emerald-500 text-emerald-600 font-black uppercase text-[10px] tracking-widest transition-all">
-                        Login
+                      <button className="w-full py-4 rounded-2xl border-2 border-slate-900 dark:border-white text-slate-900 dark:text-white font-black uppercase text-[10px] tracking-[2px]">
+                        {t("navbar.SignIn")}
                       </button>
                     </SignInButton>
                     <SignUpButton mode="modal">
-                      <button className="w-full py-4 rounded-2xl bg-emerald-500 text-white font-black uppercase text-[10px] tracking-widest shadow-lg shadow-emerald-500/20">
-                        Register
+                      <button className="w-full py-4 rounded-2xl bg-emerald-500 text-white font-black uppercase text-[10px] tracking-[2px] shadow-lg">
+                        {t("navbar.signup")}
                       </button>
                     </SignUpButton>
                   </div>
                 </SignedOut>
-
-                <SignedIn>
-                  <div className="flex items-center gap-4 p-2 bg-white dark:bg-slate-800 rounded-2xl shadow-sm">
-                    <UserButton afterSignOutUrl="/" />
-                    <span className="text-xs font-bold dark:text-white">Mening Profilim</span>
-                  </div>
-                </SignedIn>
               </div>
             </motion.div>
           </>

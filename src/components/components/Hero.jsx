@@ -1,39 +1,49 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, EffectCreative } from "swiper/modules";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-// Swiper stillari
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-creative";
 
-export default function Hero() {
-  const { t } = useTranslation();
-  const navigate = useNavigate();
+// ─── Animated background canvas ──────────────────────────────────────────────
+function NetworkCanvas() {
+  const canvasRef = useRef(null);
 
   useEffect(() => {
-    const canvas = document.getElementById("network-bg");
+    const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
+    let animId;
     let particles = [];
-    const count = 60;
+    const COUNT = 70;
+
+    const getColor = () =>
+      document.documentElement.classList.contains("dark")
+        ? "rgba(52, 211, 153, 0.55)"
+        : "rgba(22, 163, 74, 0.45)";
 
     const resize = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
     };
+
+    // Use ResizeObserver instead of window resize for accuracy
+    const ro = new ResizeObserver(resize);
+    ro.observe(canvas);
     resize();
-    window.addEventListener("resize", resize);
 
     class Particle {
-      constructor() {
+      constructor() { this.reset(); }
+      reset() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 0.3;
-        this.vy = (Math.random() - 0.5) * 0.3;
+        this.vx = (Math.random() - 0.5) * 0.35;
+        this.vy = (Math.random() - 0.5) * 0.35;
+        this.r = Math.random() * 1 + 1;
       }
       move() {
         this.x += this.vx;
@@ -43,169 +53,318 @@ export default function Hero() {
       }
       draw() {
         ctx.beginPath();
-        ctx.arc(this.x, this.y, 1.5, 0, Math.PI * 2);
-        const isDark = document.documentElement.classList.contains("dark");
-        ctx.fillStyle = isDark ? "rgba(74, 222, 128, 0.5)" : "rgba(34, 197, 94, 0.5)";
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        ctx.fillStyle = getColor();
         ctx.fill();
       }
     }
 
-    for (let i = 0; i < count; i++) particles.push(new Particle());
+    for (let i = 0; i < COUNT; i++) particles.push(new Particle());
+
+    // Draw connecting lines between nearby particles
+    const drawLines = () => {
+      const color = getColor();
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 110) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = color.replace("0.55", String((1 - dist / 110) * 0.18));
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
+          }
+        }
+      }
+    };
+
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach((p) => { p.move(); p.draw(); });
-      requestAnimationFrame(animate);
+      drawLines();
+      animId = requestAnimationFrame(animate);
     };
     animate();
-    return () => window.removeEventListener("resize", resize);
+
+    return () => {
+      cancelAnimationFrame(animId);
+      ro.disconnect();
+    };
   }, []);
 
-  const Chip = () => (
-    <div className="relative w-10 h-6 overflow-hidden rounded-lg shadow-inner sm:w-14 sm:h-10 bg-gradient-to-br from-yellow-300 via-yellow-500 to-yellow-600">
-      <div className="absolute inset-1 border-[1px] border-yellow-900/30 rounded-md"></div>
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 z-0 w-full h-full pointer-events-none opacity-50"
+    />
+  );
+}
+
+// ─── Gold chip graphic ────────────────────────────────────────────────────────
+function Chip() {
+  return (
+    <div className="relative w-9 h-6 sm:w-12 sm:h-8 shrink-0 overflow-hidden rounded-md shadow-inner bg-gradient-to-br from-yellow-200 via-yellow-400 to-yellow-600">
+      <div className="absolute inset-[3px] rounded-[3px] border border-yellow-800/25" />
+      {/* chip lines */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-[3px] pl-[3px]">
+        {[0,1,2].map(i => (
+          <div key={i} className="w-1.5 h-[1.5px] bg-yellow-800/30 rounded-full" />
+        ))}
+      </div>
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-[3px] pr-[3px]">
+        {[0,1,2].map(i => (
+          <div key={i} className="w-1.5 h-[1.5px] bg-yellow-800/30 rounded-full" />
+        ))}
+      </div>
     </div>
   );
+}
 
-  const slides = t("hero.slides", { returnObjects: true });
+// ─── 3-D tilt card ────────────────────────────────────────────────────────────
+function TiltCard({ slide, index }) {
+  const cardRef = useRef(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [8, -8]), { stiffness: 200, damping: 30 });
+  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-10, 10]), { stiffness: 200, damping: 30 });
 
-  const containerVars = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.3 } }
-  };
+  const handleMouseMove = useCallback((e) => {
+    const rect = cardRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    x.set((e.clientX - rect.left) / rect.width - 0.5);
+    y.set((e.clientY - rect.top) / rect.height - 0.5);
+  }, [x, y]);
 
-  const itemVars = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } }
-  };
+  const handleMouseLeave = useCallback(() => {
+    x.set(0); y.set(0);
+  }, [x, y]);
 
   return (
-    <section className="relative w-full min-h-screen transition-colors duration-700 bg-white dark:bg-slate-950">
-      <canvas id="network-bg" className="absolute inset-0 z-0 w-full h-full opacity-40 pointer-events-none" />
+    <div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="relative w-[240px] min-[500px]:w-[300px] sm:w-[340px] md:w-[390px] lg:w-[430px]
+                 h-[148px] min-[500px]:h-[182px] sm:h-[212px] md:h-[244px] lg:h-[268px]"
+      style={{ perspective: 1000 }}
+    >
+      {/* Back card — desktop only */}
+      <motion.div
+        initial={{ opacity: 0, x: 40, rotate: 15 }}
+        animate={{ opacity: 1, x: 0, rotate: 12, y: [0, -8, 0] }}
+        transition={{ opacity: { duration: 0.6 }, x: { duration: 0.6 },
+          y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.6 } }}
+        className="absolute top-3 left-5 w-full h-full rounded-2xl overflow-hidden
+                   shadow-xl border border-white/10 dark:border-gray-800 z-0 hidden sm:block"
+      >
+        <div
+          className="absolute inset-0 bg-center bg-cover grayscale-[0.5] scale-105"
+          style={{ backgroundImage: `url(${slide.backImg})` }}
+        />
+        <div className="absolute inset-0 bg-black/35 backdrop-blur-[1px]" />
+      </motion.div>
+
+      {/* Main card */}
+      <motion.div
+        style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+        initial={{ opacity: 0, scale: 0.82 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        className="relative w-full h-full rounded-2xl overflow-hidden cursor-pointer
+                   shadow-2xl border border-white/10 dark:border-gray-700 z-10"
+      >
+        <img
+          src={slide.cardImg}
+          alt="Card visual"
+          className="absolute inset-0 object-cover w-full h-full"
+          loading="lazy"
+          draggable={false}
+        />
+        {/* gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-black/65 via-black/10 to-white/5" />
+        {/* shimmer on hover */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700
+                        bg-gradient-to-tr from-transparent via-white/8 to-transparent" />
+
+        <div className="relative flex flex-col justify-between h-full p-3.5 sm:p-5 text-white">
+          <div className="flex items-start justify-between">
+            <h2 className="text-[11px] sm:text-base font-extrabold italic tracking-tight drop-shadow">
+              YUKSALISH
+            </h2>
+            <Chip />
+          </div>
+
+          <div>
+            <p className="text-[6px] sm:text-[9px] tracking-[3px] uppercase opacity-55 mb-1">
+              Premium Card
+            </p>
+            <p className="font-mono text-[10px] sm:text-base tracking-widest
+                          bg-black/25 backdrop-blur-sm rounded px-2 py-0.5 inline-block">
+              **** **** **** {1000 + index * 111}
+            </p>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+// ─── Text content block ───────────────────────────────────────────────────────
+const containerVars = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+  },
+};
+const itemVars = {
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 90, damping: 18 } },
+};
+
+function SlideText({ slide, t, navigate }) {
+  return (
+    <motion.div
+      variants={containerVars}
+      initial="hidden"
+      animate="visible"
+      className="z-10 w-full text-center lg:w-1/2 lg:text-left pb-14 lg:pb-0"
+    >
+      {/* Badge */}
+      <motion.div
+        variants={itemVars}
+        className="inline-flex items-center gap-2 bg-green-50 dark:bg-emerald-500/10
+                   text-green-700 dark:text-emerald-400 px-4 py-1 rounded-full
+                   text-[10px] sm:text-xs font-bold mb-4 sm:mb-6"
+      >
+        <span className="relative flex w-2 h-2">
+          <span className="absolute inline-flex w-full h-full bg-green-400 rounded-full animate-ping opacity-75" />
+          <span className="relative inline-flex w-2 h-2 bg-green-500 rounded-full" />
+        </span>
+        {slide.badge}
+      </motion.div>
+
+      {/* Heading */}
+      <motion.h1
+        variants={itemVars}
+        className="text-2xl min-[500px]:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl
+                   font-extrabold text-slate-900 dark:text-white leading-[1.1] mb-4 sm:mb-6"
+      >
+        {slide.title}
+        <br />
+        <span className="text-transparent bg-gradient-to-r from-green-600 to-emerald-400 bg-clip-text">
+          {slide.subtitle}
+        </span>
+      </motion.h1>
+
+      {/* Description */}
+      <motion.p
+        variants={itemVars}
+        className="mx-auto text-sm sm:text-base lg:text-lg leading-relaxed
+                   text-slate-500 dark:text-slate-400 mb-6 sm:mb-10 max-w-lg lg:mx-0"
+      >
+        {slide.desc}
+      </motion.p>
+
+      {/* CTA buttons */}
+      <motion.div
+        variants={itemVars}
+        className="flex flex-col gap-3 justify-center min-[450px]:flex-row lg:justify-start sm:gap-4"
+      >
+        <button
+          onClick={() => navigate("/services")}
+          className="relative overflow-hidden px-6 py-3 sm:px-8 sm:py-4
+                     text-sm sm:text-base font-bold text-white rounded-2xl
+                     bg-green-600 hover:bg-green-700 active:scale-95
+                     shadow-lg shadow-green-500/25 transition-all duration-200
+                     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400"
+        >
+          {t("hero.button")}
+        </button>
+        <button
+          onClick={() => navigate("/hisob-ochish")}
+          className="px-6 py-3 sm:px-8 sm:py-4
+                     text-sm sm:text-base font-bold rounded-2xl
+                     border-2 border-slate-200 dark:border-slate-700
+                     text-slate-700 dark:text-slate-300
+                     hover:bg-slate-50 dark:hover:bg-slate-800/60
+                     active:scale-95 transition-all duration-200
+                     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
+        >
+          {t("hero.button1")}
+        </button>
+      </motion.div>
+    </motion.div>
+  );
+}
+
+// ─── Main Hero ────────────────────────────────────────────────────────────────
+export default function Hero() {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+  const slides = t("hero.slides", { returnObjects: true });
+
+  return (
+    <section className="relative w-full min-h-screen bg-white dark:bg-slate-950 transition-colors duration-700">
+      <NetworkCanvas />
+
+      {/* Subtle radial glow for depth */}
+      <div className="pointer-events-none absolute inset-0 z-0
+                      bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(34,197,94,0.07),transparent)]
+                      dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(52,211,153,0.06),transparent)]" />
 
       <Swiper
         modules={[Autoplay, Pagination, EffectCreative]}
-        effect={"creative"}
+        effect="creative"
         creativeEffect={{
           prev: { shadow: true, translate: ["-20%", 0, -1], opacity: 0 },
           next: { translate: ["100%", 0, 0] },
         }}
-        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        autoplay={{ delay: 5500, disableOnInteraction: false, pauseOnMouseEnter: true }}
         pagination={{ clickable: true }}
-        loop={true}
+        loop
         className="h-screen"
       >
         {slides.map((slide, i) => (
           <SwiperSlide key={i} className="flex items-center justify-center">
-            {/* RESPONSIVE PADDING & LAYOUT LOGIC:
-                - < 400px: pt-[120px]
-                - 400px - 600px: pt-[100px]
-                - 600px - 1000px: pt-[80px]
-                - > 1000px (md+): pt-0 (centered)
-            */}
-            <div className="container mx-auto px-6 h-full flex flex-col-reverse lg:flex-row items-center justify-center gap-8 
-                            max-[400px]:pt-[120px] 
-                            max-[600px]:pt-[100px] 
-                            max-[1000px]:pt-[80px] 
-                            lg:pt-0 lg:px-12 xl:px-20">
+            <div
+              className="container mx-auto px-6 lg:px-12 xl:px-20 h-full
+                         flex flex-col-reverse lg:flex-row items-center justify-center gap-8
+                         pt-[clamp(80px,15vw,120px)] lg:pt-0"
+            >
+              <SlideText slide={slide} t={t} navigate={navigate} />
 
-              {/* Text Content */}
-              <motion.div 
-                variants={containerVars}
-                initial="hidden"
-                whileInView="visible"
-                className="z-10 w-full text-center lg:w-1/2 lg:text-left pb-14 lg:pb-0"
-              >
-                <motion.div variants={itemVars} className="inline-flex items-center gap-2 bg-green-50 dark:bg-emerald-500/10 text-green-700 dark:text-emerald-400 px-4 py-1 rounded-full text-[10px] sm:text-xs font-bold mb-4 sm:mb-6">
-                  <span className="relative flex w-2 h-2">
-                    <span className="absolute inline-flex w-full h-full bg-green-400 rounded-full animate-ping opacity-75"></span>
-                    <span className="relative inline-flex w-2 h-2 bg-green-500 rounded-full"></span>
-                  </span>
-                  {slide.badge}
-                </motion.div>
-
-                <motion.h1 variants={itemVars} className="text-2xl min-[500px]:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-slate-900 dark:text-white leading-[1.1] mb-4 sm:mb-6">
-                  {slide.title} <br />
-                  <span className="text-transparent bg-gradient-to-r from-green-600 to-emerald-400 bg-clip-text">
-                    {slide.subtitle}
-                  </span>
-                </motion.h1>
-
-                <motion.p variants={itemVars} className="mx-auto text-sm leading-relaxed text-slate-600 dark:text-slate-400 sm:text-base lg:text-lg mb-6 sm:mb-10 max-w-lg lg:mx-0">
-                  {slide.desc}
-                </motion.p>
-
-                <motion.div variants={itemVars} className="flex flex-col gap-3 justify-center min-[450px]:flex-row lg:justify-start sm:gap-4">
-                  <button onClick={() => navigate("/services")} className="px-6 py-3 text-sm font-bold text-white transition-all bg-green-600 sm:px-8 sm:py-4 sm:text-base rounded-2xl hover:bg-green-700 active:scale-95 shadow-lg shadow-green-500/20">
-                    {t("hero.button")}
-                  </button>
-                  <button onClick={() => navigate("/hisob-ochish")} className="px-6 py-3 text-sm font-bold transition-all border-2 sm:px-8 sm:py-4 sm:text-base border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 active:scale-95">
-                    {t("hero.button1")}
-                  </button>
-                </motion.div>
-              </motion.div>
-
-              {/* Visual Card Content */}
-              <div className="flex justify-center w-full lg:w-1/2 lg:justify-end">
-                <div className="relative w-[240px] min-[500px]:w-[300px] sm:w-[340px] md:w-[380px] lg:w-[420px] h-[150px] min-[500px]:h-[180px] sm:h-[210px] md:h-[240px] lg:h-[260px] group">
-                  
-                  {/* Orqa karta (faqat sm dan kattada) */}
-                  <motion.div
-                    initial={{ opacity: 0, x: 50, rotate: 15 }}
-                    whileInView={{ opacity: 1, x: 0, rotate: 12 }}
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-4 left-6 w-full h-full rounded-2xl overflow-hidden shadow-xl border border-white/20 dark:border-gray-800 z-0 hidden sm:block"
-                  >
-                    <div className="absolute inset-0 bg-center bg-cover grayscale-[0.6] blur-[1px]" style={{ backgroundImage: `url(${slide.backImg})` }} />
-                    <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]" />
-                  </motion.div>
-
-                  {/* Asosiy Premium Karta */}
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    whileHover={{ rotateY: -10, rotateX: 5, scale: 1.02 }}
-                    className="relative w-full h-full rounded-2xl overflow-hidden cursor-pointer shadow-2xl border border-white/10 dark:border-gray-700 z-10 preserve-3d"
-                  >
-                    <img src={slide.cardImg} alt="Card" className="absolute inset-0 object-cover w-full h-full" />
-                    <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-transparent to-white/10" />
-
-                    <div className="relative flex flex-col justify-between h-full p-4 text-white sm:p-6">
-                      <div className="flex items-start justify-between">
-                        <h2 className="text-sm font-bold italic tracking-tighter sm:text-xl">YUKSALISH</h2>
-                        <Chip />
-                      </div>
-
-                      <div>
-                        <p className="text-[7px] sm:text-[10px] tracking-[3px] uppercase opacity-60 mb-1">Premium Card</p>
-                        <p className="font-mono text-xs sm:text-lg tracking-widest bg-black/20 backdrop-blur-sm rounded px-2 py-1 inline-block">
-                          **** **** **** {1000 + i * 111}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
+              <div className="flex justify-center w-full lg:w-1/2 lg:justify-end group">
+                <TiltCard slide={slide} index={i} />
               </div>
-
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
-      <style jsx global>{`
-        .swiper-pagination-bullet { background: #22c55e !important; width: 6px; height: 6px; transition: all 0.3s ease; }
-        .swiper-pagination-bullet-active { width: 24px; border-radius: 4px; }
-        .preserve-3d { transform-style: preserve-3d; perspective: 1000px; }
-        .swiper-pagination { bottom: 20px !important; }
-        
-        /* Maxsus media so'rovlar orqali boshqarish */
+      <style>{`
+        .swiper-pagination-bullet {
+          background: #22c55e !important;
+          width: 6px; height: 6px;
+          opacity: 0.5;
+          transition: all 0.3s ease;
+        }
+        .swiper-pagination-bullet-active {
+          width: 22px;
+          border-radius: 4px;
+          opacity: 1;
+        }
+        .swiper-pagination {
+          bottom: 20px !important;
+        }
         @media (max-width: 1000px) {
           .swiper-pagination { bottom: 10px !important; }
         }
-        @media (max-height: 700px) and (max-width: 600px) {
-           .container { gap: 1rem !important; }
-           h1 { font-size: 1.75rem !important; }
-           p { margin-bottom: 1.5rem !important; }
+        @media (max-height: 680px) and (max-width: 600px) {
+          .container { gap: 0.75rem !important; }
         }
       `}</style>
     </section>
